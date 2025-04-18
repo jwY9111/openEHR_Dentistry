@@ -49,9 +49,10 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"F04358152899C2F3F18EE67E6253A027">
+		["MD5-CAM-1.0.1"] = <"44fdb820bed3cdd70454142e1997a0a9">
 		["build_uid"] = <"49c3ed31-6935-426a-8b22-9c2bd5f1dfbd">
 		["revision"] = <"0.0.1-alpha">
+		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact https://www.snomed.org/snomed-ct/get-snomed or info@snomed.org.">
 	>
 
 definition
@@ -84,6 +85,7 @@ definition
 	}
 
 ontology
+	terminologies_available = <"SNOMED-CT", ...>
 	term_definitions = <
 		["pt-br"] = <
 			items = <
@@ -155,6 +157,16 @@ ontology
 					text = <"Not declared/inadequately described">
 					description = <"is not to be used on primary collection forms. It is primarily for use in administrative collections when transferring data from data sets where the item has not been collected.">
 				>
+			>
+		>
+	>
+	term_binding = <
+		["SNOMED-CT"] = <
+			items = <
+				["at0010"] = <[SNOMED-CT::248153007]>
+				["at0011"] = <[SNOMED-CT::248152002]>
+				["at0012"] = <[SNOMED-CT::32570691000036108]>
+				["at0013"] = <[SNOMED-CT::184115007]>
 			>
 		>
 	>
