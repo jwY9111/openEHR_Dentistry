@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.1.0",
+      "sem_ver" : "3.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "bf5f25d49a71bf1a4e653b3d9f79d835",
+      "MD5-CAM-1.0.1" : "493ca9f0d99441a1e2e13d2f866793f1",
       "PARENT:MD5-CAM-1.0.1" : "B2439FE7CDCBBB0532C37A0F15FE82CD"
     },
     "details" : {
@@ -262,6 +262,12 @@
           } ],
           "attributeTuples" : [ ]
         }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "nodeId" : "at0004.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
           "@type" : "C_ARCHETYPE_ROOT",
           "rmTypeName" : "CLUSTER",
           "occurrences" : "0..1",
@@ -350,7 +356,15 @@
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "en" : { },
+        "en" : {
+          "at0004.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0004.1",
+            "text" : "Relationship",
+            "description" : "The relationship or role of the individual to the subject of the health record.",
+            "comment" : "For example - the copyholder of an advance care record; contact person in an organisation; relative in a family history entry; specimen collector; or witness to a fall or accident. If the individual being described using this archetype is the subject of the health record, then this data element is redundant."
+          }
+        },
         "nb" : { },
         "de" : { },
         "zh" : { },
