@@ -449,7 +449,7 @@ Niet te gebruiken om een FHIR-bron met eenzelfde naam te representeren - dan is 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"E51B66549F2C04336B514E1DAE9B93C8">
+		["MD5-CAM-1.0.1"] = <"f91221ec6bf060c5bc81f5dcb717fedf">
 		["build_uid"] = <"e17bae95-4198-4360-a322-d22b7666408d">
 		["revision"] = <"1.0.9">
 	>
@@ -465,6 +465,19 @@ definition
 		}
 		context matches {
 			EVENT_CONTEXT matches {
+				start_time matches {
+					DV_DATE_TIME[at0003] matches {    -- DV_DATE_TIME
+						value matches {yyyy-mm-ddT??:??:??}
+					}
+				}
+				end_time matches {
+					DV_DATE_TIME[at0004] matches {    -- DV_DATE_TIME
+						value matches {yyyy-mm-ddT??:??:??}
+					}
+				}
+				participations cardinality matches {1..*; unordered} matches {
+					PARTICIPATION[at0005] occurrences matches {0..1} matches {*}    -- PARTICIPATION
+				}
 				other_context matches {
 					ITEM_TREE[at0001] matches {    -- Tree
 						items cardinality matches {0..*; unordered} matches {
@@ -496,6 +509,18 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["en"] = <
@@ -512,6 +537,18 @@ ontology
 					text = <"Extension">
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
 					comment = <"e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+				["at0003"] = <
+					text = <"DV_DATE_TIME">
+					description = <"Date/time of encounter or visit">
+				>
+				["at0004"] = <
+					text = <"DV_DATE_TIME">
+					description = <"Date/time of encounter or visit">
+				>
+				["at0005"] = <
+					text = <"PARTICIPATION">
+					description = <"Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example).">
 				>
 			>
 		>
@@ -530,6 +567,18 @@ ontology
 					description = <"Información adicional requerida para representar el contexto local o para alineamiento con otros modelos de referencia y formalismos.">
 					comment = <"Ej.: Información local del departamento hospitalario o metadatos adicionales para alineamiento con los equivalentes en FHIR o CIMI.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["ko"] = <
@@ -546,6 +595,18 @@ ontology
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
 				>
 			>
 		>
@@ -564,6 +625,18 @@ ontology
 					description = <"Informações adicionais necessárias para identificar contexto local ou alinhar com outros formalismos/modelos de referência.">
 					comment = <"Por exemplo: informação departamental local de hospital ou metadados adicionais para alinhar com equivalentes FHIR ou CIMI.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["es"] = <
@@ -580,6 +653,18 @@ ontology
 					text = <"Extensión">
 					description = <"Información adicional requerida para capturar el contexto local o alinear con otros modelos de referencia o formalismos.">
 					comment = <"p.ej. Información departamental del hospital local o metadatos adicionales para alinearse con los equivalentes de FHIR o CIMI.">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
 				>
 			>
 		>
@@ -598,6 +683,18 @@ ontology
 					description = <"Aanvullende informatie die vereist is om de lokale context vast te leggen of in lijn te brengen met andere referentie-modellen/formalismen.">
 					comment = <"Bijvoorbeeld lokale ziekenhuisafdeling informatie of aanvullende metadata om uit in lijn te brengen met FHIR of CIMI-equivalenten.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["sv"] = <
@@ -614,6 +711,18 @@ ontology
 					text = <"Tilläggsinformation">
 					description = <"Plats för tilläggsinformation som krävs för lokala anpassningar eller anpassning till andra referensmodeller eller formella krav.">
 					comment = <"Exempelvis lokala informationskrav eller metadata för anpassning till FHIR- eller CIMI-motsvarigheter.">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
 				>
 			>
 		>
@@ -632,6 +741,18 @@ ontology
 					description = <"Zusätzliche Informationen, zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle / Formalismen.">
 					comment = <"Zum Beispiel Informationen zu lokalen Krankenhausabteilungen oder zusätzliche Metadaten zur Übereinstimmung mit FHIR- oder CIMI-Äquivalenten.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["fi"] = <
@@ -648,6 +769,18 @@ ontology
 					text = <"Laajennus">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*e.g. Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
 				>
 			>
 		>
@@ -666,6 +799,18 @@ ontology
 					description = <"Informazioni aggiuntive necessarie per catturare il contesto locale o per allinearsi con altri modelli/formalismi di riferimento.">
 					comment = <"e.g. Informazioni sul reparto ospedaliero locale o metadati aggiuntivi da allineare con gli equivalenti FHIR o CIMI.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["fr"] = <
@@ -682,6 +827,18 @@ ontology
 					text = <"Extension">
 					description = <"Informations supplémentaires requises pour saisir le contexte local ou pour s'aligner sur d'autres modèles/formalismes de référence.">
 					comment = <"Par exemple: les informations sur les services hospitaliers locaux ou des métadonnées supplémentaires pour s'aligner sur les équivalents FHIR ou CIMI.">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
 				>
 			>
 		>
@@ -700,6 +857,18 @@ ontology
 					description = <"Tilleggsinformasjon som kan være nødvendig for å dokumentere lokal kontekst, eller for å tilpasse til andre referansemodeller/formalismer.">
 					comment = <"F.eks. lokal avdelingsinformasjon eller ytterligere metadata for tilpasning til FHIR eller CIMI.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["pt-pt"] = <
@@ -717,6 +886,18 @@ ontology
 					description = <"Informações adicionais necessárias para captar o contexto local ou para alinhar com outros modelos/formalismos de referência.">
 					comment = <"Por exemplo, informação departamental do hospital local ou metadados adicionais para alinhar com os equivalentes FHIR ou CIMI.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
+				>
 			>
 		>
 		["ca"] = <
@@ -733,6 +914,18 @@ ontology
 					text = <"Extensió">
 					description = <"Informació addicional necessària per a recollir el contingut local o per alinear-se amb altres models/formalismes de referència.">
 					comment = <"Per exemple: informació departamental de l'hospital local o metadades addicionals per alinear-se amb equivalents FHIR o CIMI.">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"*Date/time of encounter or visit (en)">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"*Parties involved in the healthcare event. These would normally include the physician(s) and often the patient (but not the latter if the clinical session is a pathology test for example). (en)">
 				>
 			>
 		>
