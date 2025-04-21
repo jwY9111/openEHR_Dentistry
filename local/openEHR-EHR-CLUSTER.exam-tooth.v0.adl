@@ -203,7 +203,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ac3f53c42b796422c55c096016358ca8">
+		["MD5-CAM-1.0.1"] = <"15c813173ef70a3eacae05d00496d93c">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -221,42 +221,6 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0012.1] occurrences matches {0..1} matches {    -- Tooth position
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			allow_archetype CLUSTER[at0011.1] occurrences matches {0..*} matches {    -- Structured tooth position
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_circle(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative\.v2/}
-			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Examination findings
-				include
-					archetype_id/value matches {/.*/}
-			}
-			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Multimedia representation
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Examination not done
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
-			}
 			ELEMENT[at0.38] occurrences matches {0..1} matches {    -- Notation system
 				value matches {
 					DV_CODED_TEXT matches {
@@ -273,6 +237,15 @@ definition
 				value matches {
 					DV_TEXT matches {*}
 				}
+			}
+			ELEMENT[at0012.1] occurrences matches {0..1} matches {    -- Tooth position
+				value matches {
+					DV_CODED_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0011.1] occurrences matches {0..*} matches {    -- Structured tooth position
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_circle(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative\.v2/}
 			}
 			ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Presence
 				value matches {
@@ -307,9 +280,44 @@ definition
 					}
 				}
 			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Examination findings
+				include
+					archetype_id/value matches {/.*/}
+			}
+			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Multimedia representation
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Examination not done
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
+			}
 			ELEMENT[at0.9] occurrences matches {0..1} matches {    -- Gum description
 				value matches {
 					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0.64] occurrences matches {0..1} matches {    -- Mobility
+				value matches {
+					0|[local::at0.65],
+					1|[local::at0.66],
+					2|[local::at0.67],
+					3|[local::at0.68]
 				}
 			}
 			ELEMENT[at0.10] occurrences matches {0..1} matches {    -- Pocket depth
@@ -319,7 +327,7 @@ definition
 						list = <
 							["1"] = <
 								units = <"mm">
-								magnitude = <|0.0..10.0|>
+								magnitude = <|0.0..20.0|>
 								precision = <|0|>
 							>
 						>
@@ -365,7 +373,9 @@ definition
 									at0.33,    -- Buccal
 									at0.34,    -- Lingual
 									at0.35,    -- Incisal
-									at0.36]    -- Occlusal
+									at0.36,    -- Occlusal
+									at0.69,    -- Pit
+									at0.70]    -- Fissure
 								}
 							}
 						}
@@ -660,6 +670,34 @@ ontology
 					text = <"Tooth Anomaly - Structure">
 					description = <"">
 				>
+				["at0.64"] = <
+					text = <"Mobility">
+					description = <"">
+				>
+				["at0.65"] = <
+					text = <"No mobility">
+					description = <"Firm and stable within socket and no movement is detectable during examination">
+				>
+				["at0.66"] = <
+					text = <"Slight mobility">
+					description = <"Slight mobility, with minor horizontal or lateral movement of the tooth observed">
+				>
+				["at0.67"] = <
+					text = <"Moderate mobility">
+					description = <"More noticeable horizontal movement and possible vertical or axial displacement">
+				>
+				["at0.68"] = <
+					text = <"Severe mobility">
+					description = <"Tooth exhibits significant movement, both horizontally and vertically (Floating tooth)">
+				>
+				["at0.69"] = <
+					text = <"Pit">
+					description = <"">
+				>
+				["at0.70"] = <
+					text = <"Fissure">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
@@ -937,6 +975,34 @@ ontology
 				>
 				["at0.63"] = <
 					text = <"*Tooth Anomaly - Structure (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Mobility (en)">
+					description = <"">
+				>
+				["at0.65"] = <
+					text = <"*No mobility (en)">
+					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
+				>
+				["at0.66"] = <
+					text = <"*Slight mobility (en)">
+					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
+				>
+				["at0.67"] = <
+					text = <"*Moderate mobility (en)">
+					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
+				>
+				["at0.68"] = <
+					text = <"*Severe mobility (en)">
+					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
+				>
+				["at0.69"] = <
+					text = <"*Pit (en)">
+					description = <"">
+				>
+				["at0.70"] = <
+					text = <"*Fissure (en)">
 					description = <"">
 				>
 			>
@@ -1220,6 +1286,34 @@ ontology
 					text = <"*Tooth Anomaly - Structure (en)">
 					description = <"">
 				>
+				["at0.64"] = <
+					text = <"*Mobility (en)">
+					description = <"">
+				>
+				["at0.65"] = <
+					text = <"*No mobility (en)">
+					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
+				>
+				["at0.66"] = <
+					text = <"*Slight mobility (en)">
+					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
+				>
+				["at0.67"] = <
+					text = <"*Moderate mobility (en)">
+					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
+				>
+				["at0.68"] = <
+					text = <"*Severe mobility (en)">
+					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
+				>
+				["at0.69"] = <
+					text = <"*Pit (en)">
+					description = <"">
+				>
+				["at0.70"] = <
+					text = <"*Fissure (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
@@ -1499,6 +1593,34 @@ ontology
 				>
 				["at0.63"] = <
 					text = <"*Tooth Anomaly - Structure (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Mobility (en)">
+					description = <"">
+				>
+				["at0.65"] = <
+					text = <"*No mobility (en)">
+					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
+				>
+				["at0.66"] = <
+					text = <"*Slight mobility (en)">
+					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
+				>
+				["at0.67"] = <
+					text = <"*Moderate mobility (en)">
+					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
+				>
+				["at0.68"] = <
+					text = <"*Severe mobility (en)">
+					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
+				>
+				["at0.69"] = <
+					text = <"*Pit (en)">
+					description = <"">
+				>
+				["at0.70"] = <
+					text = <"*Fissure (en)">
 					description = <"">
 				>
 			>
@@ -1785,6 +1907,34 @@ ontology
 					text = <"*Tooth Anomaly - Structure (en)">
 					description = <"">
 				>
+				["at0.64"] = <
+					text = <"*Mobility (en)">
+					description = <"">
+				>
+				["at0.65"] = <
+					text = <"*No mobility (en)">
+					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
+				>
+				["at0.66"] = <
+					text = <"*Slight mobility (en)">
+					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
+				>
+				["at0.67"] = <
+					text = <"*Moderate mobility (en)">
+					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
+				>
+				["at0.68"] = <
+					text = <"*Severe mobility (en)">
+					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
+				>
+				["at0.69"] = <
+					text = <"*Pit (en)">
+					description = <"">
+				>
+				["at0.70"] = <
+					text = <"*Fissure (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
@@ -2066,6 +2216,34 @@ ontology
 					text = <"*Tooth Anomaly - Structure (en)">
 					description = <"">
 				>
+				["at0.64"] = <
+					text = <"*Mobility (en)">
+					description = <"">
+				>
+				["at0.65"] = <
+					text = <"*No mobility (en)">
+					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
+				>
+				["at0.66"] = <
+					text = <"*Slight mobility (en)">
+					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
+				>
+				["at0.67"] = <
+					text = <"*Moderate mobility (en)">
+					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
+				>
+				["at0.68"] = <
+					text = <"*Severe mobility (en)">
+					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
+				>
+				["at0.69"] = <
+					text = <"*Pit (en)">
+					description = <"">
+				>
+				["at0.70"] = <
+					text = <"*Fissure (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
@@ -2345,6 +2523,34 @@ ontology
 				>
 				["at0.63"] = <
 					text = <"*Tooth Anomaly - Structure (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Mobility (en)">
+					description = <"">
+				>
+				["at0.65"] = <
+					text = <"*No mobility (en)">
+					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
+				>
+				["at0.66"] = <
+					text = <"*Slight mobility (en)">
+					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
+				>
+				["at0.67"] = <
+					text = <"*Moderate mobility (en)">
+					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
+				>
+				["at0.68"] = <
+					text = <"*Severe mobility (en)">
+					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
+				>
+				["at0.69"] = <
+					text = <"*Pit (en)">
+					description = <"">
+				>
+				["at0.70"] = <
+					text = <"*Fissure (en)">
 					description = <"">
 				>
 			>
