@@ -203,20 +203,20 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"4a09c164f01a61beef1c7bb395f7175f">
+		["MD5-CAM-1.0.1"] = <"999961edf1dbd3b3225939012362793e">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000.1] matches {    -- examination_of occlusion
+	CLUSTER[at0000.1] matches {    -- Examination of occlusion
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001.1] matches {    -- System or structure examined
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
-							[local::at0.1]    -- Tooth
+							[local::at0.73]    -- Occlusion
 						}
 					}
 				}
@@ -230,11 +230,6 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_circle(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative\.v2/}
 			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Examination findings
 				include
 					archetype_id/value matches {/.*/}
@@ -242,6 +237,11 @@ definition
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Multimedia representation
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
+				value matches {
+					DV_TEXT matches {*}
+				}
 			}
 			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
 				value matches {
@@ -257,129 +257,57 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			ELEMENT[at0.38] occurrences matches {0..1} matches {    -- Notation system
-				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0.39,    -- FDI/ ISO notation system
-							at0.40,    -- Zsigmondy-Palmer notation system
-							at0.41]    -- Universal/ ADA notation system
-						}
-					}
-				}
-			}
-			ELEMENT[at0.2] occurrences matches {0..1} matches {    -- Tooth label
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Presence
-				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0.4,    -- Present
-							at0.5]    -- Absent
-						}
-					}
-				}
-			}
-			ELEMENT[at0.6] occurrences matches {0..1} matches {    -- Condition
-				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0.7,    -- Unrestored or Sound
-							at0.8,    -- Restored or Filled
-							at0.53,    -- Carious or Decayed
-							at0.54,    -- Recurrent or Secondary Caries
-							at0.55,    -- Compromised Restoration
-							at0.56,    -- Tooth Wear
-							at0.57,    -- Fracture
-							at0.58,    -- Discoloration
-							at0.59,    -- Tooth Anomaly - Postion
-							at0.60,    -- Tooth Anomaly - Size
-							at0.61,    -- Tooth Anomaly - Shape
-							at0.62,    -- Tooth Anomaly - Number
-							at0.63]    -- Tooth Anomaly - Structure
-						}
-					}
-				}
-			}
-			ELEMENT[at0.9] occurrences matches {0..1} matches {    -- Gum description
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0.64] occurrences matches {0..1} matches {    -- Mobility
-				value matches {
-					0|[local::at0.65],
-					1|[local::at0.66],
-					2|[local::at0.67],
-					3|[local::at0.68]
-				}
-			}
-			ELEMENT[at0.10] occurrences matches {0..1} matches {    -- Pocket depth
-				value matches {
-					C_DV_QUANTITY <
-						property = <[openehr::122]>
-						list = <
-							["1"] = <
-								units = <"mm">
-								magnitude = <|0.0..20.0|>
-								precision = <|0|>
-							>
-						>
-					>
-				}
-			}
-			CLUSTER[at0.11] occurrences matches {0..*} matches {    -- Findings
+			CLUSTER[at0.11] occurrences matches {0..*} matches {    -- Malocclusion findings
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0.12] occurrences matches {0..1} matches {    -- Finding
+					ELEMENT[at0.82] occurrences matches {0..1} matches {    -- Malocclusion classification or type
+						value matches {
+							DV_CODED_TEXT matches {*}
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0.79] occurrences matches {0..1} matches {    -- Arch form
+						value matches {
+							DV_TEXT matches {*}
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0.83,    -- Normal
+									at0.84,    -- Ovoid
+									at0.85,    -- Tapered
+									at0.86,    -- Narrow ovoid
+									at0.87]    -- Narrow tapered
+								}
+							}
+						}
+					}
+					ELEMENT[at0.12] occurrences matches {0..1} matches {    -- Other findings
 						value matches {
 							DV_CODED_TEXT matches {
 								defining_code matches {
 									[local::
-									at0.13,    -- Cavity
-									at0.14,    -- Amalgam
-									at0.15,    -- Gold inlay
-									at0.16,    -- Gold foil
-									at0.17,    -- Other metal restoration
-									at0.18,    -- Composite resin
-									at0.19,    -- Traumatic avulsion
-									at0.20,    -- Fractured crown
-									at0.21,    -- Root tip
-									at0.22,    -- Rotated
-									at0.23,    -- Root apical filling
-									at0.24,    -- Apicoectomy
-									at0.25,    -- Intermediate restoration
-									at0.26,    -- Crown - temporary
-									at0.27,    -- Crown - full
-									at0.28,    -- Crown - partial
-									at0.29]    -- Crown veneer
+									at0.75,    -- Overjet
+									at0.76,    -- Overbite
+									at0.77,    -- Midline deviation
+									at0.80,    -- Crossbite
+									at0.81,    -- Openbite
+									at0.92,    -- Crowding
+									at0.93,    -- Diastema
+									at0.94]    -- Spacing
 								}
 							}
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0.30] occurrences matches {0..1} matches {    -- Surface
+					ELEMENT[at0.74] occurrences matches {0..1} matches {    -- Measurement
 						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0.31,    -- Mesial
-									at0.32,    -- Distal
-									at0.33,    -- Buccal
-									at0.34,    -- Lingual
-									at0.35,    -- Incisal
-									at0.36,    -- Occlusal
-									at0.69,    -- Pit
-									at0.70,    -- Fissure
-									at0.71,    -- Cervical
-									at0.72]    -- Root
-								}
-							}
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+									>
+								>
+							>
 						}
 					}
 					ELEMENT[at0.37] occurrences matches {0..1} matches {    -- Clinical description
@@ -398,34 +326,13 @@ ontology
 		["en"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"examination_of occlusion">
+					text = <"Examination of occlusion">
 					description = <"Findings observed during the physical examination of a single tooth.">
 				>
 				["at0001.1"] = <
 					text = <"System or structure examined">
 					description = <"Identification of the examined body system or anatomical structure.">
 					comment = <"Coding of the system or structure examined with a terminology is preferred, where possible.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
-				>
-				["at0.2"] = <
-					text = <"Tooth label">
-					description = <"Name or nomenclature of the tooth examined.">
-					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
-				>
-				["at0.3"] = <
-					text = <"Presence">
-					description = <"Presence or absence of the identified tooth.">
-				>
-				["at0.4"] = <
-					text = <"Present">
-					description = <"The identified tooth is present.">
-				>
-				["at0.5"] = <
-					text = <"Absent">
-					description = <"The identified tooth is absent.">
 				>
 				["at0012.1"] = <
 					text = <"Tooth position">
@@ -435,234 +342,22 @@ ontology
 					text = <"Structured tooth position">
 					description = <"A structured description of the position of the identified tooth.">
 				>
-				["at0.6"] = <
-					text = <"Condition">
-					description = <"Has the tooth been restored?">
-				>
-				["at0.7"] = <
-					text = <"Unrestored or Sound">
-					description = <"The tooth has no repairs or restorations observed.">
-				>
-				["at0.8"] = <
-					text = <"Restored or Filled">
-					description = <"The tooth has repairs or restorations.">
-				>
-				["at0.9"] = <
-					text = <"Gum description">
-					description = <"Narrative description about the gum of the identified tooth.">
-				>
-				["at0.10"] = <
-					text = <"Pocket depth">
-					description = <"The depth of the gum pocket.">
-				>
 				["at0002"] = <
 					text = <"No abnormality detected">
 					description = <"Statement that no abnormality was detected (NAD) on physical examination.">
 					comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element. If 'No abnormality detected' is selected, then recording of other examination data elements becomes redundant, with the exception of only the 'Clinical interpretation' data element, which may be useful if a normal statement is desired for recording, for example 'Normal examination'.">
 				>
 				["at0.11"] = <
-					text = <"Findings">
+					text = <"Malocclusion findings">
 					description = <"Details about the findings observed.">
 				>
 				["at0.12"] = <
-					text = <"Finding">
+					text = <"Other findings">
 					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
-				["at0.30"] = <
-					text = <"Surface">
-					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
 					description = <"Narrative description about the finding.">
-				>
-				["at0.38"] = <
-					text = <"Notation system">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"FDI/ ISO notation system">
-					description = <"Two-digit numbering system">
-				>
-				["at0.40"] = <
-					text = <"Zsigmondy-Palmer notation system">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"Universal/ ADA notation system">
-					description = <"">
-				>
-				["at0.53"] = <
-					text = <"Carious or Decayed">
-					description = <"">
-				>
-				["at0.54"] = <
-					text = <"Recurrent or Secondary Caries">
-					description = <"">
-				>
-				["at0.55"] = <
-					text = <"Compromised Restoration">
-					description = <"">
-				>
-				["at0.56"] = <
-					text = <"Tooth Wear">
-					description = <"">
-				>
-				["at0.57"] = <
-					text = <"Fracture">
-					description = <"">
-				>
-				["at0.58"] = <
-					text = <"Discoloration">
-					description = <"">
-				>
-				["at0.59"] = <
-					text = <"Tooth Anomaly - Postion">
-					description = <"">
-				>
-				["at0.60"] = <
-					text = <"Tooth Anomaly - Size">
-					description = <"">
-				>
-				["at0.61"] = <
-					text = <"Tooth Anomaly - Shape">
-					description = <"">
-				>
-				["at0.62"] = <
-					text = <"Tooth Anomaly - Number">
-					description = <"">
-				>
-				["at0.63"] = <
-					text = <"Tooth Anomaly - Structure">
-					description = <"">
-				>
-				["at0.64"] = <
-					text = <"Mobility">
-					description = <"">
-				>
-				["at0.65"] = <
-					text = <"No mobility">
-					description = <"Firm and stable within socket and no movement is detectable during examination">
-				>
-				["at0.66"] = <
-					text = <"Slight mobility">
-					description = <"Slight mobility, with minor horizontal or lateral movement of the tooth observed">
-				>
-				["at0.67"] = <
-					text = <"Moderate mobility">
-					description = <"More noticeable horizontal movement and possible vertical or axial displacement">
-				>
-				["at0.68"] = <
-					text = <"Severe mobility">
-					description = <"Tooth exhibits significant movement, both horizontally and vertically (Floating tooth)">
-				>
-				["at0.69"] = <
-					text = <"Pit">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"Fissure">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"Cervical">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"Root">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"Physical examination findings">
@@ -708,39 +403,90 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
+				["at0.73"] = <
+					text = <"Occlusion">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"Measurement">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"mm">
+					description = <"millimeter">
+				>
+				["at0.75"] = <
+					text = <"Overjet">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"Overbite">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"Midline deviation">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"Arch form">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"Crossbite">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"Openbite">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"Malocclusion classification or type">
+					description = <"Classification of malocclusion (Angle's Class I, Angle's class II div. 1, etc.)">
+				>
+				["at0.83"] = <
+					text = <"Normal">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"Ovoid">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"Tapered">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"Narrow ovoid">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"Narrow tapered">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"Crowding">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"Diastema">
+					description = <"">
+				>
+				["at0.94"] = <
+					text = <"Spacing">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"examination_of occlusion">
+					text = <"*Examination of occlusion (en)">
 					description = <"Funn ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
 				["at0001.1"] = <
 					text = <"Undersøkt organsystem eller struktur">
 					description = <"Identifisering av det undersøkte organsystemet eller anatomiske strukturen.">
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible. (en)">
-				>
-				["at0.1"] = <
-					text = <"*Tooth (en)">
-					description = <"*A hard, bony enamel-coated structure in the jaw used, for biting and chewing. (en)">
-				>
-				["at0.2"] = <
-					text = <"*Tooth label (en)">
-					description = <"*Name or nomenclature of the tooth examined. (en)">
-					comment = <"*For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system. (en)">
-				>
-				["at0.3"] = <
-					text = <"*Presence (en)">
-					description = <"*Presence or absence of the identified tooth. (en)">
-				>
-				["at0.4"] = <
-					text = <"*Present (en)">
-					description = <"*The identified tooth is present. (en)">
-				>
-				["at0.5"] = <
-					text = <"*Absent (en)">
-					description = <"*The identified tooth is absent. (en)">
 				>
 				["at0012.1"] = <
 					text = <"*Tooth position (en)">
@@ -750,234 +496,22 @@ ontology
 					text = <"*Structured tooth position (en)">
 					description = <"*A structured description of the position of the identified tooth. (en)">
 				>
-				["at0.6"] = <
-					text = <"*Condition (en)">
-					description = <"*Has the tooth been restored? (en)">
-				>
-				["at0.7"] = <
-					text = <"*Unrestored or Sound (en)">
-					description = <"*The tooth has no repairs or restorations observed. (en)">
-				>
-				["at0.8"] = <
-					text = <"*Restored or Filled (en)">
-					description = <"*The tooth has repairs or restorations. (en)">
-				>
-				["at0.9"] = <
-					text = <"*Gum description (en)">
-					description = <"*Narrative description about the gum of the identified tooth. (en)">
-				>
-				["at0.10"] = <
-					text = <"*Pocket depth (en)">
-					description = <"*The depth of the gum pocket. (en)">
-				>
 				["at0002"] = <
 					text = <"Uten anmerkning">
 					description = <"Utsagn om at ingen avvik var oppdaget ved undersøkelsen (U.a.).">
 					comment = <"*Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element. If 'No abnormality detected' is selected, then recording of other examination data elements becomes redundant, with the exception of only the 'Clinical interpretation' data element, which may be useful if a normal statement is desired for recording, for example 'Normal examination'. (en)">
 				>
 				["at0.11"] = <
-					text = <"*Findings (en)">
+					text = <"*Malocclusion findings (en)">
 					description = <"*Details about the findings observed. (en)">
 				>
 				["at0.12"] = <
-					text = <"*Finding (en)">
+					text = <"*Other findings (en)">
 					description = <"">
-				>
-				["at0.13"] = <
-					text = <"*Cavity (en)">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"*Amalgam (en)">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"*Gold inlay (en)">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"*Gold foil (en)">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"*Other metal restoration (en)">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"*Composite resin (en)">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"*Traumatic avulsion (en)">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"*Fractured crown (en)">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"*Root tip (en)">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"*Rotated (en)">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"*Root apical filling (en)">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"*Apicoectomy (en)">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"*Intermediate restoration (en)">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"*Crown - temporary (en)">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"*Crown - full (en)">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"*Crown - partial (en)">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"*Crown veneer (en)">
-					description = <"">
-				>
-				["at0.30"] = <
-					text = <"*Surface (en)">
-					description = <"*Surface of the tooth where the finding is observed. (en)">
-				>
-				["at0.31"] = <
-					text = <"*Mesial (en)">
-					description = <"*The surface that is closest to the midline of the face. (en)">
-				>
-				["at0.32"] = <
-					text = <"*Distal (en)">
-					description = <"*The surface that is furthest from the midline of the face. (en)">
-				>
-				["at0.33"] = <
-					text = <"*Buccal (en)">
-					description = <"*The surface that faces towards the cheeks. (en)">
-				>
-				["at0.34"] = <
-					text = <"*Lingual (en)">
-					description = <"*The surface that faces towards the tongue. (en)">
-				>
-				["at0.35"] = <
-					text = <"*Incisal (en)">
-					description = <"*The biting edge of an anterior tooth. (en)">
-				>
-				["at0.36"] = <
-					text = <"*Occlusal (en)">
-					description = <"*The chewing surface of a posterior tooth. (en)">
 				>
 				["at0.37"] = <
 					text = <"*Clinical description (en)">
 					description = <"*Narrative description about the finding. (en)">
-				>
-				["at0.38"] = <
-					text = <"*Notation system (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*FDI/ ISO notation system (en)">
-					description = <"*Two-digit numbering system (en)">
-				>
-				["at0.40"] = <
-					text = <"*Zsigmondy-Palmer notation system (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Universal/ ADA notation system (en)">
-					description = <"">
-				>
-				["at0.53"] = <
-					text = <"*Carious or Decayed (en)">
-					description = <"">
-				>
-				["at0.54"] = <
-					text = <"*Recurrent or Secondary Caries (en)">
-					description = <"">
-				>
-				["at0.55"] = <
-					text = <"*Compromised Restoration (en)">
-					description = <"">
-				>
-				["at0.56"] = <
-					text = <"*Tooth Wear (en)">
-					description = <"">
-				>
-				["at0.57"] = <
-					text = <"*Fracture (en)">
-					description = <"">
-				>
-				["at0.58"] = <
-					text = <"*Discoloration (en)">
-					description = <"">
-				>
-				["at0.59"] = <
-					text = <"*Tooth Anomaly - Postion (en)">
-					description = <"">
-				>
-				["at0.60"] = <
-					text = <"*Tooth Anomaly - Size (en)">
-					description = <"">
-				>
-				["at0.61"] = <
-					text = <"*Tooth Anomaly - Shape (en)">
-					description = <"">
-				>
-				["at0.62"] = <
-					text = <"*Tooth Anomaly - Number (en)">
-					description = <"">
-				>
-				["at0.63"] = <
-					text = <"*Tooth Anomaly - Structure (en)">
-					description = <"">
-				>
-				["at0.64"] = <
-					text = <"*Mobility (en)">
-					description = <"">
-				>
-				["at0.65"] = <
-					text = <"*No mobility (en)">
-					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
-				>
-				["at0.66"] = <
-					text = <"*Slight mobility (en)">
-					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
-				>
-				["at0.67"] = <
-					text = <"*Moderate mobility (en)">
-					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
-				>
-				["at0.68"] = <
-					text = <"*Severe mobility (en)">
-					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"Funn ved fysisk undersøkelse">
@@ -1023,39 +557,90 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
+				["at0.73"] = <
+					text = <"*Occlusion (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Measurement (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.75"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Arch form (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Malocclusion classification or type (en)">
+					description = <"*Classification of malocclusion (Angle's Class I, Angle's class II div. 1, etc.) (en)">
+				>
+				["at0.83"] = <
+					text = <"*Normal (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Ovoid (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Tapered (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Narrow ovoid (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Narrow tapered (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.94"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"examination_of occlusion">
+					text = <"*Examination of occlusion (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
 				>
 				["at0001.1"] = <
 					text = <"Sistema ou estrutura examinada">
 					description = <"Identificação do sistema do corpo examinado ou da estrutura anatômica.">
 					comment = <"A codificação do sistema ou estrutura examinada com uma terminologia é preferível, sempre que possível.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
-				>
-				["at0.2"] = <
-					text = <"Tooth label">
-					description = <"Name or nomenclature of the tooth examined.">
-					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
-				>
-				["at0.3"] = <
-					text = <"Presence">
-					description = <"Presence or absence of the identified tooth.">
-				>
-				["at0.4"] = <
-					text = <"Present">
-					description = <"The identified tooth is present.">
-				>
-				["at0.5"] = <
-					text = <"Absent">
-					description = <"The identified tooth is absent.">
 				>
 				["at0012.1"] = <
 					text = <"Local do corpo">
@@ -1067,234 +652,22 @@ ontology
 					description = <"Uma descrição estruturada da área do corpo em exame.">
 					comment = <"Se o local do corpo tiver sido totalmente identificado no elemento de dados 'Sistema ou estrutura examinada' ou 'Local do corpo', esse SLOT se tornará redundante.">
 				>
-				["at0.6"] = <
-					text = <"Condition">
-					description = <"Has the tooth been restored?">
-				>
-				["at0.7"] = <
-					text = <"*Unrestored or Sound (en)">
-					description = <"The tooth has no repairs or restorations observed.">
-				>
-				["at0.8"] = <
-					text = <"*Restored or Filled (en)">
-					description = <"The tooth has repairs or restorations.">
-				>
-				["at0.9"] = <
-					text = <"Gum description">
-					description = <"Narrative description about the gum of the identified tooth.">
-				>
-				["at0.10"] = <
-					text = <"Pocket depth">
-					description = <"The depth of the gum pocket.">
-				>
 				["at0002"] = <
 					text = <"No abnormality detected">
 					description = <"Statement that no abnormality was detected (NAD) on physical examination.">
 					comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element. If 'No abnormality detected' is selected, then recording of other examination data elements becomes redundant, with the exception of only the 'Clinical interpretation' data element, which may be useful if a normal statement is desired for recording, for example 'Normal examination'.">
 				>
 				["at0.11"] = <
-					text = <"Findings">
+					text = <"*Malocclusion findings (en)">
 					description = <"Details about the findings observed.">
 				>
 				["at0.12"] = <
-					text = <"Finding">
+					text = <"*Other findings (en)">
 					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
-				["at0.30"] = <
-					text = <"Surface">
-					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
 					description = <"Narrative description about the finding.">
-				>
-				["at0.38"] = <
-					text = <"*Notation system (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*FDI/ ISO notation system (en)">
-					description = <"*Two-digit numbering system (en)">
-				>
-				["at0.40"] = <
-					text = <"*Zsigmondy-Palmer notation system (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Universal/ ADA notation system (en)">
-					description = <"">
-				>
-				["at0.53"] = <
-					text = <"*Carious or Decayed (en)">
-					description = <"">
-				>
-				["at0.54"] = <
-					text = <"*Recurrent or Secondary Caries (en)">
-					description = <"">
-				>
-				["at0.55"] = <
-					text = <"*Compromised Restoration (en)">
-					description = <"">
-				>
-				["at0.56"] = <
-					text = <"*Tooth Wear (en)">
-					description = <"">
-				>
-				["at0.57"] = <
-					text = <"*Fracture (en)">
-					description = <"">
-				>
-				["at0.58"] = <
-					text = <"*Discoloration (en)">
-					description = <"">
-				>
-				["at0.59"] = <
-					text = <"*Tooth Anomaly - Postion (en)">
-					description = <"">
-				>
-				["at0.60"] = <
-					text = <"*Tooth Anomaly - Size (en)">
-					description = <"">
-				>
-				["at0.61"] = <
-					text = <"*Tooth Anomaly - Shape (en)">
-					description = <"">
-				>
-				["at0.62"] = <
-					text = <"*Tooth Anomaly - Number (en)">
-					description = <"">
-				>
-				["at0.63"] = <
-					text = <"*Tooth Anomaly - Structure (en)">
-					description = <"">
-				>
-				["at0.64"] = <
-					text = <"*Mobility (en)">
-					description = <"">
-				>
-				["at0.65"] = <
-					text = <"*No mobility (en)">
-					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
-				>
-				["at0.66"] = <
-					text = <"*Slight mobility (en)">
-					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
-				>
-				["at0.67"] = <
-					text = <"*Moderate mobility (en)">
-					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
-				>
-				["at0.68"] = <
-					text = <"*Severe mobility (en)">
-					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -1340,39 +713,90 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Occlusion (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Measurement (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.75"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Arch form (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Malocclusion classification or type (en)">
+					description = <"*Classification of malocclusion (Angle's Class I, Angle's class II div. 1, etc.) (en)">
+				>
+				["at0.83"] = <
+					text = <"*Normal (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Ovoid (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Tapered (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Narrow ovoid (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Narrow tapered (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.94"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"examination_of occlusion">
+					text = <"*Examination of occlusion (en)">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
 				>
 				["at0001.1"] = <
 					text = <"Untersuchtes System oder untersuchte Struktur">
 					description = <"Identifizierung des untersuchten Körpersystems oder der anatomischen Struktur.">
 					comment = <"Wenn möglich wird die Kodierung des untersuchten Systems oder der untersuchten Struktur mit einer Terminologie bevorzugt.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
-				>
-				["at0.2"] = <
-					text = <"Tooth label">
-					description = <"Name or nomenclature of the tooth examined.">
-					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
-				>
-				["at0.3"] = <
-					text = <"Presence">
-					description = <"Presence or absence of the identified tooth.">
-				>
-				["at0.4"] = <
-					text = <"Present">
-					description = <"The identified tooth is present.">
-				>
-				["at0.5"] = <
-					text = <"Absent">
-					description = <"The identified tooth is absent.">
 				>
 				["at0012.1"] = <
 					text = <"Körperstelle">
@@ -1384,234 +808,22 @@ ontology
 					description = <"Eine strukturierte Beschreibung des zu untersuchenden Körperbereichs.">
 					comment = <"Wenn die Körperstelle im Datenelement \"Untersuchtes System oder untersuchte Struktur\" oder im Datenelement \"Körperstelle\" vollständig identifiziert wurde, wird die Verwendung dieses SLOT überflüssig.">
 				>
-				["at0.6"] = <
-					text = <"Condition">
-					description = <"Has the tooth been restored?">
-				>
-				["at0.7"] = <
-					text = <"*Unrestored or Sound (en)">
-					description = <"The tooth has no repairs or restorations observed.">
-				>
-				["at0.8"] = <
-					text = <"*Restored or Filled (en)">
-					description = <"The tooth has repairs or restorations.">
-				>
-				["at0.9"] = <
-					text = <"Gum description">
-					description = <"Narrative description about the gum of the identified tooth.">
-				>
-				["at0.10"] = <
-					text = <"Pocket depth">
-					description = <"The depth of the gum pocket.">
-				>
 				["at0002"] = <
 					text = <"No abnormality detected">
 					description = <"Statement that no abnormality was detected (NAD) on physical examination.">
 					comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element. If 'No abnormality detected' is selected, then recording of other examination data elements becomes redundant, with the exception of only the 'Clinical interpretation' data element, which may be useful if a normal statement is desired for recording, for example 'Normal examination'.">
 				>
 				["at0.11"] = <
-					text = <"Findings">
+					text = <"*Malocclusion findings (en)">
 					description = <"Details about the findings observed.">
 				>
 				["at0.12"] = <
-					text = <"Finding">
+					text = <"*Other findings (en)">
 					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
-				["at0.30"] = <
-					text = <"Surface">
-					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
 					description = <"Narrative description about the finding.">
-				>
-				["at0.38"] = <
-					text = <"*Notation system (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*FDI/ ISO notation system (en)">
-					description = <"*Two-digit numbering system (en)">
-				>
-				["at0.40"] = <
-					text = <"*Zsigmondy-Palmer notation system (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Universal/ ADA notation system (en)">
-					description = <"">
-				>
-				["at0.53"] = <
-					text = <"*Carious or Decayed (en)">
-					description = <"">
-				>
-				["at0.54"] = <
-					text = <"*Recurrent or Secondary Caries (en)">
-					description = <"">
-				>
-				["at0.55"] = <
-					text = <"*Compromised Restoration (en)">
-					description = <"">
-				>
-				["at0.56"] = <
-					text = <"*Tooth Wear (en)">
-					description = <"">
-				>
-				["at0.57"] = <
-					text = <"*Fracture (en)">
-					description = <"">
-				>
-				["at0.58"] = <
-					text = <"*Discoloration (en)">
-					description = <"">
-				>
-				["at0.59"] = <
-					text = <"*Tooth Anomaly - Postion (en)">
-					description = <"">
-				>
-				["at0.60"] = <
-					text = <"*Tooth Anomaly - Size (en)">
-					description = <"">
-				>
-				["at0.61"] = <
-					text = <"*Tooth Anomaly - Shape (en)">
-					description = <"">
-				>
-				["at0.62"] = <
-					text = <"*Tooth Anomaly - Number (en)">
-					description = <"">
-				>
-				["at0.63"] = <
-					text = <"*Tooth Anomaly - Structure (en)">
-					description = <"">
-				>
-				["at0.64"] = <
-					text = <"*Mobility (en)">
-					description = <"">
-				>
-				["at0.65"] = <
-					text = <"*No mobility (en)">
-					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
-				>
-				["at0.66"] = <
-					text = <"*Slight mobility (en)">
-					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
-				>
-				["at0.67"] = <
-					text = <"*Moderate mobility (en)">
-					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
-				>
-				["at0.68"] = <
-					text = <"*Severe mobility (en)">
-					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"Ergebnisse der körperlichen Untersuchung">
@@ -1657,39 +869,90 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
+				["at0.73"] = <
+					text = <"*Occlusion (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Measurement (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.75"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Arch form (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Malocclusion classification or type (en)">
+					description = <"*Classification of malocclusion (Angle's Class I, Angle's class II div. 1, etc.) (en)">
+				>
+				["at0.83"] = <
+					text = <"*Normal (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Ovoid (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Tapered (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Narrow ovoid (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Narrow tapered (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.94"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"examination_of occlusion">
+					text = <"*Examination of occlusion (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
 				>
 				["at0001.1"] = <
 					text = <"System eller struktur som undersökts">
 					description = <"Identifiering av systemet eller strukturen som undersökts.">
 					comment = <"Om möjligt, koda systemet eller strukturen med hjälp av ett terminologisystem.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
-				>
-				["at0.2"] = <
-					text = <"Tooth label">
-					description = <"Name or nomenclature of the tooth examined.">
-					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
-				>
-				["at0.3"] = <
-					text = <"Presence">
-					description = <"Presence or absence of the identified tooth.">
-				>
-				["at0.4"] = <
-					text = <"Present">
-					description = <"The identified tooth is present.">
-				>
-				["at0.5"] = <
-					text = <"Absent">
-					description = <"The identified tooth is absent.">
 				>
 				["at0012.1"] = <
 					text = <"Anatomisk plats">
@@ -1704,234 +967,22 @@ ontology
 					description = <"Strukturerad beskrivning av den anatomiska platsen som undersökts.">
 					comment = <"Om den anatomiska platsen kan identifieras helt via dataelementet \"System eller struktur som undersökts\" så blir denna del redundant.">
 				>
-				["at0.6"] = <
-					text = <"Condition">
-					description = <"Has the tooth been restored?">
-				>
-				["at0.7"] = <
-					text = <"*Unrestored or Sound (en)">
-					description = <"The tooth has no repairs or restorations observed.">
-				>
-				["at0.8"] = <
-					text = <"*Restored or Filled (en)">
-					description = <"The tooth has repairs or restorations.">
-				>
-				["at0.9"] = <
-					text = <"Gum description">
-					description = <"Narrative description about the gum of the identified tooth.">
-				>
-				["at0.10"] = <
-					text = <"Pocket depth">
-					description = <"The depth of the gum pocket.">
-				>
 				["at0002"] = <
 					text = <"No abnormality detected">
 					description = <"Statement that no abnormality was detected (NAD) on physical examination.">
 					comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element. If 'No abnormality detected' is selected, then recording of other examination data elements becomes redundant, with the exception of only the 'Clinical interpretation' data element, which may be useful if a normal statement is desired for recording, for example 'Normal examination'.">
 				>
 				["at0.11"] = <
-					text = <"Findings">
+					text = <"*Malocclusion findings (en)">
 					description = <"Details about the findings observed.">
 				>
 				["at0.12"] = <
-					text = <"Finding">
+					text = <"*Other findings (en)">
 					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
-				["at0.30"] = <
-					text = <"Surface">
-					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
 					description = <"Narrative description about the finding.">
-				>
-				["at0.38"] = <
-					text = <"*Notation system (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*FDI/ ISO notation system (en)">
-					description = <"*Two-digit numbering system (en)">
-				>
-				["at0.40"] = <
-					text = <"*Zsigmondy-Palmer notation system (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Universal/ ADA notation system (en)">
-					description = <"">
-				>
-				["at0.53"] = <
-					text = <"*Carious or Decayed (en)">
-					description = <"">
-				>
-				["at0.54"] = <
-					text = <"*Recurrent or Secondary Caries (en)">
-					description = <"">
-				>
-				["at0.55"] = <
-					text = <"*Compromised Restoration (en)">
-					description = <"">
-				>
-				["at0.56"] = <
-					text = <"*Tooth Wear (en)">
-					description = <"">
-				>
-				["at0.57"] = <
-					text = <"*Fracture (en)">
-					description = <"">
-				>
-				["at0.58"] = <
-					text = <"*Discoloration (en)">
-					description = <"">
-				>
-				["at0.59"] = <
-					text = <"*Tooth Anomaly - Postion (en)">
-					description = <"">
-				>
-				["at0.60"] = <
-					text = <"*Tooth Anomaly - Size (en)">
-					description = <"">
-				>
-				["at0.61"] = <
-					text = <"*Tooth Anomaly - Shape (en)">
-					description = <"">
-				>
-				["at0.62"] = <
-					text = <"*Tooth Anomaly - Number (en)">
-					description = <"">
-				>
-				["at0.63"] = <
-					text = <"*Tooth Anomaly - Structure (en)">
-					description = <"">
-				>
-				["at0.64"] = <
-					text = <"*Mobility (en)">
-					description = <"">
-				>
-				["at0.65"] = <
-					text = <"*No mobility (en)">
-					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
-				>
-				["at0.66"] = <
-					text = <"*Slight mobility (en)">
-					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
-				>
-				["at0.67"] = <
-					text = <"*Moderate mobility (en)">
-					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
-				>
-				["at0.68"] = <
-					text = <"*Severe mobility (en)">
-					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -1977,39 +1028,90 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Occlusion (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Measurement (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.75"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Arch form (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Malocclusion classification or type (en)">
+					description = <"*Classification of malocclusion (Angle's Class I, Angle's class II div. 1, etc.) (en)">
+				>
+				["at0.83"] = <
+					text = <"*Normal (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Ovoid (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Tapered (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Narrow ovoid (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Narrow tapered (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.94"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"examination_of occlusion">
+					text = <"*Examination of occlusion (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
 				>
 				["at0001.1"] = <
 					text = <"Εξεταζόμενο σύστημα ή δομή">
 					description = <"Ταυτοποίηση του εξεταζόμενου συστήματος σώματος ή ανατομικής δομής.">
 					comment = <"Προτιμάται η κωδικοποίηση του συστήματος ή της δομής που εξετάζεται με ορολογία, όπου είναι δυνατόν.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
-				>
-				["at0.2"] = <
-					text = <"Tooth label">
-					description = <"Name or nomenclature of the tooth examined.">
-					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
-				>
-				["at0.3"] = <
-					text = <"Presence">
-					description = <"Presence or absence of the identified tooth.">
-				>
-				["at0.4"] = <
-					text = <"Present">
-					description = <"The identified tooth is present.">
-				>
-				["at0.5"] = <
-					text = <"Absent">
-					description = <"The identified tooth is absent.">
 				>
 				["at0012.1"] = <
 					text = <"Περιοχή σώματος">
@@ -2021,234 +1123,22 @@ ontology
 					description = <"περιγραφή της περιοχής του υπό εξέταση σώματος.">
 					comment = <"*If the body site has been fully identified in the 'System or structure examined' or the 'Body site' data element, this SLOT becomes redundant.(en)">
 				>
-				["at0.6"] = <
-					text = <"Condition">
-					description = <"Has the tooth been restored?">
-				>
-				["at0.7"] = <
-					text = <"*Unrestored or Sound (en)">
-					description = <"The tooth has no repairs or restorations observed.">
-				>
-				["at0.8"] = <
-					text = <"*Restored or Filled (en)">
-					description = <"The tooth has repairs or restorations.">
-				>
-				["at0.9"] = <
-					text = <"Gum description">
-					description = <"Narrative description about the gum of the identified tooth.">
-				>
-				["at0.10"] = <
-					text = <"Pocket depth">
-					description = <"The depth of the gum pocket.">
-				>
 				["at0002"] = <
 					text = <"No abnormality detected">
 					description = <"Statement that no abnormality was detected (NAD) on physical examination.">
 					comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element. If 'No abnormality detected' is selected, then recording of other examination data elements becomes redundant, with the exception of only the 'Clinical interpretation' data element, which may be useful if a normal statement is desired for recording, for example 'Normal examination'.">
 				>
 				["at0.11"] = <
-					text = <"Findings">
+					text = <"*Malocclusion findings (en)">
 					description = <"Details about the findings observed.">
 				>
 				["at0.12"] = <
-					text = <"Finding">
+					text = <"*Other findings (en)">
 					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
-				["at0.30"] = <
-					text = <"Surface">
-					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
 					description = <"Narrative description about the finding.">
-				>
-				["at0.38"] = <
-					text = <"*Notation system (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*FDI/ ISO notation system (en)">
-					description = <"*Two-digit numbering system (en)">
-				>
-				["at0.40"] = <
-					text = <"*Zsigmondy-Palmer notation system (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Universal/ ADA notation system (en)">
-					description = <"">
-				>
-				["at0.53"] = <
-					text = <"*Carious or Decayed (en)">
-					description = <"">
-				>
-				["at0.54"] = <
-					text = <"*Recurrent or Secondary Caries (en)">
-					description = <"">
-				>
-				["at0.55"] = <
-					text = <"*Compromised Restoration (en)">
-					description = <"">
-				>
-				["at0.56"] = <
-					text = <"*Tooth Wear (en)">
-					description = <"">
-				>
-				["at0.57"] = <
-					text = <"*Fracture (en)">
-					description = <"">
-				>
-				["at0.58"] = <
-					text = <"*Discoloration (en)">
-					description = <"">
-				>
-				["at0.59"] = <
-					text = <"*Tooth Anomaly - Postion (en)">
-					description = <"">
-				>
-				["at0.60"] = <
-					text = <"*Tooth Anomaly - Size (en)">
-					description = <"">
-				>
-				["at0.61"] = <
-					text = <"*Tooth Anomaly - Shape (en)">
-					description = <"">
-				>
-				["at0.62"] = <
-					text = <"*Tooth Anomaly - Number (en)">
-					description = <"">
-				>
-				["at0.63"] = <
-					text = <"*Tooth Anomaly - Structure (en)">
-					description = <"">
-				>
-				["at0.64"] = <
-					text = <"*Mobility (en)">
-					description = <"">
-				>
-				["at0.65"] = <
-					text = <"*No mobility (en)">
-					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
-				>
-				["at0.66"] = <
-					text = <"*Slight mobility (en)">
-					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
-				>
-				["at0.67"] = <
-					text = <"*Moderate mobility (en)">
-					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
-				>
-				["at0.68"] = <
-					text = <"*Severe mobility (en)">
-					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -2294,39 +1184,90 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Occlusion (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Measurement (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.75"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Arch form (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Malocclusion classification or type (en)">
+					description = <"*Classification of malocclusion (Angle's Class I, Angle's class II div. 1, etc.) (en)">
+				>
+				["at0.83"] = <
+					text = <"*Normal (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Ovoid (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Tapered (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Narrow ovoid (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Narrow tapered (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.94"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"examination_of occlusion">
+					text = <"*Examination of occlusion (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
 				>
 				["at0001.1"] = <
 					text = <"*System or structure examined(en)">
 					description = <"*Identification of the examined body system or anatomical structure.(en)">
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible.(en)">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
-				>
-				["at0.2"] = <
-					text = <"Tooth label">
-					description = <"Name or nomenclature of the tooth examined.">
-					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
-				>
-				["at0.3"] = <
-					text = <"Presence">
-					description = <"Presence or absence of the identified tooth.">
-				>
-				["at0.4"] = <
-					text = <"Present">
-					description = <"The identified tooth is present.">
-				>
-				["at0.5"] = <
-					text = <"Absent">
-					description = <"The identified tooth is absent.">
 				>
 				["at0012.1"] = <
 					text = <"*Body site(en)">
@@ -2338,234 +1279,22 @@ ontology
 					description = <"*A structured description of the area of the body under examination.(en)">
 					comment = <"*If the body site has been fully identified in the 'System or structure examined' or the 'Body site' data element, this SLOT becomes redundant.(en)">
 				>
-				["at0.6"] = <
-					text = <"Condition">
-					description = <"Has the tooth been restored?">
-				>
-				["at0.7"] = <
-					text = <"*Unrestored or Sound (en)">
-					description = <"The tooth has no repairs or restorations observed.">
-				>
-				["at0.8"] = <
-					text = <"*Restored or Filled (en)">
-					description = <"The tooth has repairs or restorations.">
-				>
-				["at0.9"] = <
-					text = <"Gum description">
-					description = <"Narrative description about the gum of the identified tooth.">
-				>
-				["at0.10"] = <
-					text = <"Pocket depth">
-					description = <"The depth of the gum pocket.">
-				>
 				["at0002"] = <
 					text = <"No abnormality detected">
 					description = <"Statement that no abnormality was detected (NAD) on physical examination.">
 					comment = <"Record as True if no abnormality was detected on examination. Specific statements about the examination can be included in the 'Clinical Interpretation' data element. If 'No abnormality detected' is selected, then recording of other examination data elements becomes redundant, with the exception of only the 'Clinical interpretation' data element, which may be useful if a normal statement is desired for recording, for example 'Normal examination'.">
 				>
 				["at0.11"] = <
-					text = <"Findings">
+					text = <"*Malocclusion findings (en)">
 					description = <"Details about the findings observed.">
 				>
 				["at0.12"] = <
-					text = <"Finding">
+					text = <"*Other findings (en)">
 					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
-				["at0.30"] = <
-					text = <"Surface">
-					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
 					description = <"Narrative description about the finding.">
-				>
-				["at0.38"] = <
-					text = <"*Notation system (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*FDI/ ISO notation system (en)">
-					description = <"*Two-digit numbering system (en)">
-				>
-				["at0.40"] = <
-					text = <"*Zsigmondy-Palmer notation system (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Universal/ ADA notation system (en)">
-					description = <"">
-				>
-				["at0.53"] = <
-					text = <"*Carious or Decayed (en)">
-					description = <"">
-				>
-				["at0.54"] = <
-					text = <"*Recurrent or Secondary Caries (en)">
-					description = <"">
-				>
-				["at0.55"] = <
-					text = <"*Compromised Restoration (en)">
-					description = <"">
-				>
-				["at0.56"] = <
-					text = <"*Tooth Wear (en)">
-					description = <"">
-				>
-				["at0.57"] = <
-					text = <"*Fracture (en)">
-					description = <"">
-				>
-				["at0.58"] = <
-					text = <"*Discoloration (en)">
-					description = <"">
-				>
-				["at0.59"] = <
-					text = <"*Tooth Anomaly - Postion (en)">
-					description = <"">
-				>
-				["at0.60"] = <
-					text = <"*Tooth Anomaly - Size (en)">
-					description = <"">
-				>
-				["at0.61"] = <
-					text = <"*Tooth Anomaly - Shape (en)">
-					description = <"">
-				>
-				["at0.62"] = <
-					text = <"*Tooth Anomaly - Number (en)">
-					description = <"">
-				>
-				["at0.63"] = <
-					text = <"*Tooth Anomaly - Structure (en)">
-					description = <"">
-				>
-				["at0.64"] = <
-					text = <"*Mobility (en)">
-					description = <"">
-				>
-				["at0.65"] = <
-					text = <"*No mobility (en)">
-					description = <"*Firm and stable within socket and no movement is detectable during examination (en)">
-				>
-				["at0.66"] = <
-					text = <"*Slight mobility (en)">
-					description = <"*Slight mobility, with minor horizontal or lateral movement of the tooth observed (en)">
-				>
-				["at0.67"] = <
-					text = <"*Moderate mobility (en)">
-					description = <"*More noticeable horizontal movement and possible vertical or axial displacement (en)">
-				>
-				["at0.68"] = <
-					text = <"*Severe mobility (en)">
-					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -2611,13 +1340,84 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Occlusion (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Measurement (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.75"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Arch form (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Malocclusion classification or type (en)">
+					description = <"*Classification of malocclusion (Angle's Class I, Angle's class II div. 1, etc.) (en)">
+				>
+				["at0.83"] = <
+					text = <"*Normal (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Ovoid (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Tapered (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Narrow ovoid (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Narrow tapered (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.94"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
 			>
 		>
 	>
 	term_binding = <
 		["SNOMED-CT"] = <
 			items = <
-				["at0.1"] = <[SNOMED-CT::38199008]>
 				["at0000"] = <[SNOMED-CT::5880005]>
 			>
 		>
