@@ -204,18 +204,22 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"033636d19263b109bf12f1554ef20d7f">
+		["MD5-CAM-1.0.1"] = <"14fac1cebf6ffaac4fa4c35367f26e0f">
 		["build_uid"] = <"2b96e1f4-8ecc-423d-bd1b-6e3886723f90">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"2.1.1">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- exam_mucosa
+	CLUSTER[at0000] matches {    -- Examination of oral mucosa
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] matches {    -- System or structure examined
 				value matches {
-					DV_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0013]    -- Oral mucosa
+						}
+					}
 				}
 			}
 			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Body site
@@ -254,6 +258,107 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
+			CLUSTER[at0014] occurrences matches {0..1} matches {    -- Findings
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Color
+						value matches {
+							DV_CODED_TEXT matches {*}
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0017] occurrences matches {0..*} matches {    -- Lesion
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0020] occurrences matches {0..1} matches {    -- Type
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0024] occurrences matches {0..*} matches {    -- Site
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0025] occurrences matches {0..1} matches {    -- Size
+								value matches {
+									DV_TEXT matches {*}
+									C_DV_QUANTITY <
+										property = <[openehr::122]>
+										list = <
+											["1"] = <
+												units = <"mm">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0026] occurrences matches {0..1} matches {    -- Shape
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0027] occurrences matches {0..1} matches {    -- Border
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0018] occurrences matches {0..1} matches {    -- Description
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0029] occurrences matches {0..*} matches {    -- Swelling
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0030] occurrences matches {0..1} matches {    -- Type
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0031] occurrences matches {0..*} matches {    -- Site
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0032] occurrences matches {0..1} matches {    -- Size
+								value matches {
+									DV_TEXT matches {*}
+									C_DV_QUANTITY <
+										property = <[openehr::122]>
+										list = <
+											["1"] = <
+												units = <"mm">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0033] occurrences matches {0..1} matches {    -- Shape
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0037] occurrences matches {0..1} matches {    -- Pus discharge
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0035] occurrences matches {0..1} matches {    -- Description
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					ELEMENT[at0036] occurrences matches {0..1} matches {    -- Description
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -262,7 +367,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_mucosa">
+					text = <"Examination of oral mucosa">
 					description = <"Findings observed during the physical examination of a body system or anatomical structure.">
 				>
 				["at0001"] = <
@@ -305,12 +410,88 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
+				["at0013"] = <
+					text = <"Oral mucosa">
+					description = <"The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly">
+				>
+				["at0014"] = <
+					text = <"Findings">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Color">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Lesion">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Description">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"Type">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Site">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Size">
+					description = <"To record size of lesion (length x breath x width) in millimeters (mm)">
+				>
+				["at0026"] = <
+					text = <"Shape">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"mm">
+					description = <"millimeter">
+				>
+				["at0027"] = <
+					text = <"Border">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Swelling">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Type">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Site">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Size">
+					description = <"To record size of lesion (length x breath x width) in millimeters (mm)">
+				>
+				["at0033"] = <
+					text = <"Shape">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Description">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Description">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Pus discharge">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Undersøkelsesfunn gjort ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
 				["at0001"] = <
@@ -353,12 +534,88 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
+				["at0013"] = <
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
+				>
+				["at0014"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0026"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0027"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0033"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
 				>
 				["at0001"] = <
@@ -401,12 +658,88 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
+				>
+				["at0014"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0026"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0027"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0033"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
 				>
 				["at0001"] = <
@@ -449,12 +782,88 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
+				["at0013"] = <
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
+				>
+				["at0014"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0026"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0027"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0033"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
 				>
 				["at0001"] = <
@@ -497,12 +906,88 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
+				>
+				["at0014"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0026"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0027"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0033"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
 				>
 				["at0001"] = <
@@ -545,12 +1030,88 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
+				>
+				["at0014"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0026"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0027"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0033"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
 				>
 				["at0001"] = <
@@ -592,6 +1153,82 @@ ontology
 					text = <"*Body site(en)">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0013"] = <
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
+				>
+				["at0014"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0020"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0026"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0027"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Size (en)">
+					description = <"*To record size of lesion (length x breath x width) in millimeters (mm) (en)">
+				>
+				["at0033"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
 				>
 			>
 		>
