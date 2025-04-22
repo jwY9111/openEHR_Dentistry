@@ -203,7 +203,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c4fa0825fad3bd9445a88c6b2279463f">
+		["MD5-CAM-1.0.1"] = <"9fec0b74afac16e965965e4efee5fddd">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -282,7 +282,25 @@ definition
 					}
 					CLUSTER[at0.95] occurrences matches {0..*} matches {    -- other finding
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0.96] occurrences matches {0..1} matches {*}    -- findings
+							ELEMENT[at0.96] occurrences matches {0..1} matches {    -- findings
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0.99,    -- Overjet
+											at0.100,    -- Overbite
+											at0.101,    -- Midline deviation
+											at0.102,    -- Crossbite
+											at0.103,    -- Openbite
+											at0.104,    -- Crowding
+											at0.105,    -- Diastema
+											at0.106,    -- Spacing
+											at0.107]    -- Others
+										}
+									}
+									DV_TEXT matches {*}
+								}
+							}
 							ELEMENT[at0.97] occurrences matches {0..1} matches {    -- measurement
 								value matches {
 									DV_QUANTITY matches {*}
@@ -443,6 +461,42 @@ ontology
 					text = <"measurement">
 					description = <"">
 				>
+				["at0.99"] = <
+					text = <"Overjet">
+					description = <"">
+				>
+				["at0.100"] = <
+					text = <"Overbite">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"Midline deviation">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"Crossbite">
+					description = <"">
+				>
+				["at0.103"] = <
+					text = <"Openbite">
+					description = <"">
+				>
+				["at0.104"] = <
+					text = <"Crowding">
+					description = <"">
+				>
+				["at0.105"] = <
+					text = <"Diastema">
+					description = <"">
+				>
+				["at0.106"] = <
+					text = <"Spacing">
+					description = <"">
+				>
+				["at0.107"] = <
+					text = <"Others">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
@@ -571,6 +625,42 @@ ontology
 				>
 				["at0.97"] = <
 					text = <"*measurement (en)">
+					description = <"">
+				>
+				["at0.99"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.100"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.103"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.104"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.105"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.106"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
+				["at0.107"] = <
+					text = <"*Others (en)">
 					description = <"">
 				>
 			>
@@ -705,6 +795,42 @@ ontology
 					text = <"*measurement (en)">
 					description = <"">
 				>
+				["at0.99"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.100"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.103"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.104"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.105"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.106"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
+				["at0.107"] = <
+					text = <"*Others (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
@@ -835,6 +961,42 @@ ontology
 				>
 				["at0.97"] = <
 					text = <"*measurement (en)">
+					description = <"">
+				>
+				["at0.99"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.100"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.103"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.104"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.105"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.106"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
+				["at0.107"] = <
+					text = <"*Others (en)">
 					description = <"">
 				>
 			>
@@ -972,6 +1134,42 @@ ontology
 					text = <"*measurement (en)">
 					description = <"">
 				>
+				["at0.99"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.100"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.103"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.104"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.105"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.106"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
+				["at0.107"] = <
+					text = <"*Others (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
@@ -1104,6 +1302,42 @@ ontology
 					text = <"*measurement (en)">
 					description = <"">
 				>
+				["at0.99"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.100"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.103"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.104"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.105"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.106"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
+				["at0.107"] = <
+					text = <"*Others (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
@@ -1234,6 +1468,42 @@ ontology
 				>
 				["at0.97"] = <
 					text = <"*measurement (en)">
+					description = <"">
+				>
+				["at0.99"] = <
+					text = <"*Overjet (en)">
+					description = <"">
+				>
+				["at0.100"] = <
+					text = <"*Overbite (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Midline deviation (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*Crossbite (en)">
+					description = <"">
+				>
+				["at0.103"] = <
+					text = <"*Openbite (en)">
+					description = <"">
+				>
+				["at0.104"] = <
+					text = <"*Crowding (en)">
+					description = <"">
+				>
+				["at0.105"] = <
+					text = <"*Diastema (en)">
+					description = <"">
+				>
+				["at0.106"] = <
+					text = <"*Spacing (en)">
+					description = <"">
+				>
+				["at0.107"] = <
+					text = <"*Others (en)">
 					description = <"">
 				>
 			>
