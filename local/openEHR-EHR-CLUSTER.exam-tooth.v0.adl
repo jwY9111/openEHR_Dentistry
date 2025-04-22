@@ -203,7 +203,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"99a51373e7724f778d63b975eb6dce95">
+		["MD5-CAM-1.0.1"] = <"8ed027a101f619cd98296cf77a0b8597">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -656,6 +656,14 @@ ontology
 					text = <"Fissure">
 					description = <"">
 				>
+				["at0.71"] = <
+					text = <"Cervical">
+					description = <"">
+				>
+				["at0.72"] = <
+					text = <"Root">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"Physical examination findings">
 					description = <"Findings observed during the physical examination of a body system or anatomical structure.">
@@ -699,14 +707,6 @@ ontology
 					text = <"Body site">
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
-				>
-				["at0.71"] = <
-					text = <"Cervical">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"Root">
-					description = <"">
 				>
 			>
 		>
@@ -971,6 +971,14 @@ ontology
 					text = <"*Fissure (en)">
 					description = <"">
 				>
+				["at0.71"] = <
+					text = <"*Cervical (en)">
+					description = <"">
+				>
+				["at0.72"] = <
+					text = <"*Root (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"Funn ved fysisk undersøkelse">
 					description = <"Undersøkelsesfunn gjort ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
@@ -1014,14 +1022,6 @@ ontology
 					text = <"Anatomisk lokalisasjon">
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 			>
 		>
@@ -1288,6 +1288,14 @@ ontology
 					text = <"*Fissure (en)">
 					description = <"">
 				>
+				["at0.71"] = <
+					text = <"*Cervical (en)">
+					description = <"">
+				>
+				["at0.72"] = <
+					text = <"*Root (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
@@ -1331,14 +1339,6 @@ ontology
 					text = <"Local do corpo">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 			>
 		>
@@ -1605,6 +1605,14 @@ ontology
 					text = <"*Fissure (en)">
 					description = <"">
 				>
+				["at0.71"] = <
+					text = <"*Cervical (en)">
+					description = <"">
+				>
+				["at0.72"] = <
+					text = <"*Root (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"Ergebnisse der körperlichen Untersuchung">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
@@ -1648,14 +1656,6 @@ ontology
 					text = <"Körperstelle">
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 			>
 		>
@@ -1925,6 +1925,14 @@ ontology
 					text = <"*Fissure (en)">
 					description = <"">
 				>
+				["at0.71"] = <
+					text = <"*Cervical (en)">
+					description = <"">
+				>
+				["at0.72"] = <
+					text = <"*Root (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
@@ -1968,14 +1976,6 @@ ontology
 					text = <"Anatomisk plats">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 			>
 		>
@@ -2242,6 +2242,14 @@ ontology
 					text = <"*Fissure (en)">
 					description = <"">
 				>
+				["at0.71"] = <
+					text = <"*Cervical (en)">
+					description = <"">
+				>
+				["at0.72"] = <
+					text = <"*Root (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
@@ -2285,14 +2293,6 @@ ontology
 					text = <"Περιοχή σώματος">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 			>
 		>
@@ -2559,6 +2559,14 @@ ontology
 					text = <"*Fissure (en)">
 					description = <"">
 				>
+				["at0.71"] = <
+					text = <"*Cervical (en)">
+					description = <"">
+				>
+				["at0.72"] = <
+					text = <"*Root (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
@@ -2602,14 +2610,6 @@ ontology
 					text = <"*Body site(en)">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 			>
 		>
