@@ -203,7 +203,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"a29bfdb44ad3136834bbf99fbe3dd8ec">
+		["MD5-CAM-1.0.1"] = <"cec372fed3a83fb6221562d2c550a909">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -259,7 +259,7 @@ definition
 			}
 			CLUSTER[at0.11] occurrences matches {0..*} matches {    -- Malocclusion findings
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0.82] occurrences matches {0..1} matches {    -- Malocclusion classification or type
+					ELEMENT[at0.82] occurrences matches {0..*} matches {    -- Malocclusion classification or type
 						value matches {
 							DV_CODED_TEXT matches {*}
 							DV_TEXT matches {*}
@@ -303,7 +303,14 @@ definition
 							}
 							ELEMENT[at0.97] occurrences matches {0..1} matches {    -- Measurement
 								value matches {
-									DV_QUANTITY matches {*}
+									C_DV_QUANTITY <
+										property = <[openehr::122]>
+										list = <
+											["1"] = <
+												units = <"mm">
+											>
+										>
+									>
 								}
 							}
 							ELEMENT[at0.108] occurrences matches {0..1} matches {    -- Description
