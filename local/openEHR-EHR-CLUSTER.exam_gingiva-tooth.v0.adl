@@ -203,20 +203,20 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"0d7c4b66bb14503ced628031fb06063a">
+		["MD5-CAM-1.0.1"] = <"eeeb115ec8af7f7b71c57dd5d2d5c55e">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000.1] matches {    -- exam_gingiva
+	CLUSTER[at0000.1] matches {    -- Examination of gingiva (Periodontal examination)
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001.1] matches {    -- System or structure examined
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
-							[local::at0.1]    -- Tooth
+							[local::at0.73]    -- Gingiva (Gum)
 						}
 					}
 				}
@@ -230,11 +230,6 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_circle(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative\.v2/}
 			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Examination findings
 				include
 					archetype_id/value matches {/.*/}
@@ -242,16 +237,6 @@ definition
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Multimedia representation
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
-				value matches {
-					DV_TEXT matches {*}
-				}
 			}
 			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Examination not done
 				include
@@ -307,7 +292,7 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0.9] occurrences matches {0..1} matches {    -- Gum description
+			ELEMENT[at0.9] occurrences matches {0..1} matches {    -- General description of gingiva
 				value matches {
 					DV_TEXT matches {*}
 				}
@@ -334,50 +319,100 @@ definition
 					>
 				}
 			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
 			CLUSTER[at0.11] occurrences matches {0..*} matches {    -- Findings
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0.12] occurrences matches {0..1} matches {    -- Finding
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0.13,    -- Cavity
-									at0.14,    -- Amalgam
-									at0.15,    -- Gold inlay
-									at0.16,    -- Gold foil
-									at0.17,    -- Other metal restoration
-									at0.18,    -- Composite resin
-									at0.19,    -- Traumatic avulsion
-									at0.20,    -- Fractured crown
-									at0.21,    -- Root tip
-									at0.22,    -- Rotated
-									at0.23,    -- Root apical filling
-									at0.24,    -- Apicoectomy
-									at0.25,    -- Intermediate restoration
-									at0.26,    -- Crown - temporary
-									at0.27,    -- Crown - full
-									at0.28,    -- Crown - partial
-									at0.29]    -- Crown veneer
+					CLUSTER[at0.87] occurrences matches {0..1} matches {    -- Visual examination
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0.74] occurrences matches {0..1} matches {    -- Color
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
 								}
 							}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.30] occurrences matches {0..1} matches {    -- Surface
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0.31,    -- Mesial
-									at0.32,    -- Distal
-									at0.33,    -- Buccal
-									at0.34,    -- Lingual
-									at0.35,    -- Incisal
-									at0.36,    -- Occlusal
-									at0.69,    -- Pit
-									at0.70,    -- Fissure
-									at0.71,    -- Cervical
-									at0.72]    -- Root
+							ELEMENT[at0.30] occurrences matches {0..1} matches {    -- Consistency
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0.31,    -- Mesial
+											at0.32,    -- Distal
+											at0.33,    -- Buccal
+											at0.34,    -- Lingual
+											at0.35,    -- Incisal
+											at0.36,    -- Occlusal
+											at0.69,    -- Pit
+											at0.70,    -- Fissure
+											at0.71,    -- Cervical
+											at0.72]    -- Root
+										}
+									}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.75] occurrences matches {0..1} matches {    -- Contour
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.76] occurrences matches {0..1} matches {    -- Surface texture
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.82] occurrences matches {0..1} matches {    -- Marginal gingival bleeding
+								value matches {
+									0|[local::at0.83],
+									1|[local::at0.84],
+									2|[local::at0.85],
+									3|[local::at0.86]
+								}
+							}
+							ELEMENT[at0.88] occurrences matches {0..1} matches {    -- Pigmentation
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.90] occurrences matches {0..1} matches {    -- Presence of biofilm
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0.91] occurrences matches {0..1} matches {    -- Presence of supragingival calculus
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0.92] occurrences matches {0..1} matches {    -- Presence of subgingival calculus
+								value matches {
+									DV_COUNT matches {*}
+								}
+							}
+							ELEMENT[at0.95] occurrences matches {0..1} matches {    -- Gingival recession
+								value matches {
+									DV_ORDINAL matches {*}
+								}
+							}
+							ELEMENT[at0.98] occurrences matches {0..1} matches {    -- Presence of sinus opening
+								value matches {
+									DV_BOOLEAN matches {*}
 								}
 							}
 						}
@@ -385,6 +420,49 @@ definition
 					ELEMENT[at0.37] occurrences matches {0..1} matches {    -- Clinical description
 						value matches {
 							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0.89] occurrences matches {0..1} matches {    -- Tactile examination
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0.77] occurrences matches {0..1} matches {    -- Pain on probing
+								value matches {
+									0|[local::at0.78],
+									1|[local::at0.79],
+									2|[local::at0.80],
+									3|[local::at0.81]
+								}
+							}
+							ELEMENT[at0.96] occurrences matches {0..1} matches {    -- Probing depth
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::122]>
+										list = <
+											["1"] = <
+												units = <"mm">
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0.97] occurrences matches {0..1} matches {    -- Bleeding on probing
+								value matches {
+									DV_ORDINAL matches {*}
+								}
+							}
+							ELEMENT[at0.93] occurrences matches {0..1} matches {    -- Suppuration
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0.101] occurrences matches {0..1} matches {    -- Basic Periodontal Examination (BPE)
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0.102] occurrences matches {0..1} matches {    -- DV_ORDINAL
+								value matches {
+									DV_ORDINAL matches {*}
+								}
+							}
 						}
 					}
 				}
@@ -398,17 +476,13 @@ ontology
 		["en"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam_gingiva">
+					text = <"Examination of gingiva (Periodontal examination)">
 					description = <"Findings observed during the physical examination of a single tooth.">
 				>
 				["at0001.1"] = <
 					text = <"System or structure examined">
 					description = <"Identification of the examined body system or anatomical structure.">
 					comment = <"Coding of the system or structure examined with a terminology is preferred, where possible.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
 				>
 				["at0.2"] = <
 					text = <"Tooth label">
@@ -448,7 +522,7 @@ ontology
 					description = <"The tooth has repairs or restorations.">
 				>
 				["at0.9"] = <
-					text = <"Gum description">
+					text = <"General description of gingiva">
 					description = <"Narrative description about the gum of the identified tooth.">
 				>
 				["at0.10"] = <
@@ -464,80 +538,8 @@ ontology
 					text = <"Findings">
 					description = <"Details about the findings observed.">
 				>
-				["at0.12"] = <
-					text = <"Finding">
-					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
 				["at0.30"] = <
-					text = <"Surface">
+					text = <"Consistency">
 					description = <"Surface of the tooth where the finding is observed.">
 				>
 				["at0.31"] = <
@@ -708,22 +710,130 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
+				["at0.73"] = <
+					text = <"Gingiva (Gum)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"Color">
+					description = <"">
+				>
+				["at0.75"] = <
+					text = <"Contour">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"Surface texture">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"Pain on probing">
+					description = <"">
+				>
+				["at0.78"] = <
+					text = <"No pain">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"Slight pain">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"Moderate pain">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"Severe pain">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"Marginal gingival bleeding">
+					description = <"">
+				>
+				["at0.83"] = <
+					text = <"Absent of bleeding">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"Slight bleeding">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"Moderate bleeding">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"Severe bleeding">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"Visual examination">
+					description = <"">
+				>
+				["at0.88"] = <
+					text = <"Pigmentation">
+					description = <"">
+				>
+				["at0.89"] = <
+					text = <"Tactile examination">
+					description = <"">
+				>
+				["at0.90"] = <
+					text = <"Presence of biofilm">
+					description = <"">
+				>
+				["at0.91"] = <
+					text = <"Presence of supragingival calculus">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"Presence of subgingival calculus">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"Suppuration">
+					description = <"">
+				>
+				["at0.95"] = <
+					text = <"Gingival recession">
+					description = <"">
+				>
+				["at0.96"] = <
+					text = <"Probing depth">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"mm">
+					description = <"millimeter">
+				>
+				["at0.97"] = <
+					text = <"Bleeding on probing">
+					description = <"">
+				>
+				["at0.98"] = <
+					text = <"Presence of sinus opening">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"Basic Periodontal Examination (BPE)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"DV_ORDINAL">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam_gingiva">
+					text = <"*Examination of gingiva (Periodontal examination) (en)">
 					description = <"Funn ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
 				["at0001.1"] = <
 					text = <"Undersøkt organsystem eller struktur">
 					description = <"Identifisering av det undersøkte organsystemet eller anatomiske strukturen.">
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible. (en)">
-				>
-				["at0.1"] = <
-					text = <"*Tooth (en)">
-					description = <"*A hard, bony enamel-coated structure in the jaw used, for biting and chewing. (en)">
 				>
 				["at0.2"] = <
 					text = <"*Tooth label (en)">
@@ -763,7 +873,7 @@ ontology
 					description = <"*The tooth has repairs or restorations. (en)">
 				>
 				["at0.9"] = <
-					text = <"*Gum description (en)">
+					text = <"*General description of gingiva (en)">
 					description = <"*Narrative description about the gum of the identified tooth. (en)">
 				>
 				["at0.10"] = <
@@ -779,80 +889,8 @@ ontology
 					text = <"*Findings (en)">
 					description = <"*Details about the findings observed. (en)">
 				>
-				["at0.12"] = <
-					text = <"*Finding (en)">
-					description = <"">
-				>
-				["at0.13"] = <
-					text = <"*Cavity (en)">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"*Amalgam (en)">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"*Gold inlay (en)">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"*Gold foil (en)">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"*Other metal restoration (en)">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"*Composite resin (en)">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"*Traumatic avulsion (en)">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"*Fractured crown (en)">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"*Root tip (en)">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"*Rotated (en)">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"*Root apical filling (en)">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"*Apicoectomy (en)">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"*Intermediate restoration (en)">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"*Crown - temporary (en)">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"*Crown - full (en)">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"*Crown - partial (en)">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"*Crown veneer (en)">
-					description = <"">
-				>
 				["at0.30"] = <
-					text = <"*Surface (en)">
+					text = <"*Consistency (en)">
 					description = <"*Surface of the tooth where the finding is observed. (en)">
 				>
 				["at0.31"] = <
@@ -1023,22 +1061,130 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
+				["at0.73"] = <
+					text = <"*Gingiva (Gum) (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.75"] = <
+					text = <"*Contour (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Surface texture (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Pain on probing (en)">
+					description = <"">
+				>
+				["at0.78"] = <
+					text = <"*No pain (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Slight pain (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Moderate pain (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Severe pain (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Marginal gingival bleeding (en)">
+					description = <"">
+				>
+				["at0.83"] = <
+					text = <"*Absent of bleeding (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Slight bleeding (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Moderate bleeding (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Severe bleeding (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Visual examination (en)">
+					description = <"">
+				>
+				["at0.88"] = <
+					text = <"*Pigmentation (en)">
+					description = <"">
+				>
+				["at0.89"] = <
+					text = <"*Tactile examination (en)">
+					description = <"">
+				>
+				["at0.90"] = <
+					text = <"*Presence of biofilm (en)">
+					description = <"">
+				>
+				["at0.91"] = <
+					text = <"*Presence of supragingival calculus (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Presence of subgingival calculus (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Suppuration (en)">
+					description = <"">
+				>
+				["at0.95"] = <
+					text = <"*Gingival recession (en)">
+					description = <"">
+				>
+				["at0.96"] = <
+					text = <"*Probing depth (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.97"] = <
+					text = <"*Bleeding on probing (en)">
+					description = <"">
+				>
+				["at0.98"] = <
+					text = <"*Presence of sinus opening (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Basic Periodontal Examination (BPE) (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*DV_ORDINAL (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam_gingiva">
+					text = <"*Examination of gingiva (Periodontal examination) (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
 				>
 				["at0001.1"] = <
 					text = <"Sistema ou estrutura examinada">
 					description = <"Identificação do sistema do corpo examinado ou da estrutura anatômica.">
 					comment = <"A codificação do sistema ou estrutura examinada com uma terminologia é preferível, sempre que possível.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
 				>
 				["at0.2"] = <
 					text = <"Tooth label">
@@ -1080,7 +1226,7 @@ ontology
 					description = <"The tooth has repairs or restorations.">
 				>
 				["at0.9"] = <
-					text = <"Gum description">
+					text = <"*General description of gingiva (en)">
 					description = <"Narrative description about the gum of the identified tooth.">
 				>
 				["at0.10"] = <
@@ -1096,80 +1242,8 @@ ontology
 					text = <"Findings">
 					description = <"Details about the findings observed.">
 				>
-				["at0.12"] = <
-					text = <"Finding">
-					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
 				["at0.30"] = <
-					text = <"Surface">
+					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
 				>
 				["at0.31"] = <
@@ -1340,22 +1414,130 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Gingiva (Gum) (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.75"] = <
+					text = <"*Contour (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Surface texture (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Pain on probing (en)">
+					description = <"">
+				>
+				["at0.78"] = <
+					text = <"*No pain (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Slight pain (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Moderate pain (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Severe pain (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Marginal gingival bleeding (en)">
+					description = <"">
+				>
+				["at0.83"] = <
+					text = <"*Absent of bleeding (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Slight bleeding (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Moderate bleeding (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Severe bleeding (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Visual examination (en)">
+					description = <"">
+				>
+				["at0.88"] = <
+					text = <"*Pigmentation (en)">
+					description = <"">
+				>
+				["at0.89"] = <
+					text = <"*Tactile examination (en)">
+					description = <"">
+				>
+				["at0.90"] = <
+					text = <"*Presence of biofilm (en)">
+					description = <"">
+				>
+				["at0.91"] = <
+					text = <"*Presence of supragingival calculus (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Presence of subgingival calculus (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Suppuration (en)">
+					description = <"">
+				>
+				["at0.95"] = <
+					text = <"*Gingival recession (en)">
+					description = <"">
+				>
+				["at0.96"] = <
+					text = <"*Probing depth (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.97"] = <
+					text = <"*Bleeding on probing (en)">
+					description = <"">
+				>
+				["at0.98"] = <
+					text = <"*Presence of sinus opening (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Basic Periodontal Examination (BPE) (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*DV_ORDINAL (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam_gingiva">
+					text = <"*Examination of gingiva (Periodontal examination) (en)">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
 				>
 				["at0001.1"] = <
 					text = <"Untersuchtes System oder untersuchte Struktur">
 					description = <"Identifizierung des untersuchten Körpersystems oder der anatomischen Struktur.">
 					comment = <"Wenn möglich wird die Kodierung des untersuchten Systems oder der untersuchten Struktur mit einer Terminologie bevorzugt.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
 				>
 				["at0.2"] = <
 					text = <"Tooth label">
@@ -1397,7 +1579,7 @@ ontology
 					description = <"The tooth has repairs or restorations.">
 				>
 				["at0.9"] = <
-					text = <"Gum description">
+					text = <"*General description of gingiva (en)">
 					description = <"Narrative description about the gum of the identified tooth.">
 				>
 				["at0.10"] = <
@@ -1413,80 +1595,8 @@ ontology
 					text = <"Findings">
 					description = <"Details about the findings observed.">
 				>
-				["at0.12"] = <
-					text = <"Finding">
-					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
 				["at0.30"] = <
-					text = <"Surface">
+					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
 				>
 				["at0.31"] = <
@@ -1657,22 +1767,130 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
+				["at0.73"] = <
+					text = <"*Gingiva (Gum) (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.75"] = <
+					text = <"*Contour (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Surface texture (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Pain on probing (en)">
+					description = <"">
+				>
+				["at0.78"] = <
+					text = <"*No pain (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Slight pain (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Moderate pain (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Severe pain (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Marginal gingival bleeding (en)">
+					description = <"">
+				>
+				["at0.83"] = <
+					text = <"*Absent of bleeding (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Slight bleeding (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Moderate bleeding (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Severe bleeding (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Visual examination (en)">
+					description = <"">
+				>
+				["at0.88"] = <
+					text = <"*Pigmentation (en)">
+					description = <"">
+				>
+				["at0.89"] = <
+					text = <"*Tactile examination (en)">
+					description = <"">
+				>
+				["at0.90"] = <
+					text = <"*Presence of biofilm (en)">
+					description = <"">
+				>
+				["at0.91"] = <
+					text = <"*Presence of supragingival calculus (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Presence of subgingival calculus (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Suppuration (en)">
+					description = <"">
+				>
+				["at0.95"] = <
+					text = <"*Gingival recession (en)">
+					description = <"">
+				>
+				["at0.96"] = <
+					text = <"*Probing depth (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.97"] = <
+					text = <"*Bleeding on probing (en)">
+					description = <"">
+				>
+				["at0.98"] = <
+					text = <"*Presence of sinus opening (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Basic Periodontal Examination (BPE) (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*DV_ORDINAL (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam_gingiva">
+					text = <"*Examination of gingiva (Periodontal examination) (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
 				>
 				["at0001.1"] = <
 					text = <"System eller struktur som undersökts">
 					description = <"Identifiering av systemet eller strukturen som undersökts.">
 					comment = <"Om möjligt, koda systemet eller strukturen med hjälp av ett terminologisystem.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
 				>
 				["at0.2"] = <
 					text = <"Tooth label">
@@ -1717,7 +1935,7 @@ ontology
 					description = <"The tooth has repairs or restorations.">
 				>
 				["at0.9"] = <
-					text = <"Gum description">
+					text = <"*General description of gingiva (en)">
 					description = <"Narrative description about the gum of the identified tooth.">
 				>
 				["at0.10"] = <
@@ -1733,80 +1951,8 @@ ontology
 					text = <"Findings">
 					description = <"Details about the findings observed.">
 				>
-				["at0.12"] = <
-					text = <"Finding">
-					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
 				["at0.30"] = <
-					text = <"Surface">
+					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
 				>
 				["at0.31"] = <
@@ -1977,22 +2123,130 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Gingiva (Gum) (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.75"] = <
+					text = <"*Contour (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Surface texture (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Pain on probing (en)">
+					description = <"">
+				>
+				["at0.78"] = <
+					text = <"*No pain (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Slight pain (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Moderate pain (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Severe pain (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Marginal gingival bleeding (en)">
+					description = <"">
+				>
+				["at0.83"] = <
+					text = <"*Absent of bleeding (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Slight bleeding (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Moderate bleeding (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Severe bleeding (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Visual examination (en)">
+					description = <"">
+				>
+				["at0.88"] = <
+					text = <"*Pigmentation (en)">
+					description = <"">
+				>
+				["at0.89"] = <
+					text = <"*Tactile examination (en)">
+					description = <"">
+				>
+				["at0.90"] = <
+					text = <"*Presence of biofilm (en)">
+					description = <"">
+				>
+				["at0.91"] = <
+					text = <"*Presence of supragingival calculus (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Presence of subgingival calculus (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Suppuration (en)">
+					description = <"">
+				>
+				["at0.95"] = <
+					text = <"*Gingival recession (en)">
+					description = <"">
+				>
+				["at0.96"] = <
+					text = <"*Probing depth (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.97"] = <
+					text = <"*Bleeding on probing (en)">
+					description = <"">
+				>
+				["at0.98"] = <
+					text = <"*Presence of sinus opening (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Basic Periodontal Examination (BPE) (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*DV_ORDINAL (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam_gingiva">
+					text = <"*Examination of gingiva (Periodontal examination) (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
 				>
 				["at0001.1"] = <
 					text = <"Εξεταζόμενο σύστημα ή δομή">
 					description = <"Ταυτοποίηση του εξεταζόμενου συστήματος σώματος ή ανατομικής δομής.">
 					comment = <"Προτιμάται η κωδικοποίηση του συστήματος ή της δομής που εξετάζεται με ορολογία, όπου είναι δυνατόν.">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
 				>
 				["at0.2"] = <
 					text = <"Tooth label">
@@ -2034,7 +2288,7 @@ ontology
 					description = <"The tooth has repairs or restorations.">
 				>
 				["at0.9"] = <
-					text = <"Gum description">
+					text = <"*General description of gingiva (en)">
 					description = <"Narrative description about the gum of the identified tooth.">
 				>
 				["at0.10"] = <
@@ -2050,80 +2304,8 @@ ontology
 					text = <"Findings">
 					description = <"Details about the findings observed.">
 				>
-				["at0.12"] = <
-					text = <"Finding">
-					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
 				["at0.30"] = <
-					text = <"Surface">
+					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
 				>
 				["at0.31"] = <
@@ -2294,22 +2476,130 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Gingiva (Gum) (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.75"] = <
+					text = <"*Contour (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Surface texture (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Pain on probing (en)">
+					description = <"">
+				>
+				["at0.78"] = <
+					text = <"*No pain (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Slight pain (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Moderate pain (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Severe pain (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Marginal gingival bleeding (en)">
+					description = <"">
+				>
+				["at0.83"] = <
+					text = <"*Absent of bleeding (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Slight bleeding (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Moderate bleeding (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Severe bleeding (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Visual examination (en)">
+					description = <"">
+				>
+				["at0.88"] = <
+					text = <"*Pigmentation (en)">
+					description = <"">
+				>
+				["at0.89"] = <
+					text = <"*Tactile examination (en)">
+					description = <"">
+				>
+				["at0.90"] = <
+					text = <"*Presence of biofilm (en)">
+					description = <"">
+				>
+				["at0.91"] = <
+					text = <"*Presence of supragingival calculus (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Presence of subgingival calculus (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Suppuration (en)">
+					description = <"">
+				>
+				["at0.95"] = <
+					text = <"*Gingival recession (en)">
+					description = <"">
+				>
+				["at0.96"] = <
+					text = <"*Probing depth (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.97"] = <
+					text = <"*Bleeding on probing (en)">
+					description = <"">
+				>
+				["at0.98"] = <
+					text = <"*Presence of sinus opening (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Basic Periodontal Examination (BPE) (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*DV_ORDINAL (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam_gingiva">
+					text = <"*Examination of gingiva (Periodontal examination) (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
 				>
 				["at0001.1"] = <
 					text = <"*System or structure examined(en)">
 					description = <"*Identification of the examined body system or anatomical structure.(en)">
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible.(en)">
-				>
-				["at0.1"] = <
-					text = <"Tooth">
-					description = <"A hard, bony enamel-coated structure in the jaw used, for biting and chewing.">
 				>
 				["at0.2"] = <
 					text = <"Tooth label">
@@ -2351,7 +2641,7 @@ ontology
 					description = <"The tooth has repairs or restorations.">
 				>
 				["at0.9"] = <
-					text = <"Gum description">
+					text = <"*General description of gingiva (en)">
 					description = <"Narrative description about the gum of the identified tooth.">
 				>
 				["at0.10"] = <
@@ -2367,80 +2657,8 @@ ontology
 					text = <"Findings">
 					description = <"Details about the findings observed.">
 				>
-				["at0.12"] = <
-					text = <"Finding">
-					description = <"">
-				>
-				["at0.13"] = <
-					text = <"Cavity">
-					description = <"">
-				>
-				["at0.14"] = <
-					text = <"Amalgam">
-					description = <"">
-				>
-				["at0.15"] = <
-					text = <"Gold inlay">
-					description = <"">
-				>
-				["at0.16"] = <
-					text = <"Gold foil">
-					description = <"">
-				>
-				["at0.17"] = <
-					text = <"Other metal restoration">
-					description = <"">
-				>
-				["at0.18"] = <
-					text = <"Composite resin">
-					description = <"">
-				>
-				["at0.19"] = <
-					text = <"Traumatic avulsion">
-					description = <"">
-				>
-				["at0.20"] = <
-					text = <"Fractured crown">
-					description = <"">
-				>
-				["at0.21"] = <
-					text = <"Root tip">
-					description = <"">
-				>
-				["at0.22"] = <
-					text = <"Rotated">
-					description = <"">
-				>
-				["at0.23"] = <
-					text = <"Root apical filling">
-					description = <"">
-				>
-				["at0.24"] = <
-					text = <"Apicoectomy">
-					description = <"">
-				>
-				["at0.25"] = <
-					text = <"Intermediate restoration">
-					description = <"">
-				>
-				["at0.26"] = <
-					text = <"Crown - temporary">
-					description = <"">
-				>
-				["at0.27"] = <
-					text = <"Crown - full">
-					description = <"">
-				>
-				["at0.28"] = <
-					text = <"Crown - partial">
-					description = <"">
-				>
-				["at0.29"] = <
-					text = <"Crown veneer">
-					description = <"">
-				>
 				["at0.30"] = <
-					text = <"Surface">
+					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
 				>
 				["at0.31"] = <
@@ -2611,13 +2829,124 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.73"] = <
+					text = <"*Gingiva (Gum) (en)">
+					description = <"">
+				>
+				["at0.74"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.75"] = <
+					text = <"*Contour (en)">
+					description = <"">
+				>
+				["at0.76"] = <
+					text = <"*Surface texture (en)">
+					description = <"">
+				>
+				["at0.77"] = <
+					text = <"*Pain on probing (en)">
+					description = <"">
+				>
+				["at0.78"] = <
+					text = <"*No pain (en)">
+					description = <"">
+				>
+				["at0.79"] = <
+					text = <"*Slight pain (en)">
+					description = <"">
+				>
+				["at0.80"] = <
+					text = <"*Moderate pain (en)">
+					description = <"">
+				>
+				["at0.81"] = <
+					text = <"*Severe pain (en)">
+					description = <"">
+				>
+				["at0.82"] = <
+					text = <"*Marginal gingival bleeding (en)">
+					description = <"">
+				>
+				["at0.83"] = <
+					text = <"*Absent of bleeding (en)">
+					description = <"">
+				>
+				["at0.84"] = <
+					text = <"*Slight bleeding (en)">
+					description = <"">
+				>
+				["at0.85"] = <
+					text = <"*Moderate bleeding (en)">
+					description = <"">
+				>
+				["at0.86"] = <
+					text = <"*Severe bleeding (en)">
+					description = <"">
+				>
+				["at0.87"] = <
+					text = <"*Visual examination (en)">
+					description = <"">
+				>
+				["at0.88"] = <
+					text = <"*Pigmentation (en)">
+					description = <"">
+				>
+				["at0.89"] = <
+					text = <"*Tactile examination (en)">
+					description = <"">
+				>
+				["at0.90"] = <
+					text = <"*Presence of biofilm (en)">
+					description = <"">
+				>
+				["at0.91"] = <
+					text = <"*Presence of supragingival calculus (en)">
+					description = <"">
+				>
+				["at0.92"] = <
+					text = <"*Presence of subgingival calculus (en)">
+					description = <"">
+				>
+				["at0.93"] = <
+					text = <"*Suppuration (en)">
+					description = <"">
+				>
+				["at0.95"] = <
+					text = <"*Gingival recession (en)">
+					description = <"">
+				>
+				["at0.96"] = <
+					text = <"*Probing depth (en)">
+					description = <"">
+				>
+				["mm"] = <
+					text = <"*mm (en)">
+					description = <"*millimeter (en)">
+				>
+				["at0.97"] = <
+					text = <"*Bleeding on probing (en)">
+					description = <"">
+				>
+				["at0.98"] = <
+					text = <"*Presence of sinus opening (en)">
+					description = <"">
+				>
+				["at0.101"] = <
+					text = <"*Basic Periodontal Examination (BPE) (en)">
+					description = <"">
+				>
+				["at0.102"] = <
+					text = <"*DV_ORDINAL (en)">
+					description = <"">
+				>
 			>
 		>
 	>
 	term_binding = <
 		["SNOMED-CT"] = <
 			items = <
-				["at0.1"] = <[SNOMED-CT::38199008]>
 				["at0000"] = <[SNOMED-CT::5880005]>
 			>
 		>
