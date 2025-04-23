@@ -203,7 +203,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"30cd5a15b467532f3117141e989a16f9">
+		["MD5-CAM-1.0.1"] = <"f015486e4f796e7ee1c306c06cc26537">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -238,22 +238,24 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			ELEMENT[at0.38] occurrences matches {0..1} matches {    -- Notation system
-				value matches {
-					DV_CODED_TEXT matches {
-						defining_code matches {
-							[local::
-							at0.39,    -- FDI/ ISO notation system
-							at0.40,    -- Zsigmondy-Palmer notation system
-							at0.41]    -- Universal/ ADA notation system
-						}
-					}
-				}
-			}
-			ELEMENT[at0.2] occurrences matches {0..1} matches {    -- Tooth label
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
 				value matches {
 					DV_TEXT matches {*}
 				}
+			}
+			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
+			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Examination not done
+				include
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
 			ELEMENT[at0.6] occurrences matches {0..1} matches {    -- Condition
 				value matches {
@@ -277,16 +279,6 @@ definition
 					}
 				}
 			}
-			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
 			ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Presence
 				value matches {
 					DV_CODED_TEXT matches {
@@ -303,112 +295,129 @@ definition
 					DV_TEXT matches {*}
 				}
 			}
-			ELEMENT[at0007] occurrences matches {0..1} matches {    -- Comment
-				value matches {
-					DV_TEXT matches {*}
-				}
-			}
-			allow_archetype CLUSTER[at0008] occurrences matches {0..*} matches {    -- Examination not done
-				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
-			}
 			CLUSTER[at0.11] occurrences matches {0..*} matches {    -- Findings
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0.64] occurrences matches {0..1} matches {    -- Mobility
-						value matches {
-							0|[local::at0.65],
-							1|[local::at0.66],
-							2|[local::at0.67],
-							3|[local::at0.68]
-						}
-					}
-					CLUSTER[at0.186] occurrences matches {0..*} matches {    -- Pocket depth
+					CLUSTER[at0.210] occurrences matches {0..1} matches {    -- Charting
 						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0.10] occurrences matches {0..1} matches {    -- Pocket depth measurement
-								value matches {
-									C_DV_QUANTITY <
-										property = <[openehr::122]>
-										list = <
-											["1"] = <
-												units = <"mm">
-												magnitude = <|0.0..20.0|>
-												precision = <|0|>
-											>
-										>
-									>
-								}
-							}
-							ELEMENT[at0.187] occurrences matches {0..1} matches {    -- Surface
-								value matches {
-									DV_CODED_TEXT matches {
-										defining_code matches {
-											[local::
-											at0.188,    -- Labial
-											at0.189,    -- Buccal
-											at0.190,    -- Mesial
-											at0.191,    -- Distal
-											at0.192,    -- Palatal
-											at0.193]    -- Lingual
-										}
-									}
-								}
-							}
-						}
-					}
-					ELEMENT[at0.93] occurrences matches {0..1} matches {    -- Suppuration
-						value matches {
-							DV_BOOLEAN matches {*}
-						}
-					}
-					CLUSTER[at0.169] occurrences matches {0..1} matches {    -- Gingival recession
-						items cardinality matches {1..*; unordered} matches {
-							ELEMENT[at0.194] occurrences matches {0..1} matches {    -- Surface
-								value matches {
-									DV_CODED_TEXT matches {
-										defining_code matches {
-											[local::
-											at0.195,    -- Labial
-											at0.196,    -- Buccal
-											at0.197,    -- Mesial
-											at0.198,    -- Distal
-											at0.199,    -- Palatal
-											at0.200]    -- Lingual
-										}
-									}
-								}
-							}
-							ELEMENT[at0.170] occurrences matches {0..1} matches {    -- Type
-								value matches {
-									DV_CODED_TEXT matches {
-										defining_code matches {
-											[local::
-											at0.171,    -- Localized gingival recession
-											at0.172]    -- Generalized gingival recession
-										}
-									}
-								}
-							}
-							ELEMENT[at0.95] occurrences matches {0..1} matches {    -- Classification (Miller classification)
-								value matches {
-									1|[local::at0.206],
-									2|[local::at0.207],
-									3|[local::at0.208],
-									4|[local::at0.209]
-								}
-							}
-							ELEMENT[at0.173] occurrences matches {0..1} matches {    -- Description
+							ELEMENT[at0.211] occurrences matches {0..1} matches {    -- Examined tooth name
 								value matches {
 									DV_TEXT matches {*}
 								}
 							}
-						}
-					}
-					ELEMENT[at0.201] occurrences matches {0..1} matches {    -- Furcation involvement
-						value matches {
-							1|[local::at0.202],
-							2|[local::at0.203],
-							3|[local::at0.204],
-							4|[local::at0.205]
+							ELEMENT[at0.38] occurrences matches {0..1} matches {    -- Notation system
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0.39,    -- FDI/ ISO notation system
+											at0.40,    -- Zsigmondy-Palmer notation system
+											at0.41]    -- Universal/ ADA notation system
+										}
+									}
+								}
+							}
+							ELEMENT[at0.2] occurrences matches {0..1} matches {    -- Tooth label (Tooth number)
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.64] occurrences matches {0..1} matches {    -- Mobility
+								value matches {
+									0|[local::at0.65],
+									1|[local::at0.66],
+									2|[local::at0.67],
+									3|[local::at0.68]
+								}
+							}
+							CLUSTER[at0.186] occurrences matches {0..*} matches {    -- Pocket depth
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0.10] occurrences matches {0..1} matches {    -- Pocket depth measurement
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::122]>
+												list = <
+													["1"] = <
+														units = <"mm">
+														magnitude = <|0.0..20.0|>
+														precision = <|0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0.187] occurrences matches {0..1} matches {    -- Surface
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0.188,    -- Labial
+													at0.189,    -- Buccal
+													at0.190,    -- Mesial
+													at0.191,    -- Distal
+													at0.192,    -- Palatal
+													at0.193]    -- Lingual
+												}
+											}
+										}
+									}
+								}
+							}
+							ELEMENT[at0.93] occurrences matches {0..1} matches {    -- Suppuration
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							CLUSTER[at0.169] occurrences matches {0..1} matches {    -- Gingival recession
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0.194] occurrences matches {0..1} matches {    -- Surface
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0.195,    -- Labial
+													at0.196,    -- Buccal
+													at0.197,    -- Mesial
+													at0.198,    -- Distal
+													at0.199,    -- Palatal
+													at0.200]    -- Lingual
+												}
+											}
+										}
+									}
+									ELEMENT[at0.170] occurrences matches {0..1} matches {    -- Type
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0.171,    -- Localized gingival recession
+													at0.172]    -- Generalized gingival recession
+												}
+											}
+										}
+									}
+									ELEMENT[at0.95] occurrences matches {0..1} matches {    -- Classification (Miller classification)
+										value matches {
+											1|[local::at0.206],
+											2|[local::at0.207],
+											3|[local::at0.208],
+											4|[local::at0.209]
+										}
+									}
+									ELEMENT[at0.173] occurrences matches {0..1} matches {    -- Description
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							ELEMENT[at0.201] occurrences matches {0..1} matches {    -- Furcation involvement
+								value matches {
+									1|[local::at0.202],
+									2|[local::at0.203],
+									3|[local::at0.204],
+									4|[local::at0.205]
+								}
+							}
 						}
 					}
 					ELEMENT[at0.120] occurrences matches {0..1} matches {    -- Bleeding on probing
@@ -442,7 +451,7 @@ ontology
 					comment = <"Coding of the system or structure examined with a terminology is preferred, where possible.">
 				>
 				["at0.2"] = <
-					text = <"Tooth label">
+					text = <"Tooth label (Tooth number)">
 					description = <"Name or nomenclature of the tooth examined.">
 					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
 				>
@@ -759,6 +768,14 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
+				["at0.210"] = <
+					text = <"Charting">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"Examined tooth name">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
@@ -773,7 +790,7 @@ ontology
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible. (en)">
 				>
 				["at0.2"] = <
-					text = <"*Tooth label (en)">
+					text = <"*Tooth label (Tooth number) (en)">
 					description = <"*Name or nomenclature of the tooth examined. (en)">
 					comment = <"*For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system. (en)">
 				>
@@ -1090,6 +1107,14 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
@@ -1104,7 +1129,7 @@ ontology
 					comment = <"A codificação do sistema ou estrutura examinada com uma terminologia é preferível, sempre que possível.">
 				>
 				["at0.2"] = <
-					text = <"Tooth label">
+					text = <"*Tooth label (Tooth number) (en)">
 					description = <"Name or nomenclature of the tooth examined.">
 					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
 				>
@@ -1423,6 +1448,14 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
@@ -1437,7 +1470,7 @@ ontology
 					comment = <"Wenn möglich wird die Kodierung des untersuchten Systems oder der untersuchten Struktur mit einer Terminologie bevorzugt.">
 				>
 				["at0.2"] = <
-					text = <"Tooth label">
+					text = <"*Tooth label (Tooth number) (en)">
 					description = <"Name or nomenclature of the tooth examined.">
 					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
 				>
@@ -1756,6 +1789,14 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
@@ -1770,7 +1811,7 @@ ontology
 					comment = <"Om möjligt, koda systemet eller strukturen med hjälp av ett terminologisystem.">
 				>
 				["at0.2"] = <
-					text = <"Tooth label">
+					text = <"*Tooth label (Tooth number) (en)">
 					description = <"Name or nomenclature of the tooth examined.">
 					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
 				>
@@ -2092,6 +2133,14 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
@@ -2106,7 +2155,7 @@ ontology
 					comment = <"Προτιμάται η κωδικοποίηση του συστήματος ή της δομής που εξετάζεται με ορολογία, όπου είναι δυνατόν.">
 				>
 				["at0.2"] = <
-					text = <"Tooth label">
+					text = <"*Tooth label (Tooth number) (en)">
 					description = <"Name or nomenclature of the tooth examined.">
 					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
 				>
@@ -2425,6 +2474,14 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
@@ -2439,7 +2496,7 @@ ontology
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible.(en)">
 				>
 				["at0.2"] = <
-					text = <"Tooth label">
+					text = <"*Tooth label (Tooth number) (en)">
 					description = <"Name or nomenclature of the tooth examined.">
 					comment = <"For example: upper right permanent canine can be represented by the label '13' using ISO system; '3' using the Palmer notation; or '6' using the Universal numbering system.">
 				>
@@ -2757,6 +2814,14 @@ ontology
 					text = <"*Body site(en)">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
 				>
 			>
 		>
