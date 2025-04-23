@@ -202,7 +202,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"245D1470BA8298CDAFD9800399F7ED5F">
+		["MD5-CAM-1.0.1"] = <"38cf92e52cd0ac2af88e8d823b2ef7e1">
 		["build_uid"] = <"c67146e3-c932-4b1d-9e40-811d5d026920">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -236,7 +236,7 @@ definition
 			}
 			allow_archetype CLUSTER[at0004.1] occurrences matches {0..*} matches {    -- Examination findings
 				include
-					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exam-eye\.v0|openEHR-EHR-CLUSTER\.exam-eyes\.v0|openEHR-EHR-CLUSTER\.exam-mouth\.v0/}
+					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exam-eye\.v0|openEHR-EHR-CLUSTER\.exam-eyes\.v0|openEHR-EHR-CLUSTER\.exam-mouth\.v0|openEHR-EHR-CLUSTER\.exam\.v1|openEHR-EHR-CLUSTER\.exam\.v2/}
 			}
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Multimedia representation
 				include
@@ -256,9 +256,23 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			ELEMENT[at0.2] occurrences matches {0..1} matches {    -- Symmetry
-				value matches {
-					DV_TEXT matches {*}
+			CLUSTER[at0.4] occurrences matches {0..1} matches {    -- Findings
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0.2] occurrences matches {0..1} matches {    -- Symmetry
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0.3] occurrences matches {0..1} matches {    -- Facial profile
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0.6] occurrences matches {0..1} matches {    -- Overlying skin condition
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
 				}
 			}
 		}
@@ -269,16 +283,6 @@ ontology
 	term_definitions = <
 		["en"] = <
 			items = <
-				["at0006"] = <
-					text = <"Clinical interpretation">
-					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.">
-					comment = <"For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible.">
-				>
-				["at0012"] = <
-					text = <"Body site">
-					description = <"Identification of the area of the body under examination.">
-					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
-				>
 				["at0000.1"] = <
 					text = <"Examination of the face">
 					description = <"Findings observed during the physical examination of the face as a whole.">
@@ -321,6 +325,11 @@ ontology
 					text = <"Multimedia representation">
 					description = <"Digital image, video or diagram representing the physical examination findings.">
 				>
+				["at0006"] = <
+					text = <"Clinical interpretation">
+					description = <"Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.">
+					comment = <"For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible.">
+				>
 				["at0007"] = <
 					text = <"Comment">
 					description = <"Additional narrative about the physical examination findings, not captured in other fields.">
@@ -334,30 +343,27 @@ ontology
 					description = <"A structured description of the area of the body under examination.">
 					comment = <"If the body site has been fully identified in the 'System or structure examined' or the 'Body site' data element, this SLOT becomes redundant.">
 				>
+				["at0012"] = <
+					text = <"Body site">
+					description = <"Identification of the area of the body under examination.">
+					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
+				>
+				["at0.3"] = <
+					text = <"Facial profile">
+					description = <"">
+				>
+				["at0.4"] = <
+					text = <"Findings">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"Overlying skin condition">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
-				["at0001"] = <
-					text = <"Undersøkt organsystem eller struktur">
-					description = <"Identifisering av det undersøkte organsystemet eller den anatomiske strukturen.">
-					comment = <"Det anbefales å kode organsystem eller den anatomiske strukturen med en terminologi dersom mulig.">
-				>
-				["at0006"] = <
-					text = <"Fortolkning">
-					description = <"Enkelt ord, setning, frase eller kort beskrivelse som representerer den kliniske betydning og viktigheten av funnene ved den fysiske undersøkelsen.">
-					comment = <"For eksempel \"Uten anmerkning\" eller \"Moderat inflammasjon\". Det anbefales å kode \"Fortolkning\" med en terminologi dersom mulig.">
-				>
-				["at0011"] = <
-					text = <"Strukturert anatomisk lokalisasjon">
-					description = <"Angivelse av en strukturert anatomisk lokalisering av det undersøkte organsystemet eller den anatomiske strukturen.">
-					comment = <"Hvis anatomisk lokalisasjon er entydig identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette SLOT'et ikke nødvendig å benytte.">
-				>
-				["at0012"] = <
-					text = <"Anatomisk lokalisasjon">
-					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
-					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
-				>
 				["at0000.1"] = <
 					text = <"*Examination of the face (en)">
 					description = <"Funn ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
@@ -383,6 +389,11 @@ ontology
 					text = <"Funn ved fysisk undersøkelse">
 					description = <"Undersøkelsesfunn gjort ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
+				["at0001"] = <
+					text = <"Undersøkt organsystem eller struktur">
+					description = <"Identifisering av det undersøkte organsystemet eller den anatomiske strukturen.">
+					comment = <"Det anbefales å kode organsystem eller den anatomiske strukturen med en terminologi dersom mulig.">
+				>
 				["at0003"] = <
 					text = <"Klinisk beskrivelse">
 					description = <"Fritekstbeskrivelse av de overordnede funnene ved den fysiske undersøkelsen.">
@@ -395,6 +406,11 @@ ontology
 					text = <"Multimediarepresentasjon">
 					description = <"Digitale bilder, video eller diagram som representerer undersøkelsesfunnene.">
 				>
+				["at0006"] = <
+					text = <"Fortolkning">
+					description = <"Enkelt ord, setning, frase eller kort beskrivelse som representerer den kliniske betydning og viktigheten av funnene ved den fysiske undersøkelsen.">
+					comment = <"For eksempel \"Uten anmerkning\" eller \"Moderat inflammasjon\". Det anbefales å kode \"Fortolkning\" med en terminologi dersom mulig.">
+				>
 				["at0007"] = <
 					text = <"Kommentar">
 					description = <"Ytterligere fritekst om funn ved undersøkelsen, som ikke dekkes av andre elementer.">
@@ -403,20 +419,32 @@ ontology
 					text = <"Undersøkelse ikke utført">
 					description = <"Detaljer for å eksplisitt registrere at denne undersøkelsen ikke ble utført.">
 				>
+				["at0011"] = <
+					text = <"Strukturert anatomisk lokalisasjon">
+					description = <"Angivelse av en strukturert anatomisk lokalisering av det undersøkte organsystemet eller den anatomiske strukturen.">
+					comment = <"Hvis anatomisk lokalisasjon er entydig identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette SLOT'et ikke nødvendig å benytte.">
+				>
+				["at0012"] = <
+					text = <"Anatomisk lokalisasjon">
+					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
+					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
+				>
+				["at0.3"] = <
+					text = <"*Facial profile (en)">
+					description = <"">
+				>
+				["at0.4"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"*Overlying skin condition (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
 			items = <
-				["at0006"] = <
-					text = <"Interpretação clínica">
-					description = <"Palavra, frase ou breve descrição que represente o significado clínico e o significado dos resultados do exame físico.">
-					comment = <"*For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible. (en)">
-				>
-				["at0012"] = <
-					text = <"Local do corpo">
-					description = <"*Identification of the area of the body under examination. (en)">
-					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
 				["at0000.1"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
@@ -459,6 +487,11 @@ ontology
 					text = <"Representação multimídia">
 					description = <"Imagem digital, vídeo ou diagrama representando os achados do exame físico.">
 				>
+				["at0006"] = <
+					text = <"Interpretação clínica">
+					description = <"Palavra, frase ou breve descrição que represente o significado clínico e o significado dos resultados do exame físico.">
+					comment = <"*For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible. (en)">
+				>
 				["at0007"] = <
 					text = <"Comentário">
 					description = <"Narrativa adicional sobre os achados do exame físico, não capturados em outros campos.">
@@ -472,20 +505,27 @@ ontology
 					description = <"Uma descrição estruturada da área do corpo em exame.">
 					comment = <"Se o local do corpo tiver sido totalmente identificado no elemento de dados 'Sistema ou estrutura examinada' ou 'Local do corpo', esse SLOT se tornará redundante.">
 				>
+				["at0012"] = <
+					text = <"Local do corpo">
+					description = <"*Identification of the area of the body under examination. (en)">
+					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0.3"] = <
+					text = <"*Facial profile (en)">
+					description = <"">
+				>
+				["at0.4"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"*Overlying skin condition (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
 			items = <
-				["at0006"] = <
-					text = <"Klinische Interpretation">
-					description = <"Ein einzelnes Wort, eine Phrase oder eine kurze Beschreibung, die die klinische Bedeutung und Wichtigkeit der Untersuchungsergebnisse darstellt.">
-					comment = <"Zum Beispiel: „Ohne Befund“ oder „Mäßige Entzündung vorhanden“. Wenn möglich, wird die Codierung der „Klinischen Interpretation“ mit einer Terminologie bevorzugt.">
-				>
-				["at0012"] = <
-					text = <"Körperstelle">
-					description = <"Identifizierung des untersuchten Körperbereichs.">
-					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
-				>
 				["at0000.1"] = <
 					text = <"Ergebnisse der körperlichen Untersuchung">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
@@ -528,6 +568,11 @@ ontology
 					text = <"Multimediale Darstellung">
 					description = <"Digitales Bild, Video oder Diagramm, das die Ergebnisse der körperlichen Untersuchung darstellt.">
 				>
+				["at0006"] = <
+					text = <"Klinische Interpretation">
+					description = <"Ein einzelnes Wort, eine Phrase oder eine kurze Beschreibung, die die klinische Bedeutung und Wichtigkeit der Untersuchungsergebnisse darstellt.">
+					comment = <"Zum Beispiel: „Ohne Befund“ oder „Mäßige Entzündung vorhanden“. Wenn möglich, wird die Codierung der „Klinischen Interpretation“ mit einer Terminologie bevorzugt.">
+				>
 				["at0007"] = <
 					text = <"Kommentar">
 					description = <"Zusätzliche Beschreibung der Ergebnisse der körperlichen Untersuchung, die in anderen Bereichen nicht erfasst werden konnten.">
@@ -541,20 +586,27 @@ ontology
 					description = <"Eine strukturierte Beschreibung des zu untersuchenden Körperbereichs.">
 					comment = <"Wenn die Körperstelle im Datenelement \"Untersuchtes System oder untersuchte Struktur\" oder im Datenelement \"Körperstelle\" vollständig identifiziert wurde, wird die Verwendung dieses SLOT überflüssig.">
 				>
+				["at0012"] = <
+					text = <"Körperstelle">
+					description = <"Identifizierung des untersuchten Körperbereichs.">
+					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
+				>
+				["at0.3"] = <
+					text = <"*Facial profile (en)">
+					description = <"">
+				>
+				["at0.4"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"*Overlying skin condition (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
 			items = <
-				["at0006"] = <
-					text = <"Klinisk tolkning">
-					description = <"Ord, fras eller kort beskrivning av fyndens kliniska betydelse.">
-					comment = <"*For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible. (en)">
-				>
-				["at0012"] = <
-					text = <"Anatomisk plats">
-					description = <"*Identification of the area of the body under examination. (en)">
-					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
 				["at0000.1"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
@@ -597,6 +649,11 @@ ontology
 					text = <"Multimedia-representation">
 					description = <"Digital bild, video eller diagram som återger fynd från undersökningen.">
 				>
+				["at0006"] = <
+					text = <"Klinisk tolkning">
+					description = <"Ord, fras eller kort beskrivning av fyndens kliniska betydelse.">
+					comment = <"*For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible. (en)">
+				>
 				["at0007"] = <
 					text = <"Kommentar">
 					description = <"Kommentarer avseende undersökningsfynd som inte beskrivs i övriga fält.">
@@ -610,20 +667,27 @@ ontology
 					description = <"Strukturerad beskrivning av den anatomiska platsen som undersökts.">
 					comment = <"Om den anatomiska platsen kan identifieras helt via dataelementet \"System eller struktur som undersökts\" så blir denna del redundant.">
 				>
+				["at0012"] = <
+					text = <"Anatomisk plats">
+					description = <"*Identification of the area of the body under examination. (en)">
+					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0.3"] = <
+					text = <"*Facial profile (en)">
+					description = <"">
+				>
+				["at0.4"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"*Overlying skin condition (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
 			items = <
-				["at0006"] = <
-					text = <"Κλινική αξιολόγηση">
-					description = <"Μία λέξη, φράση ή σύντομη περιγραφή που αντιπροσωπεύει την κλινική σημασία και σημασία των ευρημάτων της φυσικής εξέτασης.">
-					comment = <"Για παράδειγμα: «Δεν ανιχνεύθηκε ανωμαλία» ή «Υπάρχει μέτρια φλεγμονή». Προτιμάται η κωδικοποίηση της «κλινικής ερμηνείας» με ορολογία, όπου είναι δυνατόν.">
-				>
-				["at0012"] = <
-					text = <"Περιοχή σώματος">
-					description = <"*Identification of the area of the body under examination. (en)">
-					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
 				["at0000.1"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
@@ -666,6 +730,11 @@ ontology
 					text = <"Αναπαράσταση πολυμέσων">
 					description = <"Ψηφιακή εικόνα, βίντεο ή διάγραμμα που αναπαριστά τα ευρήματα της φυσικής εξέτασης.">
 				>
+				["at0006"] = <
+					text = <"Κλινική αξιολόγηση">
+					description = <"Μία λέξη, φράση ή σύντομη περιγραφή που αντιπροσωπεύει την κλινική σημασία και σημασία των ευρημάτων της φυσικής εξέτασης.">
+					comment = <"Για παράδειγμα: «Δεν ανιχνεύθηκε ανωμαλία» ή «Υπάρχει μέτρια φλεγμονή». Προτιμάται η κωδικοποίηση της «κλινικής ερμηνείας» με ορολογία, όπου είναι δυνατόν.">
+				>
 				["at0007"] = <
 					text = <"Σχόλιο">
 					description = <"Πρόσθετη αφήγηση σχετικά με τα ευρήματα της φυσικής εξέτασης, που δεν αποτυπώνεται σε άλλους τομείς.">
@@ -679,20 +748,27 @@ ontology
 					description = <"περιγραφή της περιοχής του υπό εξέταση σώματος.">
 					comment = <"*If the body site has been fully identified in the 'System or structure examined' or the 'Body site' data element, this SLOT becomes redundant.(en)">
 				>
+				["at0012"] = <
+					text = <"Περιοχή σώματος">
+					description = <"*Identification of the area of the body under examination. (en)">
+					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0.3"] = <
+					text = <"*Facial profile (en)">
+					description = <"">
+				>
+				["at0.4"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"*Overlying skin condition (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
 			items = <
-				["at0006"] = <
-					text = <"*Clinical interpretation(en)">
-					description = <"*Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.(en)">
-					comment = <"*For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible.(en)">
-				>
-				["at0012"] = <
-					text = <"*Body site(en)">
-					description = <"*Identification of the area of the body under examination. (en)">
-					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
-				>
 				["at0000.1"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
@@ -735,6 +811,11 @@ ontology
 					text = <"*Multimedia representation(en)">
 					description = <"*Digital image, video or diagram representing the physical examination findings.(en)">
 				>
+				["at0006"] = <
+					text = <"*Clinical interpretation(en)">
+					description = <"*Single word, phrase or brief description that represents the clinical meaning and significance of the physical examination findings.(en)">
+					comment = <"*For example: 'No abnormality detected' or 'Moderate inflammation present'. Coding of the 'Clinical interpretation' with a terminology is preferred, where possible.(en)">
+				>
 				["at0007"] = <
 					text = <"*Comment(en)">
 					description = <"*Additional narrative about the physical examination findings, not captured in other fields.(en)">
@@ -747,6 +828,23 @@ ontology
 					text = <"*Structured body site(en)">
 					description = <"*A structured description of the area of the body under examination.(en)">
 					comment = <"*If the body site has been fully identified in the 'System or structure examined' or the 'Body site' data element, this SLOT becomes redundant.(en)">
+				>
+				["at0012"] = <
+					text = <"*Body site(en)">
+					description = <"*Identification of the area of the body under examination. (en)">
+					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0.3"] = <
+					text = <"*Facial profile (en)">
+					description = <"">
+				>
+				["at0.4"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.6"] = <
+					text = <"*Overlying skin condition (en)">
+					description = <"">
 				>
 			>
 		>
