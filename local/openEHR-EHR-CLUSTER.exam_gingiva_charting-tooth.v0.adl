@@ -203,7 +203,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"f015486e4f796e7ee1c306c06cc26537">
+		["MD5-CAM-1.0.1"] = <"5cb31a4b57e3ece558322a6b48872798">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -230,6 +230,11 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_circle(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.anatomical_location_relative\.v2/}
 			}
+			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
+				value matches {
+					DV_TEXT matches {*}
+				}
+			}
 			allow_archetype CLUSTER[at0004] occurrences matches {0..*} matches {    -- Examination findings
 				include
 					archetype_id/value matches {/.*/}
@@ -237,11 +242,6 @@ definition
 			allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {    -- Multimedia representation
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.media_file(-[a-zA-Z0-9_]+)*\.v1/}
-			}
-			ELEMENT[at0003] occurrences matches {0..1} matches {    -- Clinical description
-				value matches {
-					DV_TEXT matches {*}
-				}
 			}
 			ELEMENT[at0006] occurrences matches {0..*} matches {    -- Clinical interpretation
 				value matches {
@@ -297,7 +297,7 @@ definition
 			}
 			CLUSTER[at0.11] occurrences matches {0..*} matches {    -- Findings
 				items cardinality matches {1..*; unordered} matches {
-					CLUSTER[at0.210] occurrences matches {0..1} matches {    -- Charting
+					CLUSTER[at0.210] occurrences matches {0..*} matches {    -- Charting
 						items cardinality matches {1..*; unordered} matches {
 							ELEMENT[at0.211] occurrences matches {0..1} matches {    -- Examined tooth name
 								value matches {
@@ -327,6 +327,11 @@ definition
 									1|[local::at0.66],
 									2|[local::at0.67],
 									3|[local::at0.68]
+								}
+							}
+							ELEMENT[at0.93] occurrences matches {0..1} matches {    -- Suppuration
+								value matches {
+									DV_BOOLEAN matches {*}
 								}
 							}
 							CLUSTER[at0.186] occurrences matches {0..*} matches {    -- Pocket depth
@@ -360,11 +365,6 @@ definition
 											}
 										}
 									}
-								}
-							}
-							ELEMENT[at0.93] occurrences matches {0..1} matches {    -- Suppuration
-								value matches {
-									DV_BOOLEAN matches {*}
 								}
 							}
 							CLUSTER[at0.169] occurrences matches {0..1} matches {    -- Gingival recession
@@ -418,15 +418,70 @@ definition
 									4|[local::at0.205]
 								}
 							}
+							ELEMENT[at0.214] occurrences matches {0..1} matches {    -- Proximal contact relation
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0.215,    -- Open contact
+											at0.216]    -- Tight contact
+										}
+									}
+								}
+							}
+							ELEMENT[at0.120] occurrences matches {0..1} matches {    -- Bleeding on probing
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							CLUSTER[at0.217] occurrences matches {0..1} matches {    -- Hypersensitivity
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0.218] occurrences matches {0..1} matches {    -- Presence
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0.219] occurrences matches {0..1} matches {    -- Trigger
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+							ELEMENT[at0.160] occurrences matches {0..1} matches {    -- Description
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							CLUSTER[at0.220] occurrences matches {0..1} matches {    -- Restoration margin
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0.221] occurrences matches {0..1} matches {    -- Overhanging
+										value matches {
+											DV_BOOLEAN matches {*}
+										}
+									}
+									ELEMENT[at0.222] occurrences matches {0..1} matches {    -- Surface
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0.223,    -- Labial
+													at0.224,    -- Buccal
+													at0.225,    -- Mesial
+													at0.226,    -- Distal
+													at0.227,    -- Palatal
+													at0.228]    -- Lingual
+												}
+											}
+										}
+									}
+								}
+							}
 						}
 					}
-					ELEMENT[at0.120] occurrences matches {0..1} matches {    -- Bleeding on probing
-						value matches {
-							DV_CODED_TEXT matches {*}
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.160] occurrences matches {0..1} matches {    -- Description
+					ELEMENT[at0.212] occurrences matches {0..1} matches {    -- Description
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -724,6 +779,14 @@ ontology
 					text = <"Class IV">
 					description = <"Marginal tissue recession extends to or beyond mucogingival junction; Severe bone or soft tissue loss; and/or Severe malpositioning of teeth">
 				>
+				["at0.210"] = <
+					text = <"Charting">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"Examined tooth name">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"Physical examination findings">
 					description = <"Findings observed during the physical examination of a body system or anatomical structure.">
@@ -768,12 +831,68 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
-				["at0.210"] = <
-					text = <"Charting">
+				["at0.212"] = <
+					text = <"Description">
 					description = <"">
 				>
-				["at0.211"] = <
-					text = <"Examined tooth name">
+				["at0.214"] = <
+					text = <"Proximal contact relation">
+					description = <"">
+				>
+				["at0.215"] = <
+					text = <"Open contact">
+					description = <"">
+				>
+				["at0.216"] = <
+					text = <"Tight contact">
+					description = <"">
+				>
+				["at0.217"] = <
+					text = <"Hypersensitivity">
+					description = <"">
+				>
+				["at0.218"] = <
+					text = <"Presence">
+					description = <"">
+				>
+				["at0.219"] = <
+					text = <"Trigger">
+					description = <"">
+				>
+				["at0.220"] = <
+					text = <"Restoration margin">
+					description = <"">
+				>
+				["at0.221"] = <
+					text = <"Overhanging">
+					description = <"">
+				>
+				["at0.222"] = <
+					text = <"Surface">
+					description = <"">
+				>
+				["at0.223"] = <
+					text = <"Labial">
+					description = <"">
+				>
+				["at0.224"] = <
+					text = <"Buccal">
+					description = <"">
+				>
+				["at0.225"] = <
+					text = <"Mesial">
+					description = <"">
+				>
+				["at0.226"] = <
+					text = <"Distal">
+					description = <"">
+				>
+				["at0.227"] = <
+					text = <"Palatal">
+					description = <"">
+				>
+				["at0.228"] = <
+					text = <"Lingual">
 					description = <"">
 				>
 			>
@@ -1063,6 +1182,14 @@ ontology
 					text = <"*Class IV (en)">
 					description = <"*Marginal tissue recession extends to or beyond mucogingival junction; Severe bone or soft tissue loss; and/or Severe malpositioning of teeth (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"Funn ved fysisk undersøkelse">
 					description = <"Undersøkelsesfunn gjort ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
@@ -1107,12 +1234,68 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
-				["at0.210"] = <
-					text = <"*Charting (en)">
+				["at0.212"] = <
+					text = <"*Description (en)">
 					description = <"">
 				>
-				["at0.211"] = <
-					text = <"*Examined tooth name (en)">
+				["at0.214"] = <
+					text = <"*Proximal contact relation (en)">
+					description = <"">
+				>
+				["at0.215"] = <
+					text = <"*Open contact (en)">
+					description = <"">
+				>
+				["at0.216"] = <
+					text = <"*Tight contact (en)">
+					description = <"">
+				>
+				["at0.217"] = <
+					text = <"*Hypersensitivity (en)">
+					description = <"">
+				>
+				["at0.218"] = <
+					text = <"*Presence (en)">
+					description = <"">
+				>
+				["at0.219"] = <
+					text = <"*Trigger (en)">
+					description = <"">
+				>
+				["at0.220"] = <
+					text = <"*Restoration margin (en)">
+					description = <"">
+				>
+				["at0.221"] = <
+					text = <"*Overhanging (en)">
+					description = <"">
+				>
+				["at0.222"] = <
+					text = <"*Surface (en)">
+					description = <"">
+				>
+				["at0.223"] = <
+					text = <"*Labial (en)">
+					description = <"">
+				>
+				["at0.224"] = <
+					text = <"*Buccal (en)">
+					description = <"">
+				>
+				["at0.225"] = <
+					text = <"*Mesial (en)">
+					description = <"">
+				>
+				["at0.226"] = <
+					text = <"*Distal (en)">
+					description = <"">
+				>
+				["at0.227"] = <
+					text = <"*Palatal (en)">
+					description = <"">
+				>
+				["at0.228"] = <
+					text = <"*Lingual (en)">
 					description = <"">
 				>
 			>
@@ -1404,6 +1587,14 @@ ontology
 					text = <"*Class IV (en)">
 					description = <"*Marginal tissue recession extends to or beyond mucogingival junction; Severe bone or soft tissue loss; and/or Severe malpositioning of teeth (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
@@ -1448,12 +1639,68 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
-				["at0.210"] = <
-					text = <"*Charting (en)">
+				["at0.212"] = <
+					text = <"*Description (en)">
 					description = <"">
 				>
-				["at0.211"] = <
-					text = <"*Examined tooth name (en)">
+				["at0.214"] = <
+					text = <"*Proximal contact relation (en)">
+					description = <"">
+				>
+				["at0.215"] = <
+					text = <"*Open contact (en)">
+					description = <"">
+				>
+				["at0.216"] = <
+					text = <"*Tight contact (en)">
+					description = <"">
+				>
+				["at0.217"] = <
+					text = <"*Hypersensitivity (en)">
+					description = <"">
+				>
+				["at0.218"] = <
+					text = <"*Presence (en)">
+					description = <"">
+				>
+				["at0.219"] = <
+					text = <"*Trigger (en)">
+					description = <"">
+				>
+				["at0.220"] = <
+					text = <"*Restoration margin (en)">
+					description = <"">
+				>
+				["at0.221"] = <
+					text = <"*Overhanging (en)">
+					description = <"">
+				>
+				["at0.222"] = <
+					text = <"*Surface (en)">
+					description = <"">
+				>
+				["at0.223"] = <
+					text = <"*Labial (en)">
+					description = <"">
+				>
+				["at0.224"] = <
+					text = <"*Buccal (en)">
+					description = <"">
+				>
+				["at0.225"] = <
+					text = <"*Mesial (en)">
+					description = <"">
+				>
+				["at0.226"] = <
+					text = <"*Distal (en)">
+					description = <"">
+				>
+				["at0.227"] = <
+					text = <"*Palatal (en)">
+					description = <"">
+				>
+				["at0.228"] = <
+					text = <"*Lingual (en)">
 					description = <"">
 				>
 			>
@@ -1745,6 +1992,14 @@ ontology
 					text = <"*Class IV (en)">
 					description = <"*Marginal tissue recession extends to or beyond mucogingival junction; Severe bone or soft tissue loss; and/or Severe malpositioning of teeth (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"Ergebnisse der körperlichen Untersuchung">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
@@ -1789,12 +2044,68 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
-				["at0.210"] = <
-					text = <"*Charting (en)">
+				["at0.212"] = <
+					text = <"*Description (en)">
 					description = <"">
 				>
-				["at0.211"] = <
-					text = <"*Examined tooth name (en)">
+				["at0.214"] = <
+					text = <"*Proximal contact relation (en)">
+					description = <"">
+				>
+				["at0.215"] = <
+					text = <"*Open contact (en)">
+					description = <"">
+				>
+				["at0.216"] = <
+					text = <"*Tight contact (en)">
+					description = <"">
+				>
+				["at0.217"] = <
+					text = <"*Hypersensitivity (en)">
+					description = <"">
+				>
+				["at0.218"] = <
+					text = <"*Presence (en)">
+					description = <"">
+				>
+				["at0.219"] = <
+					text = <"*Trigger (en)">
+					description = <"">
+				>
+				["at0.220"] = <
+					text = <"*Restoration margin (en)">
+					description = <"">
+				>
+				["at0.221"] = <
+					text = <"*Overhanging (en)">
+					description = <"">
+				>
+				["at0.222"] = <
+					text = <"*Surface (en)">
+					description = <"">
+				>
+				["at0.223"] = <
+					text = <"*Labial (en)">
+					description = <"">
+				>
+				["at0.224"] = <
+					text = <"*Buccal (en)">
+					description = <"">
+				>
+				["at0.225"] = <
+					text = <"*Mesial (en)">
+					description = <"">
+				>
+				["at0.226"] = <
+					text = <"*Distal (en)">
+					description = <"">
+				>
+				["at0.227"] = <
+					text = <"*Palatal (en)">
+					description = <"">
+				>
+				["at0.228"] = <
+					text = <"*Lingual (en)">
 					description = <"">
 				>
 			>
@@ -2089,6 +2400,14 @@ ontology
 					text = <"*Class IV (en)">
 					description = <"*Marginal tissue recession extends to or beyond mucogingival junction; Severe bone or soft tissue loss; and/or Severe malpositioning of teeth (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
@@ -2133,12 +2452,68 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
-				["at0.210"] = <
-					text = <"*Charting (en)">
+				["at0.212"] = <
+					text = <"*Description (en)">
 					description = <"">
 				>
-				["at0.211"] = <
-					text = <"*Examined tooth name (en)">
+				["at0.214"] = <
+					text = <"*Proximal contact relation (en)">
+					description = <"">
+				>
+				["at0.215"] = <
+					text = <"*Open contact (en)">
+					description = <"">
+				>
+				["at0.216"] = <
+					text = <"*Tight contact (en)">
+					description = <"">
+				>
+				["at0.217"] = <
+					text = <"*Hypersensitivity (en)">
+					description = <"">
+				>
+				["at0.218"] = <
+					text = <"*Presence (en)">
+					description = <"">
+				>
+				["at0.219"] = <
+					text = <"*Trigger (en)">
+					description = <"">
+				>
+				["at0.220"] = <
+					text = <"*Restoration margin (en)">
+					description = <"">
+				>
+				["at0.221"] = <
+					text = <"*Overhanging (en)">
+					description = <"">
+				>
+				["at0.222"] = <
+					text = <"*Surface (en)">
+					description = <"">
+				>
+				["at0.223"] = <
+					text = <"*Labial (en)">
+					description = <"">
+				>
+				["at0.224"] = <
+					text = <"*Buccal (en)">
+					description = <"">
+				>
+				["at0.225"] = <
+					text = <"*Mesial (en)">
+					description = <"">
+				>
+				["at0.226"] = <
+					text = <"*Distal (en)">
+					description = <"">
+				>
+				["at0.227"] = <
+					text = <"*Palatal (en)">
+					description = <"">
+				>
+				["at0.228"] = <
+					text = <"*Lingual (en)">
 					description = <"">
 				>
 			>
@@ -2430,6 +2805,14 @@ ontology
 					text = <"*Class IV (en)">
 					description = <"*Marginal tissue recession extends to or beyond mucogingival junction; Severe bone or soft tissue loss; and/or Severe malpositioning of teeth (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
@@ -2474,12 +2857,68 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
-				["at0.210"] = <
-					text = <"*Charting (en)">
+				["at0.212"] = <
+					text = <"*Description (en)">
 					description = <"">
 				>
-				["at0.211"] = <
-					text = <"*Examined tooth name (en)">
+				["at0.214"] = <
+					text = <"*Proximal contact relation (en)">
+					description = <"">
+				>
+				["at0.215"] = <
+					text = <"*Open contact (en)">
+					description = <"">
+				>
+				["at0.216"] = <
+					text = <"*Tight contact (en)">
+					description = <"">
+				>
+				["at0.217"] = <
+					text = <"*Hypersensitivity (en)">
+					description = <"">
+				>
+				["at0.218"] = <
+					text = <"*Presence (en)">
+					description = <"">
+				>
+				["at0.219"] = <
+					text = <"*Trigger (en)">
+					description = <"">
+				>
+				["at0.220"] = <
+					text = <"*Restoration margin (en)">
+					description = <"">
+				>
+				["at0.221"] = <
+					text = <"*Overhanging (en)">
+					description = <"">
+				>
+				["at0.222"] = <
+					text = <"*Surface (en)">
+					description = <"">
+				>
+				["at0.223"] = <
+					text = <"*Labial (en)">
+					description = <"">
+				>
+				["at0.224"] = <
+					text = <"*Buccal (en)">
+					description = <"">
+				>
+				["at0.225"] = <
+					text = <"*Mesial (en)">
+					description = <"">
+				>
+				["at0.226"] = <
+					text = <"*Distal (en)">
+					description = <"">
+				>
+				["at0.227"] = <
+					text = <"*Palatal (en)">
+					description = <"">
+				>
+				["at0.228"] = <
+					text = <"*Lingual (en)">
 					description = <"">
 				>
 			>
@@ -2771,6 +3210,14 @@ ontology
 					text = <"*Class IV (en)">
 					description = <"*Marginal tissue recession extends to or beyond mucogingival junction; Severe bone or soft tissue loss; and/or Severe malpositioning of teeth (en)">
 				>
+				["at0.210"] = <
+					text = <"*Charting (en)">
+					description = <"">
+				>
+				["at0.211"] = <
+					text = <"*Examined tooth name (en)">
+					description = <"">
+				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
@@ -2815,12 +3262,68 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
-				["at0.210"] = <
-					text = <"*Charting (en)">
+				["at0.212"] = <
+					text = <"*Description (en)">
 					description = <"">
 				>
-				["at0.211"] = <
-					text = <"*Examined tooth name (en)">
+				["at0.214"] = <
+					text = <"*Proximal contact relation (en)">
+					description = <"">
+				>
+				["at0.215"] = <
+					text = <"*Open contact (en)">
+					description = <"">
+				>
+				["at0.216"] = <
+					text = <"*Tight contact (en)">
+					description = <"">
+				>
+				["at0.217"] = <
+					text = <"*Hypersensitivity (en)">
+					description = <"">
+				>
+				["at0.218"] = <
+					text = <"*Presence (en)">
+					description = <"">
+				>
+				["at0.219"] = <
+					text = <"*Trigger (en)">
+					description = <"">
+				>
+				["at0.220"] = <
+					text = <"*Restoration margin (en)">
+					description = <"">
+				>
+				["at0.221"] = <
+					text = <"*Overhanging (en)">
+					description = <"">
+				>
+				["at0.222"] = <
+					text = <"*Surface (en)">
+					description = <"">
+				>
+				["at0.223"] = <
+					text = <"*Labial (en)">
+					description = <"">
+				>
+				["at0.224"] = <
+					text = <"*Buccal (en)">
+					description = <"">
+				>
+				["at0.225"] = <
+					text = <"*Mesial (en)">
+					description = <"">
+				>
+				["at0.226"] = <
+					text = <"*Distal (en)">
+					description = <"">
+				>
+				["at0.227"] = <
+					text = <"*Palatal (en)">
+					description = <"">
+				>
+				["at0.228"] = <
+					text = <"*Lingual (en)">
 					description = <"">
 				>
 			>
