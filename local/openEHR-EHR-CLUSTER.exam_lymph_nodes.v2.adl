@@ -204,18 +204,23 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"907688eadcee912388701d63fc62fd6a">
+		["MD5-CAM-1.0.1"] = <"d43b0d754a8ec68c34b15fdf7b7e741f">
 		["build_uid"] = <"2b96e1f4-8ecc-423d-bd1b-6e3886723f90">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"2.1.1">
 	>
 
 definition
-	CLUSTER[at0000] matches {    -- exam_lymph_nodes
+	CLUSTER[at0000] matches {    -- Examination of lymph nodes
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001] matches {    -- System or structure examined
 				value matches {
 					DV_TEXT matches {*}
+					DV_CODED_TEXT matches {
+						defining_code matches {
+							[local::at0016]    -- Lymph node
+						}
+					}
 				}
 			}
 			ELEMENT[at0012] occurrences matches {0..1} matches {    -- Body site
@@ -254,6 +259,25 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
+			CLUSTER[at0013] occurrences matches {0..1} matches {    -- Findings
+				items cardinality matches {1..*; unordered} matches {
+					ELEMENT[at0014] occurrences matches {0..1} matches {    -- Palpable lymph node(s)
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0015] occurrences matches {0..1} matches {    -- Tenderness
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0017] occurrences matches {0..1} matches {    -- Swelling
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -262,7 +286,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_lymph_nodes">
+					text = <"Examination of lymph nodes">
 					description = <"Findings observed during the physical examination of a body system or anatomical structure.">
 				>
 				["at0001"] = <
@@ -305,12 +329,32 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
+				["at0013"] = <
+					text = <"Findings">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Palpable lymph node(s)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Tenderness">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Lymph node">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Swelling">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_lymph_nodes">
+					text = <"*Examination of lymph nodes (en)">
 					description = <"Undersøkelsesfunn gjort ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
 				["at0001"] = <
@@ -353,12 +397,32 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
+				["at0013"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Palpable lymph node(s) (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Tenderness (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Lymph node (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_lymph_nodes">
+					text = <"*Examination of lymph nodes (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
 				>
 				["at0001"] = <
@@ -401,12 +465,32 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Palpable lymph node(s) (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Tenderness (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Lymph node (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_lymph_nodes">
+					text = <"*Examination of lymph nodes (en)">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
 				>
 				["at0001"] = <
@@ -449,12 +533,32 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
+				["at0013"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Palpable lymph node(s) (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Tenderness (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Lymph node (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_lymph_nodes">
+					text = <"*Examination of lymph nodes (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
 				>
 				["at0001"] = <
@@ -497,12 +601,32 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Palpable lymph node(s) (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Tenderness (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Lymph node (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_lymph_nodes">
+					text = <"*Examination of lymph nodes (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
 				>
 				["at0001"] = <
@@ -545,12 +669,32 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Palpable lymph node(s) (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Tenderness (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Lymph node (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
 			items = <
 				["at0000"] = <
-					text = <"exam_lymph_nodes">
+					text = <"*Examination of lymph nodes (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
 				>
 				["at0001"] = <
@@ -592,6 +736,26 @@ ontology
 					text = <"*Body site(en)">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0013"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Palpable lymph node(s) (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Tenderness (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Lymph node (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Swelling (en)">
+					description = <"">
 				>
 			>
 		>
