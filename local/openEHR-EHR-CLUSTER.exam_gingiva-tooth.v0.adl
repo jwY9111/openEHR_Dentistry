@@ -203,7 +203,7 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"1dcf2a60d22e54717da89683e9611076">
+		["MD5-CAM-1.0.1"] = <"b0c981e3972cf774823de1aa3eb951d7">
 		["build_uid"] = <"abe2efa2-dc13-44be-9594-bba2a3a15d55">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
@@ -324,21 +324,7 @@ definition
 							}
 							ELEMENT[at0.30] occurrences matches {0..1} matches {    -- Consistency
 								value matches {
-									DV_CODED_TEXT matches {
-										defining_code matches {
-											[local::
-											at0.31,    -- Mesial
-											at0.32,    -- Distal
-											at0.33,    -- Buccal
-											at0.34,    -- Lingual
-											at0.35,    -- Incisal
-											at0.36,    -- Occlusal
-											at0.69,    -- Pit
-											at0.70,    -- Fissure
-											at0.71,    -- Cervical
-											at0.72]    -- Root
-										}
-									}
+									DV_CODED_TEXT matches {*}
 									DV_TEXT matches {*}
 								}
 							}
@@ -385,12 +371,17 @@ definition
 							}
 							ELEMENT[at0.92] occurrences matches {0..1} matches {    -- Presence of subgingival calculus
 								value matches {
-									DV_COUNT matches {*}
+									DV_BOOLEAN matches {*}
 								}
 							}
 							ELEMENT[at0.98] occurrences matches {0..1} matches {    -- Presence of sinus opening
 								value matches {
 									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0.174] occurrences matches {0..1} matches {    -- Description
+								value matches {
+									DV_TEXT matches {*}
 								}
 							}
 							CLUSTER[at0.169] occurrences matches {0..1} matches {    -- Gingival recession
@@ -664,30 +655,6 @@ ontology
 					text = <"Consistency">
 					description = <"Surface of the tooth where the finding is observed.">
 				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
-				>
 				["at0.37"] = <
 					text = <"Clinical description">
 					description = <"Narrative description about the finding.">
@@ -771,22 +738,6 @@ ontology
 				["at0.68"] = <
 					text = <"Severe mobility">
 					description = <"Tooth exhibits significant movement, both horizontally and vertically (Floating tooth)">
-				>
-				["at0.69"] = <
-					text = <"Pit">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"Fissure">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"Cervical">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"Root">
-					description = <"">
 				>
 				["at0.73"] = <
 					text = <"Gingiva (Gum)">
@@ -1168,6 +1119,10 @@ ontology
 					text = <"Description">
 					description = <"">
 				>
+				["at0.174"] = <
+					text = <"Description">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
@@ -1238,30 +1193,6 @@ ontology
 				["at0.30"] = <
 					text = <"*Consistency (en)">
 					description = <"*Surface of the tooth where the finding is observed. (en)">
-				>
-				["at0.31"] = <
-					text = <"*Mesial (en)">
-					description = <"*The surface that is closest to the midline of the face. (en)">
-				>
-				["at0.32"] = <
-					text = <"*Distal (en)">
-					description = <"*The surface that is furthest from the midline of the face. (en)">
-				>
-				["at0.33"] = <
-					text = <"*Buccal (en)">
-					description = <"*The surface that faces towards the cheeks. (en)">
-				>
-				["at0.34"] = <
-					text = <"*Lingual (en)">
-					description = <"*The surface that faces towards the tongue. (en)">
-				>
-				["at0.35"] = <
-					text = <"*Incisal (en)">
-					description = <"*The biting edge of an anterior tooth. (en)">
-				>
-				["at0.36"] = <
-					text = <"*Occlusal (en)">
-					description = <"*The chewing surface of a posterior tooth. (en)">
 				>
 				["at0.37"] = <
 					text = <"*Clinical description (en)">
@@ -1346,22 +1277,6 @@ ontology
 				["at0.68"] = <
 					text = <"*Severe mobility (en)">
 					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0.73"] = <
 					text = <"*Gingiva (Gum) (en)">
@@ -1743,6 +1658,10 @@ ontology
 					text = <"*Description (en)">
 					description = <"">
 				>
+				["at0.174"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
@@ -1815,30 +1734,6 @@ ontology
 				["at0.30"] = <
 					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
@@ -1923,22 +1818,6 @@ ontology
 				["at0.68"] = <
 					text = <"*Severe mobility (en)">
 					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0.73"] = <
 					text = <"*Gingiva (Gum) (en)">
@@ -2320,6 +2199,10 @@ ontology
 					text = <"*Description (en)">
 					description = <"">
 				>
+				["at0.174"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
@@ -2392,30 +2275,6 @@ ontology
 				["at0.30"] = <
 					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
@@ -2500,22 +2359,6 @@ ontology
 				["at0.68"] = <
 					text = <"*Severe mobility (en)">
 					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0.73"] = <
 					text = <"*Gingiva (Gum) (en)">
@@ -2897,6 +2740,10 @@ ontology
 					text = <"*Description (en)">
 					description = <"">
 				>
+				["at0.174"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
@@ -2972,30 +2819,6 @@ ontology
 				["at0.30"] = <
 					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
@@ -3080,22 +2903,6 @@ ontology
 				["at0.68"] = <
 					text = <"*Severe mobility (en)">
 					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0.73"] = <
 					text = <"*Gingiva (Gum) (en)">
@@ -3477,6 +3284,10 @@ ontology
 					text = <"*Description (en)">
 					description = <"">
 				>
+				["at0.174"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
@@ -3549,30 +3360,6 @@ ontology
 				["at0.30"] = <
 					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
@@ -3657,22 +3444,6 @@ ontology
 				["at0.68"] = <
 					text = <"*Severe mobility (en)">
 					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0.73"] = <
 					text = <"*Gingiva (Gum) (en)">
@@ -4054,6 +3825,10 @@ ontology
 					text = <"*Description (en)">
 					description = <"">
 				>
+				["at0.174"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
@@ -4126,30 +3901,6 @@ ontology
 				["at0.30"] = <
 					text = <"*Consistency (en)">
 					description = <"Surface of the tooth where the finding is observed.">
-				>
-				["at0.31"] = <
-					text = <"Mesial">
-					description = <"The surface that is closest to the midline of the face.">
-				>
-				["at0.32"] = <
-					text = <"Distal">
-					description = <"The surface that is furthest from the midline of the face.">
-				>
-				["at0.33"] = <
-					text = <"Buccal">
-					description = <"The surface that faces towards the cheeks.">
-				>
-				["at0.34"] = <
-					text = <"Lingual">
-					description = <"The surface that faces towards the tongue.">
-				>
-				["at0.35"] = <
-					text = <"Incisal">
-					description = <"The biting edge of an anterior tooth.">
-				>
-				["at0.36"] = <
-					text = <"Occlusal">
-					description = <"The chewing surface of a posterior tooth.">
 				>
 				["at0.37"] = <
 					text = <"Clinical description">
@@ -4234,22 +3985,6 @@ ontology
 				["at0.68"] = <
 					text = <"*Severe mobility (en)">
 					description = <"*Tooth exhibits significant movement, both horizontally and vertically (Floating tooth) (en)">
-				>
-				["at0.69"] = <
-					text = <"*Pit (en)">
-					description = <"">
-				>
-				["at0.70"] = <
-					text = <"*Fissure (en)">
-					description = <"">
-				>
-				["at0.71"] = <
-					text = <"*Cervical (en)">
-					description = <"">
-				>
-				["at0.72"] = <
-					text = <"*Root (en)">
-					description = <"">
 				>
 				["at0.73"] = <
 					text = <"*Gingiva (Gum) (en)">
@@ -4628,6 +4363,10 @@ ontology
 					description = <"">
 				>
 				["at0.173"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.174"] = <
 					text = <"*Description (en)">
 					description = <"">
 				>
