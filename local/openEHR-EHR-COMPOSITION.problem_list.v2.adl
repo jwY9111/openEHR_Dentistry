@@ -274,7 +274,7 @@ El modelo de referencia actual de openEHR sólo permite el registro de contexto 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"ab98a08c76787ae4e62a27ab2f0d5a17">
+		["MD5-CAM-1.0.1"] = <"60a5b838295dad9afe6929ff86155bd4">
 		["build_uid"] = <"e7bc32d1-2502-4a6a-86c8-b3f5816c43cc">
 		["revision"] = <"2.0.2">
 	>
@@ -302,6 +302,9 @@ definition
 				}
 			}
 		}
+		content cardinality matches {1..*; unordered} matches {
+			SECTION[at0010] occurrences matches {0..1} matches {*}    -- SECTION
+		}
 	}
 
 ontology
@@ -321,6 +324,10 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["en"] = <
@@ -337,6 +344,10 @@ ontology
 					text = <"Extension">
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
 					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
+				>
+				["at0010"] = <
+					text = <"SECTION">
+					description = <"">
 				>
 			>
 		>
@@ -355,6 +366,10 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
@@ -371,6 +386,10 @@ ontology
 					text = <"Extensão">
 					description = <"Informação adicional necessária para identificar contexto local ou alinhar com outros formalismos/modelos de referência.">
 					comment = <"Por exemplo: informação departamental local de hospital ou metadados para alinhar com equivalentes FHIR ou CIMI.">
+				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
 				>
 			>
 		>
@@ -389,6 +408,10 @@ ontology
 					description = <"Zusätzliche Informationen die benötigt werden, um lokale Inhalte zu erfassen oder sich an andere Referenzmodelle/Formalismen an zupassen.">
 					comment = <"Zum Beispiel: Lokaler Informationsbedarf zur internen Krankenhausabteilung oder zusätzliche Metadaten zum abstimmen mit FHIR oder CIMI Äquivalenten.">
 				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["nl"] = <
@@ -406,6 +429,10 @@ ontology
 					description = <"Extra informatie vereist bij het vastleggen van lokale informatie of voor het verbinden met andere referentie modellen/formalismen.">
 					comment = <"Bijvoorbeeld: informatie binnen een lokale ziekenhuisafdeling of aanvullende metadata om aan te sluiten bij FHIR of CIMI equivalenten.">
 				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["zh-cn"] = <
@@ -422,6 +449,10 @@ ontology
 					text = <"扩展">
 					description = <"采集本地内容或与其他参考模型/形式保持一致时所需的其他信息。">
 					comment = <"例如：本地医院科室信息要求，或者是与 FHIR 或 CIMI 等效项保持一致时所需的其他元数据。">
+				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
 				>
 			>
 		>
@@ -441,6 +472,10 @@ ontology
 ">
 					comment = <"Por ejemplo: Información local de un sistema departamental del hospital o metadatos adicionales para alinearlo con sus equivalentes en FHIR o CIMI">
 				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
@@ -457,6 +492,10 @@ ontology
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
+				>
+				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
 				>
 			>
 		>
