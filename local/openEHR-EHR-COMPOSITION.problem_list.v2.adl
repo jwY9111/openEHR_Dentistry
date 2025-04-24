@@ -274,7 +274,7 @@ El modelo de referencia actual de openEHR sólo permite el registro de contexto 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"60a5b838295dad9afe6929ff86155bd4">
+		["MD5-CAM-1.0.1"] = <"c88a04d755833f610e0d7e86bbb1b9df">
 		["build_uid"] = <"e7bc32d1-2502-4a6a-86c8-b3f5816c43cc">
 		["revision"] = <"2.0.2">
 	>
@@ -304,6 +304,10 @@ definition
 		}
 		content cardinality matches {1..*; unordered} matches {
 			SECTION[at0010] occurrences matches {0..1} matches {*}    -- SECTION
+			allow_archetype SECTION[at0011] occurrences matches {0..*} matches {    -- SECTION
+				include
+					archetype_id/value matches {/.*/}
+			}
 		}
 	}
 
@@ -328,6 +332,10 @@ ontology
 					text = <"*SECTION (en)">
 					description = <"">
 				>
+				["at0011"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["en"] = <
@@ -346,6 +354,10 @@ ontology
 					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
 				>
 				["at0010"] = <
+					text = <"SECTION">
+					description = <"">
+				>
+				["at0011"] = <
 					text = <"SECTION">
 					description = <"">
 				>
@@ -370,6 +382,10 @@ ontology
 					text = <"*SECTION (en)">
 					description = <"">
 				>
+				["at0011"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
@@ -388,6 +404,10 @@ ontology
 					comment = <"Por exemplo: informação departamental local de hospital ou metadados para alinhar com equivalentes FHIR ou CIMI.">
 				>
 				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
+				["at0011"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
@@ -412,6 +432,10 @@ ontology
 					text = <"*SECTION (en)">
 					description = <"">
 				>
+				["at0011"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["nl"] = <
@@ -433,6 +457,10 @@ ontology
 					text = <"*SECTION (en)">
 					description = <"">
 				>
+				["at0011"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["zh-cn"] = <
@@ -451,6 +479,10 @@ ontology
 					comment = <"例如：本地医院科室信息要求，或者是与 FHIR 或 CIMI 等效项保持一致时所需的其他元数据。">
 				>
 				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
+				["at0011"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
@@ -476,6 +508,10 @@ ontology
 					text = <"*SECTION (en)">
 					description = <"">
 				>
+				["at0011"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
@@ -494,6 +530,10 @@ ontology
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
 				["at0010"] = <
+					text = <"*SECTION (en)">
+					description = <"">
+				>
+				["at0011"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
