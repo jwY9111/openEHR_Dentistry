@@ -166,14 +166,6 @@ While it may be ideal to have only one Problem list for each subject of care, it
 
 This archetype is usually managed as a persistent list, however there are situations where the list may be used within episodic care and require additional attributes such as context etc to enable accurate recording. The openEHR reference model currently only allows context to be recorded within Event-based COMPOSITION archetypes. As a result, this archetype has been modelled as an Event, rather than Persistent, COMPOSITION, to allow for flexibility so that some clinical systems can safely manage Problem lists for episodes of care, while others will choose to implement this COMPOSITION to act in a persistent manner.(en)">
 		>
-		["ar-sy"] = <
-			language = <[ISO_639-1::ar-sy]>
-			purpose = <"للمحافظة على قائمة مُحكَمة للمشكلات الصحية الحالية المؤثرة التي يُعتَدّ بها للشخص.">
-			keywords = <"قائمة المشكلات", ...>
-			copyright = <"© openEHR Foundation">
-			use = <"للمشكلات النشطة و غير النشطة - و تُعرف المشكلات غير النشطة بوجود تاريخ البُرْء/الشفاء">
-			misuse = <"لا يستخدم للمشكلات قصيرة المدى">
-		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
 			purpose = <"To record a persistent and managed list of diagnoses identified, problems experienced by the subject or previous procedures performed, that may influence clinical decision-making and care provision.">
@@ -195,6 +187,14 @@ In a closed clinical system, it is expected that provenance of this Problem list
 While it may be ideal to have only one Problem list for each subject of care, it is more realistic to expect that in a distributed environment there may be multiple Problem lists for a single subject of care, each managed and prioritised for a specific clinician, episode of care or other context. For example, a Problem list for a primary care clinician may be a very different configuration to that which is useful for a specialist surgeon or for reference during a hospital inpatient episode. In primary care it is common to organise the Problem list based on active or inactive problems or diagnoses; specialists may prefer to see their list organised around primary diagnoses which are related to their specific speciality and secondary ones which are not; and an inpatient admission may include additional issues related to immediate nursing priorities that would not be relevant once discharged home - for these purposes there is a Status SLOT in the Problem/Diagnosis archetype, which allow use of an archetype that could support clinical systems to organise Problem lists according to the preference of the clinical users of the system, without perpetuating these contextual status labels to other clinical scenarios or for persistence.
 
 This archetype is usually managed as a persistent list, however there are situations where the list may be used within episodic care and require additional attributes such as context etc to enable accurate recording. The openEHR reference model currently only allows context to be recorded within Event-based COMPOSITION archetypes. As a result, this archetype has been modelled as an Event, rather than Persistent, COMPOSITION, to allow for flexibility so that some clinical systems can safely manage Problem lists for episodes of care, while others will choose to implement this COMPOSITION to act in a persistent manner.">
+		>
+		["ar-sy"] = <
+			language = <[ISO_639-1::ar-sy]>
+			purpose = <"للمحافظة على قائمة مُحكَمة للمشكلات الصحية الحالية المؤثرة التي يُعتَدّ بها للشخص.">
+			keywords = <"قائمة المشكلات", ...>
+			copyright = <"© openEHR Foundation">
+			use = <"للمشكلات النشطة و غير النشطة - و تُعرف المشكلات غير النشطة بوجود تاريخ البُرْء/الشفاء">
+			misuse = <"لا يستخدم للمشكلات قصيرة المدى">
 		>
 		["zh-cn"] = <
 			language = <[ISO_639-1::zh-cn]>
@@ -219,29 +219,6 @@ This archetype is usually managed as a persistent list, however there are situat
 通常会将本原始型作为持久型清单来加以管理，但在某些情况下，可能会将问题清单用于节段性的照护服务（episodic care），并且可能还需要额外的特征属性（如上下文等）才能实现准确的记录。目前，openEHR 参考模型仅仅允许在那些基于事件的组合式文书型原始型当中记录上下文背景。因此，我们将本原始型建模成了事件型的组合式文书（Event），而不是持续型的组合式文书（Persistent），而这样做的目的就是使其具备灵活性，以便一些临床系统可以安全地管理那些针对照护服务节段的问题清单，而其他的系统则可以选择实现持续发挥作用的这种组合式文书（即本原始型）。
 ">
 		>
-		["nl"] = <
-			language = <[ISO_639-1::nl]>
-			purpose = <"Om een blijvende en beheerde lijst vast te leggen van geïdentificeerde diagnoses, problemen ervaren door het individu, of in het verleden uitgevoerde procedures, die van invloed kunnen zijn op klinische beslissingen en levering van zorg.">
-			keywords = <"probleem","lijst","diagnose","diagnoses","procedure","probleemlijst">
-			use = <"Gebruik om een blijvende en beheerde lijst vast te leggen van geïdentificeerde diagnoses, problemen ervaren door het individu, of in het verleden uitgevoerde procedures. Of, als alternatief, positieve uitspraken over bekende uitsluitingen of afwezigheid van informatie uit de medische voorgeschiedenis.
-
-Deze lijst kan ook gebruikt worden als een bron voor up-to-date medische geschiedenis voor uitwisseling of als basis voor beslissingsondersteuning.
-
-Deze lijst kan opgebouwd zijn uit drie typen uitspraken; elk gerepresenteerd door specifieke archetypen:
-- uitspraken over de positieve aanwezigheid van problemen, diagnoses of procedures worden vastgelegd met de EVALUATION.problem_diagnosis en/of ACTION.procedure archetypes; OF
-- uitspraken over de positieve uitsluiting van problemen, diagnoses of procedures kan worden vastgelegd met de EVALUATION.exclusion-problem_diagnosis or EVALUATION.exclusion-procedure archetypes - bijvoorbeeld: \"Geen significante problemen of diagnoses\" of \"Geen geschiedenis van significante operaties of behandelingen\"; OF
-- uitspraken over het ontbreken van informatie - positieve aanwezigheid noch positieve uitsluiting van een probleem, diagnose of uitgevoerde procedure - kunnen worden vastgelegd met het EVALUATION.absence archetype.
-
-Om er voor te zorgen dat deze lijst accuraat en veilig te gebruiken is als basis van beslissingsondersteuningsactiviteiten en voor uitwisseling, zou deze Problem List idealiter bijgehouden worden door een clinicus verantwoordelijk voor het gezondheidsdossier en niet geautomatiseerd door het clinische systeem uitsluitend op basis van business rules.
-
-In een gesloten clinisch systeem wordt het verwacht dat herkomst van deze Problem list beheerd kan worden doormiddel van versionering van deze COMPOSITIE en zijn inhoud, met de aanvullende optie van een systeem-gebasseerde audit trail.
-
-Hoevel het ideaal is om slechts één Problem list te hebben voor ieder individu in zorg, is het realistischer om te verwachten dat in een gedistribueerde omgeving meerdere Problem list kunnen bestaan; elk beheerd en geprioriseerd voor een specifieke clinicus, episode van zorg of andere context. Bijvoorbeeld, een Problem list voor een eertselijns zorgverlener kan heel anders geconfigureerd zijn dan wat bruikbaar is voor een gespecialiseerd chirurg of als referentie tijdens een ziekenhuisverblijf. 
-
-In de eerstelijns zorg is het gebruikelijk om de Problem list te organiseren op basis van actieve of inactieve problemen en diagnoses. Specialisten kunnen de voorkeur geven aan een lijst die georganiseerd is rondom de primaire diagnose gerelateerd aan hun specialiteit and secundaire die daar niet aan gerelateerd zijn. Een ziekenhuisverblijf intake kan additionele items bevatten, gerelateerd aan de zorgbehoeften en prioriteiten die niet meer van toepassing zijn als de patient eenmaal ontslagen en weer thuis is. Voor deze doeleinden is er een Status SLOT in het Problem/Diagnosis archetype, wat het toestaat om een archetype te gebruiken dat clinsche systemen in staat stelt om Problem lists te organiseren volgens de eisen van de gebruikers of het systeem, zonder dat deze contextuele statuslabels doorvloeien naar andere clinische scenarios of invloed hebben op de langdurig vastgelegde status.
-
-Dit archetype is doorgaans beheerd als een blijvende lijst, maar er zijn echter situaties waarin de lijst gebruikt kan worden binnen episodische zorg en additionele attributen benodigd zijn zoals context etc. om een accurate vastlegging mogelijk te maken. Het openEHR reference model staat op het moment alleen toe dat context vastgelegd wordt binnen Event-based COMPOSITION archetypes. Dientengevolge is dit archetype gemodelleerd als een Event en niet als een Persistent COMPOSITION. Dit biedt flexibiliteit zo dat sommige clinische systemen op een veilige manier een Problem list kunnen beheren voor episodes, terwijl andere er voor kiezen om deze COMPOSITION te behandelen als 'persistent'.">
-		>
 		["es"] = <
 			language = <[ISO_639-1::es]>
 			purpose = <"Registrar y gestionar de forma persistente una lista de diagnósticos y problemas de salud identificados en un paciente o bien procedimientos realizados sobre el mismo que pueden influir en el proceso de toma de decisiones clínicas y la prestación de cuidados">
@@ -265,6 +242,29 @@ Aunque lo ideal es la existencia de una Lista de Problemas única, es más reali
 Este arquetripo se gestiona como una lista persistente, no obstante hay situaciones que requieren atributos adicionales tales como el contexto, etc. para facilitar un registro adecuado.
 El modelo de referencia actual de openEHR sólo permite el registro de contexto dentro de los arquetipos Event-based COMPOSITION. Consecuentemente, este arquetipo se ha modelado como una COMPOSITION Event en vez de Persistent para permitir la flexibilidad que requieren algunos sistemas para una gestión más segura de la Lista de Problemas en los distintos episodios asistenciales, mientras que otros prefieren implementar esta COMPOSITION para ejecutarla en una modalidad persistente.">
 		>
+		["nl"] = <
+			language = <[ISO_639-1::nl]>
+			purpose = <"Om een blijvende en beheerde lijst vast te leggen van geïdentificeerde diagnoses, problemen ervaren door het individu, of in het verleden uitgevoerde procedures, die van invloed kunnen zijn op klinische beslissingen en levering van zorg.">
+			keywords = <"probleem","lijst","diagnose","diagnoses","procedure","probleemlijst">
+			use = <"Gebruik om een blijvende en beheerde lijst vast te leggen van geïdentificeerde diagnoses, problemen ervaren door het individu, of in het verleden uitgevoerde procedures. Of, als alternatief, positieve uitspraken over bekende uitsluitingen of afwezigheid van informatie uit de medische voorgeschiedenis.
+
+Deze lijst kan ook gebruikt worden als een bron voor up-to-date medische geschiedenis voor uitwisseling of als basis voor beslissingsondersteuning.
+
+Deze lijst kan opgebouwd zijn uit drie typen uitspraken; elk gerepresenteerd door specifieke archetypen:
+- uitspraken over de positieve aanwezigheid van problemen, diagnoses of procedures worden vastgelegd met de EVALUATION.problem_diagnosis en/of ACTION.procedure archetypes; OF
+- uitspraken over de positieve uitsluiting van problemen, diagnoses of procedures kan worden vastgelegd met de EVALUATION.exclusion-problem_diagnosis or EVALUATION.exclusion-procedure archetypes - bijvoorbeeld: \"Geen significante problemen of diagnoses\" of \"Geen geschiedenis van significante operaties of behandelingen\"; OF
+- uitspraken over het ontbreken van informatie - positieve aanwezigheid noch positieve uitsluiting van een probleem, diagnose of uitgevoerde procedure - kunnen worden vastgelegd met het EVALUATION.absence archetype.
+
+Om er voor te zorgen dat deze lijst accuraat en veilig te gebruiken is als basis van beslissingsondersteuningsactiviteiten en voor uitwisseling, zou deze Problem List idealiter bijgehouden worden door een clinicus verantwoordelijk voor het gezondheidsdossier en niet geautomatiseerd door het clinische systeem uitsluitend op basis van business rules.
+
+In een gesloten clinisch systeem wordt het verwacht dat herkomst van deze Problem list beheerd kan worden doormiddel van versionering van deze COMPOSITIE en zijn inhoud, met de aanvullende optie van een systeem-gebasseerde audit trail.
+
+Hoevel het ideaal is om slechts één Problem list te hebben voor ieder individu in zorg, is het realistischer om te verwachten dat in een gedistribueerde omgeving meerdere Problem list kunnen bestaan; elk beheerd en geprioriseerd voor een specifieke clinicus, episode van zorg of andere context. Bijvoorbeeld, een Problem list voor een eertselijns zorgverlener kan heel anders geconfigureerd zijn dan wat bruikbaar is voor een gespecialiseerd chirurg of als referentie tijdens een ziekenhuisverblijf. 
+
+In de eerstelijns zorg is het gebruikelijk om de Problem list te organiseren op basis van actieve of inactieve problemen en diagnoses. Specialisten kunnen de voorkeur geven aan een lijst die georganiseerd is rondom de primaire diagnose gerelateerd aan hun specialiteit and secundaire die daar niet aan gerelateerd zijn. Een ziekenhuisverblijf intake kan additionele items bevatten, gerelateerd aan de zorgbehoeften en prioriteiten die niet meer van toepassing zijn als de patient eenmaal ontslagen en weer thuis is. Voor deze doeleinden is er een Status SLOT in het Problem/Diagnosis archetype, wat het toestaat om een archetype te gebruiken dat clinsche systemen in staat stelt om Problem lists te organiseren volgens de eisen van de gebruikers of het systeem, zonder dat deze contextuele statuslabels doorvloeien naar andere clinische scenarios of invloed hebben op de langdurig vastgelegde status.
+
+Dit archetype is doorgaans beheerd als een blijvende lijst, maar er zijn echter situaties waarin de lijst gebruikt kan worden binnen episodische zorg en additionele attributen benodigd zijn zoals context etc. om een accurate vastlegging mogelijk te maken. Het openEHR reference model staat op het moment alleen toe dat context vastgelegd wordt binnen Event-based COMPOSITION archetypes. Dientengevolge is dit archetype gemodelleerd als een Event en niet als een Persistent COMPOSITION. Dit biedt flexibiliteit zo dat sommige clinische systemen op een veilige manier een Problem list kunnen beheren voor episodes, terwijl andere er voor kiezen om deze COMPOSITION te behandelen als 'persistent'.">
+		>
 	>
 	other_details = <
 		["licence"] = <"This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.">
@@ -274,7 +274,7 @@ El modelo de referencia actual de openEHR sólo permite el registro de contexto 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"e2f293669d04f071a836e94c0f3551d7">
+		["MD5-CAM-1.0.1"] = <"6b142ab25a9d3163c1ac37d05e602ceb">
 		["build_uid"] = <"e7bc32d1-2502-4a6a-86c8-b3f5816c43cc">
 		["revision"] = <"2.0.2">
 	>
@@ -317,12 +317,6 @@ definition
 				}
 			}
 		}
-		content cardinality matches {1..*; unordered} matches {
-			allow_archetype SECTION[at0025] occurrences matches {0..*} matches {    -- SECTION
-				include
-					archetype_id/value matches {/.*/}
-			}
-		}
 	}
 
 ontology
@@ -341,10 +335,6 @@ ontology
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
-				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
 				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
@@ -383,10 +373,6 @@ ontology
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
 					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
 				>
-				["at0025"] = <
-					text = <"SECTION">
-					description = <"">
-				>
 				["at0026"] = <
 					text = <"DV_DATE_TIME">
 					description = <"">
@@ -423,10 +409,6 @@ ontology
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
-				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
 				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
@@ -465,10 +447,6 @@ ontology
 					description = <"Informação adicional necessária para identificar contexto local ou alinhar com outros formalismos/modelos de referência.">
 					comment = <"Por exemplo: informação departamental local de hospital ou metadados para alinhar com equivalentes FHIR ou CIMI.">
 				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
-				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
 					description = <"">
@@ -505,10 +483,6 @@ ontology
 					text = <"Erweiterung">
 					description = <"Zusätzliche Informationen die benötigt werden, um lokale Inhalte zu erfassen oder sich an andere Referenzmodelle/Formalismen an zupassen.">
 					comment = <"Zum Beispiel: Lokaler Informationsbedarf zur internen Krankenhausabteilung oder zusätzliche Metadaten zum abstimmen mit FHIR oder CIMI Äquivalenten.">
-				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
 				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
@@ -547,10 +521,6 @@ ontology
 					description = <"Extra informatie vereist bij het vastleggen van lokale informatie of voor het verbinden met andere referentie modellen/formalismen.">
 					comment = <"Bijvoorbeeld: informatie binnen een lokale ziekenhuisafdeling of aanvullende metadata om aan te sluiten bij FHIR of CIMI equivalenten.">
 				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
-				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
 					description = <"">
@@ -587,10 +557,6 @@ ontology
 					text = <"扩展">
 					description = <"采集本地内容或与其他参考模型/形式保持一致时所需的其他信息。">
 					comment = <"例如：本地医院科室信息要求，或者是与 FHIR 或 CIMI 等效项保持一致时所需的其他元数据。">
-				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
 				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
@@ -630,10 +596,6 @@ ontology
 ">
 					comment = <"Por ejemplo: Información local de un sistema departamental del hospital o metadatos adicionales para alinearlo con sus equivalentes en FHIR o CIMI">
 				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
-				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
 					description = <"">
@@ -670,10 +632,6 @@ ontology
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
-				>
-				["at0025"] = <
-					text = <"*SECTION (en)">
-					description = <"">
 				>
 				["at0026"] = <
 					text = <"*DV_DATE_TIME (en)">
