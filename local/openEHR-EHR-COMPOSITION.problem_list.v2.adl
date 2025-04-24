@@ -274,7 +274,7 @@ El modelo de referencia actual de openEHR sólo permite el registro de contexto 
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"c88a04d755833f610e0d7e86bbb1b9df">
+		["MD5-CAM-1.0.1"] = <"e2f293669d04f071a836e94c0f3551d7">
 		["build_uid"] = <"e7bc32d1-2502-4a6a-86c8-b3f5816c43cc">
 		["revision"] = <"2.0.2">
 	>
@@ -300,11 +300,25 @@ definition
 						}
 					}
 				}
+				start_time matches {
+					DV_DATE_TIME[at0026] matches {*}    -- DV_DATE_TIME
+				}
+				health_care_facility matches {
+					PARTY_IDENTIFIED[at0032] matches {*}    -- PARTY_IDENTIFIED
+				}
+				end_time matches {
+					DV_DATE_TIME[at0027] matches {*}    -- DV_DATE_TIME
+				}
+				participations cardinality matches {1..*; unordered} matches {
+					PARTICIPATION[at0028] occurrences matches {0..1} matches {*}    -- PARTICIPATION
+				}
+				setting matches {
+					DV_CODED_TEXT[at0029] matches {*}    -- DV_CODED_TEXT
+				}
 			}
 		}
 		content cardinality matches {1..*; unordered} matches {
-			SECTION[at0010] occurrences matches {0..1} matches {*}    -- SECTION
-			allow_archetype SECTION[at0011] occurrences matches {0..*} matches {    -- SECTION
+			allow_archetype SECTION[at0025] occurrences matches {0..*} matches {    -- SECTION
 				include
 					archetype_id/value matches {/.*/}
 			}
@@ -328,12 +342,28 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
@@ -353,12 +383,28 @@ ontology
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
 					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"SECTION">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"SECTION">
+				["at0026"] = <
+					text = <"DV_DATE_TIME">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"DV_DATE_TIME">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"PARTICIPATION">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"DV_CODED_TEXT">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"PARTY_IDENTIFIED">
 					description = <"">
 				>
 			>
@@ -378,12 +424,28 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
@@ -403,12 +465,28 @@ ontology
 					description = <"Informação adicional necessária para identificar contexto local ou alinhar com outros formalismos/modelos de referência.">
 					comment = <"Por exemplo: informação departamental local de hospital ou metadados para alinhar com equivalentes FHIR ou CIMI.">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
@@ -428,12 +506,28 @@ ontology
 					description = <"Zusätzliche Informationen die benötigt werden, um lokale Inhalte zu erfassen oder sich an andere Referenzmodelle/Formalismen an zupassen.">
 					comment = <"Zum Beispiel: Lokaler Informationsbedarf zur internen Krankenhausabteilung oder zusätzliche Metadaten zum abstimmen mit FHIR oder CIMI Äquivalenten.">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
@@ -453,12 +547,28 @@ ontology
 					description = <"Extra informatie vereist bij het vastleggen van lokale informatie of voor het verbinden met andere referentie modellen/formalismen.">
 					comment = <"Bijvoorbeeld: informatie binnen een lokale ziekenhuisafdeling of aanvullende metadata om aan te sluiten bij FHIR of CIMI equivalenten.">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
@@ -478,12 +588,28 @@ ontology
 					description = <"采集本地内容或与其他参考模型/形式保持一致时所需的其他信息。">
 					comment = <"例如：本地医院科室信息要求，或者是与 FHIR 或 CIMI 等效项保持一致时所需的其他元数据。">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
@@ -504,12 +630,28 @@ ontology
 ">
 					comment = <"Por ejemplo: Información local de un sistema departamental del hospital o metadatos adicionales para alinearlo con sus equivalentes en FHIR o CIMI">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
@@ -529,12 +671,28 @@ ontology
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
 				>
-				["at0010"] = <
+				["at0025"] = <
 					text = <"*SECTION (en)">
 					description = <"">
 				>
-				["at0011"] = <
-					text = <"*SECTION (en)">
+				["at0026"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0028"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*PARTY_IDENTIFIED (en)">
 					description = <"">
 				>
 			>
