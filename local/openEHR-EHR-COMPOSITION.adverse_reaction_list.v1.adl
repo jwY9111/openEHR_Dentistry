@@ -128,7 +128,7 @@ This archetype is usually managed as a persistent list, however there are situat
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"41914AB89EC39C22523B4461C349BB17">
+		["MD5-CAM-1.0.1"] = <"0aa8ab5ef6d375595f2a7c7f4cc5ad2b">
 		["build_uid"] = <"982c6d4f-c24a-4ad4-92c3-6bbea494a537">
 		["revision"] = <"1.1.3">
 	>
@@ -154,6 +154,18 @@ definition
 						}
 					}
 				}
+				start_time matches {
+					DV_DATE_TIME[at0003] matches {*}    -- DV_DATE_TIME
+				}
+				end_time matches {
+					DV_DATE_TIME[at0004] matches {*}    -- DV_DATE_TIME
+				}
+				participations cardinality matches {1..*; unordered} matches {
+					PARTICIPATION[at0005] occurrences matches {0..1} matches {*}    -- PARTICIPATION
+				}
+				setting matches {
+					DV_CODED_TEXT[at0006] matches {*}    -- DV_CODED_TEXT
+				}
 			}
 		}
 	}
@@ -175,6 +187,22 @@ ontology
 					description = <"Additional information required to capture local context or to align with other reference models/formalisms.">
 					comment = <"For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.">
 				>
+				["at0003"] = <
+					text = <"DV_DATE_TIME">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"DV_DATE_TIME">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"PARTICIPATION">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"DV_CODED_TEXT">
+					description = <"">
+				>
 			>
 		>
 		["es-ar"] = <
@@ -191,6 +219,22 @@ ontology
 					text = <"*Extension(en)">
 					description = <"*Additional information required to capture local context or to align with other reference models/formalisms.(en)">
 					comment = <"*For example: Local hospital departmental infomation or additional metadata to align with FHIR or CIMI equivalents.(en)">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
 				>
 			>
 		>
@@ -209,6 +253,22 @@ ontology
 					description = <"Informações adicionais necessárias para capturar um contexto local ou para alinhar com outros modelos referenciais / formalismos .">
 					comment = <"Por exemplo : Informações departamentais de hospital local ou metadados adicionais para alinhar com FHIR ou CIMI equivalentes.">
 				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
 			>
 		>
 		["he"] = <
@@ -225,6 +285,22 @@ ontology
 					text = <"תוספת">
 					description = <"מידע נוסף הנחוץ לצורך ייחוס להקשר מקומי או להתאמה מול מודל ייחוס \\ פורמליזם אחר">
 					comment = <"למשל: מידע מחלקתי מקומי בבית החולים או מטא-דאטה להתאמה למקבילה ב- FHIR או CIMI">
+				>
+				["at0003"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
 				>
 			>
 		>
