@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "4.0.0",
+      "sem_ver" : "5.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "4b21d3c99b855e732bb5adcf9d1db803",
+      "MD5-CAM-1.0.1" : "f4130a0caa8a3197e0f5b465fb34281c",
       "PARENT:MD5-CAM-1.0.1" : "B2439FE7CDCBBB0532C37A0F15FE82CD"
     },
     "details" : {
@@ -338,6 +338,15 @@
           "attributes" : [ ],
           "attributeTuples" : [ ],
           "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-occupation_record-001.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0008.4",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-DEMOGRAPHIC-CLUSTER.ovl-individual_credentials_iso-002.v0",
           "referenceType" : "archetypeOverlay"
         } ]
       } ],
@@ -2947,7 +2956,69 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "5DFD0809E7CD46EA0712A590C68F545B"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen zur einer Organisation, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden.",
+          "keywords" : [ "Organisation, Anbieter, Versorger, Betreuer, Netzwerk, Verbund, Gruppe" ],
+          "use" : "Der Archetyp wird verwendet, um Informationen zur einer Organisation darzustellen, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden, oft ad hoc oder wenn die Verwendung von einem formellen demografischen Register oder einem Index nicht angemessen oder nicht möglich ist.\r\nBeispiele beinhalten:\r\n- der Inhaber einer Patientenverfügung unter Verwendung des SLOT „Inhaber der Kopie“ innerhalb des Archetyps EVALUATION.advance_care_directive oder\r\n- Name und Kontaktdaten einer Organisation, die die Betreuung einer Person in ihrem zu Hause übernimmt.\r\n\r\nDieser Archetyp wurde entwickelt, um Angaben zu offiziell anerkannten Einrichtungen, wie einem eingetragenen Unternehmen, einem Krankenhaus und seinen anerkannten „Unterorganisationen“, wie einer operativ getrennten oder spezialisierten Satellitenklinik oder einem häuslichen Pflegedienst, zu enthalten. Es kann auch verwendet werden, um Kontaktinformationen über informellere Netzwerke oder Gruppen darzustellen, wie z. B. eine lokale Selbsthilfegruppe.\r\n\r\nDieser Archetyp könnte auch als Proxy für formale demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der die Prüfer erwarten würden, dass die Details zu der Organisation oben auf dem Bewertungsformular angezeigt werden.",
+          "misuse" : "Der Archetyp darf nicht verwendet werden, um ein offizielles Register oder einen Index darzustellen, zu ersetzen oder zu führen. Verwenden Sie zu diesem Zweck einen formellen Gesundheitsanbieter-Index (Health Provider Index) oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDer Archetyp darf nicht verwendet werden, um den Pflegeort und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Reference Model-Attribute dargestellt werden sollten.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera information om en organisation på det sätt som det behöver representeras i en journalanteckning.\r\n",
+          "keywords" : [ "organisation, leverantör, vårdgivare, vårdenhet, enhet, avdelning, nätverk, grupp" ],
+          "use" : "Används för att registrera information om en organisation som behöver representeras i journalen. Används exempelvis ad hoc eller i de fall då formella demografiska register eller kataloger inte kan användas istället. \r\nExempel inkluderar:\r\n- namn och kontaktuppgifter för en organisation som har en fysisk kopia av patientens önskemål om vård i händelse av att patienten inte längre kan kommunicera\r\n- namn och kontaktuppgifter för hemtjänst- eller hemsjukvårdsorganisation för en individ\r\n\r\nDenna arketyp har utformats för att dokumentera information om formellt erkända enheter, såsom ett registrerat företag, ett sjukhus och dess erkända \"underorganisationer\", såsom en separat eller specialiserad satellitklinik eller hemsjukvård. Den kan också användas för att dokumentera kontaktinformation om mer informella nätverk eller grupper, till exempel en lokal stödgrupp.\r\n\r\nDen här arketypen kan också användas som en proxy för formell demografisk data när man granskar en mall med domänexperter - exempelvis där granskare förväntar sig att se en organisations information i ett formulär.",
+          "misuse" : "*Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "organisasjon, leverandør, omsorgsperson, nettverk, gruppe" ],
+          "use" : "Brukes for å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet, ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nFor eksempel:\r\n- kopiinnhaver av av et fremtidig behandlingsvalg ved å bruke \"Kopiholder\"-SLOTet i arketypen \"EVALUATION.advance_care_directive\" (Fremtidig behandlingsvalg).\r\n- navn og kontaktdetaljer for en organisasjon som yter hjemmehjelp til en enkeltperson.\r\n\r\nDenne arketypen er utformet for å registrere detaljer om formelt anerkjente enheter, for eksempel en registrert virksomhet, et sykehus og dets \"underorganisasjoner\", en operativt separat eller spesialisert satellittklinikk eller hjemmetjeneste. Den kan også brukes til å registrere kontaktinformasjon om mer uformelle nettverk eller grupper, for eksempel en lokal støttegruppe.\r\n\r\nDenne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om en organisasjon i et vurderingsskjema.",
+          "misuse" : "Brukes ikke til å representere, erstatte eller vedlikeholde formelle demografiske opplysninger. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere behandlingssted eller lignende dataelementer, som skal representeres formelt i pasientjournalen. Bruk attributter fra Referansemodellen for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about an organisation as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "organisation, organization, provider, carer, network, group" ],
+          "use" : "Use to record details of an organisation as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype; or\r\n- the name and contact details of an organisation providing home care to an individual.\r\n\r\nThis archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.",
+          "misuse" : "Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
     "differential" : true,
@@ -3073,7 +3144,113 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
+          "keywords" : [ "Adresse", "Anschrift", "postalisch", "Mailing", "Privat", "Geschäft", "physisch", "Landmarke" ],
+          "use" : "Verwenden Sie diesen Archetyp, um Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke darzustellen, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, einen Adresssuchdienst zu verwenden. Beispiele beinhalten:\r\n- die Geschäftsadresse einer Organisation, die eine Person zu Hause betreut; oder\r\n- die Postanschrift des Inhabers einer Patientenverfügung innerhalb des Archetyps EVALUATION.advance_care_directive; oder\r\n- der Sturz- oder Unfallort.\r\n\r\nDer Geltungsbereich dieses Archetyps wurde darauf beschränkt, nur die gebräuchlichsten strukturierten Komponenten zur Identifizierung eines bestimmten physischen Gebäudes oder einer Landmarke zu enthalten. In diesem Zusammenhang kann eine vollständige Adresse beschrieben werden mit:\r\n- Ein oder mehrere Freitext-„Adresszeilen“-Datenelemente, um die große Vielfalt an Möglichkeiten darzustellen, wie Details auf „Straßenebene“ aufgezeichnet werden müssen; und\r\n- „Stadt“, um einen Vorort, eine Stadt, ein Dorf oder eine Gemeinde darzustellen;\r\n- „Region/Landkreis“ zur Darstellung eines lokalen Regierungsbezirks;\r\n- „Staat/Territorium/Provinz“, um einen großen Regierungsbezirk darzustellen;\r\n- „Postleitzahl“ und\r\n- \"Land\".\r\n\r\nDieser Archetyp könnte auch als Ersatz für formelle demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der Prüfer eine Adresse in einem Bewertungsformular erwarten würden. Dieser CLUSTER.address könnte auch als Stellvertreter für eine Adresse in formalen demografischen Adressdaten verwendet werden, wenn ein Template mit Klinikern überprüft wird – zum Beispiel bei einer Bewertung, bei der Prüfer erwarten würden, dass die vollständigen Kontaktdaten der Person oben auf dem Bewertungsformular angezeigt werden.",
+          "misuse" : "Darf nicht verwendet werden, um eine vollständig strukturierte Adresse, wie sie in ISO-Standards beschrieben ist, im Rahmen der Führung eines offiziellen demografischen Registers oder Index zu erfassen. Verwenden Sie zu diesem Zweck einen Adresssuchdienst, einen formalen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDarf nicht verwendet werden, um digitale Adressen zur Verwendung in der elektronischen Kommunikation darzustellen. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.electronic_communication.\r\n\r\nDarf nicht verwendet werden, um Details über Wohnungs- oder Obdachlosigkeit darzustellen. Verwenden Sie für diesen Zweck den Archetyp EVALUATION.housing_summary.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-pt"
+          },
+          "purpose" : "Registar os detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica.",
+          "keywords" : [ "endereço", "morada", "postal", "correio", "casa", "negócio", "físico", "marco", "ponto de referência" ],
+          "use" : "Utilize para registar detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica, muitas vezes ad hoc ou quando não é apropriado ou possível utilizar um serviço de pesquisa de endereços. Exemplos incluem:\r\n- o endereço comercial de uma organização que presta cuidados domiciliários a um indivíduo; ou\r\n- o endereço postal do titular de um registo de cuidados avançados, dentro do arquétipo EVALUATION.advance_care_directive; ou\r\n- a localização física de uma queda ou acidente.\r\n\r\nO âmbito deste arquétipo foi restringido para conter os componentes estruturados mais comuns para identificar um edifício físico ou um ponto de referência específico. Neste contexto, um endereço completo pode ser descrito utilizando:\r\n- Um ou mais elementos de dados de texto livre de 'Linha de endereço' para representar a enorme variedade de formas pelas quais os detalhes 'ao nível da rua' podem ter de ser registados; e\r\n- 'Cidade' para representar um subúrbio, vila, cidade, vila ou comunidade;\r\n- 'Distrito/Concelho' para representar um distrito governamental local;\r\n- 'Estado/Território/Província' para representar um importante distrito governamental;\r\n- ‘Código postal’, e\r\n- 'País'.\r\nNo entanto, este arquétipo pode ser estendido para incluir detalhes adicionais sobre o endereço, aninhando o CLUSTER.structured_address dentro do SLOT 'Endereço estruturado'.\r\n\r\nEste arquétipo CLUSTER.address também pode ser utilizado como um substituto para um endereço em dados formais de endereço demográfico ao rever um template com especialistas do domínio - por exemplo, uma avaliação em que os revisores esperariam ver os detalhes completos de contacto do indivíduo na parte superior do formulário de avaliação.",
+          "misuse" : "Não deve ser utilizado para registar um endereço totalmente estruturado, tal como descrito nas normas ISO ou como parte da manutenção de um registo ou índice demográfico oficial. Utilize um serviço de pesquisa de endereços, um Índice Mestre de Pacientes formal ou um Índice de Prestadores de Cuidados de Saúde para este fim, ou arquétipos baseados no Modelo de Informação Demográfica openEHR.\r\n\r\nNão deve ser utilizado para representar endereços digitais para utilização em comunicação eletrónica. Utilize CLUSTER.electronic_communication para este efeito.\r\n\r\nNão deve ser utilizado para registar detalhes sobre habitação ou falta de habitação. Utilize EVALUATION.housing_summary para esta finalidade.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "adress", "postadress", "hem", "företag", "position", "ort", "distrikt", "region" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "adresse", "postadresse", "hjem", "arbeid", "fysisk", "oppmøtested" ],
+          "use" : "\t\r\nBrukes for å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\nFor eksempel:\r\n- Adressen til hjemmetjeneste eller en annen helsetjenesteyter.\r\n- Adressen til en person eller organisasjon som oppbevarer fremtidige behandlingsvalg i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- Adressen til hendelsestedet til en ulykke eller et fall.\r\n\r\nOmfanget av denne arketypen har blitt begrenset til å dekke de vanligste komponentene i en enkel adresse. I denne sammenhengen kan en fullstendig adresse beskrives ved å bruke:\r\n- Ett eller flere \"Adresselinje\"-dataelementer for å representere det store utvalget av måter \"gatenivå\" kan registreres på.\r\n- \"By\" for å representere en forstad, by eller landsby.\r\n- \"Distrikt/fylke\" for å representere et lokalt myndighetsdistrikt.\r\n- \"Stat/territorium/provins\" for å representere et større myndighetsdistrikt.\r\n- \"Postnummer\".\r\n- \"Land\".\r\nImidlertidig kan denne arketypen utvides for å inkludere ytteligere detaljer om adressen ved å nøste arketypen CLUSTER.structured_address i SLOTet \"Strukturert adresse\"\r\n\r\nDenne CLUSTER-arketypen kan også brukes istedenfor formelle demografiske adressedata ved gjennomgang av et templat med klinikere – for eksempel en vurdering der brukeren/klinikeren forventer å se personens fullstendige kontaktinformasjon øverst i vurderingsskjemaet.",
+          "misuse" : "Brukes ikke til å representere en fullstendig strukturert adresse, som beskrevet i ISO-standarder eller for å opprettholde et demografisk register eller en indeks. Bruk en adresseoppslagstjeneste, et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke til å representere digitale adresser for bruk i elektronisk kommunikasjon. Bruk CLUSTER.electronic_communication (Elektronisk kommunikasjon) for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om bolig eller hjemløshet, Bruk arketypen EVALUATION.housing_summary (Boligsammendrag) for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "el" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "el"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "*address(en)", "*postal(en)", "*mailing(en)", "*home(en)", "*business(en)", "*physical(en)", "*landmark(en)" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "address", "postal", "mailing", "home", "business", "physical", "landmark" ],
+          "use" : "Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.",
+          "misuse" : "Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique.",
+          "keywords" : [ "adresse", "postale", "courrier", "domicile", "professionnel", "physique", "repère" ],
+          "use" : "Sert à enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique, souvent de manière ad hoc ou lorsqu'il n'est pas approprié ou possible d'utiliser un service de recherche d'adresses. Il s'agit par exemple\r\n- l'adresse professionnelle d'une organisation fournissant des soins à domicile à une personne ; ou\r\n- l'adresse postale du détenteur de la copie d'un dossier de soins avancés, dans l'archétype EVALUATION.advance_care_directive ; ou\r\n- le lieu physique d'une chute ou d'un accident.\r\n\r\nLe champ d'application de cet archétype a été limité aux composants structurés les plus courants permettant d'identifier un bâtiment physique ou un point de repère spécifique. Dans ce contexte, une adresse complète peut être décrite à l'aide des éléments suivants\r\n- un ou plusieurs éléments de données \"ligne d'adresse\" en texte libre pour représenter l'énorme variété de façons dont les détails \"au niveau de la rue\" peuvent être enregistrés ; et\r\n- Ville\" pour représenter une banlieue, une ville, un village ou une communauté ;\r\n- District/County\" pour représenter un district d'administration locale ;\r\n- \"État/Territoire/Province\" pour représenter un grand district gouvernemental ;\r\n- Code postal\", et \r\n- Pays\".\r\nToutefois, cet archétype peut être étendu pour inclure des détails plus fins sur l'adresse en imbriquant le CLUSTER.structured_address dans le SLOT \"Adresse structurée\".\r\n\r\nCet archétype CLUSTER.address peut également être utilisé comme substitut d'une adresse dans les données démographiques formelles lors de la révision d'un modèle avec des experts du domaine - par exemple, une évaluation où les examinateurs s'attendent à voir les coordonnées complètes de la personne en haut du formulaire d'évaluation.",
+          "misuse" : "Ne pas utiliser pour enregistrer une adresse entièrement structurée, telle que décrite dans les normes ISO ou dans le cadre de la tenue d'un registre ou d'un index démographique officiel. Utiliser à cette fin un service de recherche d'adresses, un index principal officiel des patients ou un index des prestataires de soins de santé, ou des archétypes fondés sur le modèle d'information démographique de l'openEHR.\r\n\r\nNe pas utiliser pour représenter des adresses numériques destinées à la communication électronique. Utiliser CLUSTER.electronic_communication à cette fin.\r\n\r\nNe doit pas être utilisé pour enregistrer des détails sur le logement ou l'absence de domicile. Utilisez EVALUATION.housing_summary à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
     "differential" : true,
@@ -3214,7 +3391,53 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird.",
+          "keywords" : [ "Telefon, Mobiltelefon, E-Mail, Fax, Pager, Chat, Soziale Medien, asynchron, Kommunikation, SoMe" ],
+          "use" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation für eine Person oder Organisation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird. Dies geschieht üblicherweise ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles Register oder einen Index zu verwenden.",
+          "misuse" : "Nicht für komplexe Kommunikationsdarstellung oder -verwaltung zu verwenden, wie z. B. bevorzugte Telefonnummern oder Gültigkeit der Nutzung. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en spesifikk type elektronisk kommunikasjon som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "telefon, mobil, e-post, faks, personsøker, chat, asynkron dialog, sosiale media, kommunikasjon, SoMe," ],
+          "use" : "Brukes for å registrere detaljer om en spesifikk type elektronisk kommunikasjon for en person eller en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.",
+          "misuse" : "Brukes ikke til kompleks kommunikasjonsadministrasjon, for eksempel foretrukne telefonnummer eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.",
+          "keywords" : [ "telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe" ],
+          "use" : "Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.",
+          "misuse" : "Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
     "differential" : true,
@@ -3295,7 +3518,38 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "E8C1E9FF75C1F67F8BE919B0799ED50B"
       },
-      "details" : { }
+      "details" : {
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Representação dos dados das credenciais de um profissional",
+          "keywords" : [ "serviço demográfico", "credenciais de um profissional" ],
+          "use" : "Usado em um serviço demográfico para coletar dados das credenciais de um profissional",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "Representation of data about a person's professional credentials",
+          "keywords" : [ "demographic service", "professional credentials" ],
+          "use" : "Used in demographic services to collect data about a person's professional credentials",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-DEMOGRAPHIC-CLUSTER.individual_credentials_iso.v0",
     "differential" : true,
@@ -3372,7 +3626,69 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "5DFD0809E7CD46EA0712A590C68F545B"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen zur einer Organisation, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden.",
+          "keywords" : [ "Organisation, Anbieter, Versorger, Betreuer, Netzwerk, Verbund, Gruppe" ],
+          "use" : "Der Archetyp wird verwendet, um Informationen zur einer Organisation darzustellen, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden, oft ad hoc oder wenn die Verwendung von einem formellen demografischen Register oder einem Index nicht angemessen oder nicht möglich ist.\r\nBeispiele beinhalten:\r\n- der Inhaber einer Patientenverfügung unter Verwendung des SLOT „Inhaber der Kopie“ innerhalb des Archetyps EVALUATION.advance_care_directive oder\r\n- Name und Kontaktdaten einer Organisation, die die Betreuung einer Person in ihrem zu Hause übernimmt.\r\n\r\nDieser Archetyp wurde entwickelt, um Angaben zu offiziell anerkannten Einrichtungen, wie einem eingetragenen Unternehmen, einem Krankenhaus und seinen anerkannten „Unterorganisationen“, wie einer operativ getrennten oder spezialisierten Satellitenklinik oder einem häuslichen Pflegedienst, zu enthalten. Es kann auch verwendet werden, um Kontaktinformationen über informellere Netzwerke oder Gruppen darzustellen, wie z. B. eine lokale Selbsthilfegruppe.\r\n\r\nDieser Archetyp könnte auch als Proxy für formale demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der die Prüfer erwarten würden, dass die Details zu der Organisation oben auf dem Bewertungsformular angezeigt werden.",
+          "misuse" : "Der Archetyp darf nicht verwendet werden, um ein offizielles Register oder einen Index darzustellen, zu ersetzen oder zu führen. Verwenden Sie zu diesem Zweck einen formellen Gesundheitsanbieter-Index (Health Provider Index) oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDer Archetyp darf nicht verwendet werden, um den Pflegeort und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Reference Model-Attribute dargestellt werden sollten.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera information om en organisation på det sätt som det behöver representeras i en journalanteckning.\r\n",
+          "keywords" : [ "organisation, leverantör, vårdgivare, vårdenhet, enhet, avdelning, nätverk, grupp" ],
+          "use" : "Används för att registrera information om en organisation som behöver representeras i journalen. Används exempelvis ad hoc eller i de fall då formella demografiska register eller kataloger inte kan användas istället. \r\nExempel inkluderar:\r\n- namn och kontaktuppgifter för en organisation som har en fysisk kopia av patientens önskemål om vård i händelse av att patienten inte längre kan kommunicera\r\n- namn och kontaktuppgifter för hemtjänst- eller hemsjukvårdsorganisation för en individ\r\n\r\nDenna arketyp har utformats för att dokumentera information om formellt erkända enheter, såsom ett registrerat företag, ett sjukhus och dess erkända \"underorganisationer\", såsom en separat eller specialiserad satellitklinik eller hemsjukvård. Den kan också användas för att dokumentera kontaktinformation om mer informella nätverk eller grupper, till exempel en lokal stödgrupp.\r\n\r\nDen här arketypen kan också användas som en proxy för formell demografisk data när man granskar en mall med domänexperter - exempelvis där granskare förväntar sig att se en organisations information i ett formulär.",
+          "misuse" : "*Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "organisasjon, leverandør, omsorgsperson, nettverk, gruppe" ],
+          "use" : "Brukes for å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet, ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nFor eksempel:\r\n- kopiinnhaver av av et fremtidig behandlingsvalg ved å bruke \"Kopiholder\"-SLOTet i arketypen \"EVALUATION.advance_care_directive\" (Fremtidig behandlingsvalg).\r\n- navn og kontaktdetaljer for en organisasjon som yter hjemmehjelp til en enkeltperson.\r\n\r\nDenne arketypen er utformet for å registrere detaljer om formelt anerkjente enheter, for eksempel en registrert virksomhet, et sykehus og dets \"underorganisasjoner\", en operativt separat eller spesialisert satellittklinikk eller hjemmetjeneste. Den kan også brukes til å registrere kontaktinformasjon om mer uformelle nettverk eller grupper, for eksempel en lokal støttegruppe.\r\n\r\nDenne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om en organisasjon i et vurderingsskjema.",
+          "misuse" : "Brukes ikke til å representere, erstatte eller vedlikeholde formelle demografiske opplysninger. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere behandlingssted eller lignende dataelementer, som skal representeres formelt i pasientjournalen. Bruk attributter fra Referansemodellen for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about an organisation as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "organisation, organization, provider, carer, network, group" ],
+          "use" : "Use to record details of an organisation as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype; or\r\n- the name and contact details of an organisation providing home care to an individual.\r\n\r\nThis archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.",
+          "misuse" : "Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
     "differential" : true,
@@ -3490,7 +3806,113 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
+          "keywords" : [ "Adresse", "Anschrift", "postalisch", "Mailing", "Privat", "Geschäft", "physisch", "Landmarke" ],
+          "use" : "Verwenden Sie diesen Archetyp, um Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke darzustellen, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, einen Adresssuchdienst zu verwenden. Beispiele beinhalten:\r\n- die Geschäftsadresse einer Organisation, die eine Person zu Hause betreut; oder\r\n- die Postanschrift des Inhabers einer Patientenverfügung innerhalb des Archetyps EVALUATION.advance_care_directive; oder\r\n- der Sturz- oder Unfallort.\r\n\r\nDer Geltungsbereich dieses Archetyps wurde darauf beschränkt, nur die gebräuchlichsten strukturierten Komponenten zur Identifizierung eines bestimmten physischen Gebäudes oder einer Landmarke zu enthalten. In diesem Zusammenhang kann eine vollständige Adresse beschrieben werden mit:\r\n- Ein oder mehrere Freitext-„Adresszeilen“-Datenelemente, um die große Vielfalt an Möglichkeiten darzustellen, wie Details auf „Straßenebene“ aufgezeichnet werden müssen; und\r\n- „Stadt“, um einen Vorort, eine Stadt, ein Dorf oder eine Gemeinde darzustellen;\r\n- „Region/Landkreis“ zur Darstellung eines lokalen Regierungsbezirks;\r\n- „Staat/Territorium/Provinz“, um einen großen Regierungsbezirk darzustellen;\r\n- „Postleitzahl“ und\r\n- \"Land\".\r\n\r\nDieser Archetyp könnte auch als Ersatz für formelle demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der Prüfer eine Adresse in einem Bewertungsformular erwarten würden. Dieser CLUSTER.address könnte auch als Stellvertreter für eine Adresse in formalen demografischen Adressdaten verwendet werden, wenn ein Template mit Klinikern überprüft wird – zum Beispiel bei einer Bewertung, bei der Prüfer erwarten würden, dass die vollständigen Kontaktdaten der Person oben auf dem Bewertungsformular angezeigt werden.",
+          "misuse" : "Darf nicht verwendet werden, um eine vollständig strukturierte Adresse, wie sie in ISO-Standards beschrieben ist, im Rahmen der Führung eines offiziellen demografischen Registers oder Index zu erfassen. Verwenden Sie zu diesem Zweck einen Adresssuchdienst, einen formalen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDarf nicht verwendet werden, um digitale Adressen zur Verwendung in der elektronischen Kommunikation darzustellen. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.electronic_communication.\r\n\r\nDarf nicht verwendet werden, um Details über Wohnungs- oder Obdachlosigkeit darzustellen. Verwenden Sie für diesen Zweck den Archetyp EVALUATION.housing_summary.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-pt"
+          },
+          "purpose" : "Registar os detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica.",
+          "keywords" : [ "endereço", "morada", "postal", "correio", "casa", "negócio", "físico", "marco", "ponto de referência" ],
+          "use" : "Utilize para registar detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica, muitas vezes ad hoc ou quando não é apropriado ou possível utilizar um serviço de pesquisa de endereços. Exemplos incluem:\r\n- o endereço comercial de uma organização que presta cuidados domiciliários a um indivíduo; ou\r\n- o endereço postal do titular de um registo de cuidados avançados, dentro do arquétipo EVALUATION.advance_care_directive; ou\r\n- a localização física de uma queda ou acidente.\r\n\r\nO âmbito deste arquétipo foi restringido para conter os componentes estruturados mais comuns para identificar um edifício físico ou um ponto de referência específico. Neste contexto, um endereço completo pode ser descrito utilizando:\r\n- Um ou mais elementos de dados de texto livre de 'Linha de endereço' para representar a enorme variedade de formas pelas quais os detalhes 'ao nível da rua' podem ter de ser registados; e\r\n- 'Cidade' para representar um subúrbio, vila, cidade, vila ou comunidade;\r\n- 'Distrito/Concelho' para representar um distrito governamental local;\r\n- 'Estado/Território/Província' para representar um importante distrito governamental;\r\n- ‘Código postal’, e\r\n- 'País'.\r\nNo entanto, este arquétipo pode ser estendido para incluir detalhes adicionais sobre o endereço, aninhando o CLUSTER.structured_address dentro do SLOT 'Endereço estruturado'.\r\n\r\nEste arquétipo CLUSTER.address também pode ser utilizado como um substituto para um endereço em dados formais de endereço demográfico ao rever um template com especialistas do domínio - por exemplo, uma avaliação em que os revisores esperariam ver os detalhes completos de contacto do indivíduo na parte superior do formulário de avaliação.",
+          "misuse" : "Não deve ser utilizado para registar um endereço totalmente estruturado, tal como descrito nas normas ISO ou como parte da manutenção de um registo ou índice demográfico oficial. Utilize um serviço de pesquisa de endereços, um Índice Mestre de Pacientes formal ou um Índice de Prestadores de Cuidados de Saúde para este fim, ou arquétipos baseados no Modelo de Informação Demográfica openEHR.\r\n\r\nNão deve ser utilizado para representar endereços digitais para utilização em comunicação eletrónica. Utilize CLUSTER.electronic_communication para este efeito.\r\n\r\nNão deve ser utilizado para registar detalhes sobre habitação ou falta de habitação. Utilize EVALUATION.housing_summary para esta finalidade.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "adress", "postadress", "hem", "företag", "position", "ort", "distrikt", "region" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "adresse", "postadresse", "hjem", "arbeid", "fysisk", "oppmøtested" ],
+          "use" : "\t\r\nBrukes for å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\nFor eksempel:\r\n- Adressen til hjemmetjeneste eller en annen helsetjenesteyter.\r\n- Adressen til en person eller organisasjon som oppbevarer fremtidige behandlingsvalg i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- Adressen til hendelsestedet til en ulykke eller et fall.\r\n\r\nOmfanget av denne arketypen har blitt begrenset til å dekke de vanligste komponentene i en enkel adresse. I denne sammenhengen kan en fullstendig adresse beskrives ved å bruke:\r\n- Ett eller flere \"Adresselinje\"-dataelementer for å representere det store utvalget av måter \"gatenivå\" kan registreres på.\r\n- \"By\" for å representere en forstad, by eller landsby.\r\n- \"Distrikt/fylke\" for å representere et lokalt myndighetsdistrikt.\r\n- \"Stat/territorium/provins\" for å representere et større myndighetsdistrikt.\r\n- \"Postnummer\".\r\n- \"Land\".\r\nImidlertidig kan denne arketypen utvides for å inkludere ytteligere detaljer om adressen ved å nøste arketypen CLUSTER.structured_address i SLOTet \"Strukturert adresse\"\r\n\r\nDenne CLUSTER-arketypen kan også brukes istedenfor formelle demografiske adressedata ved gjennomgang av et templat med klinikere – for eksempel en vurdering der brukeren/klinikeren forventer å se personens fullstendige kontaktinformasjon øverst i vurderingsskjemaet.",
+          "misuse" : "Brukes ikke til å representere en fullstendig strukturert adresse, som beskrevet i ISO-standarder eller for å opprettholde et demografisk register eller en indeks. Bruk en adresseoppslagstjeneste, et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke til å representere digitale adresser for bruk i elektronisk kommunikasjon. Bruk CLUSTER.electronic_communication (Elektronisk kommunikasjon) for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om bolig eller hjemløshet, Bruk arketypen EVALUATION.housing_summary (Boligsammendrag) for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "el" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "el"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "*address(en)", "*postal(en)", "*mailing(en)", "*home(en)", "*business(en)", "*physical(en)", "*landmark(en)" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "address", "postal", "mailing", "home", "business", "physical", "landmark" ],
+          "use" : "Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.",
+          "misuse" : "Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique.",
+          "keywords" : [ "adresse", "postale", "courrier", "domicile", "professionnel", "physique", "repère" ],
+          "use" : "Sert à enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique, souvent de manière ad hoc ou lorsqu'il n'est pas approprié ou possible d'utiliser un service de recherche d'adresses. Il s'agit par exemple\r\n- l'adresse professionnelle d'une organisation fournissant des soins à domicile à une personne ; ou\r\n- l'adresse postale du détenteur de la copie d'un dossier de soins avancés, dans l'archétype EVALUATION.advance_care_directive ; ou\r\n- le lieu physique d'une chute ou d'un accident.\r\n\r\nLe champ d'application de cet archétype a été limité aux composants structurés les plus courants permettant d'identifier un bâtiment physique ou un point de repère spécifique. Dans ce contexte, une adresse complète peut être décrite à l'aide des éléments suivants\r\n- un ou plusieurs éléments de données \"ligne d'adresse\" en texte libre pour représenter l'énorme variété de façons dont les détails \"au niveau de la rue\" peuvent être enregistrés ; et\r\n- Ville\" pour représenter une banlieue, une ville, un village ou une communauté ;\r\n- District/County\" pour représenter un district d'administration locale ;\r\n- \"État/Territoire/Province\" pour représenter un grand district gouvernemental ;\r\n- Code postal\", et \r\n- Pays\".\r\nToutefois, cet archétype peut être étendu pour inclure des détails plus fins sur l'adresse en imbriquant le CLUSTER.structured_address dans le SLOT \"Adresse structurée\".\r\n\r\nCet archétype CLUSTER.address peut également être utilisé comme substitut d'une adresse dans les données démographiques formelles lors de la révision d'un modèle avec des experts du domaine - par exemple, une évaluation où les examinateurs s'attendent à voir les coordonnées complètes de la personne en haut du formulaire d'évaluation.",
+          "misuse" : "Ne pas utiliser pour enregistrer une adresse entièrement structurée, telle que décrite dans les normes ISO ou dans le cadre de la tenue d'un registre ou d'un index démographique officiel. Utiliser à cette fin un service de recherche d'adresses, un index principal officiel des patients ou un index des prestataires de soins de santé, ou des archétypes fondés sur le modèle d'information démographique de l'openEHR.\r\n\r\nNe pas utiliser pour représenter des adresses numériques destinées à la communication électronique. Utiliser CLUSTER.electronic_communication à cette fin.\r\n\r\nNe doit pas être utilisé pour enregistrer des détails sur le logement ou l'absence de domicile. Utilisez EVALUATION.housing_summary à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
     "differential" : true,
@@ -3631,7 +4053,53 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird.",
+          "keywords" : [ "Telefon, Mobiltelefon, E-Mail, Fax, Pager, Chat, Soziale Medien, asynchron, Kommunikation, SoMe" ],
+          "use" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation für eine Person oder Organisation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird. Dies geschieht üblicherweise ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles Register oder einen Index zu verwenden.",
+          "misuse" : "Nicht für komplexe Kommunikationsdarstellung oder -verwaltung zu verwenden, wie z. B. bevorzugte Telefonnummern oder Gültigkeit der Nutzung. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en spesifikk type elektronisk kommunikasjon som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "telefon, mobil, e-post, faks, personsøker, chat, asynkron dialog, sosiale media, kommunikasjon, SoMe," ],
+          "use" : "Brukes for å registrere detaljer om en spesifikk type elektronisk kommunikasjon for en person eller en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.",
+          "misuse" : "Brukes ikke til kompleks kommunikasjonsadministrasjon, for eksempel foretrukne telefonnummer eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.",
+          "keywords" : [ "telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe" ],
+          "use" : "Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.",
+          "misuse" : "Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
     "differential" : true,
@@ -3696,6 +4164,83 @@
         "name" : "Kanika Kuwelker, John Tore Valand, Liv Laugen",
         "organisation" : "Helse Vest IKT, Helse Bergen, ​Oslo University Hospital, Norway",
         "email" : "kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "3b5f21bb-9bd8-488e-a975-abaa1a256a13",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "E8C1E9FF75C1F67F8BE919B0799ED50B"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-DEMOGRAPHIC-CLUSTER.individual_credentials_iso.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-DEMOGRAPHIC-CLUSTER.ovl-individual_credentials_iso-002.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..0",
+          "nodeId" : "at0004.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "pt-br" : { },
+        "en" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "b1749131-b0b2-42a6-8877-90ea33586a86",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Sergio Miranda Freire",
+        "organisation" : "Universidade do Estado do Rio de Janeiro - UERJ",
+        "email" : "sergio@lampada.uerj.br"
       },
       "otherDetails" : { }
     } ]
