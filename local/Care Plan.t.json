@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "5.0.0",
+      "sem_ver" : "6.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "eafbe741e8c70c9bd41a1bbd4e5b3bf3",
+      "MD5-CAM-1.0.1" : "08085fce87e428c7ac3de695e17057f0",
       "PARENT:MD5-CAM-1.0.1" : "9f315f627f161c76fc68f99f4aef7129"
     },
     "details" : {
@@ -2950,7 +2950,7 @@
                 }, {
                   "@type" : "C_ARCHETYPE_ROOT",
                   "rmTypeName" : "CLUSTER",
-                  "occurrences" : "0..*",
+                  "occurrences" : "0..1",
                   "nodeId" : "at0132.1",
                   "attributes" : [ ],
                   "attributeTuples" : [ ],
@@ -11187,209 +11187,6 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "cb3e7124-6f32-4599-bee7-475f1af7b826",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "D1349AAD9444365B34B1BAFDE9F0BD4A"
-      },
-      "details" : { }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-device-003.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "items",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "ELEMENT",
-          "nodeId" : "at0001.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ]
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..1",
-          "nodeId" : "at0027.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-media_file-002.v1",
-          "referenceType" : "archetypeOverlay"
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "ar-sy" : { },
-        "en" : {
-          "at0000.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0000.1",
-            "text" : "Prescribed dental device/ appliance",
-            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
-          },
-          "at0001.1" : {
-            "@type" : "ARCHETYPE_TERM",
-            "code" : "at0001.1",
-            "text" : "Device/ Appliance name",
-            "description" : "Identification of the medical device, preferably by a common name, a formal fully descriptive name or, if required, by class or category of device.",
-            "comment" : "This data element will capture the term, phrase or category used in clinical practice. For example: <brand name><machine> (XYZ Audiometer); <size> <brand name> <intravenous catheter> (14G Jelco IV catheter); or <brand name/type> <implant>. Coding with a terminology is desirable, where possible, although this may be local and depending on local supplies available.\r\n"
-          }
-        },
-        "es-ar" : { },
-        "pt-br" : { },
-        "nb" : { },
-        "de" : { },
-        "sv" : { },
-        "nl" : { },
-        "fr" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "fdf1b399-f40d-488c-9a16-281daae7d28c",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Anneka Sargeant",
-        "organisation" : "Institut für Medizinische Informatik - Universitätsmedizin Göttingen",
-        "email" : "anneka.sargeant@med.uni-goettingen.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Sofia Lång Janstad",
-        "organisation" : "Karolinska University hospital, Stockholm Region,",
-        "email" : "sofia.lang-janstad@regionstockholm.se"
-      },
-      "otherDetails" : {
-        "other_contributors" : "Sajjad Saffari Miandoab (Karolinska University hospital), Jörgen Kuylenstierna (openEHR Sverige), Josephine de Flon (Karolinska University hospital), Magnus Stridsman (Region Östergötland), Malin Larsson (Karolinska University hospital), Therese Högberg Mårder (Region Östergötland), Linda Rosen (Region Östergötland), Åsa Skagerhult (openEHR Sverige)"
-      }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "es-ar"
-      },
-      "author" : {
-        "name" : "Alan March",
-        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
-        "email" : "amarch@cas.austral.edu.ar"
-      },
-      "accreditation" : "MD",
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "John Tore Valand",
-        "organisation" : "Helse Bergen HF"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-br"
-      },
-      "author" : {
-        "name" : "Osmeire Chamelette Sanzovo",
-        "organisation" : "Hospital Sírio Libanês - SP",
-        "email" : "osmeire.acsanzovo@hsl.org.br"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "ar-sy"
-      },
-      "author" : {
-        "name" : "Mona Saleh"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "fr"
-      },
-      "author" : {
-        "name" : "Vanessa Pereira",
-        "organisation" : "Luxembourg Institute of Health (LIH)",
-        "email" : "vanessapereira@protonmail.com"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nl"
-      },
-      "author" : {
-        "name" : "Pieter Bos, Jelte Zeilstra",
-        "organisation" : "Nedap"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
     "uid" : "04a80f6b-d806-4101-ada2-83aa1f0956d7",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
@@ -13330,7 +13127,26 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "nodeId" : "at0001.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0027.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-media_file-002.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -13342,8 +13158,15 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Medical/ Dental device/ appliance",
+            "text" : "Prescribed medical/ dental device/ appliance",
             "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "Device/ Appliance name",
+            "description" : "Identification of the medical device, preferably by a common name, a formal fully descriptive name or, if required, by class or category of device.",
+            "comment" : "This data element will capture the term, phrase or category used in clinical practice. For example: <brand name><machine> (XYZ Audiometer); <size> <brand name> <intravenous catheter> (14G Jelco IV catheter); or <brand name/type> <implant>. Coding with a terminology is desirable, where possible, although this may be local and depending on local supplies available.\r\n"
           }
         },
         "es-ar" : { },
@@ -15999,6 +15822,1740 @@
         "name" : "Vanessa Pereira",
         "organisation" : "Luxembourg Institute of Health (LIH)",
         "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "b1576a83-c7c3-4878-8c8a-e126bda0551d",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "4C91B974D7EE4B40B0579711D6B62439"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.structured_name.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-structured_name-010.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "de" : { },
+        "nb" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "efeed73f-bc3f-4b27-a1f9-f2ac5d082e4a",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch, Alina Rehberg",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker, Marit Alice Venheim",
+        "organisation" : "Helse Vest IKT AS, Helse Bergen, Oslo University Hospital",
+        "email" : "john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no, marit.alice.venheim@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "3eb0bfef-2329-478a-8099-fc4ca06d744b",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-027.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "de" : { },
+        "nb" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "ae57162c-7e2f-4096-a08f-8f03574e4a72",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Kanika Kuwelker, John Tore Valand, Liv Laugen",
+        "organisation" : "Helse Vest IKT, Helse Bergen, ​Oslo University Hospital, Norway",
+        "email" : "kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "b5e76b17-2673-470b-8ff8-7452868405b6",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-address-023.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { },
+        "de" : { },
+        "pt-pt" : { },
+        "el" : { },
+        "fr" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "98bc048f-0811-45f4-8f58-46853c50ac46",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch, Alina Rehberg",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-pt"
+      },
+      "author" : {
+        "name" : "Hugo Silva",
+        "organisation" : "University of Minho",
+        "email" : "pg50416@uminho.pt"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Erik Sundvall",
+        "organisation" : "Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
+        "email" : "erik.sundvall@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "el"
+      },
+      "author" : {
+        "name" : "Erasmia Partafylla",
+        "organisation" : "Sigmasoft",
+        "email" : "c.partafylla@sigmasoft.gr"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Luxembourg Institute of Health (LIH)",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "9159fd94-c6f4-4931-aacf-60b4051b02bd",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-028.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "de" : { },
+        "nb" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "ae57162c-7e2f-4096-a08f-8f03574e4a72",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Kanika Kuwelker, John Tore Valand, Liv Laugen",
+        "organisation" : "Helse Vest IKT, Helse Bergen, ​Oslo University Hospital, Norway",
+        "email" : "kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "b293b8b8-f372-4ec6-b587-968c26947b8b",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-address-024.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { },
+        "de" : { },
+        "pt-pt" : { },
+        "el" : { },
+        "fr" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "98bc048f-0811-45f4-8f58-46853c50ac46",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch, Alina Rehberg",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-pt"
+      },
+      "author" : {
+        "name" : "Hugo Silva",
+        "organisation" : "University of Minho",
+        "email" : "pg50416@uminho.pt"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Erik Sundvall",
+        "organisation" : "Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
+        "email" : "erik.sundvall@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "el"
+      },
+      "author" : {
+        "name" : "Erasmia Partafylla",
+        "organisation" : "Sigmasoft",
+        "email" : "c.partafylla@sigmasoft.gr"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Luxembourg Institute of Health (LIH)",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "55569069-7258-4821-b09b-390aafd6a77f",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-029.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "de" : { },
+        "nb" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "ae57162c-7e2f-4096-a08f-8f03574e4a72",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Kanika Kuwelker, John Tore Valand, Liv Laugen",
+        "organisation" : "Helse Vest IKT, Helse Bergen, ​Oslo University Hospital, Norway",
+        "email" : "kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "8f59fe60-bf74-4b0b-a84d-806a42de6714",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "5DFD0809E7CD46EA0712A590C68F545B"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-organisation-020.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0005.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-address-024.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..*",
+          "nodeId" : "at0022.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-029.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Organisation/ Healthcare facility",
+            "description" : "An entity comprising one or more people and having a particular purpose.",
+            "comment" : "For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support."
+          }
+        },
+        "nb" : { },
+        "de" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "8543bf4b-0e15-4990-8a02-c7d082df8617",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sarah Ballout, Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "ballout.sarah@mh-hannover.de, Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Therese Lindberg, Erik Sundvall",
+        "organisation" : "Cambio CDS, Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
+        "email" : "therese.lindberg@cambio.se, erik.sundvall@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "99644890-ab52-4c69-b9ee-6099c7e4e187",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "5DFD0809E7CD46EA0712A590C68F545B"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-organisation-019.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0005.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-address-023.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..*",
+          "nodeId" : "at0022.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-028.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0021.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-organisation-020.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Department",
+            "description" : "An entity comprising one or more people and having a particular purpose.",
+            "comment" : "For example: a company, institution, association, network, department, community group, healthcare practice group, payer/insurer, care team, or a group of neighbours who provide care or support."
+          }
+        },
+        "nb" : { },
+        "de" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "8543bf4b-0e15-4990-8a02-c7d082df8617",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sarah Ballout, Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "ballout.sarah@mh-hannover.de, Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Therese Lindberg, Erik Sundvall",
+        "organisation" : "Cambio CDS, Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
+        "email" : "therese.lindberg@cambio.se, erik.sundvall@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "4678762b-545e-4c04-ac09-cb8d1e12f17d",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "E8C1E9FF75C1F67F8BE919B0799ED50B"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-DEMOGRAPHIC-CLUSTER.individual_credentials_iso.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-DEMOGRAPHIC-CLUSTER.ovl-individual_credentials_iso-007.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..0",
+          "nodeId" : "at0004.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "pt-br" : { },
+        "en" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "b1749131-b0b2-42a6-8877-90ea33586a86",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Sergio Miranda Freire",
+        "organisation" : "Universidade do Estado do Rio de Janeiro - UERJ",
+        "email" : "sergio@lampada.uerj.br"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "5957fb51-2d6b-4037-8c86-2c4972bbe672",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "10166B307F40817B5B3E2D3720F6AC03"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.person.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-person-010.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0002.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-structured_name-010.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..*",
+          "nodeId" : "at0006.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-027.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0007.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-organisation-019.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0008.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-DEMOGRAPHIC-CLUSTER.ovl-individual_credentials_iso-007.v0",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Created by",
+            "description" : "An individual human being."
+          }
+        },
+        "nb" : { },
+        "de" : { },
+        "zh" : { },
+        "sv" : { },
+        "es" : { },
+        "pt-pt" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "2141be0e-4975-4e33-8d15-0cd1086f2280",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch, Alina Rehberg",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-pt"
+      },
+      "author" : {
+        "name" : "Beatriz Soares",
+        "organisation" : "Promptly Health",
+        "email" : "beatriz.soares@promptlyhealth.com"
+      },
+      "accreditation" : "Beatriz Soares, Promptly Health, Portugal",
+      "otherDetails" : {
+        "other_contributors" : "Alex Anguelov, Promptly Health, Portugal\r\nDiogo Neto, Promptly Health, Portugal"
+      }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Elham Gholami, Erik Sundvall",
+        "organisation" : "Region Stockholm",
+        "email" : "erik.sundvall@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "zh"
+      },
+      "author" : {
+        "name" : "Yexuan Cheng",
+        "organisation" : "浙江大学",
+        "email" : "3160100913@zju.edu.cn"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es"
+      },
+      "author" : {
+        "name" : "Diego Bosca",
+        "organisation" : "VeraTech for Health",
+        "email" : "yampeku@veratech.es"
+      },
+      "accreditation" : "Native speaker. First Certificate in English",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "912c6bdd-d307-4547-a73a-7bff254f82ef",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "D1349AAD9444365B34B1BAFDE9F0BD4A"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-006.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : { },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Source device",
+            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          }
+        },
+        "es-ar" : { },
+        "pt-br" : { },
+        "nb" : { },
+        "de" : { },
+        "sv" : { },
+        "nl" : { },
+        "fr" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "fdf1b399-f40d-488c-9a16-281daae7d28c",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Anneka Sargeant",
+        "organisation" : "Institut für Medizinische Informatik - Universitätsmedizin Göttingen",
+        "email" : "anneka.sargeant@med.uni-goettingen.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Sofia Lång Janstad",
+        "organisation" : "Karolinska University hospital, Stockholm Region,",
+        "email" : "sofia.lang-janstad@regionstockholm.se"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Sajjad Saffari Miandoab (Karolinska University hospital), Jörgen Kuylenstierna (openEHR Sverige), Josephine de Flon (Karolinska University hospital), Magnus Stridsman (Region Östergötland), Malin Larsson (Karolinska University hospital), Therese Högberg Mårder (Region Östergötland), Linda Rosen (Region Östergötland), Åsa Skagerhult (openEHR Sverige)"
+      }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand",
+        "organisation" : "Helse Bergen HF"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Osmeire Chamelette Sanzovo",
+        "organisation" : "Hospital Sírio Libanês - SP",
+        "email" : "osmeire.acsanzovo@hsl.org.br"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Luxembourg Institute of Health (LIH)",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Pieter Bos, Jelte Zeilstra",
+        "organisation" : "Nedap"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "04a80f6b-d806-4101-ada2-83aa1f0956d7",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "EB7E126AF74294DF7DBBA432FB7C6F54"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.media_file.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-media_file-003.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0012.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-person-010.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0011.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-device-006.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "sv" : { },
+        "de" : { },
+        "nb" : { },
+        "nl" : { },
+        "sk" : { },
+        "pt-pt" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "7882a3d2-1f42-4545-86ba-d19716b6391d",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-pt"
+      },
+      "author" : {
+        "name" : "Hugo Silva",
+        "organisation" : "University of Minho",
+        "email" : "pg50416@uminho.pt"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Åsa Skagerhult, Erik Sundvall, Manna Vosta, Oscar Karlsson",
+        "organisation" : "Region Östergötland, Karolinska University Hospital",
+        "email" : "asa.skagerhult@regionostergotland.se, erik.sundvall@regionostergotland.se, manna.vosta@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sk"
+      },
+      "author" : {
+        "name" : "Maritn Kapinos",
+        "organisation" : "PROSOFT Košice, a.s.",
+        "email" : "kapinos.martin@prosoftke.sk"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Jelte Zeilstra",
+        "organisation" : "Nedap"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "df9c0225-f9d5-41a1-9d56-deb683bf677d",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "D1349AAD9444365B34B1BAFDE9F0BD4A"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.device.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-device-003.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "nodeId" : "at0001.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0027.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-media_file-003.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "ar-sy" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical device(en) (2)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Prescribed medical/ dental device/ appliance details",
+            "description" : "An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements."
+          },
+          "at0001.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0001.1",
+            "text" : "Device/ Appliance name",
+            "description" : "Identification of the medical device, preferably by a common name, a formal fully descriptive name or, if required, by class or category of device.",
+            "comment" : "This data element will capture the term, phrase or category used in clinical practice. For example: <brand name><machine> (XYZ Audiometer); <size> <brand name> <intravenous catheter> (14G Jelco IV catheter); or <brand name/type> <implant>. Coding with a terminology is desirable, where possible, although this may be local and depending on local supplies available.\r\n"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "*Medical device(en) (2)",
+            "description" : "*An instrument, apparatus, implant, material or similar, used in the provision of healthcare. In this context, a medical device includes a broad range of devices which act through a variety of physical, mechanical, thermal or similar means but specifically excludes devices which act through medicinal means such as pharmacological, metabolic or immunological methods.  The scope is inclusive of disposable devices as well as durable or persisting devices that require tracking, maintenance activities or regular calibration, recognising that each type of device has specific data recording requirements.(en)"
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Dispositivos médicos (2)",
+            "description" : "Um instrumento, aparelho, implante, material ou similares para a prestação de cuidados de saúde . Neste contexto, um dispositivo médico inclui uma ampla variedade de dispositivos que atuem através de uma variedade de meios físicos, mecânicos , térmicos ou semelhantes, mas exclui especificamente os dispositivos que atuem através de meios farmacológicos tais como medicamentos, metabólicos ou métodos imunológicos. O escopo é inclusive de dispositivos descartáveis​​, bem como dispositivos duráveis ​​ou permanentes que requerem seguimento, atividades de manutenção ou calibração regular, reconhecendo que cada tipo de dispositivo tem requisitos de registro de dados específicos."
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medisinsk utstyr (2)",
+            "description" : "Et instrument, apparat, implantat, materiale, programvare eller lignende som er benyttet i utførelsen av helsetjenester. I denne konteksten er medisinsk utstyr et bredt spekter utstyr med fysiske, mekaniske, termiske, programvaremessige eller tilsvarende virkemåter. Utstyr som har en farmakologisk, metabolsk eller immunologisk virkning ekskluderes spesifikt. \r\n\r\nArketypen tar høyde for registrering av engangsutstyr samt varig utstyr som krever sporing, vedlikehold eller jevnlig kalibrering, og tar høyde for at hvert enkelt medisinsk utstyr har spesifikke behov for dataregistrering."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medizingerät (2)",
+            "description" : "Ein Instrument, ein Gerät, ein Implantat, ein Material oder ähnliches, das für die Bereitstellung von Gesundheitsleistungen verwendet wird. In diesem Zusammenhang umfasst ein medizinisches Gerät eine breite Palette von Geräten, die auf verschiedene physikalische, mechanische, thermische oder ähnliche Weise wirken, schließt jedoch insbesondere Geräte aus, die auf medizinischem Wege wirken, wie zum Beispiel pharmakologische, metabolische oder immunologische Methoden. Der Geltungsbereich umfasst\r\nEinweggeräte sowie langlebige oder dauerhafte Geräte, die nachverfolgt,\r\ngewartet oder regelmäßig kalibriert werden müssen, wobei zu berücksichtigen ist, dass für jeden Gerätetyp bestimmte Datenaufzeichnungsanforderungen gelten."
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medicinteknisk produkt (2)",
+            "description" : "Ett instrument, en apparat, ett implantat, ett material eller liknande, som används vid tillhandahållande av hälso- och sjukvård. \r\nEn medicinteknisk produkt i detta sammanhang inkluderar produkter som verkar ex. genom en mängd olika fysiska, mekaniska eller termiska sätt. I sammanhanget exkluderas specifikt produkter som verkar med medicinska medel såsom farmakologiska, metaboliska eller immunologiska metoder.\r\nArketypen tar höjd för engångsprodukter och produkter med tillfällig-, kort- och långvarig användning som kräver spårning, underhållsaktiviteter eller regelbunden kalibrering. Arketypen tar också höjd för att varje typ av medicinteknisk produkt har sina egna specifika krav på registrering av uppgifter.\r\n"
+          }
+        },
+        "nl" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Medisch hulpmiddel (2)",
+            "description" : "Een instrument, apparaat, implantaat, materiaal of dergelijke dat wordt gebruikt bij het verlenen van gezondheidszorg. In deze context omvat een medisch hulpmiddel een breed scala aan hulpmiddelen die op verschillende fysische, mechanische, thermische of soortgelijke manieren werken, maar sluit specifiek hulpmiddelen uit die op medicinale wijze werken, zoals farmacologische, metabolische of immunologische methoden. De reikwijdte omvat zowel wegwerpapparaten als duurzame of blijvende hulpmiddelen waarvoor tracking, onderhoudsactiviteiten of regelmatige kalibratie nodig zijn, waarbij wordt erkend dat elk type apparaat specifieke vereisten voor gegevensregistratie heeft."
+          }
+        },
+        "fr" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Dispositif médical (2)",
+            "description" : "Un instrument, un appareil, un implant, un matériau ou similaire, utilisé dans la prestation de soins de santé. Dans ce contexte, un dispositif médical comprend un large éventail de dispositifs qui agissent par divers moyens physiques, mécaniques, thermiques ou similaires, mais exclut spécifiquement les dispositifs qui agissent par des moyens médicinaux tels que les méthodes pharmacologiques, métaboliques ou immunologiques. Le champ d'application comprend les dispositifs jetables ainsi que les dispositifs durables ou persistants qui nécessitent un suivi, des activités de maintenance ou un étalonnage régulier, en reconnaissant que chaque type de dispositif a des exigences spécifiques en matière d'enregistrement des données."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "fdf1b399-f40d-488c-9a16-281daae7d28c",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Anneka Sargeant",
+        "organisation" : "Institut für Medizinische Informatik - Universitätsmedizin Göttingen",
+        "email" : "anneka.sargeant@med.uni-goettingen.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Sofia Lång Janstad",
+        "organisation" : "Karolinska University hospital, Stockholm Region,",
+        "email" : "sofia.lang-janstad@regionstockholm.se"
+      },
+      "otherDetails" : {
+        "other_contributors" : "Sajjad Saffari Miandoab (Karolinska University hospital), Jörgen Kuylenstierna (openEHR Sverige), Josephine de Flon (Karolinska University hospital), Magnus Stridsman (Region Östergötland), Malin Larsson (Karolinska University hospital), Therese Högberg Mårder (Region Östergötland), Linda Rosen (Region Östergötland), Åsa Skagerhult (openEHR Sverige)"
+      }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina",
+        "email" : "amarch@cas.austral.edu.ar"
+      },
+      "accreditation" : "MD",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "John Tore Valand",
+        "organisation" : "Helse Bergen HF"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Osmeire Chamelette Sanzovo",
+        "organisation" : "Hospital Sírio Libanês - SP",
+        "email" : "osmeire.acsanzovo@hsl.org.br"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ar-sy"
+      },
+      "author" : {
+        "name" : "Mona Saleh"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Luxembourg Institute of Health (LIH)",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Pieter Bos, Jelte Zeilstra",
+        "organisation" : "Nedap"
       },
       "otherDetails" : { }
     } ]
