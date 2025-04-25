@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.1.0",
+      "sem_ver" : "3.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "7f7ccfe3af4d27e7d2c7faf0b95e0630",
+      "MD5-CAM-1.0.1" : "14ba5e753c7d41cb79224bcf3822c7c6",
       "PARENT:MD5-CAM-1.0.1" : "6b142ab25a9d3163c1ac37d05e602ceb"
     },
     "details" : {
@@ -445,7 +445,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Medical History",
+            "text" : "Medical History/ Diagnosis/ Procedure",
             "description" : "Framework for consistent modelling of content within a template for a Problem list.",
             "comment" : "Intended to be used within the COMPOSITION.problem_list."
           }
@@ -786,7 +786,7 @@
             "children" : [ {
               "@type" : "C_ARCHETYPE_ROOT",
               "rmTypeName" : "CLUSTER",
-              "occurrences" : "0..1",
+              "occurrences" : "0..*",
               "nodeId" : "at0039.1",
               "attributes" : [ ],
               "attributeTuples" : [ ],
@@ -19427,7 +19427,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Dental History",
+            "text" : "Dental History/ Diagnosis/ Procedure",
             "description" : "Framework for consistent modelling of content within a template for a Problem list.",
             "comment" : "Intended to be used within the COMPOSITION.problem_list."
           }
