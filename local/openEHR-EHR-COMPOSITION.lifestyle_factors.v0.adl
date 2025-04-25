@@ -106,7 +106,7 @@ Initieel ontwerp van dit archetype was gesubsidieerd door het iCareNet Antenatal
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"D58C6DA0C5FC12B15E83F7CE21D66F6B">
+		["MD5-CAM-1.0.1"] = <"f7bc126451630e0ea7031b3a81fe755c">
 		["build_uid"] = <"d0d4bf04-59f9-4e37-910b-1833a4f96020">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -132,6 +132,18 @@ definition
 						}
 					}
 				}
+				start_time matches {
+					DV_DATE_TIME[at0004] matches {*}    -- DV_DATE_TIME
+				}
+				end_time matches {
+					DV_DATE_TIME[at0005] matches {*}    -- DV_DATE_TIME
+				}
+				participations cardinality matches {1..*; unordered} matches {
+					PARTICIPATION[at0006] occurrences matches {0..1} matches {*}    -- PARTICIPATION
+				}
+				setting matches {
+					DV_CODED_TEXT[at0007] matches {*}    -- DV_CODED_TEXT
+				}
 			}
 		}
 	}
@@ -153,6 +165,22 @@ ontology
 					description = <"Additional information required to extend the model with local content or to align with other reference models or formalisms.">
 					comment = <"For example: local information requirements; or additional metadata to align with FHIR.">
 				>
+				["at0004"] = <
+					text = <"DV_DATE_TIME">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"DV_DATE_TIME">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"PARTICIPATION">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"DV_CODED_TEXT">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
@@ -169,6 +197,22 @@ ontology
 					text = <"Erweiterung">
 					description = <"Zusätzliche Informationen zur Erfassung lokaler Inhalte oder Anpassung an andere Referenzmodelle/Formalismen.">
 					comment = <"Zum Beispiel: lokaler Informationsbedarf oder zusätzliche Metadaten zur Anpassung an FHIR-Ressourcen.">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
 				>
 			>
 		>
@@ -187,6 +231,22 @@ ontology
 					description = <"Aanvullende informatie benodigd om het model uit te breiden met lokale inhoud of om aan te sluiten bij andere referentiemodellen of formalismen.">
 					comment = <"Bijvoorbeeld: lokale informatie eisen; of aanvullende metadata om aan te sluiten bij FHIR.">
 				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
@@ -202,6 +262,22 @@ ontology
 				["at0003"] = <
 					text = <"*Extension(en)">
 					description = <"*Additional information required to extend the model with local content or to align with other reference models or formalisms.(en)">
+				>
+				["at0004"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0005"] = <
+					text = <"*DV_DATE_TIME (en)">
+					description = <"">
+				>
+				["at0006"] = <
+					text = <"*PARTICIPATION (en)">
+					description = <"">
+				>
+				["at0007"] = <
+					text = <"*DV_CODED_TEXT (en)">
+					description = <"">
 				>
 			>
 		>
