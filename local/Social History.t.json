@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "0.1.0",
+      "sem_ver" : "1.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "0825908a3dfc2bfee389d8448957fa60",
+      "MD5-CAM-1.0.1" : "cba63384f3294473a6a210e1d7f8ad00",
       "PARENT:MD5-CAM-1.0.1" : "f7bc126451630e0ea7031b3a81fe755c"
     },
     "details" : {
@@ -368,14 +368,64 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "EVALUATION",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "CLUSTER",
+              "nodeId" : "at0029.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "items",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "CLUSTER",
+                  "nodeId" : "at0064.1",
+                  "attributes" : [ ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
       "@type" : "ARCHETYPE_TERMINOLOGY",
       "conceptCode" : "at0000",
       "termDefinitions" : {
-        "en" : { },
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Smokeless tobacco summary",
+            "description" : "Summary or persistent information about smokeless tobacco use by an individual.",
+            "comment" : "Examples: \t\ntobacco, snus, snuff, dip, gutka, iqmik, naswar, toombak, shammah, mawa, gadakhu, habit, babul, zarda, dokta, paan, pan, khilli, pan masala, dohra, tombol, sada pata, chadha, kapoori, manipuri, twist, niswar, nass, nasway, nasvay, sute, ammari, saood, sauté, gudakhu, kiwam, mishri, gul, tuibur, hidakpha, hsaypaung yay, chaw, chewing, oral, spitting"
+          },
+          "at0029.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0029.1",
+            "text" : "Type",
+            "description" : "Details about use of a specified type of smokeless tobacco."
+          },
+          "at0064.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0064.1",
+            "text" : "Episode",
+            "description" : "Details about a discrete period of use of the specified type of smokeless tobacco."
+          }
+        },
         "nb" : { },
         "sv" : { }
       },
