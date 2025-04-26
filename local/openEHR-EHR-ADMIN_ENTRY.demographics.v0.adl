@@ -29,7 +29,7 @@ description
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"B2439FE7CDCBBB0532C37A0F15FE82CD">
+		["MD5-CAM-1.0.1"] = <"02f4b2c1ff3a06770c25a56e318d77f0">
 		["build_uid"] = <"10ba36b2-aa8c-4b1a-ae11-aa5176aeb97b">
 		["revision"] = <"0.0.1-alpha">
 	>
@@ -42,6 +42,10 @@ definition
 					allow_archetype CLUSTER[at0003] occurrences matches {0..*} matches {    -- Person/Organisation
 						include
 							archetype_id/value matches {/openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v0|openEHR-EHR-CLUSTER\.person(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.organisation(-[a-zA-Z0-9_]+)*\.v1/}
+					}
+					allow_archetype ELEMENT[at0004] occurrences matches {0..*} matches {    -- ELEMENT
+						include
+							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -62,6 +66,10 @@ ontology
 				>
 				["at0003"] = <
 					text = <"Person/Organisation">
+					description = <"">
+				>
+				["at0004"] = <
+					text = <"ELEMENT">
 					description = <"">
 				>
 			>
