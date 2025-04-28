@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "8.0.0",
+      "sem_ver" : "9.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "3451d89a0bef76f51c54bebaac967ffa",
+      "MD5-CAM-1.0.1" : "499aad904982369d5a76f6549efd47af",
       "PARENT:MD5-CAM-1.0.1" : "6b142ab25a9d3163c1ac37d05e602ceb"
     },
     "details" : {
@@ -208,6 +208,15 @@
         "attributes" : [ ],
         "attributeTuples" : [ ],
         "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-005.v1",
+        "referenceType" : "archetypeOverlay"
+      }, {
+        "@type" : "C_ARCHETYPE_ROOT",
+        "rmTypeName" : "SECTION",
+        "occurrences" : "0..1",
+        "nodeId" : "at0.15",
+        "attributes" : [ ],
+        "attributeTuples" : [ ],
+        "archetypeRef" : "openEHR-EHR-SECTION.ovl-adhoc-006.v1",
         "referenceType" : "archetypeOverlay"
       } ]
     } ],
@@ -14349,6 +14358,15 @@
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..1",
+          "nodeId" : "at0.19",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-substance_use_screening-001.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
           "rmTypeName" : "EVALUATION",
           "occurrences" : "0..1",
           "nodeId" : "at0.7",
@@ -14760,7 +14778,162 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "8FE80F3E80C594AAF99D3BA540A53D73"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Eine generische Abschnittsüberschrift eines Templates, welche entsprechend dem spezifischen klinischen Kontext umbenannt werden sollte.",
+          "keywords" : [ "Abschnitt", "Template", "Überschrift", "Ad hoc", "Abschnittsüberschrift" ],
+          "use" : "Dieser Archetyp kann für die Erstellung einer Abschnittsüberschrift in einem Template verwendet werden. Die Überschrift kann, passend zu dem jeweiligen klinischen Kontext, umbenannt werden. Zum Beispiel: \"Ad hoc Überschrift\" wird umbenannt in \"Untersuchungsergebnisse\".\r\n\r\n",
+          "misuse" : "Die Überschrift sollte in einem Template nicht unverändert verwendet werden.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "En allmän avsnittsrubrik som döps om i en openEHR-mall för att passa in i en specifik klinisk kontext.",
+          "keywords" : [ ],
+          "use" : "Används för att skapa en avsnittsrubrik i en openEHR-mall som sedan döps om för att passa in i den specifika kliniska kontexten. Exempelvis \"Rubrik\" döps om till \"Undersökningsfynd\".",
+          "misuse" : "Ska inte lämnas oförändrad i en openEHR-mall.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ru" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ru"
+          },
+          "purpose" : "Базовый заголовок раздела, должен быть переименован в локальном шаблоне ",
+          "keywords" : [ "раздел", "шаблон", "заготовка", "название", "образец" ],
+          "use" : "используется для создания и именования разделов в локальных шаблонах",
+          "misuse" : "*Not to be left unchanged in a template.(en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Brukes som en generisk seksjonsoverskrift som skal gis nytt navn i en templat for å passe i en gitt klinisk kontekst.",
+          "keywords" : [ ],
+          "use" : "Brukes til å lage en seksjonsoverskrift i en templat, hvis navn deretter endres for å passe i den aktuelle kliniske konteksten. For eksempel: \"Templat-overskrift\" endret til \"Funn ved undersøkelse\", \"Anamnese\", \"Personopplysninger\" eller \"Oppsummering\".",
+          "misuse" : "Skal ikke stå med uendret navn i en templat.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es-ar" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es-ar"
+          },
+          "purpose" : "Proporcionar un encabezado de sección de tipo genérico que será renombrado en una plantilla para su empleo en un contexto clínico específico.",
+          "keywords" : [ ],
+          "use" : "Utilizar para construir un encabezado de sección en una plantilla y que será renombrado para su empleo en un contexto clínico específico. Por ejemplo, \"Encabezado ad hoc\" puede renombrarse como \"Hallazgos de examen\".",
+          "misuse" : "No debe mantenerse sin cambios en una plantilla.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Oferecer um cabeçalho de uma sessão genérica que será renomeado no template para adequar-se a um contexto clínico específico.",
+          "keywords" : [ "cabeçalho" ],
+          "use" : "Utilize para construir um cabeçalho de uma sessão (de um template) que será renomeada para adequar-se a um contexto clínico específico. Por exemplo: \"cabeçalho Ad hoc\" renomeado para \"Achados de exame\".",
+          "misuse" : "Não deve manter a configuração original no template.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To provide a generic section header which will be renamed in a template to suit a specific clinical context.",
+          "keywords" : [ ],
+          "use" : "Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".",
+          "misuse" : "Not to be left unchanged in a template.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sl"
+          },
+          "purpose" : "*To provide a generic section header which will be renamed in a template to suit a specific clinical context.(en)",
+          "keywords" : [ ],
+          "use" : "*Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".(en)",
+          "misuse" : "*Not to be left unchanged in a template.(en)",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "it" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "it"
+          },
+          "purpose" : "Fornire un'intestazione generica della sezione che sarà rinominata in un template per adattarsi ad uno specifico contesto clinico.",
+          "keywords" : [ ],
+          "use" : "Usato per costruire un'intestazione di sezione in un template che sarà rinominato in base al contesto clinico specifico. Per esempio: \"Intestazione ad hoc\" rinominata in \"Risultati dell'esame\".",
+          "misuse" : "Non deve essere lasciato invariato in un template.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "*To provide a generic section header which will be renamed in a template to suit a specific clinical context.(en)",
+          "keywords" : [ ],
+          "use" : "*Use to construct a section heading in a template that will be renamed to suit the specific clinical context. For example: \"Ad hoc heading\" renamed to \"Examination findings\".(en)",
+          "misuse" : "*Not to be left unchanged in a template.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-SECTION.adhoc.v1",
     "differential" : true,
@@ -15051,7 +15224,101 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "189016652B796FD2552171C762A5602E"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Schaffung von Rahmenbedingungen für die Darstellung von Antworten auf vordefinierte Screening-Fragen zur Anwendung eines bestimmten Medikaments oder einer Medikamentengruppe.",
+          "keywords" : [ "Medikation, Screening, Fragebogen, Medikament, Arzneimittel, Behandlung" ],
+          "use" : "Verwendung als Rahmenbedingung für die Darstellung von Antworten auf vordefinierte Screening-Fragen zur Anwendung eines bestimmten Medikaments oder einer Medikamentengruppe (einschließliche Medikamentenkasse).\r\n\r\nBeispiele für Medikamente, Gruppierungen und Klassen von Medikamenten sind „Alendronsäure“, „Osteoporose-Medikamente“ bzw. „Bisphosphonate“.\r\n\r\nHäufige Anwendungsfälle umfassen, sind aber nicht beschränkt auf:\r\n- Systematische Befragung in jedem Beratungsgespräch zu dem Medikamenteneinnahme-Verhalten, zum Beispiel:\r\n--- Verwenden Sie Paracetamol? Ja, Nein, Unbekannt.\r\n--- Haben Sie in den letzten vier Wochen Antikoagulanzien verwendet? Ja, Nein, Unbekannt.\r\n\r\nDie Semantik dieses Archetyps ist absichtlich locker, und die Abfrage dieses Archetyps wäre normalerweise nur im Kontext jedes spezifischen Templates nützlich oder sicher. In einem Template würde normalerweise jedes Datenelement in die spezifische gestellte Frage umbenannt. Wo Wertesätze für allgemeine Anwendungsfälle vorgeschlagen wurden, können diese für die lokale Verwendung angepasst werden, indem die „Text“-Auswahl verwendet wird, um jedem spezifischen Anwendungsfall zu entsprechen.\r\n\r\nÜber die EVENT-Struktur aus dem Referenzmodell kann festgelegt werden, ob sich die Fragen auf einen Zeitpunkt oder einen Zeitraum beziehen. Verwenden Sie eine separate Instanz dieses Archetyps, um zwischen einer Befragung zu unterscheiden, der Informationen über ein Medikament enthält, das zu einem beliebigen Zeitpunkt in der Vergangenheit angewendet wurde, und Informationen über ein Medikament, das innerhalb eines bestimmten Zeitintervalls durchgeführt wurde - zum Beispiel den Unterschied zwischen \"Verwenden Sie Paracetamol? \" im Vergleich zu \"Haben Sie in den letzten vier Wochen Antikoagulanzien verwendet?\".\r\n\r\nDie Quelle der Informationen in einer Fragebogenantwort kann in verschiedenen Kontexten variieren, kann jedoch mithilfe des Elements „Information provider“ im Referenzmodell spezifisch identifiziert werden.\r\n\r\nDieser Archetyp wurde entwickelt, um als Screening-Tool oder zur Darstellung einfacher Daten im Fragebogenformat zur Verwendung in Situationen wie einem Krankheitsregister verwendet zu werden. Wenn der Screening-Fragebogen das Vorhandensein eines Medikaments identifiziert, wird empfohlen, dass das klinische System die spezifischen Details über das Medikament unter Verwendung eines relevanten Medikations-Archetyps darstellt und beibehält, zum Beispiel das OBSERVATION.medication_statement, um eine detaillierte Momentaufnahme über die tatsächliche Verwendung des spezifischen Medikaments darzustellen.",
+          "misuse" : "Nicht zur Darstellung einer Anforderung für ein zu verabreichendes oder zu konsumierendes Medikament zu verwenden - verwenden Sie zu diesem Zweck INSTRUCTION.medication_order.\r\n\r\nNicht zur Darstellung der Verabreichung, Abgabe oder Einnahme eines Medikaments verwenden - verwenden Sie ACTION.medication für diesen Zweck.\r\n\r\nNicht zur Darstellung einer Zusammenfassung der Verwendung eines Medikaments über die Lebenszeit der Person zu verwenden – verwenden Sie zu diesem Zweck EVALUATION.medication_summary.\r\n\r\nDarf nicht verwendet werden, um eine detaillierte Momentaufnahme über die tatsächliche Verwendung eines einzelnen angegebenen Medikaments außerhalb eines Screening-Kontexts darzustellen. - Verwenden Sie zu diesem Zweck OBSERVATION.medication_statement.\r\n\r\nDarf nicht verwendet werden, um Details über das Fehlen eines bestimmten Medikaments oder einer Medikamentengruppe außerhalb eines Screening-Kontexts darzustellen. Verwenden Sie zu diesem Zweck EVALUATION.exclusion_specific.\r\n\r\nNicht zu verwenden, um einen Rahmen für die Darstellung von Antworten auf vordefinierte Screening-Fragen zu Nebenwirkungen zu schaffen, verwenden Sie zu diesem Zweck einen geeigneten Archetyp.\r\n\r\nDarf nicht verwendet werden, um Details zu einer einfachen Auswahlliste darzustellen, in der eine Frage entweder als \"vorhanden\" oder \"unbestimmt\" aufgezeichnet werden kann. Verwenden Sie dazu OBSERVATION.selection_list.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om bruken av et hvilket som helst legemiddel eller gruppe av legemidler.",
+          "keywords" : [ "legemiddel, kartlegging, spørreskjema, legemiddelgruppe, medikament" ],
+          "use" : "Brukes for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om bruken av et hvilket som helst legemiddel eller gruppe av legemidler.\r\n\r\nEksempler på legemidler, grupper og klasser av legemidler er \"alendronsyre\", \"osteoporosemedisiner\" og \"bisfosfonater\".\r\n\r\nVanlige bruksområder inkluderer, men er ikke begrenset til:\r\n- Systematiske spørsmål ved konsultasjoner, for eksempel:\r\n--- Bruker du paracetamol? Ja, Nei, Ukjent.\r\n--- Har du brukt noen blodfortynnende medisiner de siste 4 ukene? Ja, Nei, Ukjent.\r\n\r\nSemantikken til denne arketypen er med vilje løst definert, og spørringer etter data i denne arketypen vil normalt bare være hensiktsmessig eller sikkert i konteksten av det spesifikke templatet. I et templat vil hvert dataelement vanligvis døpes om til det (spesifikke) spørsmålet man ønsker svar på. Flere steder er det foreslått verdisett som passer til de vanligste bruksområder, men det er allikevel mulig å tilpasse/endre verdisett for lokal bruk ved å benytte de alternative datatypene DV_TEXT eller DV_BOOLEAN for å harmonere verdisettet til hvert enkelt brukstilfelle.\r\n\r\nEVENT-strukturen fra arketypens referansemodell kan brukes for å spesifisere om spørsmålene relateres til et tidspunkt eller til et tidsintervall.\r\nBruk egne instanser av denne arketypen for å skille mellom spørsmål om bruk av et legemiddel på et hvilket som helst tidspunkt og spørsmål om legemidler som er brukt i et tidsintervall. For eksempel; \"Bruker du paracetamol nå?\" sammenlignet med \"Har du brukt noen smertestillende medisin de siste 4 ukene?\".\r\n\r\nKilden til informasjonen i et spørreskjema kan variere i ulike kontekster, men kan identifiseres spesifikt ved å benytte \"Information provider\" elementet i openEHR referansemodellen.\r\n\r\nDenne arketypen er laget for å bli brukt i et spørreskjema eller for å registrere enkle strukturerte data til for eksempel et sykdomsregister. Dersom det i spørreskjemaet identifiseres at et legemiddel er tilstede, anbefales det at spesifikke detaljer om legemiddelet registreres og lagres i pasientjournalen i en egnet legemiddelarketype, for eksempel arketypen OBSERVATION.medication_statement for å registrere et detaljert øyeblikksbilde om bruken av et enkelt spesifisert legemiddel.",
+          "misuse" : "Brukes ikke for å dokumentere forordningen av et legemiddel - bruk arketypen INSTRUCTION.medication_order (Legemiddelordinering) til dette formålet.\r\n\r\nBrukes ikke for å dokumentere administreringen av et legemiddel - bruk arketypen ACTION.medication (Legemiddelhåndtering) til dette formålet.\r\n\r\nBrukes ikke for å registrere et sammendrag om all bruk av et spesifisert legemiddel over et individs livstid, bruk arketypen EVALUATION.medication_summary (Legemiddelsammendrag) til dette formålet.\r\n\r\nBrukes ikke for å registrere et detaljert øyeblikksbilde om bruken av et enkelt spesifisert legemiddel, utenfor konteksten av kartleggingen. Bruk arketypen OBSERVATION.medication_statement for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om etablert fravær av et spesifikt legemiddel eller gruppe av legemidler i pasientjournalen, utenfor konteksten av kartleggingen. Bruk arketypen EVALUATION.exclusion_specific for dette formålet.\r\n\r\nBrukes ikke for å lage et rammeverk for registrering av svar på forhåndsdefinerte spørsmål om overfølsomhetsreaksjoner, bruk en egnet arketype for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om en enkel utvalgsliste der et spørsmål kan registreres som enten \"Tilstede\" eller \"Ubestemt\". Bruk arketypen OBSERVATION.selection_list for dette formålet.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF, openEHR Foundation, openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To create a framework for recording answers to pre-defined screening questions about the use of any specified medication or grouping of medications.",
+          "keywords" : [ "medication, screening, questionnaire, drug, treatment" ],
+          "use" : "Use to create a framework for recording answers to pre-defined screening questions about the use of any specified medication or grouping (including classes) of medications.\r\n\r\nExamples of medications, groupings and classes of medications are 'alendronic acid', 'anti osteoporosis medications' and 'bisphosphonates', respectively.\r\n\r\nCommon use cases include, but are not limited to:\r\n- Systematic questioning in any consultation related to patterns of medication usage, for example:\r\n--- Do you use paracetamol? Yes, No, Unknown.\r\n--- Have you been using any anticoagulants the last four weeks? Yes, No, Unknown.\r\n\r\nThe semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the DV_TEXT or the DV_BOOLEAN datatypes choice to match each specific use case.\r\n\r\nThe EVENT structure from the reference model can be used to specify whether the questions relate to point in time or over a period of time. Use a separate instance of this archetype to distinguish between a questionnaire recording information about a medication that has been used at any time in the past and information about a medication used within a specified time interval - for example the difference between \"Do you use paracetamol?\" compared to \"Have you been using any anticoagulants during the last four weeks?\".\r\n\r\nThe source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.\r\n\r\nThis archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a medication it is recommended that clinical system record and persist the specific details about the medication using a relevant medication archetype, for example the OBSERVATION.medication_statement to record a detailed snapshot view about the actual use of a single specified medication.",
+          "misuse" : "Not to be used for recording an order for a medication to be administered or consumed - use INSTRUCTION.medication_order for this purpose.\r\n\r\nNot to be used for recording the administration, dispensing or consumption of a medication - use ACTION.medication for this purpose.\r\n\r\nNot to be used for recording a summary of use of a medication over the lifetime of the individual - use EVALUATION.medication_summary for this purpose.\r\n\r\nNot to be used to record a detailed snapshot view about the actual use of a single specified medication, outside of a screening context. - use OBSERVATION.medication_statement for this purpose.\r\n\r\nNot to be used to record details about the positive absence of a specific medication or grouping of medication, outside of a screening context. Use EVALUATION.exclusion_specific for this purpose.\r\n\r\nNot to be used to to create a framework for recording answers to pre-defined screening questions about adverse reactions, use an appropriate archetype for this purpose.\r\n\r\nNot to be used to record details about a simple selection list where a question may be recorded as either \"present\" or \"indeterminate\". Use OBSERVATION.selection_list for this purpose.",
+          "copyright" : "© openEHR Foundation, Nasjonal IKT HF",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Crear un marco para registrar respuestas a preguntas de detección predefinidas sobre el uso de cualquier medicamento o grupo de medicamentos específico.",
+          "keywords" : [ "medicación, cribado, cuestionario, fármaco, tratamiento" ],
+          "use" : "Úselo para crear un marco para registrar respuestas a preguntas de detección predefinidas sobre el uso de cualquier medicamento o grupo (incluidas clases) de medicamentos específicos.\r\n\r\nEjemplos de medicamentos, grupos y clases de medicamentos son \"ácido alendrónico\", \"medicamentos contra la osteoporosis\" y \"bifosfonatos\", respectivamente.\r\n\r\nLos casos de uso comunes incluyen, entre otros:\r\n- Cuestionamiento sistemático en cualquier consulta relacionada con patrones de uso de medicamentos, por ejemplo:\r\n--- ¿Usas paracetamol? Sí, No, Desconocido.\r\n--- ¿Ha estado usando algún anticoagulante en las últimas cuatro semanas? Sí, No, Desconocido.\r\n\r\nLa semántica de este arquetipo es intencionalmente en líneas generales y consultar este arquetipo normalmente solo sería útil o seguro dentro del contexto de cada plantilla específica. En una plantilla, a cada elemento de datos normalmente se le cambiaría el nombre según la pregunta específica formulada. Cuando se han propuesto conjuntos de valores para casos de uso comunes, estos se pueden adaptar para uso local utilizando la opción de tipos de datos DV_TEXT o DV_BOOLEAN para que coincidan con cada caso de uso específico.\r\n\r\nLa estructura EVENTO del modelo de referencia se puede utilizar para especificar si las preguntas se relacionan con un momento determinado o durante un período de tiempo. Utilice una instancia separada de este arquetipo para distinguir entre un cuestionario que registra información sobre un medicamento que se ha usado en cualquier momento en el pasado e información sobre un medicamento usado dentro de un intervalo de tiempo específico; por ejemplo, la diferencia entre \"¿Usa paracetamol?\", en comparación con \"¿Ha estado usando algún anticoagulante durante las últimas cuatro semanas?\".\r\n\r\nLa fuente de información en una respuesta al cuestionario puede variar en diferentes contextos, pero se puede identificar específicamente utilizando el elemento 'Proveedor de información' en el Modelo de Referencia.\r\n\r\nEste arquetipo ha sido diseñado para usarse como herramienta de detección o para registrar datos en formato de cuestionario simple para su uso en situaciones como un registro de enfermedades. Si el cuestionario de detección identifica la presencia de un medicamento, se recomienda que el sistema clínico registre y mantenga los detalles específicos sobre el medicamento utilizando un arquetipo de medicamento relevante, por ejemplo OBSERVATION.medication_statement para registrar una vista instantánea detallada sobre el uso real de un solo medicamento especificado.",
+          "misuse" : "No debe usarse para registrar una orden de administración o consumo de un medicamento; usar INSTRUCTION.medication_order para este propósito.\r\n\r\nNo debe usarse para registrar la administración, dispensación o consumo de un medicamento; usar ACTION.medication para este propósito.\r\n\r\nNo debe usarse para registrar un resumen del uso de un medicamento durante la vida del individuo; usar EVALUATION.medication_summary para este propósito.\r\n\r\nNo debe utilizarse para registrar una instantánea detallada del uso real de un único medicamento específico, fuera de un contexto de detección. - usar OBSERVATION.medication_statement para este fin.\r\n\r\nNo debe utilizarse para registrar detalles sobre la ausencia positiva de un medicamento o grupo de medicamentos específico, fuera de un contexto de detección. Utilice EVALUATION.exclusion_specific para este propósito.\r\n\r\nNo debe utilizarse para crear un marco para registrar respuestas a preguntas de detección predefinidas sobre reacciones adversas, utilice un arquetipo apropiado para este propósito.\r\n\r\nNo debe utilizarse para registrar detalles sobre una lista de selección simple donde una pregunta puede registrarse como \"presente\" o \"indeterminada\". Utilice OBSERVATION.selection_list para este propósito.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "ca" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "ca"
+          },
+          "purpose" : "Crear un marc per registrar les respostes a preguntes de cribratge predefinides sobre l'ús de qualsevol medicament o agrupació de medicaments especificats.",
+          "keywords" : [ "medicació, cribratge, qüestionari, fàrmac, tractament" ],
+          "use" : "Utilitzeu-lo per crear un marc per registrar les respostes a preguntes de cribratge predefinides sobre l'ús de qualsevol medicament o agrupació (incloses les classes) de medicaments especificats.\r\n\r\nExemples de medicaments, agrupacions i classes de medicaments són \"àcid alendrònic\", \"medicaments contra l'osteoporosi\" i \"bifosfonats\", respectivament.\r\n\r\nEls casos d'ús habituals inclouen, però no es limiten a:\r\n- Qüestionament sistemàtic en qualsevol consulta relacionada amb patrons d'ús de medicaments, per exemple:\r\n--- Fas servir paracetamol? Sí, no, desconegut.\r\n--- Heu fet servir algun anticoagulant les últimes quatre setmanes? Sí, no, desconegut.\r\n\r\nLa semàntica d'aquest arquetip és intencionadament en línies generals, i la consulta d'aquest arquetip normalment només seria útil o segura en el context de cada plantilla específica. En una plantilla, cada element de dades normalment es canviaria de nom a la pregunta específica formulada. Quan s'han proposat conjunts de valors per a casos d'ús habituals, aquests es poden adaptar per a l'ús local mitjançant l'opció de tipus de dades DV_TEXT o DV_BOOLEAN per fer coincidir cada cas d'ús específic.\r\n\r\nL'estructura EVENT del model de referència es pot utilitzar per especificar si les preguntes es relacionen amb un punt en el temps o durant un període de temps. Utilitzeu una instància separada d'aquest arquetip per distingir entre un qüestionari que registra informació sobre un medicament que s'ha utilitzat en qualsevol moment en el passat i informació sobre un medicament utilitzat dins d'un interval de temps especificat, per exemple, la diferència entre \"Feu servir paracetamol?\" en comparació amb \"Has estat utilitzant algun anticoagulant durant les últimes quatre setmanes?\".\r\n\r\nLa font de la informació en una resposta al qüestionari pot variar en diferents contextos, però es pot identificar específicament mitjançant l'element \"Proveïdor d'informació\" del model de referència.\r\n\r\nAquest arquetip ha estat dissenyat per ser utilitzat com a eina de cribratge o per registrar dades senzilles en format de qüestionari per utilitzar-les en situacions com ara un registre de malalties. Si el qüestionari de detecció identifica la presència d'un medicament, es recomana que el sistema clínic enregistri i persisteixi els detalls específics sobre el medicament mitjançant un arquetip de medicament rellevant, per exemple, la declaració OBSERVATION.medication_statement per registrar una visualització instantània detallada sobre l'ús real d'una única medicació especificada.",
+          "misuse" : "No s'ha d'utilitzar per registrar una comanda d'un medicament que s'ha d'administrar o consumir; utilitzeu INSTRUCTION.medication_order per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar l'administració, la dispensació o el consum d'un medicament - utilitzar ACTION.medication per a aquesta finalitat.\r\n\r\nNo s'ha d'utilitzar per registrar un resum de l'ús d'un medicament al llarg de la vida de l'individu; utilitzeu EVALUATION.medication_summary per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per gravar una instantània detallada sobre l'ús real d'un únic medicament especificat, fora d'un context de detecció. - utilitzeu OBSERVATION.medication_statement per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar detalls sobre l'absència positiva d'un medicament o agrupació de medicaments específics, fora d'un context de cribratge. Utilitzeu EVALUATION.exclusion_specific per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per crear un marc per registrar les respostes a preguntes de cribratge predefinides sobre reaccions adverses, utilitzeu un arquetip adequat per a aquest propòsit.\r\n\r\nNo s'ha d'utilitzar per registrar detalls sobre una llista de selecció simple on una pregunta es pot registrar com a \"present\" o \"indeterminada\". Utilitzeu OBSERVATION.selection_list per a aquest propòsit.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "*To create a framework for recording answers to pre-defined screening questions about the use of a any medication. (en)",
+          "keywords" : [ "*medication, screening, questionnaire, drug, treatment (en)" ],
+          "use" : "*Use to create a framework for recording answers to pre-defined screening questions about the use of any specified medication or grouping (including classes) of medications.\r\n\r\nExamples of medications, groupings and classes of medications are 'alendronic acid', 'anti osteoporosis medications' and 'bisphosphonates', respectively.\r\n\r\nCommon use cases include, but are not limited to:\r\n- Systematic questioning in any consultation related to patterns of medication usage , for example:\r\n--- Do you use paracetamol? Yes, No, Unknown.\r\n--- Have you been using any anticoagulants the last four weeks? Yes, No, Unknown.\r\n\r\nThe semantics of this archetype are intentionally loose, and querying this archetype would normally only be useful or safe within the context of each specific template. In a template, each data element would usually be renamed to the specific question asked. Where value sets have been proposed for common use cases, these can be adapted for local use by using the 'text' choice to match each specific use case.\r\n\r\nThe EVENT structure from the reference model can be used to specify whether the questions relate to point in time or over a period of time. Use a separate instance of this archetype to distinguish between a questionnaire recording information about a procedure that has been performed at any time in the past and information about a procedure performed within a specified time interval - for example the difference between \"Do you use paracetamol?\" compared to \"Have you been using any anticoagulants the last four weeks?\".\r\n\r\nThe source of the information in a questionnaire response may vary in different contexts but can be specifically identified using the 'Information provider' element in the Reference Model.\r\n\r\nThis archetype has been designed to be used as a screening tool or to record simple questionnaire-format data for use in situations such as a disease registry. If the screening questionnaire identifies the presence of a medication it is recommended that clinical system record and persist the specific details about the medication using a relevant medication archetype, for example the OBSERVATION.medication_statement to record a detailed snapshot view about the actual use of a single specified medication. (en)",
+          "misuse" : "*Not to be used for recording an order for a medication to be administered or consumed - use INSTRUCTION.medication_order for this purpose.\r\n\r\nNot to be used for recording the administration, dispensing or consumption of a medication - use ACTION.medication for this purpose.\r\n\r\nNot to be used for recording a summary of use of a medication over the lifetime of the individual - use EVALUATION.medication_summary for this purpose.\r\n\r\nNot to be used to record a detailed snapshot view about the actual use of a single specified medication, outside of a screening context. - use OBSERVATION.medication_statement for this purpose.\r\n\r\nNot to be used to record details about the positive absence of a specific medication or grouping of medication, outside of a screening context. Use EVALUATION.exclusion_specific for this purpose.\r\n\r\nNot to be used to to create a framework for recording answers to pre-defined screening questions about adverse reactions, use an appropriate archetype for this purpose.\r\n\r\nNot to be used to record details about a simple selection list where a question may be recorded as either \"present\" or \"indeterminate\". Use OBSERVATION.selection_list for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.medication_screening.v1",
     "differential" : true,
@@ -15240,7 +15507,79 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "926B8773E3FBB271F2820D4198B4F63E"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung der Kombination von Medikamentendosis und Verabreichungszeit an einem Tag im Kontext einer Medikamentenverordnung oder der Arzneimittelverwaltung oder gegebenenfalls für andere therapeutische/verschreibungspflichtige Produkte.",
+          "keywords" : [ "Medikation", "Verordnung", "verschreiben", "verordnen", "Therapie", "Substanz", "Wirkstoff", "Arzneimittel", "Medikament", "therapeutisch", "therapeutisches Erzeugnis", "Pharmazeutikum", "Produkt", "Posologie", "Dosierung", "Behandlung", "Fluid", "Flüssigkeit", "Ernährung", "Timing", "Zeitplan", "Verabreichung", "Applikation", "Dosis" ],
+          "use" : "Wird verwendet, um die Kombination einer Medikamentendosis und der Verabreichungszeiten innerhalb eines Tages, als Teil einer Medikamentenverordnung oder der Arzneimittelverwaltung oder gegebenenfalls für andere verschriebene therapeutische Produkte darzustellen.\r\nDas Zeitmuster für einen einzelnen Tag kann einfach eine einzelne Verabreichungszeit oder mehrere Verabreichungszeiten mit unterschiedlichem Komplexitätsgrad sein.\r\n\r\nTiming-Details, die nicht innerhalb eines Tages liegen, z. B. wöchentlicher oder monatlicher Rhythmus, werden im CLUSTER-Archetyp \"Verabreichungszeitpunkte - nicht täglich\" aufgeführt, der im CLUSTER-Archetyp \"Therapeutische Anweisungen\" (CLUSTER.therapeutic_direction) enthalten ist.\r\n\r\nIm Kontext einer therapeutischen INSTRUCTION kann dieser Archetyp in den SLOT \"Strukturierte Dosis- und Zeitangaben\" im CLUSTER \"Therapeutische Anweisung\" (CLUSTER.therapeutic_direction) eingefügt werden, um die Dosis und Details zum Zeitmuster der einzelnen beabsichtigten Verabreichungen eines therapeutischen Produktes darzustellen.\r\n\r\nIm Kontext eines ACTION-Archetyps fügen Sie diesen Archetyp direkt in den SLOT \"Dosis\" ein, um die Dosis und den Zeitpunkt der tatsächlichen Verabreichung eines therapeutischen Produktes darzustellen.\r\n\r\nSpezifische Start- / Stoppzeiten der Verabreichung sollten in einem CLUSTER-Archetyp \"Verabreichungszeitpunkte - täglich\" angegeben werden.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera kombinationen av läkemedelsmängd och administrationstid för en enda dag, som en del av en läkemedelsorder eller läkemedelshantering eller för andra lämpliga terapeutiska / förskrivningsbara föremål.",
+          "keywords" : [ "medicinering", "beställa", "ordinera", "terapi", "ämne", "läkemedel", "terapeutisk", "terapeutiskt bra", "läkemedel", "produkt", "dosering", "behandling", "vätska", "näring", "timing", "administration", "dos" ],
+          "use" : "Används för att registrera kombinationen av läkemedelsmängd och administreringstid för en enda dag, som en del av en läkemedelsorder eller läkemedelshantering eller för andra lämpliga terapeutiska / förskrivningsbara föremål.\r\nTidmönstret för en dag kan vara så enkelt som en enda administreringstid eller flera administreringstider med varierande nivåer av komplexitet.\r\n\r\nTidsuppgifter som inte ligger inom en enda dag, t.ex. vecko- eller månatliga tider, tas i CLUSTER 'Timing - non-daily' arketypen, inom CLUSTER 'Therapeutic direction' arketypen.\r\n\r\nI samband med en terapeutisk INSTRUCTION kan den här arketypen införas i 'Strukturerad dos och tidsriktning' SLOT i 'Therapeutic direction' CLUSTER för att registrera dos- och tidsdetaljer för mönstret för enstaka avsedda administrationer av en terapeutisk artikel.\r\n\r\nI samband med en ACTION-arketyp, sätt in den här arketypen direkt i 'Amount' SLOT för att registrera dosen och tidpunkten för den faktiska administreringen av ett terapeutisk objekt\r\n\r\nSpecifika administrationsstart / stopptider bör anges inom en innesluten CLUSTER 'Timing - daily' arketyp.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere kombinasjonen av en legemiddeldose og administrasjonstidspunkter innenfor en dag, som del av en legemiddelordinering eller legemiddelhåndtering, eller for andre ordinerte produkter der det er passende.",
+          "keywords" : [ "legemiddel", "ordinering", "foreskrive", "terapi", "substans", "medisin", "terapeutisk", "farmasøytisk", "produkt", "behandling", "væske", "ernæring", "timing", "administrering", "administrasjon", "dose" ],
+          "use" : "Brukes for å registrere kombinasjonen av en legemiddeldose og administrasjonstidspunkter innenfor en dag, som del av en legemiddelordinering eller legemiddelhåndtering, eller for andre ordinerte produkter der det er passende. Mønsteret for administrasjonstidspunkter innenfor en dag kan være så enkelt som ett administrasjonstidspunkt, eller flere administrasjonstidspunkter med forskjellige nivåer av kompleksitet.\r\n\r\nTimingdetaljer som ikke er innenfor én dag, f.eks. ukentlig eller månedlige timinger, håndteres av CLUSTER-arketypen \"Timing - repetering\" som benyttes i CLUSTER-arketypen \"Terapeutisk anvisning\".\r\n\r\nInnenfor en INSTRUCTION og i den igjen innenfor CLUSTER-arketypen \"Terapeutisk anvisning\" (CLUSTER.therapeutic_direction) for å registrere dose og timing av et ordinert produkt, som f.eks. et legemiddel.\r\n\r\nInnenfor en ACTION-arketype kan denne arketypen brukes for å registrere dosen og timing for den faktiske administreringen av det ordinerte produktet.\r\n\r\nSpesifikke tidspunkter for administrering og start/stopp-tidspunkter spesifiseres i CLUSTER-arketypen \"Timing - daglig\".",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para gravar a combinação de uma quantidade de medicamento e o tempo de administração diário, como parte de uma solicitação ou gestão de medicamentos ou para outros itens terapêuticos/prescritos apropriados.\r\n",
+          "keywords" : [ "medicamento", "solicitação", "prescrever", "terapia", "substância", "fármaco", "terapêutico", "item terapêutico", "farmacêutico", "produto", "posologia", "tratamento", "fluido", "nutrição", "tempo", "administração", "dose" ],
+          "use" : "Usado para gravar a combinação de uma quantidade de medicamento e o tempo de administração diário, como parte de uma solicitação ou gestão de medicamentos ou para outros itens terapêuticos/prescritos apropriados.\r\nO padrão de tempo diário pode ser simples como uma administração única ou múltiplas administrações com níveis variados de complexidade.\r\n\r\nOs detalhes de tempo que não estão dentro de um mesmo dia p.e. semanalmente ou mensalmente são incluídos dentro do arquétipo CLUSTER \"Timing repetition\" carregado dentro do arquétipo CLUSTER \"Therapeutic direction\".\r\n\r\nNo contexto de uma INSTRUÇÃO terapêutica este arquétipo pode ser inserido dentro do SLOT \"Dosage administration\" no CLUSTER \"Therapeutic direction\" para gravar a dose e detalhes de tempo do padrão de uma administração única de um item terapêutico.\r\n\r\nNo contexto de um arquétipo tipo ACTION insira este arquétipo diretamente no SLOT \"Amount\" para gravar a dose e tempo da administração de um item terapêutico.\r\n\r\nTempos específicos de início e parada de administração devem ser especificados dentro do arquétipo CLUSTER \"Timing - daily\".\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the combination of a medication amount and the administration timing within a single day, as part of a medication order or medication management or for other appropriate therapeutic/prescribable items.",
+          "keywords" : [ "medication", "order", "prescribe", "therapy", "substance", "drug", "therapeutic", "therapeutic good", "pharmaceutical", "product", "posology", "treatment", "fluid", "nutrition", "timing", "administration", "dose" ],
+          "use" : "Use to record the combination of a medication amount and the administration timing for a single day, as part of a medication order or medication management or for other appropriate therapeutic/prescribable items. \r\nThe timing pattern for a single day can be as simple as a single administration time, or multiple administration times with varying levels of complexity.\r\n\r\nTiming details which are not within a single day, for example, weekly or monthly timings, are carried in the CLUSTER 'Timing - non-daily' archetype carried within the CLUSTER 'Therapeutic direction' archetype.\r\n\r\nIn the context of a therapeutic INSTRUCTION, this archetype may be inserted into the 'Structured dose and timing directions' SLOT in the 'Therapeutic direction' CLUSTER to record the dose and timing details of the pattern of single intended administrations of a therapeutic item. \r\n\r\nIn the context of an ACTION archetype insert this archetype directly into the 'Amount' SLOT to record the dose and timing of the actual administration of a therapeutic item.\r\n\r\nSpecific administration start/stop times should be specified within a contained CLUSTER 'Timing - daily' archetype.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.dosage.v2",
     "differential" : true,
@@ -15365,7 +15704,98 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "23070EF3E7FB47E48F7450559058538D"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Repräsentation strukturierter Informationen über den geplanten Zeitablauf einer therapeutischen oder diagnostischen Aktivität innerhalb von 24 Stunden.",
+          "keywords" : [ "Zeitablauf", "Zeitpunkt", "Applikation", "Verabreichung", "Dosierung", "Frequenz", "Intervall", "Rezept", "Empfehlung", "Zeitplan", "pro Tag" ],
+          "use" : "Zur Repräsentation strukturierter Informationen über über den geplanten Zeitablauf einer therapeutischen oder diagnostischen Aktivität innerhalb eines Zeitraums von 24 Stunden.\r\n\r\nDieser Archetyp ist so konzipiert, dass er innerhalb des SLOTs \"Tägliche Verabreichungszeiten\" des Archetyps CLUSTER.dosage verwendet werden kann. Er kann aber auch in anderen CLUSTER- und ENTRY-Klassen-Archetypen verwendet werden, wenn dies klinisch sinnvoll ist.",
+          "misuse" : "Nicht zur Repräsentation von Informationen zum Zeitablauf, der innerhalb längeren Zeitraums als 24-Stunden liegt, verwenden. Verwenden Sie zu diesem Zweck den Archetyp CLUSTER.timing_nondaily.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere strukturert informasjon om planlagt timing av en terapeutisk eller diagnostisk aktivitet innenfor ett døgn.",
+          "keywords" : [ "timing", "administrering", "dosering", "frekvens", "intervall", "ordinering", "anbefaling", "plan", "per dag", "dssn", "tidspunkt", "tidsskjema", "tidsplan", "tidfesting", "tidsberegning", "tidsplanlegging", "planlegging" ],
+          "use" : "Strukturert informasjon om planlagt timing av en terapeutisk eller diagnostisk aktivitet innenfor ett døgn.\r\n\r\nArketypen er laget for å brukes i SLOTet \"Administreringstidspunkt\" i arketypen CLUSTER.dosage (Dosering), men kan også brukes i andre CLUSTER- og ENTRY-arketyper der det er klinisk passende.",
+          "misuse" : "Skal ikke brukes til å registrere detaljer om timing over lengre tidsperioder enn et døgn. Bruk arketypen CLUSTER.timing_repetition for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sk" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sk"
+          },
+          "purpose" : "Pre záznam štruktúrovaných informácií o požadovanom časovom rozpise terapeutickej alebo diagnostickej aktivity v rámci 24h intervalu",
+          "keywords" : [ "čas", "časový rozpis", "podanie", "dávkovanie", "frekvencia", "interval", "objednávka", "odporúčanie", "rozpis", "za deň", "denne", "denný" ],
+          "use" : "Použite pre záznam štruktúrovaných informácií o požadovanom časovom rozpise terapeutickej alebo diagnostickej aktivity v rámci 24h intervalu",
+          "misuse" : "Nepoužívajte pre záznam časového rozpisu pre periódy dlhšie ako 24h. V takom prípade použite CLUSTER.timing_repetition archetyp",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sl"
+          },
+          "purpose" : "*To provide structured information on time schedules within a single day that is suitable for computation and display for human interpretation.(en)",
+          "keywords" : [ ],
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record structured information about the intended timing of a therapeutic or diagnostic activity within any 24 hour period.",
+          "keywords" : [ "timing", "administration", "dosing", "frequency", "interval", "order", "recommendation", "schedule", "per day" ],
+          "use" : "Use to record structured information about the intended timing of a therapeutic or diagnostic activity within any 24 hour period.\r\n\r\nThis archetype is designed to be used within the 'Timing' SLOT within the CLUSTER.dosage archetype, but can also be used in other CLUSTER and ENTRY class archetypes where clinically appropriate.",
+          "misuse" : "Not to be used for recording timing details over periods longer than a single 24 hour period. Use the CLUSTER.timing_repetition archetype for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Enregistrer des informations structurées sur le moment prévu pour une activité thérapeutique ou diagnostique au cours d'une période de 24 heures.",
+          "keywords" : [ "timming", "l'administration", "dosage", "fréquence", "intervalle", "ordre", "recommandation", "horaire", "par jour" ],
+          "use" : "A utiliser pour enregistrer des informations structurées sur le moment prévu pour une activité thérapeutique ou diagnostique au cours d'une période de 24 heures.\r\n\r\nCet archétype est conçu pour être utilisé dans le SLOT 'Timing' de l'archétype CLUSTER.dosage, mais peut également être utilisé dans d'autres archétypes de classe CLUSTER et ENTRY lorsque cela est cliniquement approprié.",
+          "misuse" : "Ne doit pas être utilisé pour enregistrer les détails du chronométrage sur des périodes plus longues qu'une seule période de 24 heures. Utilisez l'archétype CLUSTER.timing_repetition à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.timing_daily.v1",
     "differential" : true,
@@ -15488,7 +15918,99 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "89BA41E6CD217F7E2639D05A6B02465C"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Details eines Arzneimittels oder einer Komponente eines Arzneimittels, einschließlich der Wirkstärke, der Darreichungsform und den Details über bestimmte Inhaltsstoffe.",
+          "keywords" : [ "Arzneimittel", "Medikament", "Verordnung", "Verschreibung", "Rezept", "ein Rezept ausstellen", "Therapie", "Substanz", "Stoff", "Arznei", "Therapeutikum", "Wirkstoff", "Heilmittel", "ad-hoc", "ad hoc", "Rezeptur", "Zusammensetzung", "Medizin", "Pharmakon" ],
+          "use" : "Zur Darstellung von Angaben zu einem Arzneimittel oder einer Arzneimittelkomponente, einschließlich der Wirkstärke, der Darreichungsform und den Angaben über spezielle Inhaltsstoffe.\r\n\r\nDieser Archetyp soll für die Darstellung von Angaben zu einem Arzneimittel oder einer Arzneimittelkomponente verwendet werden. Dabei sollen vor allem die Darreichungsform und die Inhaltsstoffe detailliert beschrieben werden, z.B. zu einer Infusion oder einer Ad-hoc-Mixtur oder wenn es zu einem Arzneimittel keine Terminologie zur Verfügung steht. Im Rahmen einer Verordnung oder Abgabe eines Arzneimittels kann dieser Archetyp in den SLOT \"Arzneimitteldetails\" innerhalb des INSTRUCTION.medication_order Archetyps eingebettet werden. Für die Darstellung einer gegenwärtigen Verabreichung, Abgabe oder Anwendung eines Arzneimittels muss dieser Archetyp innerhalb des SLOTs \"Arzneimitteldetails\" in den Archetyp ACTION.medication eingefügt werden.\r\n\r\nDieser Archetyp kann überflüssig sein, wenn die Verordnung eines verschreibungsfähigen Arzneimittels eine Terminologie zur Identifizierung des Arzneimittelproduktes verwendet. In diesem Fall kann der Marken- oder Produktname Informationen über die Darreichungsform und die Wirkstärke der Stoffe beinhalten.\r\n",
+          "misuse" : "Nicht für die Kontrolle des Apothekenbestands oder zur Verwaltung von Arzneimittellisten verwenden.\r\n\r\nNicht zur Darstellung einer beabsichtigten oder verabreichten Dosis eines Arzneimittels einsetzen. Für diesen Zweck müssen die Archetypen INSTRUCTION.medication_order oder CLUSTER.dosage verwendet werden.\r\n\r\nDarf nicht allein zum Ausfüllen einer Medikamentenliste verwendet werden. Verwenden Sie dazu einen relevanten medikamentenbezogenen ENTRY-Archetyp wie INSTRUCTION.medication_order oder ACTION.medication.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "För att registrera information om ett läkemedel eller en läkemedelskomponent, inklusive styrka, form och detaljer om någon specifika beståndsdel.",
+          "keywords" : [ "läkemedel", "beställnförskrivning", "terapi", "substans", "drog eller läkemedel", "behandlingsavsikt", "therapeutic good", "ad-hoc", "adhoc", "ad hoc", "*extemporaneous", "läkemedelsform", "farmaceutisk produkt" ],
+          "use" : "*Use to record details about a medication or component of a medication, including strength, form and details of any specific constituents.\r\n\r\nThis archetype is intended to be used to record details of a medication or component of a medication where the form and detailed ingredients of the medication need to be specified in more detail, for example, infusions and ad hoc mixtures, or where there is no medication terminology available. In the context of an order for administration or dispensing of a medication, nest this archetype within the Preparation details SLOT within the INSTRUCTION.medication_order archetype. In the context of recording the actual administration or dispensing or a medication, nest this archetype within the 'Medication details' SLOT within the ACTION.medication archetype.\r\n\r\nThis archetype may be redundant in situations where ordering a medication via prescription uses a terminology to identify the medication item. In that case the brand or product name may identify the form and strength of the substance. (en)",
+          "misuse" : "*Not to be used for pharmacy stock-control or within medication catalogues.\r\n\r\nNot to be used to record the intended or administered dose of a medication. Use either the INSTRUCTION.medication_order or the CLUSTER.dosage archetypes for this purpose.\r\n\r\nNot to be used by itself to populate a medication list. Use a relevant medication-related ENTRY archetype such as INSTRUCTION.medication_order or ACTION.medication for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om et legemiddel eller en komponent av et legemiddel, inkludert detaljer om spesifikke bestanddeler.",
+          "keywords" : [ "legemiddel", "tilbereding", "ordinering", "forskrive", "terapi", "substans", "medikament", "terapeutisk", "medikamenter solgt over disk", "vare", "magistrell", "ex tempore", "blanding", "virkestoff", "hjelpestoff", "utblanding", "foreskrive", "forordne" ],
+          "use" : "Brukes for å registrere detaljer om et legemiddel eller en komponent av et legemiddel, inkludert detaljer om spesifikke bestanddeler.\r\n\r\nDenne arketypen er laget for å brukes til å registrere detaljer om et legemiddel eller en komponent av et legemiddel, der formen og detaljer om bestanddelene må oppgis i mer detalj. Eksempler kan være infusjoner og magistrellforskrevne blandinger, eller der det ikke finnes en tilgjengelig legemiddelterminologi. I sammenhenger der et legemiddel skal administreres eller ekspederes skal denne arketypen nøstes i SLOTet Legemiddeldetaljer i arketypen INSTRUCTION.medication_order. I sammenhenger der det skal registreres hvilket legemiddel som faktisk ble administrert eller ekspedert skal denne arketypen nøstes i SLOTet Legemiddeldetaljer i arketypen ACTION.medication.\r\n\r\nDenne arketypen kan være overflødig i situasjoner der en legemiddelordinering via resept bruker terminologi for å spesifisere legemiddelet. I slike tilfeller vil ofte form og styrke være angitt som en del av terminologibegrepet.",
+          "misuse" : "Skal ikke brukes innen varelageroversikt for apotek, eller innen legemiddelkataloger.\r\n\r\nSkal ikke brukes for å registrere den tilsiktede eller administrerte dosen av et legemiddel. Bruk enten INSTRUCTION.medication_order eller CLUSTER.dosage til dette formålet.\r\n\r\nSkal ikke brukes alene for å populere en legemiddelliste. Bruk en relevant legemiddel-relatert ENTRY-arketype som INSTRUCTION.medication_order eller ACTION.medication for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt"
+          },
+          "purpose" : "Para registrar detalhes de uma preparação de medicamentos, incluindo, quando necessário, detalhes de múltiplos ingredientes, no contexto de uma infusão ou preparação ad-hoc (manipulada). A maioria das prescrições baseadas em dose terá sua precisa preparação determinada pelo estoque disponível na unidade, ou pelo fornecimento de farmácia, enquanto que, com a prescrição baseada em produtos, o nome da medicação traz detalhes da forma e concentração da preparação.",
+          "keywords" : [ "medicação", "ordem", "prescrever", "terapia", "substância", "droga", "terapêutico", "venda livre", "ítem terapêutico", "Ad hoc", "manipulados" ],
+          "use" : "*Use to record details about a medication or component of a medication, including strength, form and details of any specific constituents.\r\n\r\nThis archetype is intended to be used to record details of a medication or component of a medication where the form and detailed ingredients of the medication need to be specified in more detail, for example, infusions and ad hoc mixtures, or where there is no medication terminology available. In the context of an order for administration or dispensing of a medication, nest this archetype within the Preparation details SLOT within the INSTRUCTION.medication_order archetype. In the context of recording the actual administration or dispensing or a medication, nest this archetype within the 'Medication details' SLOT within the ACTION.medication archetype.\r\n\r\nThis archetype may be redundant in situations where ordering a medication via prescription uses a terminology to identify the medication item. In that case the brand or product name may identify the form and strength of the substance. (en)",
+          "misuse" : "*Not to be used for pharmacy stock-control or within medication catalogues.\r\n\r\nNot to be used to record the intended or administered dose of a medication. Use either the INSTRUCTION.medication_order or the CLUSTER.dosage archetypes for this purpose.\r\n\r\nNot to be used by itself to populate a medication list. Use a relevant medication-related ENTRY archetype such as INSTRUCTION.medication_order or ACTION.medication for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a medication or component of a medication, including strength, form and details of any specific constituents.",
+          "keywords" : [ "medication", "order", "prescribe", "therapy", "substance", "drug", "therapeutic", "therapeutic good", "ad-hoc", "adhoc", "ad hoc", "extemporaneous", "formulation", "medicine" ],
+          "use" : "Use to record details about a medication or component of a medication, including strength, form and details of any specific constituents.\r\n\r\nThis archetype is intended to be used to record details of a medication or component of a medication where the form and detailed ingredients of the medication need to be specified in more detail, for example, infusions and ad hoc mixtures, or where there is no medication terminology available. In the context of an order for administration or dispensing of a medication, nest this archetype within the 'Medication details' SLOT within the INSTRUCTION.medication_order archetype. In the context of recording the actual administration or dispensing or a medication, nest this archetype within the 'Medication details' SLOT within the ACTION.medication archetype.\r\n\r\nThis archetype may be redundant in situations where ordering a medication via prescription uses a terminology to identify the medication item. In that case the brand or product name may identify the form and strength of the substance.",
+          "misuse" : "Not to be used for pharmacy stock-control or within medication catalogues.\r\n\r\nNot to be used to record the intended or administered dose of a medication. Use either the INSTRUCTION.medication_order or the CLUSTER.dosage archetypes for this purpose.\r\n\r\nNot to be used by itself to populate a medication list. Use a relevant medication-related ENTRY archetype such as INSTRUCTION.medication_order or ACTION.medication for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nl" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nl"
+          },
+          "purpose" : "Het vastleggen van gegevens over een medicament of een onderdeel van een medicament, inclusief sterkte, vorm en details van een specifiek bestandsdeel.",
+          "keywords" : [ "medicatie", "recept", "voorschrijven", "behandeling", "substantie", "medicament", "therapeuticum", "therapeutische substantie", "ad-hoc", "adhoc", "ad hoc", "medicijn" ],
+          "use" : "*Use to record details about a medication or component of a medication, including strength, form and details of any specific constituents.\r\n\r\nThis archetype is intended to be used to record details of a medication or component of a medication where the form and detailed ingredients of the medication need to be specified in more detail, for example, infusions and ad hoc mixtures, or where there is no medication terminology available. In the context of an order for administration or dispensing of a medication, nest this archetype within the Preparation details SLOT within the INSTRUCTION.medication_order archetype. In the context of recording the actual administration or dispensing or a medication, nest this archetype within the 'Medication details' SLOT within the ACTION.medication archetype.\r\n\r\nThis archetype may be redundant in situations where ordering a medication via prescription uses a terminology to identify the medication item. In that case the brand or product name may identify the form and strength of the substance. (en)",
+          "misuse" : "*Not to be used for pharmacy stock-control or within medication catalogues.\r\n\r\nNot to be used to record the intended or administered dose of a medication. Use either the INSTRUCTION.medication_order or the CLUSTER.dosage archetypes for this purpose.\r\n\r\nNot to be used by itself to populate a medication list. Use a relevant medication-related ENTRY archetype such as INSTRUCTION.medication_order or ACTION.medication for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.medication.v2",
     "differential" : true,
@@ -15616,7 +16138,100 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "94A7237B611A8FAB5C0F0DBEA236C3F9"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung einer allgemeinen Übersicht von Ausschlüssen. Diese umfasst alle Erkrankungen, Diagnosen, Familienanamnese, Medikamente, Prozeduren, unerwünschte Nebenwirkungen oder andere klinische Ereignisse, die entweder gerade nicht aktuell sind, oder die in der Vergangenheit nicht vorhanden waren.",
+          "keywords" : [ "Ausschluss, Verneinung, ausschließen, Abwesenheit" ],
+          "use" : "Zur Darstellung einer allgemeinen Übersicht von Ausschlüssen. Diese umfasst alle Erkrankungen, Diagnosen, Familienanamnese, Medikamente, Prozeduren, unerwünschte Nebenwirkungen oder andere klinische Ereignisse, die entweder gerade nicht aktuell sind, oder die in der Vergangenheit nicht vorhanden waren.\r\n\r\nDieser Archetyp wurde speziell erstellt, um eine klare und unmissverständliche Aussage zum Gesamtausschluss eines klinischen Merkmals aus der Gesundheitsakte zu treffen. Diese Verfahrensweise wird bevorzugt, um zuverlässig Kennzeichen und Terminolgien zu verwenden, die einen Ausschluss ausdrücken.\r\n\r\nJede allgemeine Angabe sollte in einem einzelnen Archetyp dokumentiert werden - zum Beispiel in einem einzelnen Archetyp für Medikamente und einem anderen für unerwünschte Nebenwirkungen.\r\n\r\nDas Datenelement \"Allgemeine Ausschlusserklärung\" ermöglicht die Dokumentation von einzelnen Ausschlussangaben. Die Ausschlussangaben unterscheiden sich zur \"Allgemeinen Ausschlusserklärung\" in der Laufzeitnamenseinschränkung dem unterschiedlichen allgemeinen Ausschluss. Die Laufzeitnameseinschränkung wird während der Templatemodellierung oder im Rahmen einer Softwareanwendung vorgenommen.\r\n\r\nBitte beachten, dass die Ausschlusserklärungen nur zum Zeitpunkt der Dokumentation aktuell und genau sind. Es ist möglich, dass bei einem Individuum bei dem keine bekannte Geschichte eines Problems oder Diagnose dokumentiert wird (Verwendung der Ausschlusserklärung), es zum gleichen Zeitpunkt des Gesprächs / der Beratung das erste Auftreten eines Problems oder einer Diagnose kommen kann (Verwendung des Archetypes EVALUATION.problem_diagnosis). In zukünftigen Ausschlusserklärungen kann das Individuum möglicherweise eine bekannte Geschichte des Problems oder der Diagnose aufweisen.",
+          "misuse" : "Nicht zur Dokumentation des Ausschlusses eines bestimmten Problems/einer bestimmten Diagnose, eines Medikamentes, einer Prozedur, einer Familienanamnese, einer unerwünschten Nebenwirkung oder eines anderen klinischen Ereignisses - für diesen Zweck bitte den Archetyp EVALUATION.exclusion_specific benutzen.\r\n\r\nNicht zur Dokumentation des Ausschlusses von einem Teil einer medizinischen Untersuchung - für diesen Zweck bitte den Archetyp CLUSTER.exclusion_exam oder innerhalb eines entsprechenden OBSERVATION oder CLUSTER Archetyps verwenden.\r\n\r\nNicht zur Dokumentation von Ausschlüssen von Symptomen, für diesen Zweck bitte den Archetyp CLUSTER.exclusion_symptom oder innerhalb eines entsprechenden OBSERVATION oder CLUSTER Archetyps verwenden.\r\n\r\nNicht zur Dokumentation von fehlenden Informationen verwenden - für diesen Zweck bitte den Archetyp EVALUATION.absense benutzen.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att generellt utesluta alla problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare.",
+          "keywords" : [ "utesluta, exkludera, avsaknad" ],
+          "use" : "Används för att generellt utesluta alla problem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare.\r\n",
+          "misuse" : "Ska inte användas för att utesluta specifikaproblem/diagnoser, ärftlighet, läkemedel, ingrepp, biverkningar eller annat, som antingen inte föreligger nu eller som inte har uppträtt tidigare. Använd då i stället arketypen EVALUATION.exclusion_specific.\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere et overordnet eksklusjonsutsagn om alle problemer/diagnoser, familiære sykdommer, legemidler, prosedyrer, overfølsomheter eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid.",
+          "keywords" : [ "eksklusjon, negasjon, utelukkelse, fravær" ],
+          "use" : "Brukes til å registrere et overordnet eksklusjonsutsagn om alle problemer/diagnoser, familiære sykdommer, legemidler, prosedyrer, overfølsomheter eller andre kliniske konsepter som ikke er tilstede hos et individ, enten i nåtid eller fortid.\r\n\r\nArketypen er laget spesifikt for å kunne uttrykke klart og tydelig en overordnet utelukkelse av en type klinisk konsept fra journalen. Denne tilnærmingen er valgt i stedet for å basere seg på flagg eller terminologi for å uttrykke negasjon.\r\n\r\nHver globale eksklusjon registreres i en egen instans av arketypen, for eksempel en egen instans for utelukkelse av legemidler og en annen for overfølsomhetsreaksjoner.\r\n\r\nElementet \"Overordnet utsagn\" brukes til å registrere et enkelt globalt eksklusjonsutsagn. De forskjellige typene utsagn som er listet opp i elementets runtime name constraint navngir de forskjellige globale eksklusjonene. En runtime name constraint kan brukes enten under templatmodellering eller i en applikasjon.\r\n\r\nMerk at eksklusjonsutsagn kun kan regnes som aktuelle og pålitelige på det tidspunktet de registreres. Et journalnotat kan gjerne uttrykke at et individ har ingen problemer eller diagnoser i sin historikk (ved hjelp av et eksklusjonsutsagn) i den samme konsultasjonen der det for første gang registreres et problem eller en diagnose (ved hjelp av arketypen EVALUATION.problem_diagnosis). I senere journalnotater kan individet ha det aktuelle problemet eller diagnosen som del av sin kjente historikk.",
+          "misuse" : "Brukes ikke for å registrere eksklusjon av et spesifikt problem eller diagnose, legemiddel, prosedyre, familiær sykdom, overfølsomhet eller annet klinisk konsept - bruk arketypen EVALUATION.exclusion_specific for dette formålet.\r\n\r\nBrukes ikke for å registrere eksklusjon av noen komponent av en fysisk undersøkelse - bruk arketypen CLUSTER.exclusion_exam i en passende OBSERVATION- eller CLUSTER-arketype.\r\n\r\nBrukes ikke for å registrere eksklusjon av symptomer - bruk arketypen CLUSTER.exclusion_symptom i en passende OBSERVATION- eller CLUSTER-arketype.\r\n\r\nBrukes ikke for å registrere fravær av informasjon - bruk arketypen EVALUATION.absence for dette formålet.",
+          "copyright" : "© Nasjonal IKT HF, openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para registrar uma declaração global de exclusão sobre todos Problema / diagnóstico, História familiar, Medicamentos, Procedimentos, Reações adversas ou outro item clínico que não estão presentes atualmente ou não estiveram presentes no passado.",
+          "keywords" : [ "exclusão, negação, excluir, ausência" ],
+          "use" : "Use para registrar uma declaração geral de exclusão sobre todos os Problema / diagnóstico, História familiar, Medicamentos, Procedimentos, Reações adversas ou outro item clínico que não estão presentes ou não estiveram presentes no passado.\r\n\r\nEste arquétipo foi especificamente concebido para fazer uma declaração clara e inequívoca de uma exclusão global de um tipo de item clínico do registro de saúde. Esta abordagem é usada preferencialmente, em vez de se basear em sinalizadores ou terminologia para expressar negação.\r\n\r\nCada declaração global deve ser registrada em uma instância separada - por exemplo, uma instância separada para uma declaração sobre medicamentos e outra para reações adversas.\r\n\r\nO elemento de dados \"Declaração Global\" permite a gravação de uma única declaração Global. As diferentes declarações globais listadas na restrição de nome de tempo de execução \"declaração global\" identificam as diferentes exclusões globais. Esta restrição de nome pode ser aplicada durante a construção do modelo ou em tempo de execução dentro de um aplicativo de software.\r\n\r\nPor favor observe que as declarações de exclusão só podem ser consideradas atuais e precisas no momento da gravação. É possível que um registro seja capaz de afirmar que um indivíduo tenha nenhum histórico conhecido de quaisquer problemas ou diagnósticos (utilizando uma instrução de exclusão) e na mesma consulta seja gravada a evidência de sua primeira experiência de um problema ou diagnóstico (usando o arquétipo EVALUATION.problem_diagnosis). Em declarações de registro futuras, o indivíduo pode ter um histórico CONHECIDO do problema ou diagnóstico registrado em sua lista de problemas.",
+          "misuse" : "Não deve ser utilizado para registar a exclusão de um problema específico / diagnóstico, medicação, procedimento, história familiar, reação adversa ou outro item clínico - use o arquétipo EVALUATION.exclusion_specific para este fim.\r\n\r\nNão deve ser usado para registrar a exclusão de qualquer componente de um exame físico, use o arquétipo CLUSTER.exclusion_exam dentro de um arquétipo apropriado do tipo OBSERVATION ou CLUSTER.\r\n\r\nNão deve ser usado para registrar a exclusão de sintomas, use o arquétipo CLUSTER.exclusion_symptom dentro de um arquétipo apropriado do tipo OBSERVATION ou CLUSTER.\r\n\r\nNão deve ser usado para registrar a ausência de informações - use o arquétipo EVALUATION.absense para este fim.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record an overall statement of exclusion about all Problem/diagnosis, Family history, Medications, Procedures, Adverse reactions or other clinical item that are either not currently present, or have not been present in the past.",
+          "keywords" : [ "exclusion, negation, rule out, rule-out, r/o, absence" ],
+          "use" : "Use to record an overall statement of exclusion about all Problem/diagnosis, Family history, Medications, Procedures, Adverse reactions or other clinical item that are either not currently present, or have not been present in the past.\r\n\r\nThis archetype has been specifically designed to make a clear and unambiguous statement of an overall exclusion of a type of clinical item from the health record. This approach is used in preference to relying on flags or terminology to express negation.\r\n\r\nEach global statement should be recorded in a separate instance - for example a separate instance for a statement about medications and another for adverse reactions.\r\n\r\nThe 'Global statement' data element allows for recording of a single Global statement. The different Global statements listed in the \"Global statement' run-time name constraint identifies the the different global exclusions. This name constraint can be applied during template modelling or at run-time within a software application.\r\n\r\nPlease note that exclusion statements can only be considered to be current and accurate at the point-in-time of recording. It is possible for a record to be able to state that an individual has NO KNOWN history of any problems or diagnoses (using an exclusion statement) at the same consultation as recording the evidence of their first experience of a problem or diagnosis (using the EVALUATION.problem_diagnosis archetype). In future record statements, the individual may have a KNOWN history of the problem or diagnosis recorded in their problem list.",
+          "misuse" : "Not to be used to record the exclusion of a specific problem/diagnosis, medication, procedure, family history, adverse reaction or other clinical item - use the EVALUATION.exclusion_specific archetype for this purpose.\r\n\r\nNot to be used to record the exclusion of any component of a physical examination - use the CLUSTER.exclusion_exam archetype within an appropriate OBSERVATION or CLUSTER archetype.\r\n\r\nNot to be used to record the exclusion of symptoms use the CLUSTER.exclusion_symptom archetype within an appropriate OBSERVATION or CLUSTER archetype.\r\n\r\nNot to be used to record the absence of information - use the EVALUATION.absense archetype for this purpose.",
+          "copyright" : "© Nasjonal IKT HF, openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Une déclaration globale d'exclusion concernant tous les problèmes/diagnostics, les antécédents familiaux, les médicaments, les procédures, les effets indésirables ou autres éléments cliniques qui ne sont pas présents actuellement ou qui ne l'ont pas été dans le passé.",
+          "keywords" : [ "exclusion, négation, exclusion, exclusion, r / o, absence" ],
+          "use" : "*Use to record an overall statement of exclusion about all Problem/diagnosis, Family history, Medications, Procedures, Adverse reactions or other clinical item that are either not currently present, or have not been present in the past.\r\n\r\nThis archetype has been specifically designed to make a clear and unambiguous statement of an overall exclusion of a type of clinical item from the health record. This approach is used in preference to relying on flags or terminology to express negation.\r\n\r\nEach global statement should be recorded in a separate instance - for example a separate instance for a statement about medications and another for adverse reactions.\r\n\r\nThe 'Global statement' data element allows for recording of a single Global statement. The different Global statements listed in the \"Global statement' run-time name constraint identifies the the different global exclusions. This name constraint can be applied during template modelling or at run-time within a software application.\r\n\r\nPlease note that exclusion statements can only be considered to be current and accurate at the point-in-time of recording. It is possible for a record to be able to state that an individual has NO KNOWN history of any problems or diagnoses (using an exclusion statement) at the same consultation as recording the evidence of their first experience of a problem or diagnosis (using the EVALUATION.problem_diagnosis archetype). In future record statements, the individual may have a KNOWN history of the problem or diagnosis recorded in their problem list.(en)",
+          "misuse" : "*Not to be used to record the exclusion of a specific problem/diagnosis, medication, procedure, family history, adverse reaction or other clinical item - use the EVALUATION.exclusion_specific archetype for this purpose.\r\n\r\nNot to be used to record the exclusion of any component of a physical examination - use the CLUSTER.exclusion_exam archetype within an appropriate OBSERVATION or CLUSTER archetype.\r\n\r\nNot to be used to record the exclusion of symptoms use the CLUSTER.exclusion_symptom archetype within an appropriate OBSERVATION or CLUSTER archetype.\r\n\r\nNot to be used to record the absence of information - use the EVALUATION.absense archetype for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.exclusion_global.v1",
     "differential" : true,
@@ -15749,7 +16364,84 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "2DC80F474683F0694427F87B2BA48457"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Um die Aufzeichnung oder den Austausch einer expliziten Aussage eines Arztes zu ermöglichen, dass bestimmte Gesundheitsinformationen zum Zeitpunkt der Erfassung nicht für die Dokumentation in der Krankenakte oder einem Aktenauszug zur Verfügung stehen.",
+          "keywords" : [ "Abwesenheit", "Fehlen", "Nichtvorhandensein", "Information", "Auskunft", "unerwünscht", "Nebenwirkung", "Problem", "Diagnose", "Medikament", "Verfahren", "Schutzimpfung", "Impfung" ],
+          "use" : "Um die Aufzeichnung oder den Austausch einer Aussage eines Arztes zu ermöglichen, dass bestimmte Gesundheitsinformationen zum Zeitpunkt der Erfassung nicht für die Dokumentation in der Krankenakte oder einem Aktenauszug zur Verfügung stehen. \r\n\r\nDieser Datensatz ist die 3. Komponente einer Familie von Aussagen - Aussagen über das sichere Vorhandensein von Informationen, Aussagen über den expliziten Ausschluss von z.B. Krankheiten oder Medikamenteneinnahmen und Aussagen über die Abwesenheit bezüglich z.B. einer Erkrankung oder Medikamenteneinnahme:\r\n-Aussagen über vorhandene Informationen bedeuten, dass die entsprechenden Einträge in der Krankenakte oder in einem Auszug daraus vorliegen - zum Beispiel: EVALUATION.adverse_reaction kann aussagen, dass der Patient eine Allergie gegen Penicillin hat oder EVALUATION.problem_diagnosis kann aussagen, dass der Patient an Diabetes erkrankt ist.\r\n-Äquivalent können über z.B. nicht vorliegende Erkrankungen oder Medikamenteneinnahmen Aussagen getroffen werden. Sie geben an, dass keine entprechende Dokumentation in der Krankenakte oder einem Auszug daraus vorliegt - zum Beispiel: EVALUATION.exclusion_adverse kann aussagen, dass der Patient keine Allergie gegen Penicillin hat oder EVALUATION.exclusion_problem_diagnosis kann aussagen, dass der Patient nicht an Diabetes erkrankt ist; und;\r\n- In diesem Zusammenhang kann EVALUATION.absence genutzt werden, um auszudrücken, dass keine Informationen über ein Vorliegen einer Penicillin Allergie oder einer Diabetes Erkrankung des Patienten vorhanden sind - es ist nicht bekannt, ob z.B. eine Allergie vorliegt oder diese Allergie ausgeschlossen werden kann, da keine Informationen darüber zur Verfügung stehen.\r\n\r\nDieser Archetyp wurde z.B. für die Erstellung eines Arztbriefes entwickelt. Der Empfänger dieses Dokuments kann die vorhandenen Informationen klar und eindeutig verstehen - welche Angaben liegen vor, was ist ausgeschlossen und welche Informationen sind nicht vorhanden. \r\n\r\nDieser Archetyp ist dazu vorgesehen, innerhalb von SLOTS in fortbestehenden COMPOSITIONS wie z.B. \"Therapiemaßnahmen\", \"Medikamentenliste\" oder \"Nebenwirkungsliste\" verwendet zu werden. Die Dokumentation soll ebenso erfolgen, wie bei der Aufnahme einer Allergie oder einer Diagnose durch den Arzt. Dabei soll es jedoch eine Abgrenzung gegenüber der technischen Verwendung eines \"Null Flavor\" Standards geben. \r\n\r\nDie Aussagen über fehlende Informationen können nur zum Zeitpunkt der Dokumentation als aktuell und korrekt angesehen werden. \r\n\r\nDie Archetypen dieser Familie ermöglichen es auf \"Flags\", beispielsweise zum Ausdrücken von Negationen, zu verzichten.",
+          "misuse" : "Nicht zur Dokumentation von Nebenwirkungen, Medikamenteneinnahmen, Verfahren, Problemen oder Diagnosen entwickelt - für diesen Zweck bitte die dafür vorgesehenen Archetypen verwenden.\r\n\r\nNicht zur Dokumentation von ausgeschlossenen Nebenwirkungen, Medikamenteneinnahmen, Verfahren, Problemen oder Diagnosen entwickelt - für diesen Zweck bitte die Spezialisierungen des Archetyps EVALUATION.exclusion verwenden.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-br" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-br"
+          },
+          "purpose" : "Para permitir o registro ou mudança de uma declaração explícita por um clínico que especificou que informações de saúde não estão disponíveis para inclusão no registro de saúde ou para registrar sua extração no momento do registro.",
+          "keywords" : [ "ausência", "informação", "adversa", "reação", "problema", "diagnóstico", "medicação", "procedimento", "vacinação", "reação adversa" ],
+          "use" : "Utilizar para permitir o registro ou mudança de uma declaração explícita de um sistema de informação especificado que não está disponível para inclusão no prontuário médico ou fragmento no momento do registro.\r\n\r\nEsta declaração é o terceiro componente de uma família de declarações - declarações de presença positiva, declarações de exclusão positiva e declarações de ausência:\r\n- Declarações de presença positiva indicam que há uma informação de saúde relevante no relato ou fragmento - por exemplo, EVALUATION.adverse_reaction afirmando que o paciente tem alergia a penicilina ou EVALUATION.problem_diagnosis afirmando que o paciente tem diabetes. \r\n- Declarações equivalentes sobre exclusão são usadas para indicar que é conhecido que não há informação de saúde relevante no relato de saúde ou extrato deste - por exemplo, EVALUATION.exclusion_adverse afirmando que o paciente nao tem alergia conhecida a penicilina ou EVALUATION.exclusion_problem_diagnosis afirmando que o paciente não é diabético; e;\r\n- Neste contexto, o EVALUATION.absence pode ser utilizado para registrar que não há informação de saúde disponível sobre alergia a penicilina ou diagnóstico de diabetes - não se sabe se é presente ou excluído, mas não há informação a ser disponibilizada. \r\n\r\nEste arquétipo foi desenvolvido especificamete para o caso de uso em que o clínico está preparando uma parte de um relatório de saúde, então o receptor tem uma compreensão explícita e não ambígua da informação disponível - que se está presente, excluida ou não disponível. É intenção primária que seja utilizado com SLOTS em COMPOSITIONS persistentes como 'Precauções terapêuticas', 'Lista de medicações', 'Lista de problemas' ou 'Lista de reações adversas'. É também pretendido deliberadamente que seja declaração feita por clínico da mesma maneira que ele registra qualquer alergia ou diagnóstico, e é pretendido que seja bem diferente do uso técnico de dados com valores nulos.\r\n\r\nDeclarações de ausência somente podem ser consideradas correntes a acuradas no momento do registro.\r\n\r\nEste arquétipo foi projetado especificamente para evitar a necessidade de usar flags para expressar negação em qualquer entrada no relato de saúde.",
+          "misuse" : "Não deve ser utilizado para registrar a presença ou ausência de reações adversas, uso de medicações, procedimentos, problemas ou diagnósticos - usar arquétipos específicos para estas finalidades.\r\n\r\nNão dever ser utilizado para registrar a exclusão de reações adversas, uso de medicações, procedimentos, problemas ou diagnósticos - utilizar especializações específicas do arquétipo EVALUATION.exclusion para esta finalidade.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To enable recording or exchange of an explicit statement by a clinician that specified health information is not available for inclusion in the health record or record extract at the time of recording.",
+          "keywords" : [ "absence", "information", "adverse", "reaction", "problem", "diagnosis", "medication", "procedure", "vaccination", "adverse reaction" ],
+          "use" : "Use to enable recording or exchange of an explicit statement that specified health information is not available for inclusion in the health record or record extract at the time of recording. \r\n\r\nThis statement is the third component of a family of statements - statements of positive presence, statements of positive exclusion and statements of absence:\r\n- Statements of positive presence indicate that there is relevant health information in the record or extract - for example, EVALUATION.adverse_reaction stating that the patient has an allergy to penicillin or EVALUATION.problem_diagnosis stating that the patient has diabetes. \r\n- Equivalent statements about exclusion are used to indicate that it is known that there is no relevant health information in the health record or extract - for example, EVALUATION.exclusion_adverse  stating that the patient does not have a known allergy to penicillin or EVALUATION.exclusion_problem_diagnosis stating that the patient is not diabetic; and;\r\n- In this context, the EVALUATION.absence could be used to record that there is no health information available about penicillin allergy or the diagnosis of diabetes - it is not known if it is present or excluded, but there is no information that can be provided. \r\n\r\nThis archetype has been developed specifically for the use case where a clinician is preparing an extract from a health record, so that the receiver has explicit and unambiguous understanding of the information available - that which is present, excluded or just not available. It is primarily intended to be used within SLOTS in persistent COMPOSITIONS such as 'Therapeutic precautions', 'Medication list', 'Problem list', or 'Adverse reaction list'. It is also deliberately intended to be statement made by a clinician in the same way that they would record any allergies or diagnoses, and is intended to be quite different to technical use of null flavours in data.\r\n\r\nAbsence statements can only be considered to be current and accurate at the time of recording.\r\n\r\nThis archetype has been designed specifically to avoid the need to use of flags to express negation about any entry within the health record.",
+          "misuse" : "Not to be used to record the presence of adverse reactions, medication use, procedures, problems or diagnoses - use specific archetypes for this purpose.\r\n\r\nNot to be used to record the exclusion of adverse reactions, medication use, procedures, problems or diagnoses - use specific specialisations of the EVALUATION.exclusion archetype for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "*To enable recording or exchange of an explicit statement by a clinician that specified health information is not available for inclusion in the health record or record extract at the time of recording.(en)",
+          "keywords" : [ "absence", "information", "négatif", "réaction", "problème", "diagnostic", "médicament", "procédure", "vaccination", "réaction indésirable" ],
+          "use" : "*Use to enable recording or exchange of an explicit statement that specified health information is not available for inclusion in the health record or record extract at the time of recording. \r\n\r\nThis statement is the third component of a family of statements - statements of positive presence, statements of positive exclusion and statements of absence:\r\n- Statements of positive presence indicate that there is relevant health information in the record or extract - for example, EVALUATION.adverse_reaction stating that the patient has an allergy to penicillin or EVALUATION.problem_diagnosis stating that the patient has diabetes. \r\n- Equivalent statements about exclusion are used to indicate that it is known that there is no relevant health information in the health record or extract - for example, EVALUATION.exclusion_adverse  stating that the patient does not have a known allergy to penicillin or EVALUATION.exclusion_problem_diagnosis stating that the patient is not diabetic; and;\r\n- In this context, the EVALUATION.absence could be used to record that there is no health information available about penicillin allergy or the diagnosis of diabetes - it is not known if it is present or excluded, but there is no information that can be provided. \r\n\r\nThis archetype has been developed specifically for the use case where a clinician is preparing an extract from a health record, so that the receiver has explicit and unambiguous understanding of the information available - that which is present, excluded or just not available. It is primarily intended to be used within SLOTS in persistent COMPOSITIONS such as 'Therapeutic precautions', 'Medication list', 'Problem list', or 'Adverse reaction list'. It is also deliberately intended to be statement made by a clinician in the same way that they would record any allergies or diagnoses, and is intended to be quite different to technical use of null flavours in data.\r\n\r\nAbsence statements can only be considered to be current and accurate at the time of recording.\r\n\r\nThis archetype has been designed specifically to avoid the need to use of flags to express negation about any entry within the health record.(en)",
+          "misuse" : "*Not to be used to record the presence of adverse reactions, medication use, procedures, problems or diagnoses - use specific archetypes for this purpose.\r\n\r\nNot to be used to record the exclusion of adverse reactions, medication use, procedures, problems or diagnoses - use specific specialisations of the EVALUATION.exclusion archetype for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Permitir el registro o intercambio de una declaración expresa por parte de un clínico, de que determinada información sanitaria no está disponible para su inclusión en la historia clínica, o extracto de la misma, en el momento del registro.",
+          "keywords" : [ "ausencia", "información", "adversa", "reacción", "problema", "diagnóstico", "medicación", "procedimiento", "vacunación", "reacción adversa" ],
+          "use" : "Se utiliza para permitir el registro o intercambio de una declaración expresa de que determinada información sanitaria no está disponible para su inclusión en la historia clínica, o extracto de la misma, en el momento del registro. \r\n\r\nEsta declaración es el tercer componente de una familia de declaraciones: declaraciones de presencia positiva, declaraciones de exclusión positiva y declaraciones de ausencia:\r\n- Las declaraciones de presencia positiva indican que existe información sanitaria relevante en el registro o extracto - por ejemplo, EVALUATION.adverse_reaction indica que el paciente tiene alergia a la penicilina, o EVALUATION.problem_diagnosis indica que el paciente tiene diabetes. \r\n- Las declaraciones equivalentes sobre exclusión se utilizan para indicar que se sabe que no hay información sanitaria relevante en la historia clínica o en el extracto - por ejemplo, EVALUATION.exclusion_adverse indicando que el paciente no tiene una alergia conocida a la penicilina, o EVALUATION.exclusion_problem_diagnosis indicando que el paciente no es diabético;\r\n- En este contexto, EVALUATION.absence podría utilizarse para registrar que no se dispone de información sanitaria sobre la alergia a la penicilina o el diagnóstico de diabetes - no se sabe si está presente o excluido, pero no hay información que pueda proporcionarse. \r\n\r\nEste arquetipo se ha desarrollado específicamente para el caso de uso en el que un clínico está preparando un extracto de un registro sanitario, de modo que el receptor tenga una comprensión explícita e inequívoca de la información disponible: la que está presente, la que está excluida o simplemente la que no está disponible. Está pensado principalmente para ser utilizado dentro de SLOTS en COMPOSITIONS persistentes como 'Therapeutic precautions', 'Medication list', 'Problem list' o 'Adverse reaction list'. También se pretende, de forma deliberada, que sea una declaración realizada por un clínico de la misma manera que registraría cualquier alergia o diagnóstico, y se pretende que sea bastante diferente del uso técnico de los valoras nulos en los datos.\r\n\r\nLas declaraciones de ausencia sólo pueden considerarse actuales y precisas en el momento de su registro.\r\n\r\nEste arquetipo se ha diseñado específicamente para evitar la necesidad de utilizar indicadores para expresar una negación sobre cualquier entrada de la historia clínica.",
+          "misuse" : "No debe utilizarse para registrar la presencia de reacciones adversas, uso de medicación, procedimientos, problemas o diagnósticos - utilice arquetipos específicos para este fin.\r\n\r\nNo debe utilizarse para registrar la exclusión de reacciones adversas, uso de medicación, procedimientos, problemas o diagnósticos - utilice especializaciones específicas del arquetipo EVALUATION.exclusion para este fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.absence.v2",
     "differential" : true,
@@ -15843,6 +16535,835 @@
         "name" : "Julio de Sosa",
         "organisation" : "Servei Català de la Salut",
         "email" : "juliodesosa@catsalut.cat"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "b50d87ff-ff6d-4851-a121-03976bc421dd",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "4BA90DE6E8273F4E4517597B8A3E3F12"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.substance_use_screening.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-substance_use_screening-001.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { },
+        "de" : { },
+        "nl" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "bd6f047c-5c79-48a9-9815-513b40a11941",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Kim Sommer, Natalia Strauch, Alina Rehberg, Darin Leonhardt",
+        "organisation" : "Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule",
+        "email" : "sommer.kimkatrin@mh-hannover.de, Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de, leonhardt.darin@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Silje Ljosland Bakke, Marit Alice Venheim, John Tore Valand, Liv Laugen, Vebjørn Arntzen",
+        "organisation" : "Helse Vest IKT AS, Helse Bergen, ​Oslo University Hospital, Norway",
+        "email" : "silje.ljosland.bakke@helse-vest-ikt.no, marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no, varntzen@ous-hf.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nl"
+      },
+      "author" : {
+        "name" : "Martijn van Eenennaam",
+        "organisation" : "Nedap Healthcare",
+        "email" : "martijn.vaneenennaam@nedap.com"
+      },
+      "accreditation" : "PhD",
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "0f9037a3-7282-4a10-adc8-4409600209ca",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "8FE80F3E80C594AAF99D3BA540A53D73"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-SECTION.adhoc.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-SECTION.ovl-adhoc-006.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "SECTION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "existence" : "0..1",
+        "cardinality" : {
+          "@type" : "CARDINALITY",
+          "interval" : "1..*",
+          "ordered" : false,
+          "unique" : false
+        },
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "OBSERVATION",
+          "occurrences" : "0..1",
+          "nodeId" : "at0.2",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-adverse_reaction_screening-001.v0",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Allergic/ Adverse reactions",
+            "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
+          }
+        },
+        "ru" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "заготовка заголовка (6)",
+            "description" : "Образец заголовка раздела"
+          }
+        },
+        "es-ar" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Encabezado ad hoc (6)",
+            "description" : "Un encabezado de sección de tipo genérico que será renombrado en una plantilla para su empleo en un contexto clínico específico."
+          }
+        },
+        "sl" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Naslov sekcije (6)",
+            "description" : "Naslov sekcije"
+          }
+        },
+        "nb" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Templat-overskrift (6)",
+            "description" : "En generisk seksjonsoverskrift som skal gis nytt navn i en templat for å passe i en gitt klinisk kontekst."
+          }
+        },
+        "pt-br" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Cabeçalho Ad hoc (6)",
+            "description" : "Um cabeçalho de sessão genérico que deve ser renomeado no template para adequar-se a um contexto clínico específico."
+          }
+        },
+        "sv" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Rubrik (6)",
+            "description" : "En allmän avsnittsrubrik som döps om i en openEHR-mall för att passa in i en specifik klinisk kontext."
+          }
+        },
+        "de" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Ad hoc Überschrift (6)",
+            "description" : "Eine generische Abschnittsüberschrift eines Templates, welche entsprechend dem spezifischen klinischen Kontext umbenannt werden sollte."
+          }
+        },
+        "it" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Intestazione di sezione ad hoc (6)",
+            "description" : "Un'intestazione di sezione generica che dovrebbe essere rinominata in un template per adattarsi ad uno specifico contesto clinico."
+          }
+        },
+        "fr" : {
+          "at0000.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0000.1",
+            "text" : "Rubrique ad hoc (6)",
+            "description" : "Un en-tête de section générique qui doit être renommé dans un modèle pour s'adapter à un contexte clinique spécifique."
+          }
+        }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "46fe0e95-f5cc-44c8-8616-3b9fd0ca6e61",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Ramona Wellmann",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "wellmann.ramona@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "ru"
+      },
+      "author" : {
+        "name" : "Art Latyp Латыпов Артур Шамилевич",
+        "organisation" : "RusBITech РусБИТех, Москва"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Daniel Hall",
+        "organisation" : "Region Östergötland",
+        "email" : "daniel.hall@regionostergotland.se"
+      },
+      "accreditation" : "Åsa Skagerhult, Lisa Axelsson",
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "es-ar"
+      },
+      "author" : {
+        "name" : "Alan March",
+        "organisation" : "Hospital Universitario Austral, Buenos Aires, Argentina"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "einar.fosse@unn.no" : "einar.fosse@unn.no",
+        "name" : "Einar Fosse",
+        "organisation" : "Norwegian Centre for Integrated Care and Telemedicine, Tromsø, Norway"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-br"
+      },
+      "author" : {
+        "name" : "Vladimir Pizzo",
+        "organisation" : "Hospital Sírio Libanês, São Paulo, Brazil",
+        "email" : "vladimir.pizzo@hsl.org.br"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sl"
+      },
+      "author" : {
+        "name" : "?"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "it"
+      },
+      "author" : {
+        "name" : "Paolo Anedda",
+        "organisation" : "Inpeco",
+        "email" : "paolo.anedda@inpeco.com"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Better - Pathfinder",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "e1fbcc01-9ac9-4a88-affe-8a29b39ed066",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "067FA8D6808C997D952CB410116C340C"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.adverse_reaction_screening.v0",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-OBSERVATION.ovl-adverse_reaction_screening-001.v0"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "OBSERVATION",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "EVENT",
+              "nodeId" : "at0002",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_COMPLEX_OBJECT",
+                      "rmTypeName" : "CLUSTER",
+                      "nodeId" : "at0022",
+                      "attributes" : [ {
+                        "@type" : "C_ATTRIBUTE",
+                        "rmAttributeName" : "items",
+                        "children" : [ {
+                          "@type" : "C_ARCHETYPE_ROOT",
+                          "rmTypeName" : "CLUSTER",
+                          "occurrences" : "0..1",
+                          "nodeId" : "at0039.1",
+                          "attributes" : [ ],
+                          "attributeTuples" : [ ],
+                          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-organisation-005.v1",
+                          "referenceType" : "archetypeOverlay"
+                        } ]
+                      } ],
+                      "attributeTuples" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "22623988-b411-44eb-a53e-a28c21b41bd0",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "June Marie Nepstad Knappskog",
+        "organisation" : "Helse Nord IKT AS, Norway (openEHR Editor)",
+        "email" : "june.marie.nepstad.knappskog@hnikt.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "28a83221-97d2-4c0f-a4d8-ac1436b91b70",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "5DFD0809E7CD46EA0712A590C68F545B"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-organisation-005.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..1",
+          "nodeId" : "at0005.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-address-005.v1",
+          "referenceType" : "archetypeOverlay"
+        }, {
+          "@type" : "C_ARCHETYPE_ROOT",
+          "rmTypeName" : "CLUSTER",
+          "occurrences" : "0..*",
+          "nodeId" : "at0022.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ],
+          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-006.v1",
+          "referenceType" : "archetypeOverlay"
+        } ]
+      } ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { },
+        "de" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "8543bf4b-0e15-4990-8a02-c7d082df8617",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Sarah Ballout, Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "ballout.sarah@mh-hannover.de, Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Therese Lindberg, Erik Sundvall",
+        "organisation" : "Cambio CDS, Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
+        "email" : "therese.lindberg@cambio.se, erik.sundvall@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "dc584c83-b14e-4291-ad4c-151450dc0a20",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-address-005.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { },
+        "de" : { },
+        "pt-pt" : { },
+        "el" : { },
+        "fr" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "98bc048f-0811-45f4-8f58-46853c50ac46",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch, Alina Rehberg",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "pt-pt"
+      },
+      "author" : {
+        "name" : "Hugo Silva",
+        "organisation" : "University of Minho",
+        "email" : "pg50416@uminho.pt"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Erik Sundvall",
+        "organisation" : "Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
+        "email" : "erik.sundvall@regionstockholm.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
+        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
+        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "el"
+      },
+      "author" : {
+        "name" : "Erasmia Partafylla",
+        "organisation" : "Sigmasoft",
+        "email" : "c.partafylla@sigmasoft.gr"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "fr"
+      },
+      "author" : {
+        "name" : "Vanessa Pereira",
+        "organisation" : "Luxembourg Institute of Health (LIH)",
+        "email" : "vanessapereira@protonmail.com"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "e7a2e2cf-dd73-4290-a750-0d1a64f6cf9e",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-006.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "de" : { },
+        "nb" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "ae57162c-7e2f-4096-a08f-8f03574e4a72",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Natalia Strauch",
+        "organisation" : "Medizinische Hochschule Hannover",
+        "email" : "Strauch.Natalia@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Kanika Kuwelker, John Tore Valand, Liv Laugen",
+        "organisation" : "Helse Vest IKT, Helse Bergen, ​Oslo University Hospital, Norway",
+        "email" : "kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
       },
       "otherDetails" : { }
     } ]
