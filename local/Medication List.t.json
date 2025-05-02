@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "2.0.0",
+      "sem_ver" : "3.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "87c24457c1a4459b18f5f8329627b368",
+      "MD5-CAM-1.0.1" : "5b2d059b4de71808f6598b7a7686b99f",
       "PARENT:MD5-CAM-1.0.1" : "5f1bca5bb65aa51a4e2f694a6162eada"
     },
     "details" : {
@@ -2327,7 +2327,7 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "No current medication use?",
+            "text" : "Absent of medication use?",
             "description" : "A generic section header which should be renamed in a template to suit a specific clinical context."
           }
         },
