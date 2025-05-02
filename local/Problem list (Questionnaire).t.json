@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "11.1.0",
+      "sem_ver" : "11.2.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "d540abe82f3572f4ea5bbeb84bf831be",
+      "MD5-CAM-1.0.1" : "310bcd228752094037de39dcecc1ae28",
       "PARENT:MD5-CAM-1.0.1" : "6b142ab25a9d3163c1ac37d05e602ceb"
     },
     "details" : {
@@ -238,7 +238,7 @@
         "at0000.1" : {
           "@type" : "ARCHETYPE_TERM",
           "code" : "at0000.1",
-          "text" : "Problem list (Questionnaire)",
+          "text" : "Patient history taking (Questionnaire)",
           "description" : "A persistent and managed list of any combination of diagnoses, problems and/or procedures that may influence clinical decision-making and care provision for the subject of care."
         }
       },
