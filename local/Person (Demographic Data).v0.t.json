@@ -21,7 +21,7 @@
       "custodian_namespace" : "",
       "sem_ver" : "1.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "951d3c72f2031ff08016581adfdc29d1",
+      "MD5-CAM-1.0.1" : "9cbe98e71d551a785b4d736ee24a671c",
       "PARENT:MD5-CAM-1.0.1" : "f91221ec6bf060c5bc81f5dcb717fedf"
     },
     "details" : {
@@ -4715,7 +4715,37 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "528770673B6F27BE273FC9F786744619"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Eine generische Clusterüberschrift, welche üblicherweise im Rahmen der Template Modellierung umbenannt wird.",
+          "keywords" : [ "Überschrift", "Cluster", "Ad hoc", "Clusterüberschrift" ],
+          "use" : "Für den Aufbau und die Benennung eines Clusters innerhalb eines definierten Templates.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "A generic cluster header which is normally renamed locally at template level.",
+          "keywords" : [ ],
+          "use" : "To construct and name a cluster within a local template.",
+          "copyright" : "© Australian Digital Health Agency, openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.adhoc_cluster_heading.v0",
     "differential" : true,
@@ -4801,7 +4831,114 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "10166B307F40817B5B3E2D3720F6AC03"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen zu einer Person, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden.",
+          "keywords" : [ "Anbieter, Dienstleister, Betreuer, Personal, medizinisches Fachpersonal, Verwandter, Angehöriger, Hausarzt, Zeuge, Freund, Nachbar, Kind, Familie, Geschwister, Elternteil, Einzelperson" ],
+          "use" : "Der Archetyp wird verwendet, um Informationen zur einer Person darzustellen, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden, oft ad hoc oder wenn die Verwendung von einem formellen demografischen Register oder einem Index nicht angemessen oder nicht möglich ist.\r\nBeispiele beinhalten:\r\n- der Inhaber einer Patientenverfügung unter Verwendung des SLOT „Inhaber der Kopie“ innerhalb des Archetyps EVALUATION.advance_care_directive;\r\n- die Rolle und Kontaktdaten eines benannten Ansprechpartners in einer Organisation, unter Verwendung des SLOT „Kontaktperson“ innerhalb des Archetyps CLUSTER.organisation;\r\n- Angaben zu einem Verwandten in einer Familienanamnese unter Verwendung des SLOT „Angaben zum Familienmitglied“ innerhalb des Archetyps openEHR-EHR-EVALUATION.family_history;\r\n- der Name der Person, die eine Laborprobe von einem Patienten entnommen hat, unter Verwendung der „Angaben zum Probennehmer“ innerhalb des Archetyps CLUSTER.specimen oder\r\n- ein Zeuge eines Sturzes oder Unfalls, unter Verwendung des SLOT \"Zeuge\" innerhalb des Archetyps CLUSTER.health_event.\r\n\r\nIn den meisten einfachen Anwendungsfällen reicht das unstrukturierte Element „Name“ innerhalb des Archetyps CLUSTER.person aus, um den Namen einer Person als Teil einer Gesundheitsakte darzustellen. In Fällen, in denen ein strukturierter Name für klinische Aufzeichnungszwecke erforderlich oder wünschenswert ist, verschachteln Sie diesen Archetyp jedoch im SLOT „Name strukturiert“ im Archetyp CLUSTER.person. Wenn der Archetyp CLUSTER.structured_name in den SLOT „Name strukturiert“ eingebettet ist, können beliebige oder alle Datenelemente als Textzeichenfolge kombiniert und im Element „Name“ dargestellt werden, solange sie konsistent sind.\r\n\r\nDieser Archetyp könnte auch stellvertretend für formale demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise eine Bewertung, bei der Prüfer erwarten würden, dass die Details einer Person oben im Bewertungsformular angezeigt werden.",
+          "misuse" : "Der Archetyp darf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um den Patienten, die Teilnehmer oder den Verfasser der Akte und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Referenzmodellattribute dargestellt werden sollten.\r\n\r\nDarf nicht verwendet werden, um das Geburtsdatum einer Person darzustellen – verwenden Sie zu diesem Zweck das Datenelement „Geburtsdatum“ im Archetyp EVALUATION.birth_summary.\r\n\r\nDarf nicht verwendet werden, um biometrische Details oder Biomarker über eine Person darzustellen – verwenden Sie zu diesem Zweck einen speziellen ENTRY-Archetyp.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-pt"
+          },
+          "purpose" : "Para registar detalhes sobre uma pessoa tal como são conhecidos ou compreendidos aquando da documentação clínica.",
+          "keywords" : [ "prestador de cuidados, cuidador, funcionário, profissional de saúde, familiar, familiar mais próximo, testemunha, amigo, vizinho, criança, família, irmão, pai, indivíduo" ],
+          "use" : "Utilizado para registar detalhes de uma pessoa conforme são conhecidos ou compreendidos aquando da documentação clínica, frequentemente ad hoc ou quando não é apropriado ou possível usar um registo demográfico ou índice formal. Exemplos incluem:\r\n- o detentor da cópia de um registo de cuidados avançados, utilizando o SLOT 'Copyholder' dentro do arquétipo EVALUATION.advance_care_directive;\r\n- o papel e detalhes de contacto de uma pessoa designada dentro de uma organização, utilizando o SLOT 'Contact person' dentro do arquétipo CLUSTER.organisation;\r\n- detalhes sobre um familiar num registo de histórico familiar, utilizando o SLOT 'Family member details' dentro do arquétipo openEHR-EHR-EVALUATION.family_history;\r\n- o nome da pessoa que recolheu uma amostra laboratorial de um paciente, utilizando os 'Specimen collector details' dentro do arquétipo CLUSTER.specimen; ou\r\n- uma testemunha de uma queda ou acidente, utilizando o SLOT 'Witness' dentro do arquétipo CLUSTER.health_event.\r\n\r\nNa maioria dos casos simples de registo clínico, o elemento não estruturado 'Name' dentro do arquétipo CLUSTER.person será suficiente para registar o nome de uma pessoa como parte de um registo de saúde. No entanto, em circunstâncias em que um nome estruturado é necessário ou desejável para fins de registo clínico, incorpore este arquétipo dentro do SLOT 'Structured name' no arquétipo CLUSTER.person. Se o arquétipo CLUSTER.structured_name estiver incorporado dentro do SLOT 'Structured name', todos ou alguns dos elementos de dados podem ser combinados como uma string de texto e representados no elemento 'Name', desde que sejam consistentes.\r\n\r\nEste arquétipo também poderia ser utilizado como um proxy para dados demográficos formais ao rever um template com especialistas do domínio - por exemplo, uma avaliação onde os revisores esperariam ver os detalhes de uma pessoa no topo do formulário de avaliação.",
+          "misuse" : "Não deve ser utilizado para representar ou substituir a gestão formal de identificação ou para efeitos de manutenção de um registo ou índice demográfico oficial. Utilize um Master Patient Index formal ou Health Provider Index para este fim, ou arquétipos baseados no Demographic Information Model do openEHR.\r\n\r\nNão deve ser utilizado para representar o sujeito do cuidado, participantes ou autor do registo e elementos de dados semelhantes que devem ser representados formalmente no registo de saúde utilizando os atributos do Reference Model.\r\n\r\nNão deve ser utilizado para registar a data de nascimento de um indivíduo - utilize o elemento de dados 'Date of birth' dentro do EVALUATION.birth_summary para este fim.\r\n\r\nNão deve ser utilizado para registar detalhes biométricos ou biomarcadores sobre um indivíduo - utilize um arquétipo ENTRY específico para este fim.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Används för att registrera information om en person som behöver representeras i patientjournalen.",
+          "keywords" : [ "Leverantör, vårdare, vårdgivare, personal, vårdpersonal, släkting, anhöriga, läkare, vittne, vän, granne, barn, familj, syskon, förälder, individ" ],
+          "use" : "Används för att registrera uppgifter om en person i den elektroniska journalen, när det inte är lämpligt eller möjligt att använda ett formellt demografiskt register eller index. Exempelvis:\r\n- Namn och kontaktuppgifter för en person som innehar en fysisk kopia av ett dokument om framtida behandlingsval eller behandlingsreservationer; exempelvis 'Copyholder'-attributet i arketypen EVALUATION.advance_care_directive;\r\n- Namn och kontaktuppgifter för en vårdgivare i en remiss;\r\n- Namn, roll och kontaktuppgifter för en medlem av ett vårdgivarteam;\r\n- Rollen och kontaktuppgifterna för en namngiven kontaktperson inom en organisation;\r\n- uppgifter om en släkting i en släkthistoria; eller\r\n- ett vittne till ett epileptisk anfall.\r\n\r\nI de flesta vanliga användningsfallen där ett namn måste inkluderas i en journal räcker det med fritextinmatning inom elementet 'Ostrukturerat namn'. I situationer när det krävs mer detaljerade detaljer om en eller flera namnkomponenter, använd de ytterligare strukturerade dataelementen i arketypen CLUSTER.structured_name. I denna arketyp finns en SLOT kapslade i \"Structured name\" . Om arketypen CLUSTER.structured name är kapslad i 'Structured name' SLOT, kan något eller alla av de strukturerade namnelementen sammanfogas och representeras i elementet 'Ostrukturerat namn'.\r\n\r\nDenna arketyp kan också användas som en proxy för formella demografiska data när man granskar en mall med domänexperter – till exempel en bedömning där granskare förväntar sig att se patientens uppgifter högst upp i bedömningsformuläret.",
+          "misuse" : "Får inte användas för att representera eller ersätta formell identifieringshantering eller i syfte att upprätthålla ett officiellt demografiskt register eller index. Använd ett formellt Master Patient Index eller Vårdgivare Index för detta ändamål, eller arketyper baserade på openEHR Demographic Information Model.\r\n\r\nFår inte användas för att representera patienten, deltagare eller författare till journalen och liknande dataelement som bör representeras formellt i journalen med hjälp av Referensmodellens attribut.\r\n\r\nFår inte användas för att registrera en individs födelsedatum - använd istället dataelementet \"Födelsedatum\" i EVALUATION.birth_summary för detta ändamål\r\n\r\nFår inte användas för att registrera biometriska detaljer eller biomarkörer om en individ - använd en specifik ENTRY-arketyp för detta ändamål.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en person i en pasientjournal.",
+          "keywords" : [ "tjenesteyter, omsorgsperson, helsepersonell, slektning, pårørende, vitne, venn, nabo, barn, familie, søsken, forelder, arbeidsgiver, rekvirent, henviser, ektefelle, verge, samboer, kjæreste" ],
+          "use" : "Brukes for å registrere detaljer om en person i en pasientjournal, når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nFor eksempel:\r\n- navn og kontaktdetaljer til en person som har en kopi av et fremtidig behandlingsvalg, i SLOTet \"Kopiholder\" i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- navn og kontaktdetaljer til en omsorgsperson eller helsepersonell i en organisasjon, i SLOTet \"Kontaktperson\" i arketypen CLUSTER.organisation (Organisasjon).\r\n- detaljer om en slektning i en familieanamnese, I SLOTet \"Detaljer om familiemedlem\" i arketypen EVALUATION.family_history (Familieanamnese).\r\n- navnet på en person som gjennomførte prøvetakning på en pasient, i SLOTet \"Detaljer om prøvetaker\" i arketypen CLUSTER.specimen (Prøvemateriale).\r\n- et vitne til et fall eller en ulykke, i SLOTet \"Witness\" i arketypen CLUSTER.health_event.\r\n\r\nI de mest vanlige brukscasene der navn skal registreres i pasientjournalen, vil dataelementet \"Navn\" i denne arketypen være tilstrekkelig. I tilfeller der det er nødvendig eller ønskelig med detaljer om en eller flere navnekomponenter, bruk arketypen CLUSTER.structured_name i SLOTet \"Strukturert navn\" i denne arketypen. \r\nOm det er gjort, kan noen eller alle de strukturerte navnelementene slås sammen av programvaren man benytter, og lagres i dataelementet \"Navn\".\r\n\r\nDenne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om en person på toppen av vurderingsskjema.",
+          "misuse" : "Brukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere pasient, deltakere eller forfatter av skjema eller lignende, som skal representeres formelt i pasientjournalen. Bruk attributter fra Referansemodellen for dette formålet.\r\n\r\nBrukes ikke for å registrere fødselsdato for individet - bruk dataelementet \"Fødselsdato\" i arketypen EVALUATION.birth_summary for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om biometri eller biomarkører for personen - bruk en spesifikk ENTRY-arketype for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a person as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "provider, carer, staff, healthcare professional, relative, next-of-kin, practitioner, witness, friend, neighbour, child, family, sibling, parent, individual" ],
+          "use" : "Use to record details of a person as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype;\r\n- the role and contact details of a named contact person within an organisation, using the 'Contact person' SLOT within the CLUSTER.organisation archetype;\r\n- details about a relative in a family history record, using the 'Family member details' SLOT within the openEHR-EHR-EVALUATION.family_history archetype; \r\n- the name of the person who collected a laboratory specimen from a patient, using the 'Specimen collector details' within the CLUSTER.specimen archetype; or\r\n- a witness to a fall or accident, using the 'Witness' SLOT within the CLUSTER.health_event archetype.\r\n\r\nIn most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of a person as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype. If the CLUSTER.structured_name archetype is nested within the 'Structured name' SLOT, any or all of the data elements can be combined together as a text string and represented in the 'Name' element, as long as they are consistent.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see a person's details at the top of the assessment form.",
+          "misuse" : "Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the subject of care, participants or author of the record and similar data elements that should be represented formally in the health record using the Reference Model attributes.\r\n\r\nNot to be used to record the date of birth of an individual - use the 'Date of birth' data element within the EVALUATION.birth_summary for this purpose\r\n\r\nNot to be used to record biometric detail or biomarkers about an individual - use a specific ENTRY archetype for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Para registrar detalles sobre una persona tal y como se conocen o entienden en el curso de la documentación clínica.",
+          "keywords" : [ "proveedor, cuidador, personal, profesional sanitario, familiar, pariente cercano, profesional, testigo, amigo, vecino, niño, familia, hermano, padre, individuo" ],
+          "use" : "Utilizar para registrar los detalles de una persona tal y como se conocen o entienden en el curso de la documentación clínica, a menudo ad hoc o cuando no es apropiado o posible utilizar un registro o índice demográfico formal. Algunos ejemplos son:\r\n- El nombre y los datos de contacto de una persona que posee una copia física de un documento de voluntades anticipadas, usando el slot 'Encargado de la copia' en el arquetipo EVALUATION.advance_care_directive;\r\n- La función y los datos de una persona de contacto nombrada dentro de una organización, utilizando el SLOT \"Persona de contacto\" dentro del arquetipo CLUSTER.organisation;\r\n- Los datos de un pariente en un registro de historia familiar, utilizando el SLOT 'Family member details' dentro del arquetipo openEHR-EHR-EVALUATION.family_history;\r\n- El nombre de la persona que recogió una muestra de laboratorio de un paciente, utilizando los \"detalles del recolector de muestras\" dentro del arquetipo CLUSTER.specimen; o\r\n- Un testigo de una caída o accidente, utilizando el SLOT \"Testigo\" dentro del arquetipo CLUSTER.health_event.\r\n\r\nEn la mayoría de los casos de uso de registros clínicos sencillos, el elemento no estructurado \"Nombre\" dentro del arquetipo CLUSTER.person será suficiente para registrar el nombre de una persona como parte de un registro sanitario. Sin embargo, en circunstancias en las que sea necesario o deseable un nombre estructurado para fines de registro clínico, incluya este arquetipo dentro del SLOT 'Nombre estructurado' en el arquetipo CLUSTER.person. Si el arquetipo CLUSTER.structured_name se incluye dentro del SLOT 'Structured name', cualquiera de los elementos de datos, o todos ellos, pueden combinarse juntos como una cadena de texto y representarse en el elemento 'Nombre' siempre que sean coherentes.\r\n\r\nEste arquetipo también puede utilizarse como sustituto de los datos demográficos formales cuando se revise una plantilla con expertos del dominio - por ejemplo, una evaluación en la que los revisores esperarían ver los datos del paciente en la parte superior del formulario.",
+          "misuse" : "No debe utilizarse para representar o sustituir la gestión de la identificación formal ni para mantener un registro o índice demográfico oficial. Utilice para ello un Índice Maestro de Pacientes o un Índice de Proveedores de Salud formales o arquetipos basados en el Modelo de Información Demográfico de openEHR.\r\n\r\nNo debe utilizarse para representar el sujeto de la atención, los participantes o el autor del registro y elementos de datos similares que deberían representarse formalmente en el registro sanitario utilizando los atributos del Modelo de Referencia.\r\n\r\nNo debe utilizarse para registrar la fecha de nacimiento de un individuo: utilice el elemento de datos \"Fecha de nacimiento\" dentro de EVALUATION.birth_summary para este fin\r\n\r\nNo debe utilizarse para registrar detalles biométricos o biomarcadores sobre un individuo - utilice un arquetipo de ENTRY específico para este fin.\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "zh" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "zh"
+          },
+          "purpose" : "*To record details about a person as they are known or understood in the course of clinical documentation. (en)",
+          "keywords" : [ "*provider, carer, staff, healthcare professional, relative, next-of-kin, practitioner, witness, friend, neighbour, child, family, sibling, parent, individual (en)" ],
+          "use" : "*Use to record details of a person as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype;\r\n- the role and contact details of a named contact person within an organisation, using the 'Contact person' SLOT within the CLUSTER.organisation archetype;\r\n- details about a relative in a family history record, using the 'Family member details' SLOT within the openEHR-EHR-EVALUATION.family_history archetype; \r\n- the name of the person who collected a laboratory specimen from a patient, using the 'Specimen collector details' within the CLUSTER.specimen archetype; or\r\n- a witness to a fall or accident, using the 'Witness' SLOT within the CLUSTER.health_event archetype.\r\n\r\nIn most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of a person as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype. If the CLUSTER.structured_name archetype is nested within the 'Structured name' SLOT, any or all of the data elements can be combined together as a text string and represented in the 'Name' element, as long as they are consistent.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see a person's details at the top of the assessment form. (en)",
+          "misuse" : "*Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the subject of care, participants or author of the record and similar data elements that should be represented formally in the health record using the Reference Model attributes.\r\n\r\nNot to be used to record the date of birth of an individual - use the 'Date of birth' data element within the EVALUATION.birth_summary for this purpose\r\n\r\nNot to be used to record biometric detail or biomarkers about an individual - use a specific ENTRY archetype for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.person.v1",
     "differential" : true,
@@ -4991,7 +5128,54 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4C91B974D7EE4B40B0579711D6B62439"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Angaben zu den einzelnen Bestandteilen des Namens einer Person, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
+          "keywords" : [ "Person, Individuum, Name" ],
+          "use" : "Zur Darstellung von Angaben zu den einzelnen Bestandteilen des Namens einer Person, wie sie im Verlauf der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles demografisches Register oder einen Index zu verwenden.\r\n\r\nIn den meisten einfachen Anwendungsfällen für klinische Aufzeichnungen reicht das unstrukturierte Element „Name“ innerhalb des Archetyps CLUSTER.person aus, um den Namen einer Person als Teil einer Gesundheitsakte darzustellen. In Fällen, in denen ein strukturierter Name für klinische Aufzeichnungszwecke erforderlich oder wünschenswert ist, verschachteln Sie diesen Archetyp im SLOT „Name strukturiert“ im Archetyp CLUSTER.person.\r\n\r\nJedes Datenelement kann als Zeichenfolge mit freiem Text eingegeben werden – zum Beispiel „Prof Dr“, „Sonja Jane“, „Smith-Brown“, „MP“. Alternativ, da jedes Datenelement innerhalb eines Templates wiederholbar ist:\r\n- „Titel“ könnte für den Wert „Prof“ auf „Titel 1“ und für den Wert „Dr“ auf „Titel 2“ geklont werden; und\r\n- „Vorname“ konnte geklont und für den Wert „Sonja“ in „Vorname“ und für den Wert „Jane“ in „Zweiter Vorname“ umbenannt werden.\r\n\r\nObwohl dieser Archetyp an ISO 22220 ausgerichtet wurde, wurden aufgrund des eingeschränkten Umfangs dieses Archetyps der bevorzugte Name, die Namensverwendung, die Gültigkeitsdaten und die sich wiederholende Gruppierung von Namensbestandteil/Ordnung absichtlich nicht repliziert.\r\n\r\nEs wird davon ausgegangen, dass in den meisten Anwendungsfällen, für die dieser Archetyp entworfen wurde, komplexe Familiennamen einfach als Zeichenfolge aufgezeichnet werden. Es ist jedoch möglich, sie mit größerer Granularität und innerhalb dieses strukturierten Namensmusters unter Verwendung von Regeln und Beispielen aus ISO 22220:2007 (Anhang F) aufzuzeichnen, einschließlich:\r\n- Familienname zuerst, Vorname/n zuletzt;\r\n- Familiennamen mit Präfixen z.B. El Haddad oder van der Heyden; und\r\n- Namen, die sowohl den Familiennamen des Vaters als auch der Mutter enthalten.",
+          "misuse" : "Der Achetyp darf nicht verwendet werden, wenn eine unstrukturierte Textzeichenfolge, die den Namen der Person darstellt, für den Zweck geeignet ist. Verwenden Sie zu diesem Zweck das Datenelement „Name“ innerhalb des CLUSTER.person.\r\n\r\nDarf nicht für komplexe Namensdarstellung oder -verwaltung, wie z. B. Vorzugsnamen, Namensverwendung oder gültige Verwendungsdaten verwendet werden. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um den Behandlungsgegenstand, die Teilnehmer oder den Verfasser der Aufzeichnung und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Referenzmodellattribute dargestellt werden sollten.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om et individs strukturerte navn, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "person, individ, navn" ],
+          "use" : "Brukes for å registrere detaljer om et individs strukturerte navn, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nI de mest vanlige brukscasene vil det ustrukturerte dataelementet \"Navn\" i arketypen CLUSTER.person være tilstrekkelig til å registrere navnet til en person. Denne arketypen skal brukes i tilfeller der man har behov for detaljer om en eller flere komponenter i navnet, og gjøres ved å benytte denne arketypen i SLOTet \"Strukturert navn\" i arketypen CLUSTER.person.\r\n\r\nHver enkelt komponent kan registreres som fritekst, for eksempel: \"Prof Dr\", \"Sonja Jane\", \"Smith Brown\". Alternativt, ettersom hvert dataelement kan repeteres i et templat:\r\n- \"Tittel\" kan klones til \"Tittel 1\" for verdien \"Prof\" og \"Tittel 2\" for \"Dr\".\r\n- \"Fornavn\" kan klones til \"Fornavn\" for verdien Sonja og \"Mellomnavn\" for verdien \"Jane\".\r\n\r\nSelv om denne arketypen er laget for å være lik ISO 22220, har foretrukket navn, navnebruk, gyldige datoer og den gjentatte navnekomponenten/rangeringen med hensikt ikke blitt replikert på grunn av at arketypen har et mer begrenset bruksområde.\r\n\r\nDet antas at i de fleste brukstilfeller som denne arketypen er designet for, vil komplekse familienavn ganske enkelt bli registrert som en streng.\r\nISO 22220:2007 (vedlegg F) gir eksempler og veiledning for hvordan du registrerer komplekse navn innenfor det strukturerte navnemønsteret, inkludert:\r\n- Etternavn først, fornavn/navn etter.\r\n- Familienavn med prefikser, f.eks. El Haddad eller van der Heyden.\r\n- Navn som inneholder både fars og mors etternavn.",
+          "misuse" : "Brukes ikke dersom det for formålet er tilstrekkelig at personens navn registreres som fritekst. Bruk dataelementet \"Navn\" i CLUSTER.person (Person) for dette formålet. \r\n\r\nBrukes ikke til kompleks navnerepresentasjon eller administrative oppgaver, for eksempel foretrukne navn, navnebruk eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske detaljene for formell identitetsforvaltning, eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere pasient, deltakere eller forfatter av skjema eller lignende, som skal representeres formelt i pasientjournalen, bruk attributter fra Referansemodellen for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about the structured name of an individual as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "person, individual, name" ],
+          "use" : "Use to record details about the structured name of an individual as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index.\r\n\r\nIn most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of an individual as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype.\r\n\r\nEach data element can be entered as a string of free text - for example, 'Prof Dr', 'Sonja Jane', 'Smith-Brown', 'MP'. Alternatively, as each data element is repeatable within a template:\r\n- 'Title' could be cloned to 'Title 1' for the value 'Prof' and 'Title 2' for the value 'Dr'; and\r\n-  'Given name' could be cloned and renamed to 'First name' for the value 'Sonja' and 'Middle name' for the value 'Jane'.\r\n\r\nWhile this archetype has been aligned with ISO 22220, preferred name, name usage, valid dates and the repeating Name component/Order grouping has intentionally not been replicated due to the reduced scope of this archetype.\r\n\r\nIt is anticipated that in most use cases for which this archetype has been designed, complex family names will simply be recorded as a string. However, it is possible to record them with more granularity and within this structured name pattern using guidance and examples from ISO 22220:2007 (Annex F), including:\r\n- Family name first, given name/s last;\r\n- Family names with prefixes eg El Haddad or van der Heyden; and\r\n- Names containing both father's and mother's family names.",
+          "misuse" : "Not to be used if an unstructured text string representing the individual's name is adequate for the purpose. Use the 'Name' data element within the CLUSTER.person for this purpose.\r\n\r\nNot to be used for complex name representation or management, such as preferred names, name usage or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the subject of care, participants or author of the record and similar data elements that should be represented formally in the health record using the Reference Model attributes.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.structured_name.v1",
     "differential" : true,
@@ -5072,7 +5256,113 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
+          "keywords" : [ "Adresse", "Anschrift", "postalisch", "Mailing", "Privat", "Geschäft", "physisch", "Landmarke" ],
+          "use" : "Verwenden Sie diesen Archetyp, um Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke darzustellen, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, einen Adresssuchdienst zu verwenden. Beispiele beinhalten:\r\n- die Geschäftsadresse einer Organisation, die eine Person zu Hause betreut; oder\r\n- die Postanschrift des Inhabers einer Patientenverfügung innerhalb des Archetyps EVALUATION.advance_care_directive; oder\r\n- der Sturz- oder Unfallort.\r\n\r\nDer Geltungsbereich dieses Archetyps wurde darauf beschränkt, nur die gebräuchlichsten strukturierten Komponenten zur Identifizierung eines bestimmten physischen Gebäudes oder einer Landmarke zu enthalten. In diesem Zusammenhang kann eine vollständige Adresse beschrieben werden mit:\r\n- Ein oder mehrere Freitext-„Adresszeilen“-Datenelemente, um die große Vielfalt an Möglichkeiten darzustellen, wie Details auf „Straßenebene“ aufgezeichnet werden müssen; und\r\n- „Stadt“, um einen Vorort, eine Stadt, ein Dorf oder eine Gemeinde darzustellen;\r\n- „Region/Landkreis“ zur Darstellung eines lokalen Regierungsbezirks;\r\n- „Staat/Territorium/Provinz“, um einen großen Regierungsbezirk darzustellen;\r\n- „Postleitzahl“ und\r\n- \"Land\".\r\n\r\nDieser Archetyp könnte auch als Ersatz für formelle demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der Prüfer eine Adresse in einem Bewertungsformular erwarten würden. Dieser CLUSTER.address könnte auch als Stellvertreter für eine Adresse in formalen demografischen Adressdaten verwendet werden, wenn ein Template mit Klinikern überprüft wird – zum Beispiel bei einer Bewertung, bei der Prüfer erwarten würden, dass die vollständigen Kontaktdaten der Person oben auf dem Bewertungsformular angezeigt werden.",
+          "misuse" : "Darf nicht verwendet werden, um eine vollständig strukturierte Adresse, wie sie in ISO-Standards beschrieben ist, im Rahmen der Führung eines offiziellen demografischen Registers oder Index zu erfassen. Verwenden Sie zu diesem Zweck einen Adresssuchdienst, einen formalen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDarf nicht verwendet werden, um digitale Adressen zur Verwendung in der elektronischen Kommunikation darzustellen. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.electronic_communication.\r\n\r\nDarf nicht verwendet werden, um Details über Wohnungs- oder Obdachlosigkeit darzustellen. Verwenden Sie für diesen Zweck den Archetyp EVALUATION.housing_summary.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-pt"
+          },
+          "purpose" : "Registar os detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica.",
+          "keywords" : [ "endereço", "morada", "postal", "correio", "casa", "negócio", "físico", "marco", "ponto de referência" ],
+          "use" : "Utilize para registar detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica, muitas vezes ad hoc ou quando não é apropriado ou possível utilizar um serviço de pesquisa de endereços. Exemplos incluem:\r\n- o endereço comercial de uma organização que presta cuidados domiciliários a um indivíduo; ou\r\n- o endereço postal do titular de um registo de cuidados avançados, dentro do arquétipo EVALUATION.advance_care_directive; ou\r\n- a localização física de uma queda ou acidente.\r\n\r\nO âmbito deste arquétipo foi restringido para conter os componentes estruturados mais comuns para identificar um edifício físico ou um ponto de referência específico. Neste contexto, um endereço completo pode ser descrito utilizando:\r\n- Um ou mais elementos de dados de texto livre de 'Linha de endereço' para representar a enorme variedade de formas pelas quais os detalhes 'ao nível da rua' podem ter de ser registados; e\r\n- 'Cidade' para representar um subúrbio, vila, cidade, vila ou comunidade;\r\n- 'Distrito/Concelho' para representar um distrito governamental local;\r\n- 'Estado/Território/Província' para representar um importante distrito governamental;\r\n- ‘Código postal’, e\r\n- 'País'.\r\nNo entanto, este arquétipo pode ser estendido para incluir detalhes adicionais sobre o endereço, aninhando o CLUSTER.structured_address dentro do SLOT 'Endereço estruturado'.\r\n\r\nEste arquétipo CLUSTER.address também pode ser utilizado como um substituto para um endereço em dados formais de endereço demográfico ao rever um template com especialistas do domínio - por exemplo, uma avaliação em que os revisores esperariam ver os detalhes completos de contacto do indivíduo na parte superior do formulário de avaliação.",
+          "misuse" : "Não deve ser utilizado para registar um endereço totalmente estruturado, tal como descrito nas normas ISO ou como parte da manutenção de um registo ou índice demográfico oficial. Utilize um serviço de pesquisa de endereços, um Índice Mestre de Pacientes formal ou um Índice de Prestadores de Cuidados de Saúde para este fim, ou arquétipos baseados no Modelo de Informação Demográfica openEHR.\r\n\r\nNão deve ser utilizado para representar endereços digitais para utilização em comunicação eletrónica. Utilize CLUSTER.electronic_communication para este efeito.\r\n\r\nNão deve ser utilizado para registar detalhes sobre habitação ou falta de habitação. Utilize EVALUATION.housing_summary para esta finalidade.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "adress", "postadress", "hem", "företag", "position", "ort", "distrikt", "region" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "adresse", "postadresse", "hjem", "arbeid", "fysisk", "oppmøtested" ],
+          "use" : "\t\r\nBrukes for å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\nFor eksempel:\r\n- Adressen til hjemmetjeneste eller en annen helsetjenesteyter.\r\n- Adressen til en person eller organisasjon som oppbevarer fremtidige behandlingsvalg i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- Adressen til hendelsestedet til en ulykke eller et fall.\r\n\r\nOmfanget av denne arketypen har blitt begrenset til å dekke de vanligste komponentene i en enkel adresse. I denne sammenhengen kan en fullstendig adresse beskrives ved å bruke:\r\n- Ett eller flere \"Adresselinje\"-dataelementer for å representere det store utvalget av måter \"gatenivå\" kan registreres på.\r\n- \"By\" for å representere en forstad, by eller landsby.\r\n- \"Distrikt/fylke\" for å representere et lokalt myndighetsdistrikt.\r\n- \"Stat/territorium/provins\" for å representere et større myndighetsdistrikt.\r\n- \"Postnummer\".\r\n- \"Land\".\r\nImidlertidig kan denne arketypen utvides for å inkludere ytteligere detaljer om adressen ved å nøste arketypen CLUSTER.structured_address i SLOTet \"Strukturert adresse\"\r\n\r\nDenne CLUSTER-arketypen kan også brukes istedenfor formelle demografiske adressedata ved gjennomgang av et templat med klinikere – for eksempel en vurdering der brukeren/klinikeren forventer å se personens fullstendige kontaktinformasjon øverst i vurderingsskjemaet.",
+          "misuse" : "Brukes ikke til å representere en fullstendig strukturert adresse, som beskrevet i ISO-standarder eller for å opprettholde et demografisk register eller en indeks. Bruk en adresseoppslagstjeneste, et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke til å representere digitale adresser for bruk i elektronisk kommunikasjon. Bruk CLUSTER.electronic_communication (Elektronisk kommunikasjon) for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om bolig eller hjemløshet, Bruk arketypen EVALUATION.housing_summary (Boligsammendrag) for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "el" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "el"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "*address(en)", "*postal(en)", "*mailing(en)", "*home(en)", "*business(en)", "*physical(en)", "*landmark(en)" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "address", "postal", "mailing", "home", "business", "physical", "landmark" ],
+          "use" : "Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.",
+          "misuse" : "Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique.",
+          "keywords" : [ "adresse", "postale", "courrier", "domicile", "professionnel", "physique", "repère" ],
+          "use" : "Sert à enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique, souvent de manière ad hoc ou lorsqu'il n'est pas approprié ou possible d'utiliser un service de recherche d'adresses. Il s'agit par exemple\r\n- l'adresse professionnelle d'une organisation fournissant des soins à domicile à une personne ; ou\r\n- l'adresse postale du détenteur de la copie d'un dossier de soins avancés, dans l'archétype EVALUATION.advance_care_directive ; ou\r\n- le lieu physique d'une chute ou d'un accident.\r\n\r\nLe champ d'application de cet archétype a été limité aux composants structurés les plus courants permettant d'identifier un bâtiment physique ou un point de repère spécifique. Dans ce contexte, une adresse complète peut être décrite à l'aide des éléments suivants\r\n- un ou plusieurs éléments de données \"ligne d'adresse\" en texte libre pour représenter l'énorme variété de façons dont les détails \"au niveau de la rue\" peuvent être enregistrés ; et\r\n- Ville\" pour représenter une banlieue, une ville, un village ou une communauté ;\r\n- District/County\" pour représenter un district d'administration locale ;\r\n- \"État/Territoire/Province\" pour représenter un grand district gouvernemental ;\r\n- Code postal\", et \r\n- Pays\".\r\nToutefois, cet archétype peut être étendu pour inclure des détails plus fins sur l'adresse en imbriquant le CLUSTER.structured_address dans le SLOT \"Adresse structurée\".\r\n\r\nCet archétype CLUSTER.address peut également être utilisé comme substitut d'une adresse dans les données démographiques formelles lors de la révision d'un modèle avec des experts du domaine - par exemple, une évaluation où les examinateurs s'attendent à voir les coordonnées complètes de la personne en haut du formulaire d'évaluation.",
+          "misuse" : "Ne pas utiliser pour enregistrer une adresse entièrement structurée, telle que décrite dans les normes ISO ou dans le cadre de la tenue d'un registre ou d'un index démographique officiel. Utiliser à cette fin un service de recherche d'adresses, un index principal officiel des patients ou un index des prestataires de soins de santé, ou des archétypes fondés sur le modèle d'information démographique de l'openEHR.\r\n\r\nNe pas utiliser pour représenter des adresses numériques destinées à la communication électronique. Utiliser CLUSTER.electronic_communication à cette fin.\r\n\r\nNe doit pas être utilisé pour enregistrer des détails sur le logement ou l'absence de domicile. Utilisez EVALUATION.housing_summary à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
     "differential" : true,
@@ -5213,7 +5503,53 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird.",
+          "keywords" : [ "Telefon, Mobiltelefon, E-Mail, Fax, Pager, Chat, Soziale Medien, asynchron, Kommunikation, SoMe" ],
+          "use" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation für eine Person oder Organisation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird. Dies geschieht üblicherweise ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles Register oder einen Index zu verwenden.",
+          "misuse" : "Nicht für komplexe Kommunikationsdarstellung oder -verwaltung zu verwenden, wie z. B. bevorzugte Telefonnummern oder Gültigkeit der Nutzung. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en spesifikk type elektronisk kommunikasjon som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "telefon, mobil, e-post, faks, personsøker, chat, asynkron dialog, sosiale media, kommunikasjon, SoMe," ],
+          "use" : "Brukes for å registrere detaljer om en spesifikk type elektronisk kommunikasjon for en person eller en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.",
+          "misuse" : "Brukes ikke til kompleks kommunikasjonsadministrasjon, for eksempel foretrukne telefonnummer eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.",
+          "keywords" : [ "telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe" ],
+          "use" : "Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.",
+          "misuse" : "Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
     "differential" : true,
@@ -5294,7 +5630,37 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "528770673B6F27BE273FC9F786744619"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Eine generische Clusterüberschrift, welche üblicherweise im Rahmen der Template Modellierung umbenannt wird.",
+          "keywords" : [ "Überschrift", "Cluster", "Ad hoc", "Clusterüberschrift" ],
+          "use" : "Für den Aufbau und die Benennung eines Clusters innerhalb eines definierten Templates.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "A generic cluster header which is normally renamed locally at template level.",
+          "keywords" : [ ],
+          "use" : "To construct and name a cluster within a local template.",
+          "copyright" : "© Australian Digital Health Agency, openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.adhoc_cluster_heading.v0",
     "differential" : true,
@@ -5387,7 +5753,114 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "10166B307F40817B5B3E2D3720F6AC03"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen zu einer Person, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden.",
+          "keywords" : [ "Anbieter, Dienstleister, Betreuer, Personal, medizinisches Fachpersonal, Verwandter, Angehöriger, Hausarzt, Zeuge, Freund, Nachbar, Kind, Familie, Geschwister, Elternteil, Einzelperson" ],
+          "use" : "Der Archetyp wird verwendet, um Informationen zur einer Person darzustellen, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden, oft ad hoc oder wenn die Verwendung von einem formellen demografischen Register oder einem Index nicht angemessen oder nicht möglich ist.\r\nBeispiele beinhalten:\r\n- der Inhaber einer Patientenverfügung unter Verwendung des SLOT „Inhaber der Kopie“ innerhalb des Archetyps EVALUATION.advance_care_directive;\r\n- die Rolle und Kontaktdaten eines benannten Ansprechpartners in einer Organisation, unter Verwendung des SLOT „Kontaktperson“ innerhalb des Archetyps CLUSTER.organisation;\r\n- Angaben zu einem Verwandten in einer Familienanamnese unter Verwendung des SLOT „Angaben zum Familienmitglied“ innerhalb des Archetyps openEHR-EHR-EVALUATION.family_history;\r\n- der Name der Person, die eine Laborprobe von einem Patienten entnommen hat, unter Verwendung der „Angaben zum Probennehmer“ innerhalb des Archetyps CLUSTER.specimen oder\r\n- ein Zeuge eines Sturzes oder Unfalls, unter Verwendung des SLOT \"Zeuge\" innerhalb des Archetyps CLUSTER.health_event.\r\n\r\nIn den meisten einfachen Anwendungsfällen reicht das unstrukturierte Element „Name“ innerhalb des Archetyps CLUSTER.person aus, um den Namen einer Person als Teil einer Gesundheitsakte darzustellen. In Fällen, in denen ein strukturierter Name für klinische Aufzeichnungszwecke erforderlich oder wünschenswert ist, verschachteln Sie diesen Archetyp jedoch im SLOT „Name strukturiert“ im Archetyp CLUSTER.person. Wenn der Archetyp CLUSTER.structured_name in den SLOT „Name strukturiert“ eingebettet ist, können beliebige oder alle Datenelemente als Textzeichenfolge kombiniert und im Element „Name“ dargestellt werden, solange sie konsistent sind.\r\n\r\nDieser Archetyp könnte auch stellvertretend für formale demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise eine Bewertung, bei der Prüfer erwarten würden, dass die Details einer Person oben im Bewertungsformular angezeigt werden.",
+          "misuse" : "Der Archetyp darf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um den Patienten, die Teilnehmer oder den Verfasser der Akte und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Referenzmodellattribute dargestellt werden sollten.\r\n\r\nDarf nicht verwendet werden, um das Geburtsdatum einer Person darzustellen – verwenden Sie zu diesem Zweck das Datenelement „Geburtsdatum“ im Archetyp EVALUATION.birth_summary.\r\n\r\nDarf nicht verwendet werden, um biometrische Details oder Biomarker über eine Person darzustellen – verwenden Sie zu diesem Zweck einen speziellen ENTRY-Archetyp.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-pt"
+          },
+          "purpose" : "Para registar detalhes sobre uma pessoa tal como são conhecidos ou compreendidos aquando da documentação clínica.",
+          "keywords" : [ "prestador de cuidados, cuidador, funcionário, profissional de saúde, familiar, familiar mais próximo, testemunha, amigo, vizinho, criança, família, irmão, pai, indivíduo" ],
+          "use" : "Utilizado para registar detalhes de uma pessoa conforme são conhecidos ou compreendidos aquando da documentação clínica, frequentemente ad hoc ou quando não é apropriado ou possível usar um registo demográfico ou índice formal. Exemplos incluem:\r\n- o detentor da cópia de um registo de cuidados avançados, utilizando o SLOT 'Copyholder' dentro do arquétipo EVALUATION.advance_care_directive;\r\n- o papel e detalhes de contacto de uma pessoa designada dentro de uma organização, utilizando o SLOT 'Contact person' dentro do arquétipo CLUSTER.organisation;\r\n- detalhes sobre um familiar num registo de histórico familiar, utilizando o SLOT 'Family member details' dentro do arquétipo openEHR-EHR-EVALUATION.family_history;\r\n- o nome da pessoa que recolheu uma amostra laboratorial de um paciente, utilizando os 'Specimen collector details' dentro do arquétipo CLUSTER.specimen; ou\r\n- uma testemunha de uma queda ou acidente, utilizando o SLOT 'Witness' dentro do arquétipo CLUSTER.health_event.\r\n\r\nNa maioria dos casos simples de registo clínico, o elemento não estruturado 'Name' dentro do arquétipo CLUSTER.person será suficiente para registar o nome de uma pessoa como parte de um registo de saúde. No entanto, em circunstâncias em que um nome estruturado é necessário ou desejável para fins de registo clínico, incorpore este arquétipo dentro do SLOT 'Structured name' no arquétipo CLUSTER.person. Se o arquétipo CLUSTER.structured_name estiver incorporado dentro do SLOT 'Structured name', todos ou alguns dos elementos de dados podem ser combinados como uma string de texto e representados no elemento 'Name', desde que sejam consistentes.\r\n\r\nEste arquétipo também poderia ser utilizado como um proxy para dados demográficos formais ao rever um template com especialistas do domínio - por exemplo, uma avaliação onde os revisores esperariam ver os detalhes de uma pessoa no topo do formulário de avaliação.",
+          "misuse" : "Não deve ser utilizado para representar ou substituir a gestão formal de identificação ou para efeitos de manutenção de um registo ou índice demográfico oficial. Utilize um Master Patient Index formal ou Health Provider Index para este fim, ou arquétipos baseados no Demographic Information Model do openEHR.\r\n\r\nNão deve ser utilizado para representar o sujeito do cuidado, participantes ou autor do registo e elementos de dados semelhantes que devem ser representados formalmente no registo de saúde utilizando os atributos do Reference Model.\r\n\r\nNão deve ser utilizado para registar a data de nascimento de um indivíduo - utilize o elemento de dados 'Date of birth' dentro do EVALUATION.birth_summary para este fim.\r\n\r\nNão deve ser utilizado para registar detalhes biométricos ou biomarcadores sobre um indivíduo - utilize um arquétipo ENTRY específico para este fim.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Används för att registrera information om en person som behöver representeras i patientjournalen.",
+          "keywords" : [ "Leverantör, vårdare, vårdgivare, personal, vårdpersonal, släkting, anhöriga, läkare, vittne, vän, granne, barn, familj, syskon, förälder, individ" ],
+          "use" : "Används för att registrera uppgifter om en person i den elektroniska journalen, när det inte är lämpligt eller möjligt att använda ett formellt demografiskt register eller index. Exempelvis:\r\n- Namn och kontaktuppgifter för en person som innehar en fysisk kopia av ett dokument om framtida behandlingsval eller behandlingsreservationer; exempelvis 'Copyholder'-attributet i arketypen EVALUATION.advance_care_directive;\r\n- Namn och kontaktuppgifter för en vårdgivare i en remiss;\r\n- Namn, roll och kontaktuppgifter för en medlem av ett vårdgivarteam;\r\n- Rollen och kontaktuppgifterna för en namngiven kontaktperson inom en organisation;\r\n- uppgifter om en släkting i en släkthistoria; eller\r\n- ett vittne till ett epileptisk anfall.\r\n\r\nI de flesta vanliga användningsfallen där ett namn måste inkluderas i en journal räcker det med fritextinmatning inom elementet 'Ostrukturerat namn'. I situationer när det krävs mer detaljerade detaljer om en eller flera namnkomponenter, använd de ytterligare strukturerade dataelementen i arketypen CLUSTER.structured_name. I denna arketyp finns en SLOT kapslade i \"Structured name\" . Om arketypen CLUSTER.structured name är kapslad i 'Structured name' SLOT, kan något eller alla av de strukturerade namnelementen sammanfogas och representeras i elementet 'Ostrukturerat namn'.\r\n\r\nDenna arketyp kan också användas som en proxy för formella demografiska data när man granskar en mall med domänexperter – till exempel en bedömning där granskare förväntar sig att se patientens uppgifter högst upp i bedömningsformuläret.",
+          "misuse" : "Får inte användas för att representera eller ersätta formell identifieringshantering eller i syfte att upprätthålla ett officiellt demografiskt register eller index. Använd ett formellt Master Patient Index eller Vårdgivare Index för detta ändamål, eller arketyper baserade på openEHR Demographic Information Model.\r\n\r\nFår inte användas för att representera patienten, deltagare eller författare till journalen och liknande dataelement som bör representeras formellt i journalen med hjälp av Referensmodellens attribut.\r\n\r\nFår inte användas för att registrera en individs födelsedatum - använd istället dataelementet \"Födelsedatum\" i EVALUATION.birth_summary för detta ändamål\r\n\r\nFår inte användas för att registrera biometriska detaljer eller biomarkörer om en individ - använd en specifik ENTRY-arketyp för detta ändamål.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en person i en pasientjournal.",
+          "keywords" : [ "tjenesteyter, omsorgsperson, helsepersonell, slektning, pårørende, vitne, venn, nabo, barn, familie, søsken, forelder, arbeidsgiver, rekvirent, henviser, ektefelle, verge, samboer, kjæreste" ],
+          "use" : "Brukes for å registrere detaljer om en person i en pasientjournal, når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nFor eksempel:\r\n- navn og kontaktdetaljer til en person som har en kopi av et fremtidig behandlingsvalg, i SLOTet \"Kopiholder\" i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- navn og kontaktdetaljer til en omsorgsperson eller helsepersonell i en organisasjon, i SLOTet \"Kontaktperson\" i arketypen CLUSTER.organisation (Organisasjon).\r\n- detaljer om en slektning i en familieanamnese, I SLOTet \"Detaljer om familiemedlem\" i arketypen EVALUATION.family_history (Familieanamnese).\r\n- navnet på en person som gjennomførte prøvetakning på en pasient, i SLOTet \"Detaljer om prøvetaker\" i arketypen CLUSTER.specimen (Prøvemateriale).\r\n- et vitne til et fall eller en ulykke, i SLOTet \"Witness\" i arketypen CLUSTER.health_event.\r\n\r\nI de mest vanlige brukscasene der navn skal registreres i pasientjournalen, vil dataelementet \"Navn\" i denne arketypen være tilstrekkelig. I tilfeller der det er nødvendig eller ønskelig med detaljer om en eller flere navnekomponenter, bruk arketypen CLUSTER.structured_name i SLOTet \"Strukturert navn\" i denne arketypen. \r\nOm det er gjort, kan noen eller alle de strukturerte navnelementene slås sammen av programvaren man benytter, og lagres i dataelementet \"Navn\".\r\n\r\nDenne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om en person på toppen av vurderingsskjema.",
+          "misuse" : "Brukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere pasient, deltakere eller forfatter av skjema eller lignende, som skal representeres formelt i pasientjournalen. Bruk attributter fra Referansemodellen for dette formålet.\r\n\r\nBrukes ikke for å registrere fødselsdato for individet - bruk dataelementet \"Fødselsdato\" i arketypen EVALUATION.birth_summary for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om biometri eller biomarkører for personen - bruk en spesifikk ENTRY-arketype for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a person as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "provider, carer, staff, healthcare professional, relative, next-of-kin, practitioner, witness, friend, neighbour, child, family, sibling, parent, individual" ],
+          "use" : "Use to record details of a person as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype;\r\n- the role and contact details of a named contact person within an organisation, using the 'Contact person' SLOT within the CLUSTER.organisation archetype;\r\n- details about a relative in a family history record, using the 'Family member details' SLOT within the openEHR-EHR-EVALUATION.family_history archetype; \r\n- the name of the person who collected a laboratory specimen from a patient, using the 'Specimen collector details' within the CLUSTER.specimen archetype; or\r\n- a witness to a fall or accident, using the 'Witness' SLOT within the CLUSTER.health_event archetype.\r\n\r\nIn most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of a person as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype. If the CLUSTER.structured_name archetype is nested within the 'Structured name' SLOT, any or all of the data elements can be combined together as a text string and represented in the 'Name' element, as long as they are consistent.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see a person's details at the top of the assessment form.",
+          "misuse" : "Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the subject of care, participants or author of the record and similar data elements that should be represented formally in the health record using the Reference Model attributes.\r\n\r\nNot to be used to record the date of birth of an individual - use the 'Date of birth' data element within the EVALUATION.birth_summary for this purpose\r\n\r\nNot to be used to record biometric detail or biomarkers about an individual - use a specific ENTRY archetype for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "es" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "es"
+          },
+          "purpose" : "Para registrar detalles sobre una persona tal y como se conocen o entienden en el curso de la documentación clínica.",
+          "keywords" : [ "proveedor, cuidador, personal, profesional sanitario, familiar, pariente cercano, profesional, testigo, amigo, vecino, niño, familia, hermano, padre, individuo" ],
+          "use" : "Utilizar para registrar los detalles de una persona tal y como se conocen o entienden en el curso de la documentación clínica, a menudo ad hoc o cuando no es apropiado o posible utilizar un registro o índice demográfico formal. Algunos ejemplos son:\r\n- El nombre y los datos de contacto de una persona que posee una copia física de un documento de voluntades anticipadas, usando el slot 'Encargado de la copia' en el arquetipo EVALUATION.advance_care_directive;\r\n- La función y los datos de una persona de contacto nombrada dentro de una organización, utilizando el SLOT \"Persona de contacto\" dentro del arquetipo CLUSTER.organisation;\r\n- Los datos de un pariente en un registro de historia familiar, utilizando el SLOT 'Family member details' dentro del arquetipo openEHR-EHR-EVALUATION.family_history;\r\n- El nombre de la persona que recogió una muestra de laboratorio de un paciente, utilizando los \"detalles del recolector de muestras\" dentro del arquetipo CLUSTER.specimen; o\r\n- Un testigo de una caída o accidente, utilizando el SLOT \"Testigo\" dentro del arquetipo CLUSTER.health_event.\r\n\r\nEn la mayoría de los casos de uso de registros clínicos sencillos, el elemento no estructurado \"Nombre\" dentro del arquetipo CLUSTER.person será suficiente para registrar el nombre de una persona como parte de un registro sanitario. Sin embargo, en circunstancias en las que sea necesario o deseable un nombre estructurado para fines de registro clínico, incluya este arquetipo dentro del SLOT 'Nombre estructurado' en el arquetipo CLUSTER.person. Si el arquetipo CLUSTER.structured_name se incluye dentro del SLOT 'Structured name', cualquiera de los elementos de datos, o todos ellos, pueden combinarse juntos como una cadena de texto y representarse en el elemento 'Nombre' siempre que sean coherentes.\r\n\r\nEste arquetipo también puede utilizarse como sustituto de los datos demográficos formales cuando se revise una plantilla con expertos del dominio - por ejemplo, una evaluación en la que los revisores esperarían ver los datos del paciente en la parte superior del formulario.",
+          "misuse" : "No debe utilizarse para representar o sustituir la gestión de la identificación formal ni para mantener un registro o índice demográfico oficial. Utilice para ello un Índice Maestro de Pacientes o un Índice de Proveedores de Salud formales o arquetipos basados en el Modelo de Información Demográfico de openEHR.\r\n\r\nNo debe utilizarse para representar el sujeto de la atención, los participantes o el autor del registro y elementos de datos similares que deberían representarse formalmente en el registro sanitario utilizando los atributos del Modelo de Referencia.\r\n\r\nNo debe utilizarse para registrar la fecha de nacimiento de un individuo: utilice el elemento de datos \"Fecha de nacimiento\" dentro de EVALUATION.birth_summary para este fin\r\n\r\nNo debe utilizarse para registrar detalles biométricos o biomarcadores sobre un individuo - utilice un arquetipo de ENTRY específico para este fin.\r\n",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "zh" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "zh"
+          },
+          "purpose" : "*To record details about a person as they are known or understood in the course of clinical documentation. (en)",
+          "keywords" : [ "*provider, carer, staff, healthcare professional, relative, next-of-kin, practitioner, witness, friend, neighbour, child, family, sibling, parent, individual (en)" ],
+          "use" : "*Use to record details of a person as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype;\r\n- the role and contact details of a named contact person within an organisation, using the 'Contact person' SLOT within the CLUSTER.organisation archetype;\r\n- details about a relative in a family history record, using the 'Family member details' SLOT within the openEHR-EHR-EVALUATION.family_history archetype; \r\n- the name of the person who collected a laboratory specimen from a patient, using the 'Specimen collector details' within the CLUSTER.specimen archetype; or\r\n- a witness to a fall or accident, using the 'Witness' SLOT within the CLUSTER.health_event archetype.\r\n\r\nIn most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of a person as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype. If the CLUSTER.structured_name archetype is nested within the 'Structured name' SLOT, any or all of the data elements can be combined together as a text string and represented in the 'Name' element, as long as they are consistent.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see a person's details at the top of the assessment form. (en)",
+          "misuse" : "*Not to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the subject of care, participants or author of the record and similar data elements that should be represented formally in the health record using the Reference Model attributes.\r\n\r\nNot to be used to record the date of birth of an individual - use the 'Date of birth' data element within the EVALUATION.birth_summary for this purpose\r\n\r\nNot to be used to record biometric detail or biomarkers about an individual - use a specific ENTRY archetype for this purpose. (en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.person.v1",
     "differential" : true,
@@ -5577,7 +6050,54 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4C91B974D7EE4B40B0579711D6B62439"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Angaben zu den einzelnen Bestandteilen des Namens einer Person, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
+          "keywords" : [ "Person, Individuum, Name" ],
+          "use" : "Zur Darstellung von Angaben zu den einzelnen Bestandteilen des Namens einer Person, wie sie im Verlauf der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles demografisches Register oder einen Index zu verwenden.\r\n\r\nIn den meisten einfachen Anwendungsfällen für klinische Aufzeichnungen reicht das unstrukturierte Element „Name“ innerhalb des Archetyps CLUSTER.person aus, um den Namen einer Person als Teil einer Gesundheitsakte darzustellen. In Fällen, in denen ein strukturierter Name für klinische Aufzeichnungszwecke erforderlich oder wünschenswert ist, verschachteln Sie diesen Archetyp im SLOT „Name strukturiert“ im Archetyp CLUSTER.person.\r\n\r\nJedes Datenelement kann als Zeichenfolge mit freiem Text eingegeben werden – zum Beispiel „Prof Dr“, „Sonja Jane“, „Smith-Brown“, „MP“. Alternativ, da jedes Datenelement innerhalb eines Templates wiederholbar ist:\r\n- „Titel“ könnte für den Wert „Prof“ auf „Titel 1“ und für den Wert „Dr“ auf „Titel 2“ geklont werden; und\r\n- „Vorname“ konnte geklont und für den Wert „Sonja“ in „Vorname“ und für den Wert „Jane“ in „Zweiter Vorname“ umbenannt werden.\r\n\r\nObwohl dieser Archetyp an ISO 22220 ausgerichtet wurde, wurden aufgrund des eingeschränkten Umfangs dieses Archetyps der bevorzugte Name, die Namensverwendung, die Gültigkeitsdaten und die sich wiederholende Gruppierung von Namensbestandteil/Ordnung absichtlich nicht repliziert.\r\n\r\nEs wird davon ausgegangen, dass in den meisten Anwendungsfällen, für die dieser Archetyp entworfen wurde, komplexe Familiennamen einfach als Zeichenfolge aufgezeichnet werden. Es ist jedoch möglich, sie mit größerer Granularität und innerhalb dieses strukturierten Namensmusters unter Verwendung von Regeln und Beispielen aus ISO 22220:2007 (Anhang F) aufzuzeichnen, einschließlich:\r\n- Familienname zuerst, Vorname/n zuletzt;\r\n- Familiennamen mit Präfixen z.B. El Haddad oder van der Heyden; und\r\n- Namen, die sowohl den Familiennamen des Vaters als auch der Mutter enthalten.",
+          "misuse" : "Der Achetyp darf nicht verwendet werden, wenn eine unstrukturierte Textzeichenfolge, die den Namen der Person darstellt, für den Zweck geeignet ist. Verwenden Sie zu diesem Zweck das Datenelement „Name“ innerhalb des CLUSTER.person.\r\n\r\nDarf nicht für komplexe Namensdarstellung oder -verwaltung, wie z. B. Vorzugsnamen, Namensverwendung oder gültige Verwendungsdaten verwendet werden. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um den Behandlungsgegenstand, die Teilnehmer oder den Verfasser der Aufzeichnung und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Referenzmodellattribute dargestellt werden sollten.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om et individs strukturerte navn, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "person, individ, navn" ],
+          "use" : "Brukes for å registrere detaljer om et individs strukturerte navn, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nI de mest vanlige brukscasene vil det ustrukturerte dataelementet \"Navn\" i arketypen CLUSTER.person være tilstrekkelig til å registrere navnet til en person. Denne arketypen skal brukes i tilfeller der man har behov for detaljer om en eller flere komponenter i navnet, og gjøres ved å benytte denne arketypen i SLOTet \"Strukturert navn\" i arketypen CLUSTER.person.\r\n\r\nHver enkelt komponent kan registreres som fritekst, for eksempel: \"Prof Dr\", \"Sonja Jane\", \"Smith Brown\". Alternativt, ettersom hvert dataelement kan repeteres i et templat:\r\n- \"Tittel\" kan klones til \"Tittel 1\" for verdien \"Prof\" og \"Tittel 2\" for \"Dr\".\r\n- \"Fornavn\" kan klones til \"Fornavn\" for verdien Sonja og \"Mellomnavn\" for verdien \"Jane\".\r\n\r\nSelv om denne arketypen er laget for å være lik ISO 22220, har foretrukket navn, navnebruk, gyldige datoer og den gjentatte navnekomponenten/rangeringen med hensikt ikke blitt replikert på grunn av at arketypen har et mer begrenset bruksområde.\r\n\r\nDet antas at i de fleste brukstilfeller som denne arketypen er designet for, vil komplekse familienavn ganske enkelt bli registrert som en streng.\r\nISO 22220:2007 (vedlegg F) gir eksempler og veiledning for hvordan du registrerer komplekse navn innenfor det strukturerte navnemønsteret, inkludert:\r\n- Etternavn først, fornavn/navn etter.\r\n- Familienavn med prefikser, f.eks. El Haddad eller van der Heyden.\r\n- Navn som inneholder både fars og mors etternavn.",
+          "misuse" : "Brukes ikke dersom det for formålet er tilstrekkelig at personens navn registreres som fritekst. Bruk dataelementet \"Navn\" i CLUSTER.person (Person) for dette formålet. \r\n\r\nBrukes ikke til kompleks navnerepresentasjon eller administrative oppgaver, for eksempel foretrukne navn, navnebruk eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske detaljene for formell identitetsforvaltning, eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere pasient, deltakere eller forfatter av skjema eller lignende, som skal representeres formelt i pasientjournalen, bruk attributter fra Referansemodellen for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about the structured name of an individual as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "person, individual, name" ],
+          "use" : "Use to record details about the structured name of an individual as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index.\r\n\r\nIn most simple clinical recording use cases, the unstructured 'Name' element within the CLUSTER.person archetype will be sufficient to record the name of an individual as part of a health record. However, in circumstances where a structured name is necessary or desirable for clinical recording purposes, nest this archetype within the 'Structured name' SLOT in CLUSTER.person archetype.\r\n\r\nEach data element can be entered as a string of free text - for example, 'Prof Dr', 'Sonja Jane', 'Smith-Brown', 'MP'. Alternatively, as each data element is repeatable within a template:\r\n- 'Title' could be cloned to 'Title 1' for the value 'Prof' and 'Title 2' for the value 'Dr'; and\r\n-  'Given name' could be cloned and renamed to 'First name' for the value 'Sonja' and 'Middle name' for the value 'Jane'.\r\n\r\nWhile this archetype has been aligned with ISO 22220, preferred name, name usage, valid dates and the repeating Name component/Order grouping has intentionally not been replicated due to the reduced scope of this archetype.\r\n\r\nIt is anticipated that in most use cases for which this archetype has been designed, complex family names will simply be recorded as a string. However, it is possible to record them with more granularity and within this structured name pattern using guidance and examples from ISO 22220:2007 (Annex F), including:\r\n- Family name first, given name/s last;\r\n- Family names with prefixes eg El Haddad or van der Heyden; and\r\n- Names containing both father's and mother's family names.",
+          "misuse" : "Not to be used if an unstructured text string representing the individual's name is adequate for the purpose. Use the 'Name' data element within the CLUSTER.person for this purpose.\r\n\r\nNot to be used for complex name representation or management, such as preferred names, name usage or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the subject of care, participants or author of the record and similar data elements that should be represented formally in the health record using the Reference Model attributes.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.structured_name.v1",
     "differential" : true,
@@ -5658,7 +6178,113 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
+          "keywords" : [ "Adresse", "Anschrift", "postalisch", "Mailing", "Privat", "Geschäft", "physisch", "Landmarke" ],
+          "use" : "Verwenden Sie diesen Archetyp, um Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke darzustellen, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, einen Adresssuchdienst zu verwenden. Beispiele beinhalten:\r\n- die Geschäftsadresse einer Organisation, die eine Person zu Hause betreut; oder\r\n- die Postanschrift des Inhabers einer Patientenverfügung innerhalb des Archetyps EVALUATION.advance_care_directive; oder\r\n- der Sturz- oder Unfallort.\r\n\r\nDer Geltungsbereich dieses Archetyps wurde darauf beschränkt, nur die gebräuchlichsten strukturierten Komponenten zur Identifizierung eines bestimmten physischen Gebäudes oder einer Landmarke zu enthalten. In diesem Zusammenhang kann eine vollständige Adresse beschrieben werden mit:\r\n- Ein oder mehrere Freitext-„Adresszeilen“-Datenelemente, um die große Vielfalt an Möglichkeiten darzustellen, wie Details auf „Straßenebene“ aufgezeichnet werden müssen; und\r\n- „Stadt“, um einen Vorort, eine Stadt, ein Dorf oder eine Gemeinde darzustellen;\r\n- „Region/Landkreis“ zur Darstellung eines lokalen Regierungsbezirks;\r\n- „Staat/Territorium/Provinz“, um einen großen Regierungsbezirk darzustellen;\r\n- „Postleitzahl“ und\r\n- \"Land\".\r\n\r\nDieser Archetyp könnte auch als Ersatz für formelle demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der Prüfer eine Adresse in einem Bewertungsformular erwarten würden. Dieser CLUSTER.address könnte auch als Stellvertreter für eine Adresse in formalen demografischen Adressdaten verwendet werden, wenn ein Template mit Klinikern überprüft wird – zum Beispiel bei einer Bewertung, bei der Prüfer erwarten würden, dass die vollständigen Kontaktdaten der Person oben auf dem Bewertungsformular angezeigt werden.",
+          "misuse" : "Darf nicht verwendet werden, um eine vollständig strukturierte Adresse, wie sie in ISO-Standards beschrieben ist, im Rahmen der Führung eines offiziellen demografischen Registers oder Index zu erfassen. Verwenden Sie zu diesem Zweck einen Adresssuchdienst, einen formalen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDarf nicht verwendet werden, um digitale Adressen zur Verwendung in der elektronischen Kommunikation darzustellen. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.electronic_communication.\r\n\r\nDarf nicht verwendet werden, um Details über Wohnungs- oder Obdachlosigkeit darzustellen. Verwenden Sie für diesen Zweck den Archetyp EVALUATION.housing_summary.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "pt-pt" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "pt-pt"
+          },
+          "purpose" : "Registar os detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica.",
+          "keywords" : [ "endereço", "morada", "postal", "correio", "casa", "negócio", "físico", "marco", "ponto de referência" ],
+          "use" : "Utilize para registar detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica, muitas vezes ad hoc ou quando não é apropriado ou possível utilizar um serviço de pesquisa de endereços. Exemplos incluem:\r\n- o endereço comercial de uma organização que presta cuidados domiciliários a um indivíduo; ou\r\n- o endereço postal do titular de um registo de cuidados avançados, dentro do arquétipo EVALUATION.advance_care_directive; ou\r\n- a localização física de uma queda ou acidente.\r\n\r\nO âmbito deste arquétipo foi restringido para conter os componentes estruturados mais comuns para identificar um edifício físico ou um ponto de referência específico. Neste contexto, um endereço completo pode ser descrito utilizando:\r\n- Um ou mais elementos de dados de texto livre de 'Linha de endereço' para representar a enorme variedade de formas pelas quais os detalhes 'ao nível da rua' podem ter de ser registados; e\r\n- 'Cidade' para representar um subúrbio, vila, cidade, vila ou comunidade;\r\n- 'Distrito/Concelho' para representar um distrito governamental local;\r\n- 'Estado/Território/Província' para representar um importante distrito governamental;\r\n- ‘Código postal’, e\r\n- 'País'.\r\nNo entanto, este arquétipo pode ser estendido para incluir detalhes adicionais sobre o endereço, aninhando o CLUSTER.structured_address dentro do SLOT 'Endereço estruturado'.\r\n\r\nEste arquétipo CLUSTER.address também pode ser utilizado como um substituto para um endereço em dados formais de endereço demográfico ao rever um template com especialistas do domínio - por exemplo, uma avaliação em que os revisores esperariam ver os detalhes completos de contacto do indivíduo na parte superior do formulário de avaliação.",
+          "misuse" : "Não deve ser utilizado para registar um endereço totalmente estruturado, tal como descrito nas normas ISO ou como parte da manutenção de um registo ou índice demográfico oficial. Utilize um serviço de pesquisa de endereços, um Índice Mestre de Pacientes formal ou um Índice de Prestadores de Cuidados de Saúde para este fim, ou arquétipos baseados no Modelo de Informação Demográfica openEHR.\r\n\r\nNão deve ser utilizado para representar endereços digitais para utilização em comunicação eletrónica. Utilize CLUSTER.electronic_communication para este efeito.\r\n\r\nNão deve ser utilizado para registar detalhes sobre habitação ou falta de habitação. Utilize EVALUATION.housing_summary para esta finalidade.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "adress", "postadress", "hem", "företag", "position", "ort", "distrikt", "region" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "adresse", "postadresse", "hjem", "arbeid", "fysisk", "oppmøtested" ],
+          "use" : "\t\r\nBrukes for å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\nFor eksempel:\r\n- Adressen til hjemmetjeneste eller en annen helsetjenesteyter.\r\n- Adressen til en person eller organisasjon som oppbevarer fremtidige behandlingsvalg i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- Adressen til hendelsestedet til en ulykke eller et fall.\r\n\r\nOmfanget av denne arketypen har blitt begrenset til å dekke de vanligste komponentene i en enkel adresse. I denne sammenhengen kan en fullstendig adresse beskrives ved å bruke:\r\n- Ett eller flere \"Adresselinje\"-dataelementer for å representere det store utvalget av måter \"gatenivå\" kan registreres på.\r\n- \"By\" for å representere en forstad, by eller landsby.\r\n- \"Distrikt/fylke\" for å representere et lokalt myndighetsdistrikt.\r\n- \"Stat/territorium/provins\" for å representere et større myndighetsdistrikt.\r\n- \"Postnummer\".\r\n- \"Land\".\r\nImidlertidig kan denne arketypen utvides for å inkludere ytteligere detaljer om adressen ved å nøste arketypen CLUSTER.structured_address i SLOTet \"Strukturert adresse\"\r\n\r\nDenne CLUSTER-arketypen kan også brukes istedenfor formelle demografiske adressedata ved gjennomgang av et templat med klinikere – for eksempel en vurdering der brukeren/klinikeren forventer å se personens fullstendige kontaktinformasjon øverst i vurderingsskjemaet.",
+          "misuse" : "Brukes ikke til å representere en fullstendig strukturert adresse, som beskrevet i ISO-standarder eller for å opprettholde et demografisk register eller en indeks. Bruk en adresseoppslagstjeneste, et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke til å representere digitale adresser for bruk i elektronisk kommunikasjon. Bruk CLUSTER.electronic_communication (Elektronisk kommunikasjon) for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om bolig eller hjemløshet, Bruk arketypen EVALUATION.housing_summary (Boligsammendrag) for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "el" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "el"
+          },
+          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
+          "keywords" : [ "*address(en)", "*postal(en)", "*mailing(en)", "*home(en)", "*business(en)", "*physical(en)", "*landmark(en)" ],
+          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
+          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.",
+          "keywords" : [ "address", "postal", "mailing", "home", "business", "physical", "landmark" ],
+          "use" : "Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.",
+          "misuse" : "Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "fr" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "fr"
+          },
+          "purpose" : "Enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique.",
+          "keywords" : [ "adresse", "postale", "courrier", "domicile", "professionnel", "physique", "repère" ],
+          "use" : "Sert à enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique, souvent de manière ad hoc ou lorsqu'il n'est pas approprié ou possible d'utiliser un service de recherche d'adresses. Il s'agit par exemple\r\n- l'adresse professionnelle d'une organisation fournissant des soins à domicile à une personne ; ou\r\n- l'adresse postale du détenteur de la copie d'un dossier de soins avancés, dans l'archétype EVALUATION.advance_care_directive ; ou\r\n- le lieu physique d'une chute ou d'un accident.\r\n\r\nLe champ d'application de cet archétype a été limité aux composants structurés les plus courants permettant d'identifier un bâtiment physique ou un point de repère spécifique. Dans ce contexte, une adresse complète peut être décrite à l'aide des éléments suivants\r\n- un ou plusieurs éléments de données \"ligne d'adresse\" en texte libre pour représenter l'énorme variété de façons dont les détails \"au niveau de la rue\" peuvent être enregistrés ; et\r\n- Ville\" pour représenter une banlieue, une ville, un village ou une communauté ;\r\n- District/County\" pour représenter un district d'administration locale ;\r\n- \"État/Territoire/Province\" pour représenter un grand district gouvernemental ;\r\n- Code postal\", et \r\n- Pays\".\r\nToutefois, cet archétype peut être étendu pour inclure des détails plus fins sur l'adresse en imbriquant le CLUSTER.structured_address dans le SLOT \"Adresse structurée\".\r\n\r\nCet archétype CLUSTER.address peut également être utilisé comme substitut d'une adresse dans les données démographiques formelles lors de la révision d'un modèle avec des experts du domaine - par exemple, une évaluation où les examinateurs s'attendent à voir les coordonnées complètes de la personne en haut du formulaire d'évaluation.",
+          "misuse" : "Ne pas utiliser pour enregistrer une adresse entièrement structurée, telle que décrite dans les normes ISO ou dans le cadre de la tenue d'un registre ou d'un index démographique officiel. Utiliser à cette fin un service de recherche d'adresses, un index principal officiel des patients ou un index des prestataires de soins de santé, ou des archétypes fondés sur le modèle d'information démographique de l'openEHR.\r\n\r\nNe pas utiliser pour représenter des adresses numériques destinées à la communication électronique. Utiliser CLUSTER.electronic_communication à cette fin.\r\n\r\nNe doit pas être utilisé pour enregistrer des détails sur le logement ou l'absence de domicile. Utilisez EVALUATION.housing_summary à cette fin.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
     "differential" : true,
@@ -5799,7 +6425,53 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird.",
+          "keywords" : [ "Telefon, Mobiltelefon, E-Mail, Fax, Pager, Chat, Soziale Medien, asynchron, Kommunikation, SoMe" ],
+          "use" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation für eine Person oder Organisation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird. Dies geschieht üblicherweise ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles Register oder einen Index zu verwenden.",
+          "misuse" : "Nicht für komplexe Kommunikationsdarstellung oder -verwaltung zu verwenden, wie z. B. bevorzugte Telefonnummern oder Gültigkeit der Nutzung. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om en spesifikk type elektronisk kommunikasjon som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
+          "keywords" : [ "telefon, mobil, e-post, faks, personsøker, chat, asynkron dialog, sosiale media, kommunikasjon, SoMe," ],
+          "use" : "Brukes for å registrere detaljer om en spesifikk type elektronisk kommunikasjon for en person eller en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.",
+          "misuse" : "Brukes ikke til kompleks kommunikasjonsadministrasjon, for eksempel foretrukne telefonnummer eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.",
+          "keywords" : [ "telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe" ],
+          "use" : "Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.",
+          "misuse" : "Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
     "differential" : true,
