@@ -207,20 +207,20 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"fe06f067bd33e559b7720243c6109d40">
+		["MD5-CAM-1.0.1"] = <"8114cc5695142fbcdeffe5cadf8fa67a">
 		["build_uid"] = <"43f93f81-11e9-4b64-889d-b37f994c061d">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000.1] matches {    -- exam-oral_mucosa
+	CLUSTER[at0000.1] matches {    -- Examination of oral mucosa
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001.1] matches {    -- System or structure examined
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
-							[local::at0.36]    -- Lymph node
+							[local::at0.36]    -- Oral mucosa
 						}
 					}
 				}
@@ -261,24 +261,109 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			CLUSTER[at0.37] occurrences matches {0..1} matches {    -- Findings
+			CLUSTER[at0.42] occurrences matches {0..1} matches {    -- Findings
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0.38] occurrences matches {0..1} matches {    -- Palpable lymph node(s)
+					ELEMENT[at0.43] occurrences matches {0..1} matches {    -- Color
 						value matches {
-							DV_BOOLEAN matches {*}
+							DV_CODED_TEXT matches {*}
+							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0.39] occurrences matches {0..1} matches {    -- Tenderness
-						value matches {
-							DV_BOOLEAN matches {*}
+					CLUSTER[at0.44] occurrences matches {0..1} matches {    -- Lesion
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0.45] occurrences matches {0..1} matches {    -- Type
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0.46] occurrences matches {0..*} matches {    -- Site
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0.47] occurrences matches {0..1} matches {    -- Size
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::122]>
+										list = <
+											["1"] = <
+												units = <"mm">
+												precision = <|2|>
+											>
+											["2"] = <
+												units = <"cm">
+												precision = <|2|>
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0.48] occurrences matches {0..1} matches {    -- Shape
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.49] occurrences matches {0..1} matches {    -- Border
+								value matches {
+									DV_TEXT matches {*}
+									DV_CODED_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.50] occurrences matches {0..1} matches {    -- Description
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
 						}
 					}
-					ELEMENT[at0.40] occurrences matches {0..1} matches {    -- Swelling
-						value matches {
-							DV_BOOLEAN matches {*}
+					CLUSTER[at0.60] occurrences matches {0..1} matches {    -- Swelling
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0.61] occurrences matches {0..1} matches {    -- Type
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							allow_archetype CLUSTER[at0.62] occurrences matches {0..*} matches {    -- Site
+								include
+									archetype_id/value matches {/.*/}
+							}
+							ELEMENT[at0.63] occurrences matches {0..1} matches {    -- Size
+								value matches {
+									C_DV_QUANTITY <
+										property = <[openehr::122]>
+										list = <
+											["1"] = <
+												units = <"mm">
+											>
+											["2"] = <
+												units = <"cm">
+												precision = <|2|>
+											>
+										>
+									>
+								}
+							}
+							ELEMENT[at0.64] occurrences matches {0..1} matches {    -- Shape
+								value matches {
+									DV_CODED_TEXT matches {*}
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0.67] occurrences matches {0..1} matches {    -- Pus discharge
+								value matches {
+									DV_BOOLEAN matches {*}
+								}
+							}
+							ELEMENT[at0.66] occurrences matches {0..1} matches {    -- Description
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
 						}
 					}
-					ELEMENT[at0.41] occurrences matches {0..1} matches {    -- Description
+					ELEMENT[at0.69] occurrences matches {0..1} matches {    -- Description
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -293,7 +378,7 @@ ontology
 		["en"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam-oral_mucosa">
+					text = <"Examination of oral mucosa">
 					description = <"Findings observed during the physical examination of the cranial nerves.">
 				>
 				["at0001.1"] = <
@@ -326,28 +411,8 @@ ontology
 					description = <"">
 				>
 				["at0.36"] = <
-					text = <"Lymph node">
-					description = <"">
-				>
-				["at0.37"] = <
-					text = <"Findings">
-					description = <"">
-				>
-				["at0.38"] = <
-					text = <"Palpable lymph node(s)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"Tenderness">
-					description = <"">
-				>
-				["at0.40"] = <
-					text = <"Swelling">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"Description">
-					description = <"">
+					text = <"Oral mucosa">
+					description = <"The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly">
 				>
 				["at0000"] = <
 					text = <"Physical examination findings">
@@ -393,12 +458,132 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
+				["at0020"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"Cluster">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"Cluster">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"Cluster">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0.42"] = <
+					text = <"Findings">
+					description = <"">
+				>
+				["at0.43"] = <
+					text = <"Color">
+					description = <"">
+				>
+				["at0.44"] = <
+					text = <"Lesion">
+					description = <"">
+				>
+				["at0.45"] = <
+					text = <"Type">
+					description = <"">
+				>
+				["at0.46"] = <
+					text = <"Site">
+					description = <"">
+				>
+				["at0.47"] = <
+					text = <"Size">
+					description = <"">
+				>
+				["at0.48"] = <
+					text = <"Shape">
+					description = <"">
+				>
+				["at0.49"] = <
+					text = <"Border">
+					description = <"">
+				>
+				["at0.50"] = <
+					text = <"Description">
+					description = <"">
+				>
+				["at0.60"] = <
+					text = <"Swelling">
+					description = <"">
+				>
+				["at0.61"] = <
+					text = <"Type">
+					description = <"">
+				>
+				["at0.62"] = <
+					text = <"Site">
+					description = <"">
+				>
+				["at0.63"] = <
+					text = <"Size">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"Shape">
+					description = <"">
+				>
+				["at0.66"] = <
+					text = <"Description">
+					description = <"">
+				>
+				["at0.67"] = <
+					text = <"Pus discharge">
+					description = <"">
+				>
+				["at0.69"] = <
+					text = <"Description">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam-oral_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Funn ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
 				["at0001.1"] = <
@@ -431,28 +616,8 @@ ontology
 					description = <"">
 				>
 				["at0.36"] = <
-					text = <"*Lymph node (en)">
-					description = <"">
-				>
-				["at0.37"] = <
-					text = <"*Findings (en)">
-					description = <"">
-				>
-				["at0.38"] = <
-					text = <"*Palpable lymph node(s) (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*Tenderness (en)">
-					description = <"">
-				>
-				["at0.40"] = <
-					text = <"*Swelling (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Description (en)">
-					description = <"">
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
 				>
 				["at0000"] = <
 					text = <"Funn ved fysisk undersøkelse">
@@ -498,12 +663,132 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
+				["at0020"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0.42"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.43"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.44"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0.45"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.46"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.47"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.48"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.49"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0.50"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.60"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0.61"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.62"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.63"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.66"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.67"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
+				["at0.69"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam-oral_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
 				>
 				["at0001.1"] = <
@@ -536,28 +821,8 @@ ontology
 					description = <"">
 				>
 				["at0.36"] = <
-					text = <"*Lymph node (en)">
-					description = <"">
-				>
-				["at0.37"] = <
-					text = <"*Findings (en)">
-					description = <"">
-				>
-				["at0.38"] = <
-					text = <"*Palpable lymph node(s) (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*Tenderness (en)">
-					description = <"">
-				>
-				["at0.40"] = <
-					text = <"*Swelling (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Description (en)">
-					description = <"">
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -603,12 +868,132 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0020"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0.42"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.43"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.44"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0.45"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.46"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.47"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.48"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.49"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0.50"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.60"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0.61"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.62"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.63"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.66"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.67"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
+				["at0.69"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam-oral_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
 				>
 				["at0001.1"] = <
@@ -641,28 +1026,8 @@ ontology
 					description = <"">
 				>
 				["at0.36"] = <
-					text = <"*Lymph node (en)">
-					description = <"">
-				>
-				["at0.37"] = <
-					text = <"*Findings (en)">
-					description = <"">
-				>
-				["at0.38"] = <
-					text = <"*Palpable lymph node(s) (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*Tenderness (en)">
-					description = <"">
-				>
-				["at0.40"] = <
-					text = <"*Swelling (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Description (en)">
-					description = <"">
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
 				>
 				["at0000"] = <
 					text = <"Ergebnisse der körperlichen Untersuchung">
@@ -708,12 +1073,132 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
+				["at0020"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0.42"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.43"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.44"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0.45"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.46"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.47"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.48"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.49"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0.50"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.60"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0.61"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.62"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.63"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.66"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.67"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
+				["at0.69"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam-oral_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
 				>
 				["at0001.1"] = <
@@ -746,28 +1231,8 @@ ontology
 					description = <"">
 				>
 				["at0.36"] = <
-					text = <"*Lymph node (en)">
-					description = <"">
-				>
-				["at0.37"] = <
-					text = <"*Findings (en)">
-					description = <"">
-				>
-				["at0.38"] = <
-					text = <"*Palpable lymph node(s) (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*Tenderness (en)">
-					description = <"">
-				>
-				["at0.40"] = <
-					text = <"*Swelling (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Description (en)">
-					description = <"">
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -813,12 +1278,132 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0020"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0.42"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.43"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.44"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0.45"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.46"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.47"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.48"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.49"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0.50"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.60"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0.61"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.62"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.63"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.66"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.67"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
+				["at0.69"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam-oral_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
 				>
 				["at0001.1"] = <
@@ -851,28 +1436,8 @@ ontology
 					description = <"">
 				>
 				["at0.36"] = <
-					text = <"*Lymph node (en)">
-					description = <"">
-				>
-				["at0.37"] = <
-					text = <"*Findings (en)">
-					description = <"">
-				>
-				["at0.38"] = <
-					text = <"*Palpable lymph node(s) (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*Tenderness (en)">
-					description = <"">
-				>
-				["at0.40"] = <
-					text = <"*Swelling (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Description (en)">
-					description = <"">
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -918,12 +1483,132 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0020"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0.42"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.43"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.44"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0.45"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.46"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.47"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.48"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.49"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0.50"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.60"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0.61"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.62"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.63"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.66"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.67"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
+				["at0.69"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
 			items = <
 				["at0000.1"] = <
-					text = <"exam-oral_mucosa">
+					text = <"*Examination of oral mucosa (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
 				>
 				["at0001.1"] = <
@@ -956,28 +1641,8 @@ ontology
 					description = <"">
 				>
 				["at0.36"] = <
-					text = <"*Lymph node (en)">
-					description = <"">
-				>
-				["at0.37"] = <
-					text = <"*Findings (en)">
-					description = <"">
-				>
-				["at0.38"] = <
-					text = <"*Palpable lymph node(s) (en)">
-					description = <"">
-				>
-				["at0.39"] = <
-					text = <"*Tenderness (en)">
-					description = <"">
-				>
-				["at0.40"] = <
-					text = <"*Swelling (en)">
-					description = <"">
-				>
-				["at0.41"] = <
-					text = <"*Description (en)">
-					description = <"">
+					text = <"*Oral mucosa (en)">
+					description = <"*The mucous membrane that lines the structures within the oral cavity limits that extends from the junction between the vermilion border of the lips and labial mucosa anteriorly to the palatopharyngeal folds posteriorly (en)">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -1022,6 +1687,126 @@ ontology
 					text = <"*Body site(en)">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0020"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0024"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0025"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0026"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0027"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0029"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0030"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0031"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0032"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0033"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0037"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0035"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0036"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0.42"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.43"] = <
+					text = <"*Color (en)">
+					description = <"">
+				>
+				["at0.44"] = <
+					text = <"*Lesion (en)">
+					description = <"">
+				>
+				["at0.45"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.46"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.47"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.48"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.49"] = <
+					text = <"*Border (en)">
+					description = <"">
+				>
+				["at0.50"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.60"] = <
+					text = <"*Swelling (en)">
+					description = <"">
+				>
+				["at0.61"] = <
+					text = <"*Type (en)">
+					description = <"">
+				>
+				["at0.62"] = <
+					text = <"*Site (en)">
+					description = <"">
+				>
+				["at0.63"] = <
+					text = <"*Size (en)">
+					description = <"">
+				>
+				["at0.64"] = <
+					text = <"*Shape (en)">
+					description = <"">
+				>
+				["at0.66"] = <
+					text = <"*Description (en)">
+					description = <"">
+				>
+				["at0.67"] = <
+					text = <"*Pus discharge (en)">
+					description = <"">
+				>
+				["at0.69"] = <
+					text = <"*Description (en)">
+					description = <"">
 				>
 			>
 		>
