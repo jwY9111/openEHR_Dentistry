@@ -207,20 +207,20 @@ Not to be used for recording the results of an imaging examination - use the CLU
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"be5f6626bf0e72609da9c8ecbfa0f2bd">
+		["MD5-CAM-1.0.1"] = <"86cb21bc0880ba712cb78c10f68348a5">
 		["build_uid"] = <"43f93f81-11e9-4b64-889d-b37f994c061d">
 		["ip_acknowledgements"] = <"This artefact includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyrighted material of the International Health Terminology Standards Development Organisation (IHTSDO). Where an implementation of this artefact makes use of SNOMED CT content, the implementer must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomedct or info@snomed.org.">
 		["revision"] = <"0.0.1-alpha">
 	>
 
 definition
-	CLUSTER[at0000.1] matches {    -- exam-tmj
+	CLUSTER[at0000.1] matches {    -- Examination of temporomandibular joints (TMJs)
 		items cardinality matches {1..*; unordered} matches {
 			ELEMENT[at0001.1] matches {    -- System or structure examined
 				value matches {
 					DV_CODED_TEXT matches {
 						defining_code matches {
-							[local::at0.1]    -- Cranial nerve
+							[local::at0.1]    -- Temporomandibular joints
 						}
 					}
 				}
@@ -261,123 +261,42 @@ definition
 				include
 					archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam(-[a-zA-Z0-9_]+)*\.v1/}
 			}
-			CLUSTER[at0.28] occurrences matches {0..1} matches {    -- Findings
+			CLUSTER[at0.29] occurrences matches {0..1} matches {    -- Findings
 				items cardinality matches {1..*; unordered} matches {
-					ELEMENT[at0.11] occurrences matches {0..1} matches {    -- CN I description
+					ELEMENT[at0.30] occurrences matches {0..1} matches {    -- Mouth opening
+						value matches {
+							C_DV_QUANTITY <
+								property = <[openehr::122]>
+								list = <
+									["1"] = <
+										units = <"mm">
+									>
+									["2"] = <
+										units = <"cm">
+										precision = <|2|>
+									>
+								>
+							>
+						}
+					}
+					ELEMENT[at0.31] occurrences matches {0..1} matches {    -- Palpation
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0.2] occurrences matches {0..*} matches {    -- I details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1/}
-					}
-					ELEMENT[at0.12] occurrences matches {0..1} matches {    -- CN II description
+					ELEMENT[at0.32] occurrences matches {0..1} matches {    -- Pain/tenderness upon joint movements
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0.3] occurrences matches {0..*} matches {    -- II details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1/}
-					}
-					ELEMENT[at0.13] occurrences matches {0..1} matches {    -- CN III, IV & VI description
+					ELEMENT[at0.33] occurrences matches {0..1} matches {    -- Joint sounds during joint movements
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
-					allow_archetype CLUSTER[at0.4] occurrences matches {0..*} matches {    -- III, IV & VI details
+					allow_archetype CLUSTER[at0.34] occurrences matches {0..*} matches {    -- Range of motion
 						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1|openEHR-EHR-CLUSTER\.exam-pupil\.v0/}
-					}
-					ELEMENT[at0.14] occurrences matches {0..1} matches {    -- CN V description
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.20] occurrences matches {0..1} matches {    -- Corneal reflex
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0.21,    -- Present
-									at0.22,    -- Absent
-									at0.23]    -- Reduced
-								}
-							}
-						}
-					}
-					ELEMENT[at0.24] occurrences matches {0..1} matches {    -- Jaw jerk
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0.25,    -- Present
-									at0.26]    -- Absent
-								}
-							}
-						}
-					}
-					allow_archetype CLUSTER[at0.5] occurrences matches {0..*} matches {    -- V details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1/}
-					}
-					ELEMENT[at0.15] occurrences matches {0..1} matches {    -- CN VII description
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0.6] occurrences matches {0..*} matches {    -- VII details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1|openEHR-EHR-CLUSTER\.exam-face\.v0/}
-					}
-					ELEMENT[at0.16] occurrences matches {0..1} matches {    -- CN VIII description
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0.7] occurrences matches {0..*} matches {    -- VIII details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1/}
-					}
-					ELEMENT[at0.17] occurrences matches {0..1} matches {    -- CN IX & X description
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.27] occurrences matches {0..1} matches {    -- Gag reflex
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {
-									[local::
-									at0.21,    -- Present
-									at0.22,    -- Absent
-									at0.23]    -- Reduced
-								}
-							}
-						}
-					}
-					allow_archetype CLUSTER[at0.8] occurrences matches {0..*} matches {    -- IX & X details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1|openEHR-EHR-CLUSTER\.exam-throat\.v0/}
-					}
-					ELEMENT[at0.18] occurrences matches {0..1} matches {    -- CN XI description
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0.9] occurrences matches {0..*} matches {    -- XI details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1/}
-					}
-					ELEMENT[at0.19] occurrences matches {0..1} matches {    -- CN XII description
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					allow_archetype CLUSTER[at0.10] occurrences matches {0..*} matches {    -- XII details
-						include
-							archetype_id/value matches {/openEHR-EHR-CLUSTER\.exclusion_exam\.v1|openEHR-EHR-CLUSTER\.exam-tongue\.v0/}
+							archetype_id/value matches {/.*/}
 					}
 				}
 			}
@@ -390,127 +309,17 @@ ontology
 		["en"] = <
 			items = <
 				["at0.1"] = <
-					text = <"Cranial nerve">
-					description = <"One of each of twelve pairs of nerves which arise directly from the brain.">
-				>
-				["at0.10"] = <
-					text = <"XII details">
-					description = <"Details about the function of the hypoglossal nerve.">
-				>
-				["at0.11"] = <
-					text = <"CN I description">
-					description = <"Narrative description about findings on examination of the olfactory nerve.">
-					comment = <"For example: summary about smell testing.">
-				>
-				["at0.12"] = <
-					text = <"CN II description">
-					description = <"Narrative description about findings on examination of the optic nerve.">
-				>
-				["at0.13"] = <
-					text = <"CN III, IV & VI description">
-					description = <"Narrative description about findings on examination of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.14"] = <
-					text = <"CN V description">
-					description = <"Narrative description about findings on examination of the trigeminal nerve.">
-				>
-				["at0.15"] = <
-					text = <"CN VII description">
-					description = <"Narrative description about findings on examination of the facial nerve.">
-				>
-				["at0.16"] = <
-					text = <"CN VIII description">
-					description = <"Narrative description about findings on examination of the vestibulococchlear nerve.">
-				>
-				["at0.17"] = <
-					text = <"CN IX & X description">
-					description = <"Narrative description about findings on examination of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.18"] = <
-					text = <"CN XI description">
-					description = <"Narrative description about findings on examination of the accessory nerve.">
-				>
-				["at0.19"] = <
-					text = <"CN XII description">
-					description = <"Narrative description about findings on examination of the hypoglossal nerve.">
-				>
-				["at0.2"] = <
-					text = <"I details">
-					description = <"Details about function of the olfactory nerve.">
-				>
-				["at0.20"] = <
-					text = <"Corneal reflex">
-					description = <"The presence of the corneal reflex.">
-					comment = <"Also known as the 'blink reflex'.">
-				>
-				["at0.21"] = <
-					text = <"Present">
-					description = <"The reflex is observed.">
-				>
-				["at0.22"] = <
-					text = <"Absent">
-					description = <"The reflex is not observed.">
-				>
-				["at0.23"] = <
-					text = <"Reduced">
-					description = <"The reflex is observed, but diminished compared to normal.">
-				>
-				["at0.24"] = <
-					text = <"Jaw jerk">
-					description = <"The presence of the jaw jerk.">
-				>
-				["at0.25"] = <
-					text = <"Present">
-					description = <"The jaw jerk is present.">
-				>
-				["at0.26"] = <
-					text = <"Absent">
-					description = <"The jaw jerk is absent.">
-				>
-				["at0.3"] = <
-					text = <"II details">
-					description = <"Details about the function of the optic nerve.">
-				>
-				["at0.4"] = <
-					text = <"III, IV & VI details">
-					description = <"Details about the function of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.5"] = <
-					text = <"V details">
-					description = <"Details about the function of the trigeminal nerve.">
-				>
-				["at0.6"] = <
-					text = <"VII details">
-					description = <"Details about the function of the facial nerve.">
-				>
-				["at0.7"] = <
-					text = <"VIII details">
-					description = <"Details about the function of the vestibulococchlear nerve.">
-				>
-				["at0.8"] = <
-					text = <"IX & X details">
-					description = <"Details about the function of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.9"] = <
-					text = <"XI details">
-					description = <"Details about the function of the accessory nerve.">
+					text = <"Temporomandibular joints">
+					description = <"The articulation of the mandibular condyle with the glenoid fossa of the temporal bone">
 				>
 				["at0000.1"] = <
-					text = <"exam-tmj">
+					text = <"Examination of temporomandibular joints (TMJs)">
 					description = <"Findings observed during the physical examination of the cranial nerves.">
 				>
 				["at0001.1"] = <
 					text = <"System or structure examined">
 					description = <"Identification of the examined body system or anatomical structure.">
 					comment = <"Coding of the system or structure examined with a terminology is preferred, where possible.">
-				>
-				["at0.27"] = <
-					text = <"Gag reflex">
-					description = <"The presence of the pharyngeal, or gag, reflex.">
-				>
-				["at0.28"] = <
-					text = <"Findings">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"Physical examination findings">
@@ -556,132 +365,70 @@ ontology
 					description = <"Identification of the area of the body under examination.">
 					comment = <"For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant.">
 				>
+				["at0013"] = <
+					text = <"Cluster">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"Element">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"Cluster">
+					description = <"">
+				>
+				["at0.29"] = <
+					text = <"Findings">
+					description = <"">
+				>
+				["at0.30"] = <
+					text = <"Mouth opening">
+					description = <"">
+				>
+				["at0.31"] = <
+					text = <"Palpation">
+					description = <"">
+				>
+				["at0.32"] = <
+					text = <"Pain/tenderness upon joint movements">
+					description = <"">
+				>
+				["at0.33"] = <
+					text = <"Joint sounds during joint movements">
+					description = <"">
+				>
+				["at0.34"] = <
+					text = <"Range of motion">
+					description = <"">
+				>
 			>
 		>
 		["nb"] = <
 			items = <
 				["at0.1"] = <
-					text = <"*Cranial nerve (en)">
-					description = <"*">
-				>
-				["at0.10"] = <
-					text = <"*XII details (en)">
-					description = <"*Details about the function of the hypoglossal nerve. (en)">
-				>
-				["at0.11"] = <
-					text = <"*CN I description (en)">
-					description = <"*Narrative description about findings on examination of the olfactory nerve. (en)">
-					comment = <"*For example: summary about smell testing. (en)">
-				>
-				["at0.12"] = <
-					text = <"*CN II description (en)">
-					description = <"*Narrative description about findings on examination of the optic nerve. (en)">
-				>
-				["at0.13"] = <
-					text = <"*CN III, IV & VI description (en)">
-					description = <"*Narrative description about findings on examination of the oculomotor, trochlear and abducens nerves. (en)">
-				>
-				["at0.14"] = <
-					text = <"*CN V description (en)">
-					description = <"*Narrative description about findings on examination of the trigeminal nerve. (en)">
-				>
-				["at0.15"] = <
-					text = <"*CN VII description (en)">
-					description = <"*Narrative description about findings on examination of the facial nerve. (en)">
-				>
-				["at0.16"] = <
-					text = <"*CN VIII description (en)">
-					description = <"*Narrative description about findings on examination of the vestibulococchlear nerve. (en)">
-				>
-				["at0.17"] = <
-					text = <"*CN IX & X description (en)">
-					description = <"*Narrative description about findings on examination of the glossopharyngeal and vagus nerves. (en)">
-				>
-				["at0.18"] = <
-					text = <"*CN XI description (en)">
-					description = <"*Narrative description about findings on examination of the accessory nerve. (en)">
-				>
-				["at0.19"] = <
-					text = <"*CN XII description (en)">
-					description = <"*Narrative description about findings on examination of the hypoglossal nerve. (en)">
-				>
-				["at0.2"] = <
-					text = <"*I details (en)">
-					description = <"*Details about function of the olfactory nerve. (en)">
-				>
-				["at0.20"] = <
-					text = <"*Corneal reflex(en)">
-					description = <"*The presence of the corneal reflex.(en)">
-					comment = <"*Also known as the 'blink reflex'.(en)">
-				>
-				["at0.21"] = <
-					text = <"*Present (en)">
-					description = <"*The corneal reflex is present. (en)">
-				>
-				["at0.22"] = <
-					text = <"*Absent (en)">
-					description = <"*The corneal reflex is absent. (en)">
-				>
-				["at0.23"] = <
-					text = <"*Reduced (en)">
-					description = <"*The corneal reflex is present, but diminished compared to normal. (en)">
-				>
-				["at0.24"] = <
-					text = <"*Jaw jerk(en)">
-					description = <"*The presence of the jaw jerk.(en)">
-				>
-				["at0.25"] = <
-					text = <"*Present (en)">
-					description = <"*The jaw jerk is present. (en)">
-				>
-				["at0.26"] = <
-					text = <"*Absent (en)">
-					description = <"*The jaw jerk is absent. (en)">
-				>
-				["at0.3"] = <
-					text = <"*II details (en)">
-					description = <"*Details about the function of the optic nerve. (en)">
-				>
-				["at0.4"] = <
-					text = <"*III, IV & VI details (en)">
-					description = <"*Details about the function of the oculomotor, trochlear and abducens nerves. (en)">
-				>
-				["at0.5"] = <
-					text = <"*V details (en)">
-					description = <"*Details about the function of the trigeminal nerve. (en)">
-				>
-				["at0.6"] = <
-					text = <"*VII details (en)">
-					description = <"*Details about the function of the facial nerve. (en)">
-				>
-				["at0.7"] = <
-					text = <"*VIII details (en)">
-					description = <"*Details about the function of the vestibulococchlear nerve. (en)">
-				>
-				["at0.8"] = <
-					text = <"*IX & X details (en)">
-					description = <"*Details about the function of the glossopharyngeal and vagus nerves. (en)">
-				>
-				["at0.9"] = <
-					text = <"*XI details (en)">
-					description = <"*Details about the function of the accessory nerve. (en)">
+					text = <"*Temporomandibular joints (en)">
+					description = <"*The articulation of the mandibular condyle with the glenoid fossa of the temporal bone (en)">
 				>
 				["at0000.1"] = <
-					text = <"exam-tmj">
+					text = <"*Examination of temporomandibular joints (TMJs) (en)">
 					description = <"Funn ved fysisk undersøkelse av et organsystem eller anatomisk struktur.">
 				>
 				["at0001.1"] = <
 					text = <"Undersøkt organsystem eller struktur">
 					description = <"Identifisering av det undersøkte organsystemet eller anatomiske strukturen.">
 					comment = <"Det er anbefalt å kode det undersøkte systemet eller strukturen med en terminologi, der det er mulig.">
-				>
-				["at0.27"] = <
-					text = <"*Gag reflex (en)">
-					description = <"*The presence of the pharyngeal, or gag, reflex. (en)">
-				>
-				["at0.28"] = <
-					text = <"*Findings (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"Funn ved fysisk undersøkelse">
@@ -727,132 +474,70 @@ ontology
 					description = <"Identifisering av et enkelt fysisk sted enten på eller i menneskekroppen.">
 					comment = <"For eksempel undersøkelse av et spesifikt område på huden. Dersom den anatomiske lokaliseringen allerede er identifisert i elementet \"Undersøkt organsystem eller struktur\" er dette dataelementet overflødig.">
 				>
+				["at0013"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0.29"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.30"] = <
+					text = <"*Mouth opening (en)">
+					description = <"">
+				>
+				["at0.31"] = <
+					text = <"*Palpation (en)">
+					description = <"">
+				>
+				["at0.32"] = <
+					text = <"*Pain/tenderness upon joint movements (en)">
+					description = <"">
+				>
+				["at0.33"] = <
+					text = <"*Joint sounds during joint movements (en)">
+					description = <"">
+				>
+				["at0.34"] = <
+					text = <"*Range of motion (en)">
+					description = <"">
+				>
 			>
 		>
 		["pt-br"] = <
 			items = <
 				["at0.1"] = <
-					text = <"Cranial nerve">
-					description = <"One of each of twelve pairs of nerves which arise directly from the brain.">
-				>
-				["at0.10"] = <
-					text = <"XII details">
-					description = <"Details about the function of the hypoglossal nerve.">
-				>
-				["at0.11"] = <
-					text = <"*CN I description (en)">
-					description = <"Narrative description about findings on examination of the olfactory nerve.">
-					comment = <"For example: summary about smell testing.">
-				>
-				["at0.12"] = <
-					text = <"*CN II description (en)">
-					description = <"Narrative description about findings on examination of the optic nerve.">
-				>
-				["at0.13"] = <
-					text = <"*CN III, IV & VI description (en)">
-					description = <"Narrative description about findings on examination of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.14"] = <
-					text = <"*CN V description (en)">
-					description = <"Narrative description about findings on examination of the trigeminal nerve.">
-				>
-				["at0.15"] = <
-					text = <"*CN VII description (en)">
-					description = <"Narrative description about findings on examination of the facial nerve.">
-				>
-				["at0.16"] = <
-					text = <"*CN VIII description (en)">
-					description = <"Narrative description about findings on examination of the vestibulococchlear nerve.">
-				>
-				["at0.17"] = <
-					text = <"*CN IX & X description (en)">
-					description = <"Narrative description about findings on examination of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.18"] = <
-					text = <"*CN XI description (en)">
-					description = <"Narrative description about findings on examination of the accessory nerve.">
-				>
-				["at0.19"] = <
-					text = <"*CN XII description (en)">
-					description = <"Narrative description about findings on examination of the hypoglossal nerve.">
-				>
-				["at0.2"] = <
-					text = <"I details">
-					description = <"Details about function of the olfactory nerve.">
-				>
-				["at0.20"] = <
-					text = <"Corneal reflex">
-					description = <"The presence of the corneal reflex.">
-					comment = <"Also known as the 'blink reflex'.">
-				>
-				["at0.21"] = <
-					text = <"Present">
-					description = <"The reflex is observed.">
-				>
-				["at0.22"] = <
-					text = <"Absent">
-					description = <"The reflex is not observed.">
-				>
-				["at0.23"] = <
-					text = <"Reduced">
-					description = <"The reflex is observed, but diminished compared to normal.">
-				>
-				["at0.24"] = <
-					text = <"Jaw jerk">
-					description = <"The presence of the jaw jerk.">
-				>
-				["at0.25"] = <
-					text = <"Present">
-					description = <"The jaw jerk is present.">
-				>
-				["at0.26"] = <
-					text = <"Absent">
-					description = <"The jaw jerk is absent.">
-				>
-				["at0.3"] = <
-					text = <"II details">
-					description = <"Details about the function of the optic nerve.">
-				>
-				["at0.4"] = <
-					text = <"III, IV & VI details">
-					description = <"Details about the function of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.5"] = <
-					text = <"V details">
-					description = <"Details about the function of the trigeminal nerve.">
-				>
-				["at0.6"] = <
-					text = <"VII details">
-					description = <"Details about the function of the facial nerve.">
-				>
-				["at0.7"] = <
-					text = <"VIII details">
-					description = <"Details about the function of the vestibulococchlear nerve.">
-				>
-				["at0.8"] = <
-					text = <"IX & X details">
-					description = <"Details about the function of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.9"] = <
-					text = <"XI details">
-					description = <"Details about the function of the accessory nerve.">
+					text = <"*Temporomandibular joints (en)">
+					description = <"*The articulation of the mandibular condyle with the glenoid fossa of the temporal bone (en)">
 				>
 				["at0000.1"] = <
-					text = <"exam-tmj">
+					text = <"*Examination of temporomandibular joints (TMJs) (en)">
 					description = <"Constatações observadas durante o exame físico de um sistema corporal ou estrutura anatômica.">
 				>
 				["at0001.1"] = <
 					text = <"Sistema ou estrutura examinada">
 					description = <"Identificação do sistema do corpo examinado ou da estrutura anatômica.">
 					comment = <"A codificação do sistema ou estrutura examinada com uma terminologia é preferível, sempre que possível.">
-				>
-				["at0.27"] = <
-					text = <"Gag reflex">
-					description = <"The presence of the pharyngeal, or gag, reflex.">
-				>
-				["at0.28"] = <
-					text = <"*Findings (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -898,132 +583,70 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0.29"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.30"] = <
+					text = <"*Mouth opening (en)">
+					description = <"">
+				>
+				["at0.31"] = <
+					text = <"*Palpation (en)">
+					description = <"">
+				>
+				["at0.32"] = <
+					text = <"*Pain/tenderness upon joint movements (en)">
+					description = <"">
+				>
+				["at0.33"] = <
+					text = <"*Joint sounds during joint movements (en)">
+					description = <"">
+				>
+				["at0.34"] = <
+					text = <"*Range of motion (en)">
+					description = <"">
+				>
 			>
 		>
 		["de"] = <
 			items = <
 				["at0.1"] = <
-					text = <"Cranial nerve">
-					description = <"One of each of twelve pairs of nerves which arise directly from the brain.">
-				>
-				["at0.10"] = <
-					text = <"XII details">
-					description = <"Details about the function of the hypoglossal nerve.">
-				>
-				["at0.11"] = <
-					text = <"*CN I description (en)">
-					description = <"Narrative description about findings on examination of the olfactory nerve.">
-					comment = <"For example: summary about smell testing.">
-				>
-				["at0.12"] = <
-					text = <"*CN II description (en)">
-					description = <"Narrative description about findings on examination of the optic nerve.">
-				>
-				["at0.13"] = <
-					text = <"*CN III, IV & VI description (en)">
-					description = <"Narrative description about findings on examination of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.14"] = <
-					text = <"*CN V description (en)">
-					description = <"Narrative description about findings on examination of the trigeminal nerve.">
-				>
-				["at0.15"] = <
-					text = <"*CN VII description (en)">
-					description = <"Narrative description about findings on examination of the facial nerve.">
-				>
-				["at0.16"] = <
-					text = <"*CN VIII description (en)">
-					description = <"Narrative description about findings on examination of the vestibulococchlear nerve.">
-				>
-				["at0.17"] = <
-					text = <"*CN IX & X description (en)">
-					description = <"Narrative description about findings on examination of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.18"] = <
-					text = <"*CN XI description (en)">
-					description = <"Narrative description about findings on examination of the accessory nerve.">
-				>
-				["at0.19"] = <
-					text = <"*CN XII description (en)">
-					description = <"Narrative description about findings on examination of the hypoglossal nerve.">
-				>
-				["at0.2"] = <
-					text = <"I details">
-					description = <"Details about function of the olfactory nerve.">
-				>
-				["at0.20"] = <
-					text = <"Corneal reflex">
-					description = <"The presence of the corneal reflex.">
-					comment = <"Also known as the 'blink reflex'.">
-				>
-				["at0.21"] = <
-					text = <"Present">
-					description = <"The reflex is observed.">
-				>
-				["at0.22"] = <
-					text = <"Absent">
-					description = <"The reflex is not observed.">
-				>
-				["at0.23"] = <
-					text = <"Reduced">
-					description = <"The reflex is observed, but diminished compared to normal.">
-				>
-				["at0.24"] = <
-					text = <"Jaw jerk">
-					description = <"The presence of the jaw jerk.">
-				>
-				["at0.25"] = <
-					text = <"Present">
-					description = <"The jaw jerk is present.">
-				>
-				["at0.26"] = <
-					text = <"Absent">
-					description = <"The jaw jerk is absent.">
-				>
-				["at0.3"] = <
-					text = <"II details">
-					description = <"Details about the function of the optic nerve.">
-				>
-				["at0.4"] = <
-					text = <"III, IV & VI details">
-					description = <"Details about the function of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.5"] = <
-					text = <"V details">
-					description = <"Details about the function of the trigeminal nerve.">
-				>
-				["at0.6"] = <
-					text = <"VII details">
-					description = <"Details about the function of the facial nerve.">
-				>
-				["at0.7"] = <
-					text = <"VIII details">
-					description = <"Details about the function of the vestibulococchlear nerve.">
-				>
-				["at0.8"] = <
-					text = <"IX & X details">
-					description = <"Details about the function of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.9"] = <
-					text = <"XI details">
-					description = <"Details about the function of the accessory nerve.">
+					text = <"*Temporomandibular joints (en)">
+					description = <"*The articulation of the mandibular condyle with the glenoid fossa of the temporal bone (en)">
 				>
 				["at0000.1"] = <
-					text = <"exam-tmj">
+					text = <"*Examination of temporomandibular joints (TMJs) (en)">
 					description = <"Während der körperlichen Untersuchung eines Körpersystems oder einer anatomischen Struktur beobachtete Befunde.">
 				>
 				["at0001.1"] = <
 					text = <"Untersuchtes System oder untersuchte Struktur">
 					description = <"Identifizierung des untersuchten Körpersystems oder der anatomischen Struktur.">
 					comment = <"Wenn möglich wird die Kodierung des untersuchten Systems oder der untersuchten Struktur mit einer Terminologie bevorzugt.">
-				>
-				["at0.27"] = <
-					text = <"Gag reflex">
-					description = <"The presence of the pharyngeal, or gag, reflex.">
-				>
-				["at0.28"] = <
-					text = <"*Findings (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"Ergebnisse der körperlichen Untersuchung">
@@ -1069,132 +692,70 @@ ontology
 					description = <"Identifizierung des untersuchten Körperbereichs.">
 					comment = <"Zum Beispiel die Untersuchung einer bestimmten Hautpartie. Wenn die Körperstelle im Datenelement „Untersuchtes System oder Struktur“ vollständig identifiziert wurde, wird dieses Datenelement überflüssig.">
 				>
+				["at0013"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0.29"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.30"] = <
+					text = <"*Mouth opening (en)">
+					description = <"">
+				>
+				["at0.31"] = <
+					text = <"*Palpation (en)">
+					description = <"">
+				>
+				["at0.32"] = <
+					text = <"*Pain/tenderness upon joint movements (en)">
+					description = <"">
+				>
+				["at0.33"] = <
+					text = <"*Joint sounds during joint movements (en)">
+					description = <"">
+				>
+				["at0.34"] = <
+					text = <"*Range of motion (en)">
+					description = <"">
+				>
 			>
 		>
 		["sv"] = <
 			items = <
 				["at0.1"] = <
-					text = <"Cranial nerve">
-					description = <"One of each of twelve pairs of nerves which arise directly from the brain.">
-				>
-				["at0.10"] = <
-					text = <"XII details">
-					description = <"Details about the function of the hypoglossal nerve.">
-				>
-				["at0.11"] = <
-					text = <"*CN I description (en)">
-					description = <"Narrative description about findings on examination of the olfactory nerve.">
-					comment = <"For example: summary about smell testing.">
-				>
-				["at0.12"] = <
-					text = <"*CN II description (en)">
-					description = <"Narrative description about findings on examination of the optic nerve.">
-				>
-				["at0.13"] = <
-					text = <"*CN III, IV & VI description (en)">
-					description = <"Narrative description about findings on examination of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.14"] = <
-					text = <"*CN V description (en)">
-					description = <"Narrative description about findings on examination of the trigeminal nerve.">
-				>
-				["at0.15"] = <
-					text = <"*CN VII description (en)">
-					description = <"Narrative description about findings on examination of the facial nerve.">
-				>
-				["at0.16"] = <
-					text = <"*CN VIII description (en)">
-					description = <"Narrative description about findings on examination of the vestibulococchlear nerve.">
-				>
-				["at0.17"] = <
-					text = <"*CN IX & X description (en)">
-					description = <"Narrative description about findings on examination of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.18"] = <
-					text = <"*CN XI description (en)">
-					description = <"Narrative description about findings on examination of the accessory nerve.">
-				>
-				["at0.19"] = <
-					text = <"*CN XII description (en)">
-					description = <"Narrative description about findings on examination of the hypoglossal nerve.">
-				>
-				["at0.2"] = <
-					text = <"I details">
-					description = <"Details about function of the olfactory nerve.">
-				>
-				["at0.20"] = <
-					text = <"Corneal reflex">
-					description = <"The presence of the corneal reflex.">
-					comment = <"Also known as the 'blink reflex'.">
-				>
-				["at0.21"] = <
-					text = <"Present">
-					description = <"The reflex is observed.">
-				>
-				["at0.22"] = <
-					text = <"Absent">
-					description = <"The reflex is not observed.">
-				>
-				["at0.23"] = <
-					text = <"Reduced">
-					description = <"The reflex is observed, but diminished compared to normal.">
-				>
-				["at0.24"] = <
-					text = <"Jaw jerk">
-					description = <"The presence of the jaw jerk.">
-				>
-				["at0.25"] = <
-					text = <"Present">
-					description = <"The jaw jerk is present.">
-				>
-				["at0.26"] = <
-					text = <"Absent">
-					description = <"The jaw jerk is absent.">
-				>
-				["at0.3"] = <
-					text = <"II details">
-					description = <"Details about the function of the optic nerve.">
-				>
-				["at0.4"] = <
-					text = <"III, IV & VI details">
-					description = <"Details about the function of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.5"] = <
-					text = <"V details">
-					description = <"Details about the function of the trigeminal nerve.">
-				>
-				["at0.6"] = <
-					text = <"VII details">
-					description = <"Details about the function of the facial nerve.">
-				>
-				["at0.7"] = <
-					text = <"VIII details">
-					description = <"Details about the function of the vestibulococchlear nerve.">
-				>
-				["at0.8"] = <
-					text = <"IX & X details">
-					description = <"Details about the function of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.9"] = <
-					text = <"XI details">
-					description = <"Details about the function of the accessory nerve.">
+					text = <"*Temporomandibular joints (en)">
+					description = <"*The articulation of the mandibular condyle with the glenoid fossa of the temporal bone (en)">
 				>
 				["at0000.1"] = <
-					text = <"exam-tmj">
+					text = <"*Examination of temporomandibular joints (TMJs) (en)">
 					description = <"Observerade fynd vid fysisk undersökning av system i kroppen, eller av anatomisk struktur">
 				>
 				["at0001.1"] = <
 					text = <"System eller struktur som undersökts">
 					description = <"Identifiering av systemet eller strukturen som undersökts.">
 					comment = <"Om möjligt, koda systemet eller strukturen med hjälp av ett terminologisystem.">
-				>
-				["at0.27"] = <
-					text = <"Gag reflex">
-					description = <"The presence of the pharyngeal, or gag, reflex.">
-				>
-				["at0.28"] = <
-					text = <"*Findings (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -1240,132 +801,70 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0.29"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.30"] = <
+					text = <"*Mouth opening (en)">
+					description = <"">
+				>
+				["at0.31"] = <
+					text = <"*Palpation (en)">
+					description = <"">
+				>
+				["at0.32"] = <
+					text = <"*Pain/tenderness upon joint movements (en)">
+					description = <"">
+				>
+				["at0.33"] = <
+					text = <"*Joint sounds during joint movements (en)">
+					description = <"">
+				>
+				["at0.34"] = <
+					text = <"*Range of motion (en)">
+					description = <"">
+				>
 			>
 		>
 		["el"] = <
 			items = <
 				["at0.1"] = <
-					text = <"Cranial nerve">
-					description = <"One of each of twelve pairs of nerves which arise directly from the brain.">
-				>
-				["at0.10"] = <
-					text = <"XII details">
-					description = <"Details about the function of the hypoglossal nerve.">
-				>
-				["at0.11"] = <
-					text = <"*CN I description (en)">
-					description = <"Narrative description about findings on examination of the olfactory nerve.">
-					comment = <"For example: summary about smell testing.">
-				>
-				["at0.12"] = <
-					text = <"*CN II description (en)">
-					description = <"Narrative description about findings on examination of the optic nerve.">
-				>
-				["at0.13"] = <
-					text = <"*CN III, IV & VI description (en)">
-					description = <"Narrative description about findings on examination of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.14"] = <
-					text = <"*CN V description (en)">
-					description = <"Narrative description about findings on examination of the trigeminal nerve.">
-				>
-				["at0.15"] = <
-					text = <"*CN VII description (en)">
-					description = <"Narrative description about findings on examination of the facial nerve.">
-				>
-				["at0.16"] = <
-					text = <"*CN VIII description (en)">
-					description = <"Narrative description about findings on examination of the vestibulococchlear nerve.">
-				>
-				["at0.17"] = <
-					text = <"*CN IX & X description (en)">
-					description = <"Narrative description about findings on examination of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.18"] = <
-					text = <"*CN XI description (en)">
-					description = <"Narrative description about findings on examination of the accessory nerve.">
-				>
-				["at0.19"] = <
-					text = <"*CN XII description (en)">
-					description = <"Narrative description about findings on examination of the hypoglossal nerve.">
-				>
-				["at0.2"] = <
-					text = <"I details">
-					description = <"Details about function of the olfactory nerve.">
-				>
-				["at0.20"] = <
-					text = <"Corneal reflex">
-					description = <"The presence of the corneal reflex.">
-					comment = <"Also known as the 'blink reflex'.">
-				>
-				["at0.21"] = <
-					text = <"Present">
-					description = <"The reflex is observed.">
-				>
-				["at0.22"] = <
-					text = <"Absent">
-					description = <"The reflex is not observed.">
-				>
-				["at0.23"] = <
-					text = <"Reduced">
-					description = <"The reflex is observed, but diminished compared to normal.">
-				>
-				["at0.24"] = <
-					text = <"Jaw jerk">
-					description = <"The presence of the jaw jerk.">
-				>
-				["at0.25"] = <
-					text = <"Present">
-					description = <"The jaw jerk is present.">
-				>
-				["at0.26"] = <
-					text = <"Absent">
-					description = <"The jaw jerk is absent.">
-				>
-				["at0.3"] = <
-					text = <"II details">
-					description = <"Details about the function of the optic nerve.">
-				>
-				["at0.4"] = <
-					text = <"III, IV & VI details">
-					description = <"Details about the function of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.5"] = <
-					text = <"V details">
-					description = <"Details about the function of the trigeminal nerve.">
-				>
-				["at0.6"] = <
-					text = <"VII details">
-					description = <"Details about the function of the facial nerve.">
-				>
-				["at0.7"] = <
-					text = <"VIII details">
-					description = <"Details about the function of the vestibulococchlear nerve.">
-				>
-				["at0.8"] = <
-					text = <"IX & X details">
-					description = <"Details about the function of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.9"] = <
-					text = <"XI details">
-					description = <"Details about the function of the accessory nerve.">
+					text = <"*Temporomandibular joints (en)">
+					description = <"*The articulation of the mandibular condyle with the glenoid fossa of the temporal bone (en)">
 				>
 				["at0000.1"] = <
-					text = <"exam-tmj">
+					text = <"*Examination of temporomandibular joints (TMJs) (en)">
 					description = <"Ευρήματα που παρατηρούνται κατά τη φυσική εξέταση ενός συστήματος σώματος ή ανατομικής δομής.">
 				>
 				["at0001.1"] = <
 					text = <"Εξεταζόμενο σύστημα ή δομή">
 					description = <"Ταυτοποίηση του εξεταζόμενου συστήματος σώματος ή ανατομικής δομής.">
 					comment = <"Προτιμάται η κωδικοποίηση του συστήματος ή της δομής που εξετάζεται με ορολογία, όπου είναι δυνατόν.">
-				>
-				["at0.27"] = <
-					text = <"Gag reflex">
-					description = <"The presence of the pharyngeal, or gag, reflex.">
-				>
-				["at0.28"] = <
-					text = <"*Findings (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -1411,132 +910,70 @@ ontology
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
 				>
+				["at0013"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0.29"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.30"] = <
+					text = <"*Mouth opening (en)">
+					description = <"">
+				>
+				["at0.31"] = <
+					text = <"*Palpation (en)">
+					description = <"">
+				>
+				["at0.32"] = <
+					text = <"*Pain/tenderness upon joint movements (en)">
+					description = <"">
+				>
+				["at0.33"] = <
+					text = <"*Joint sounds during joint movements (en)">
+					description = <"">
+				>
+				["at0.34"] = <
+					text = <"*Range of motion (en)">
+					description = <"">
+				>
 			>
 		>
 		["es"] = <
 			items = <
 				["at0.1"] = <
-					text = <"Cranial nerve">
-					description = <"One of each of twelve pairs of nerves which arise directly from the brain.">
-				>
-				["at0.10"] = <
-					text = <"XII details">
-					description = <"Details about the function of the hypoglossal nerve.">
-				>
-				["at0.11"] = <
-					text = <"*CN I description (en)">
-					description = <"Narrative description about findings on examination of the olfactory nerve.">
-					comment = <"For example: summary about smell testing.">
-				>
-				["at0.12"] = <
-					text = <"*CN II description (en)">
-					description = <"Narrative description about findings on examination of the optic nerve.">
-				>
-				["at0.13"] = <
-					text = <"*CN III, IV & VI description (en)">
-					description = <"Narrative description about findings on examination of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.14"] = <
-					text = <"*CN V description (en)">
-					description = <"Narrative description about findings on examination of the trigeminal nerve.">
-				>
-				["at0.15"] = <
-					text = <"*CN VII description (en)">
-					description = <"Narrative description about findings on examination of the facial nerve.">
-				>
-				["at0.16"] = <
-					text = <"*CN VIII description (en)">
-					description = <"Narrative description about findings on examination of the vestibulococchlear nerve.">
-				>
-				["at0.17"] = <
-					text = <"*CN IX & X description (en)">
-					description = <"Narrative description about findings on examination of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.18"] = <
-					text = <"*CN XI description (en)">
-					description = <"Narrative description about findings on examination of the accessory nerve.">
-				>
-				["at0.19"] = <
-					text = <"*CN XII description (en)">
-					description = <"Narrative description about findings on examination of the hypoglossal nerve.">
-				>
-				["at0.2"] = <
-					text = <"I details">
-					description = <"Details about function of the olfactory nerve.">
-				>
-				["at0.20"] = <
-					text = <"Corneal reflex">
-					description = <"The presence of the corneal reflex.">
-					comment = <"Also known as the 'blink reflex'.">
-				>
-				["at0.21"] = <
-					text = <"Present">
-					description = <"The reflex is observed.">
-				>
-				["at0.22"] = <
-					text = <"Absent">
-					description = <"The reflex is not observed.">
-				>
-				["at0.23"] = <
-					text = <"Reduced">
-					description = <"The reflex is observed, but diminished compared to normal.">
-				>
-				["at0.24"] = <
-					text = <"Jaw jerk">
-					description = <"The presence of the jaw jerk.">
-				>
-				["at0.25"] = <
-					text = <"Present">
-					description = <"The jaw jerk is present.">
-				>
-				["at0.26"] = <
-					text = <"Absent">
-					description = <"The jaw jerk is absent.">
-				>
-				["at0.3"] = <
-					text = <"II details">
-					description = <"Details about the function of the optic nerve.">
-				>
-				["at0.4"] = <
-					text = <"III, IV & VI details">
-					description = <"Details about the function of the oculomotor, trochlear and abducens nerves.">
-				>
-				["at0.5"] = <
-					text = <"V details">
-					description = <"Details about the function of the trigeminal nerve.">
-				>
-				["at0.6"] = <
-					text = <"VII details">
-					description = <"Details about the function of the facial nerve.">
-				>
-				["at0.7"] = <
-					text = <"VIII details">
-					description = <"Details about the function of the vestibulococchlear nerve.">
-				>
-				["at0.8"] = <
-					text = <"IX & X details">
-					description = <"Details about the function of the glossopharyngeal and vagus nerves.">
-				>
-				["at0.9"] = <
-					text = <"XI details">
-					description = <"Details about the function of the accessory nerve.">
+					text = <"*Temporomandibular joints (en)">
+					description = <"*The articulation of the mandibular condyle with the glenoid fossa of the temporal bone (en)">
 				>
 				["at0000.1"] = <
-					text = <"exam-tmj">
+					text = <"*Examination of temporomandibular joints (TMJs) (en)">
 					description = <"*Findings observed during the physical examination of a body system or anatomical structure.(en)">
 				>
 				["at0001.1"] = <
 					text = <"*System or structure examined(en)">
 					description = <"*Identification of the examined body system or anatomical structure.(en)">
 					comment = <"*Coding of the system or structure examined with a terminology is preferred, where possible.(en)">
-				>
-				["at0.27"] = <
-					text = <"Gag reflex">
-					description = <"The presence of the pharyngeal, or gag, reflex.">
-				>
-				["at0.28"] = <
-					text = <"*Findings (en)">
-					description = <"">
 				>
 				["at0000"] = <
 					text = <"*Physical examination findings (en)">
@@ -1581,6 +1018,54 @@ ontology
 					text = <"*Body site(en)">
 					description = <"*Identification of the area of the body under examination. (en)">
 					comment = <"*For example examination of a specific area of skin. If the body site has been fully identified in the 'System or structure examined' data element, this data element becomes redundant. (en)">
+				>
+				["at0013"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0017"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0014"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0018"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0015"] = <
+					text = <"*Element (en)">
+					description = <"">
+				>
+				["at0016"] = <
+					text = <"*Cluster (en)">
+					description = <"">
+				>
+				["at0.29"] = <
+					text = <"*Findings (en)">
+					description = <"">
+				>
+				["at0.30"] = <
+					text = <"*Mouth opening (en)">
+					description = <"">
+				>
+				["at0.31"] = <
+					text = <"*Palpation (en)">
+					description = <"">
+				>
+				["at0.32"] = <
+					text = <"*Pain/tenderness upon joint movements (en)">
+					description = <"">
+				>
+				["at0.33"] = <
+					text = <"*Joint sounds during joint movements (en)">
+					description = <"">
+				>
+				["at0.34"] = <
+					text = <"*Range of motion (en)">
+					description = <"">
 				>
 			>
 		>
