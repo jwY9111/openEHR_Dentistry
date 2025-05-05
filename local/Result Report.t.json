@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "4.0.0",
+      "sem_ver" : "5.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "54f1d8c2cc4c9fe0aea0f30cd72f8088",
+      "MD5-CAM-1.0.1" : "b016dffa74c12c48a8eea33eac3ea9f4",
       "PARENT:MD5-CAM-1.0.1" : "a07600c31123fae1c014f787d8ad9832"
     },
     "details" : {
@@ -5080,7 +5080,7 @@
         "children" : [ {
           "@type" : "C_ARCHETYPE_ROOT",
           "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..1",
+          "occurrences" : "0..*",
           "nodeId" : "at0088.1",
           "attributes" : [ ],
           "attributeTuples" : [ ],
@@ -15020,7 +15020,27 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "EVALUATION",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0002.1",
+              "attributes" : [ ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -15031,8 +15051,14 @@
           "at0000.1" : {
             "@type" : "ARCHETYPE_TERM",
             "code" : "at0000.1",
-            "text" : "Clinical synopsis of result",
+            "text" : "Result summary and interpretation",
             "description" : "Narrative summary or overview about a patient, specifically from the perspective of a healthcare provider, and with or without associated interpretations."
+          },
+          "at0002.1" : {
+            "@type" : "ARCHETYPE_TERM",
+            "code" : "at0002.1",
+            "text" : "Summary/ Interpretation",
+            "description" : "The summary, assessment, conclusions or evaluation of the clinical findings."
           }
         },
         "fa" : { },
