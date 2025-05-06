@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "13.0.0",
+      "sem_ver" : "14.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "77fbb1eb17cafa882f70fd9242810735",
+      "MD5-CAM-1.0.1" : "0173e08623f9deadec54d83e92c541ad",
       "PARENT:MD5-CAM-1.0.1" : "6b142ab25a9d3163c1ac37d05e602ceb"
     },
     "details" : {
@@ -772,24 +772,6 @@
           "attributes" : [ ],
           "attributeTuples" : [ ],
           "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-device_screening-001.v0",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "EVALUATION",
-          "occurrences" : "0..1",
-          "nodeId" : "at0.5",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-EVALUATION.ovl-last_menstrual_period-001.v1",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "OBSERVATION",
-          "occurrences" : "0..1",
-          "nodeId" : "at0.12",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-OBSERVATION.ovl-pregnancy_finding-001.v0",
           "referenceType" : "archetypeOverlay"
         }, {
           "@type" : "C_ARCHETYPE_ROOT",
@@ -5696,105 +5678,6 @@
         "name" : "Ramona Wellmann, Natalia Strauch",
         "organisation" : "Medizinische Hochschule Hannover",
         "email" : "wellmann.ramona@mh-hannover.de, Strauch.Natalia@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "1db5e254-8d05-4aa7-acd9-4310dd3d5dfc",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "271CD0C30AF2A1828A0A2EA440800BBC"
-      },
-      "details" : {
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere detaljer om den første dagen i den siste menstruasjonsperioden individet opplevde.",
-          "keywords" : [ "menstruasjon, mensen, LNMP, LMP, LNP, DLMP" ],
-          "use" : "Brukes for å registrere detaljer om den første dagen i den siste menstruasjonsperioden individet opplevde.\r\n\r\nBruk dataelementet \"Sikkerhet\" for å registrere sikkerhetsgraden for at datoen var korrekt. Ved registrering av startdatoen for siste menstruasjonsperiode er antagelsen at denne menstruasjonen var normal.",
-          "misuse" : "Brukes ikke for å registrere detaljer om menarke eller overgangsalder - bruk arketypen EVALUATION.menstruation_summary for dette formålet.\r\n\r\nBrukes ikke for å registrere informasjon om en spesifikk dag i menstruasjonssyklusen, bruk arketypen OBSERVATION.menstrual_diary for dette formålet.\r\n\r\nBrukes ikke for å registrere informasjon om typiske eller vanlige menstruasjonssykluser eller mønstre - bruk arketypen EVALUATION.menstruation_summary for dette formålet.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record the details about the first day of the most recent menstrual cycle for the individual.",
-          "keywords" : [ "menstruation, menses, LNMP, LMP, LNP, DLMP" ],
-          "use" : "Use to record the details about the first day of the most recent menstrual cycle for the individual. \r\n\r\nUse the data element 'Certainty' to record the level of certainty the date was correct. The assumption when recording the onset of the last menstrual cycle is that the menstruation was 'normal'.",
-          "misuse" : "Not to be used to record information about menses or related symptoms, use the OBSERVATION.menstruation archetype for this purpose. \r\n\r\nNot to be used to record information about a specific day in a menstrual cycle, use the OBSERVATION.menstrual_diary archetype for this purpose.\r\n\r\nNot to be used to record information about an individual's menstruation history events or patterns of menstruation over time, use the EVALUATION.menstruation_summary archetype for this purpose.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-EVALUATION.last_menstrual_period.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-EVALUATION.ovl-last_menstrual_period-001.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "EVALUATION",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "ae09ea7b-787c-494c-a987-89845ef29295",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Marit Alice Venheim, John Tore Valand",
-        "organisation" : "Helse Vest IKT",
-        "email" : "marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no"
       },
       "otherDetails" : { }
     } ]
@@ -17172,564 +17055,6 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "3d5acaa4-d68a-4156-97dc-b1f743310ae4",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "04DB3ACCF005E496B0B9FD86C73867DA"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus einer Person, die nur zum Zeitpunkt der Feststellung als richtig anzusehen ist.",
-          "keywords" : [ "Schwangerschaft, schwanger, Ausschluss" ],
-          "use" : "Zur Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus einer Person zu einem bestimmten Zeitpunkt. \r\n\r\nDiese Datengruppe ist ganz bewusst als Aufzeichnung einer Behauptung definiert, einer sorgfältigen klinischen Aussage eines Arztes darüber, ob er nach bestem Wissen und Gewissen glaubt, dass eine Person schwanger ist oder nicht.\r\n\r\n\"Möglicherweise schwanger“ wird in der Regel nicht als Wert angeboten, geschweige denn in der Krankenakte vermerkt, da dies die Standardannahme eines jeden Arztes für jede Frau im gebärfähigen Alter ist, bis das Gegenteil bewiesen ist. \r\n\r\nDie Feststellung, dass eine Person schwanger ist, lässt sich relativ einfach und sicher auf der Grundlage von Beweisen wie einem positiven Urin- oder Bluttest oder körperlichen Untersuchungsergebnissen treffen. In der Regel führen die Folgen eines Fehlers in diesem Szenario zu übervorsichtigen Behandlungsentscheidungen, die wahrscheinlich keinen klinischen Schaden verursachen. Die umgekehrte Situation, in der ein Arzt feststellen muss, dass eine Person, die bei der Geburt als weiblich eingestuft wurde, nicht schwanger ist, ist jedoch oft keine einfache oder sichere Entscheidung. Die fälschliche Feststellung, dass eine Person nicht schwanger ist, kann erhebliche klinische Folgen haben, wenn sie zu klinischen Behandlungsentscheidungen führt, die einer schwangeren Frau oder dem Fötus in einer nicht erkannten Schwangerschaft schaden können.\r\n\r\nEin absoluter Ausschluss einer Schwangerschaft ist nur in begrenzten Fällen möglich, z. B. nach bestätigtem Fehlen oder Entfernung beider Eierstöcke und der Gebärmutter. In den meisten anderen Situationen kann der Arzt nur auf der Grundlage einer Kombination aus Anamnese, körperlicher Untersuchung, diagnostischen Tests und klinischem Urteil entscheiden, dass keine Schwangerschaft vorliegt. Jede Aussage zum Ausschluss einer Schwangerschaft sollte eine Begründung oder Rechtfertigung des Arztes enthalten, die sich auf aktuelle Testergebnisse, ein Organinventar oder eine Vorgeschichte von Diagnosen und Verfahren beziehen kann.\r\n\r\nEine Feststellung sollte nur zum Zeitpunkt der Feststellung als richtig angesehen werden. So ist beispielsweise die Feststellung, eine Person sei schwanger, für die Diagnose einer Eileiterschwangerschaft erforderlich, obwohl sie nach einer Operation nicht mehr schwanger sein sollte. Ebenso muss eine Feststellung, dass eine Person nicht schwanger ist, die auf einer Anamnese und einem Urin-Schwangerschaftstest beruht, möglicherweise kurz darauf revidiert werden, wenn ein Bluttest auf Schwangerschaft positiv ausfällt.",
-          "misuse" : "Nicht für die Aufzeichnung zusammenfassender Informationen über eine einzelne Schwangerschaft zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp EVALUATION.pregnancy_summary.\r\n\r\nNicht zur Aufzeichnung der Phase einer aktiven Schwangerschaft, wie z. B. vor der Empfängnis, schwanger oder nach der Geburt, zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp EVALUATION.pregnancy_phase.\r\n\r\nNicht zur Erfassung von Details zu Eingriffen während einer Schwangerschaft, z. B. Schwangerschaftsabbrüche oder Entbindungen, zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp ACTION.procedure oder andere relevante Archetypen.\r\n\r\nNicht zu verwenden im Zusammenhang mit fragebogenartigen Darstellungen, wie z. B. Selbstauskünften mit Fragen wie „Sind Sie schwanger?“. Verwenden Sie hierfür den openEHR-EHR-OBSERVATION.problem_screening.v1 oder andere entsprechende Archetypen.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "Å registrere et utsagn om graviditetsstatusen til en person, som kun skal anses som nøyaktig på datoen og tidspunktet for utsagnet.",
-          "keywords" : [ "graviditet, gravid, ekskludering, utelukkelse" ],
-          "use" : "Brukes til å registrere et utsagn om graviditetsstatusen til individet på et bestemt tidspunkt.\r\n\r\nDenne typen data er spesifikt definert som registrering av et utsagn, en nøye klinisk uttalelse fra en kliniker om hvorvidt de tror, ​​basert på deres beste kunnskap, at en person er gravid eller ikke gravid.\r\n\r\n\"Kan være gravid\" tilbys vanligvis ikke som en verdi, langt mindre registrert i helsejournalen, da dette er en klinikers antakelse for enhver kvinne i fertil alder, inntil det motsatte er bevist.\r\n\r\nÅ hevde at en person er gravid er relativt enkelt og trygt å gjøre på grunnlag av bevis som en positiv urin- eller blodprøve eller fysiske undersøkelse. Vanligvis fører konsekvensene av en feil i dette scenariet til svært forsiktige behandlingsvalg, som neppe vil forårsake klinisk skade. Imidlertid er den motsatte situasjonen hvor en kliniker trenger å hevde at en person som ble født som kvinne ikke er gravid, ofte ikke er en enkel eller sikker avgjørelse. Feil utsagn om at individet ikke er gravid kan ha betydelige kliniske konsekvenser dersom det resulterer i kliniske valg som kan skade en gravid kvinne eller fosteret i et ukjent svangerskap.\r\n\r\nAbsolutt utelukkelse av graviditet er bare mulig i begrensede tilfeller, for eksempel etter bekreftet fjerning av både eggstokkene og livmoren. I de fleste andre situasjoner kan klinikere bare ta en avgjørelse om \"ikke gravid\" basert på en kombinasjon av anamnese, fysisk undersøkelse, diagnostisk testing og klinisk vurdering. Enhver erklæring om utelukkelse av graviditet bør inkludere klinikerens begrunnelse, som kan referere til samtidige testresultater, manglende organ eller en tidligere historie med diagnoser og prosedyrer.\r\n\r\nEt utsagn bør kun anses som nøyaktig på tidspunktet for utsagnet. For eksempel er et utsagn om at en person er gravid nødvendig for å diagnostisere en graviditet utenfor livmoren, men personen bør ikke lenger være gravide etter en operasjon. På samme måte kan et utsagn om at en person ikke er gravid, basert på anamnese og et uringraviditetstestresultat, måtte revideres kort tid etter hvis en blodprøve for graviditet returnerer positiv.",
-          "misuse" : "Skal ikke brukes til å registrere sammendrag om en enkelt graviditet. Bruk arketypen EVALUATION.pregnancy_summary til dette formålet.\r\n\r\nSkal ikke brukes til å registrere fasen av en graviditet, slik som før unnfangelsen, graviditeten eller etter fødselen. Bruk arketypen EVALUATION.pregnancy_phase til dette formålet.\r\n\r\nSkal ikke brukes til å registrere detaljer om prosedyrer utført under en graviditet, for eksempel avbrudd eller fødsel. Bruk ACTION.prosedyren eller andre relevante arketyper for dette formålet.\r\n\r\nSkal ikke brukes i sammenheng med spørreskjema for eksempel selvrapporterte data med spørsmål som \"Er du gravid?\". Bruk openEHR-EHR-OBSERVATION.problem_screening.v1 eller andre relevante arketyper for dette formålet.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record a statement or declaration about the pregnancy status of the individual, which is to be considered accurate only at the date and time of assertion.",
-          "keywords" : [ "pregnancy, pregnant, exclusion," ],
-          "use" : "Use to record a statement or declaration about the pregnancy status of the individual at a specific point in time. \r\n\r\nThis data group is very deliberately defined as the recording of an assertion, a careful clinical statement made by a clinician about whether they believe, based on their best knowledge, that an individual is pregnant or not pregnant.\r\n\r\n‘May be pregnant’ is not usually offered as a value, much less recorded in the health record, as this is every clincian’s default assumption for any woman of child-bearing age, until proven otherwise. \r\n\r\nAsserting that an individual is pregnant is relatively straightforward and safe to do on the basis of evidence such as a positive urine or blood test or physical examination findings. Typically, the consequences of an error in this scenario lead to overly cautious treatment choices, which are unlikely to cause clinical harm. However, the opposite situation where a clinician needs to assert that an individual who has been assigned as female at birth is not pregnant is often not a straightforward or safe determination. Incorrectly asserting that the individual is not pregnant can have significant clinical consequences if it results in clinical management choices that can cause harm to a pregnant woman or to the fetus in an unrecognised pregnancy.\r\n\r\nAbsolute exclusion of pregnancy is possible only in limited cases, such as after the confirmed absence or removal of both ovaries and the uterus. In most other situations, clinicians can only make a determination of ‘not pregnant’ based on a combination of history taking, physical examination, diagnostic testing and clinical judgment. Any statement of pregnancy exclusion should include the clinician’s rationale or justification, which may reference contemporaneous test results, an organ inventory or a past history of diagnoses and procedures.\r\n\r\nAn assertion should be considered accurate only at the time of assertion. For example, an assertion that an individual is pregnant is needed to diagnose an ectopic pregnancy, however they should no longer be pregnant following surgery. Similarly, an assertion that an individual is not pregnant, based on history taking and a urine pregnancy test result, may need to be revised shortly after if a blood test for pregnancy returns positive.",
-          "misuse" : "Not to be used to record summary information about a single pregnancy. Use the EVALUATION.pregnancy_summary archetype for this purpose.\r\n\r\nNot to be used to record the phase of an active pregnancy, such as preconception, pregnant, or postpartum. Use the EVALUATION.pregnancy_phase archetype for this purpose.\r\n\r\nNot to be used to record details about procedures performed during a pregnancy, for example terminations or deliveries. Use the ACTION.procedure or other relevant archetypes for this purpose.\r\n\r\nNot to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you pregnant?'. Use the openEHR-EHR-OBSERVATION.problem_screening.v1 or other relevant archetypes for this purpose.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-OBSERVATION.pregnancy_finding.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-OBSERVATION.ovl-pregnancy_finding-001.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "OBSERVATION",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "data",
-        "children" : [ {
-          "@type" : "C_COMPLEX_OBJECT",
-          "rmTypeName" : "HISTORY",
-          "nodeId" : "at0001",
-          "attributes" : [ {
-            "@type" : "C_ATTRIBUTE",
-            "rmAttributeName" : "events",
-            "children" : [ {
-              "@type" : "C_COMPLEX_OBJECT",
-              "rmTypeName" : "POINT_EVENT",
-              "nodeId" : "at0016",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "data",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "ITEM_TREE",
-                  "nodeId" : "at0003",
-                  "attributes" : [ {
-                    "@type" : "C_ATTRIBUTE",
-                    "rmAttributeName" : "items",
-                    "children" : [ {
-                      "@type" : "C_ARCHETYPE_ROOT",
-                      "rmTypeName" : "CLUSTER",
-                      "occurrences" : "0..1",
-                      "nodeId" : "at0019.1",
-                      "attributes" : [ ],
-                      "attributeTuples" : [ ],
-                      "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-clinical_evidence-002.v1",
-                      "referenceType" : "archetypeOverlay"
-                    } ]
-                  } ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
-              "attributeTuples" : [ ]
-            } ]
-          } ],
-          "attributeTuples" : [ ]
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "de" : { },
-        "nb" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "796371b7-f919-4609-ba43-39ba6f628ffc",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Sarah Ballout, Natalia Strauch, Darin Leonhardt",
-        "organisation" : "MHH-Hannover, Medizinische Hochschule Hannover, PLRI für medizinische Informatik/ Medizinische Hochschule",
-        "email" : "ballout.sarah@mh-hannover.de, Strauch.Natalia@mh-hannover.de, leonhardt.darin@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Eli Larsen, Liv Laugen",
-        "organisation" : "Universitetssykehuset Nord-Norge, ​Oslo University Hospital, Norway",
-        "email" : "eli.larsen@unn.no, liv.laugen@ous-hf.no"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "890b58a7-f347-4998-a945-0a8f58ef428a",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "9CA673C44D07EB44E7473631D0F97DD4"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Dokumentation eines expliziten Befundes zur Unterstützung einer klinischen Behauptung, wie z.B. eines Problems/einer Diagnose, eines Nebenwirkungsrisikos, einer Gesundheitsrisikobewertung oder einer Kontraindikation.",
-          "keywords" : [ "Diagnose", "Beweis", "Bedingung", "Krankheit", "Problem", "Feststellung", "Befund", "Beobachtung" ],
-          "use" : "Zur Dokumentationn von Details zu Befunden, die eine klinische Feststellung unterstützen, entweder als Zusammenfassung von Daten, die in anderen (oft der Klasse OBSERVATION) Archetypen verfügbar sind, oder wenn die ursprünglichen Beobachtungsdaten nicht verfügbar sind.\r\n\r\nDiesen Archetypen innerhalb eines SLOTS Archetypen wie EVALUATION.problem_diagnose, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication oder ähnlichen zusammenfassenden Archetypen verwenden, bei denen der Name der Feststellung bereits in der EVALUATION angegeben wurde, verschachtelt wird, um den Inhalt um diesen zusätzlichen und optionalen Datensatz zu erweitern. Während LINKs innerhalb des openEHR-Referenzmodells eine Verknüpfung mit Daten ermöglichen, die an anderer Stelle in der Gesundheitsakte gespeichert sind, wurde dieser Archetyp entwickelt, um diese Funktionalität explizit zu machen und um die klinische Sichtbarkeit und Überprüfung dieser Daten zu ermöglichen, wo sie in einer Vorlage oder Spezifikation relevant sein können.\r\n\r\nDer klinische Beweis kann direkt in diesen Archetyp als \"Finding\" eingegeben werden, oder es kann ein Zitat verwendet werden, um explizit auf Daten innerhalb der Gesundheitsakte zu verweisen.\r\n\r\n",
-          "misuse" : "Nicht zur Dokumentation von zusammenfassende Details zu einem identifizierten Problem oder einer Diagnose verwenden - verwenden Sie dazu die EVALUATION.problem_diagnosis.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Nebenwirkungsrisiko verwenden - verwenden Sie dazu die Datei EVALUATION.adverse_reaction_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Gesundheitsrisiko zu verwenden - verwenden Sie zu diesem Zweck die Datei EVALUATION.health_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassende Einzelheiten über eine identifizierte Kontraindikation verwenden - verwenden Sie dazu die Datei EVALUATION.contraindication.\r\n",
-          "copyright" : "© openEHR Foundation, openEHR Norway",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "sv" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "sv"
-          },
-          "purpose" : "Att registrera ett uttryckligt resultat till stöd för ett kliniskt påstående, såsom ett problem / diagnos, biverkningsrisk, hälsoriskbedömning eller kontraindikation.",
-          "keywords" : [ "diagnos", "bevis", "tillstånd", "sjukdom", "problem", "påstående", "fynd", "observation" ],
-          "use" : "*Används för att registrera detaljer om fynd som stöder ett kliniskt påstående, antingen som en sammanfattning av data som finns tillgängliga i andra (ofta OBSERVATION-klass) arketyper, eller när de ursprungliga observationsdata inte är tillgängliga.\r\n\r\nDenna arketyp är utformad för att kapslas in i en SLOT i EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, eller liknande sammanfattande arketyper, där namnet på påståendet redan har specificerats i EVALUATIONEN, för att utöka innehållet med denna extra och valfria dataset. Medan LÄNKAR inom openEHR-referensmodellen möjliggör koppling till data som hålls någon annanstans inom hälsojournalen har denna arketyp utvecklats för att göra denna funktion tydlig och för att möjliggöra klinisk synlighet och granskning av dessa data, där det kan vara relevant i en template eller specifikation.\r\n\r\nDe kliniska bevisen kan matas in direkt i denna arketyp som en \"Finding\", eller en citering kan användas för att uttryckligen peka på data i hälsojournalen.",
-          "misuse" : "Är inte utformad för att registrera sammanfattade detaljer om ett identifierat problem eller diagnos - använd EVALUATION.problem_diagnosis för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad biverkningsrisk - använd EVALUATION.adverse_reaction_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad hälsorisk - använd EVALUATION.health_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad kontraindikation - använd EVALUATION.-kontraindikationen för detta ändamål.",
-          "copyright" : "© openEHR Foundation, openEHR Norway",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, for eksempel en problem/diagnose, risiko for overfølsomhetsreaksjon, helserisiko, eller kontraindikasjon.",
-          "keywords" : [ "diagnose", "evidens", "tilstand", "sykdom", "problem", "observasjon", "begrunnelse" ],
-          "use" : "Brukes for å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, enten som en oppsummering av data som er tilgjengelig i andre arketyper (ofte av OBSERVATION-klassen), eller når de opprinnelige dataene ikke er tilgjengelige for applikasjonen.\r\n\r\nDenne arketypen er ment å legges i et SLOT i arketypene EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication eller lignende oppsummerende arketyper, der utsagnet allerede er spesifisert i EVALUATION-arketypen. Den fungerer der som en valgfri utvidelse av datasettet i EVALUATION-arketypen.\r\n\r\nSom spesifisert i openEHR referansemodellen kan det benyttes lenker for å lenke til data som ligger andre steder i journalen, mens denne arketypen er laget for å gjøre dette eksplisitt, og for å gjøre det mulig å vise og gjennomgå disse dataene klinisk der dette er relevant.\r\n\r\nGrunnlaget kan legges direkte i denne i arketypen som et \"Resultat\", \"Strukturert resultat\", som fritekstlig oppsummering i \"Oppsummering\", eller en referans kan benyttes for å peke direkte til dataene som ligger et annet sted i journalen.",
-          "misuse" : "Skal ikke brukes til å registrere sammendrag om et problem eller en diagnose. For dette brukes arketypen EVALUATION.problem_diagnosis.\r\n\r\nSkal ikke brukes til å registrere sammendrag om risiko for overfølsomhetsreaksjoner. For dette brukes arketypen EVALUATION.adverse_reaction_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en helserisiko. For dette brukes arketypen EVALUATION.health_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en kontraindikasjon. For dette brukes arketypen EVALUATION.contraindication.",
-          "copyright" : "© openEHR Foundation, openEHR Norway",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record an explicit finding in support of a clinical assertion, such as a problem/diagnosis, adverse reaction risk, health risk assessment, or contraindication.",
-          "keywords" : [ "diagnosis", "evidence", "condition", "disease", "problem", "assertion", "finding", "observation" ],
-          "use" : "Use to record details about findings that support a clinical assertion, either as a summary of data available in other (often OBSERVATION class) archetypes, or when the original observational data is not available.\r\n\r\nThis archetype is designed to be nested within a SLOT in the EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, or similar summary archetypes, where the name of the assertion has already been specified in the EVALUATION, in order to extend its content with this additional and optional dataset. While LINKs within the openEHR Reference Model allow for linkage to data held elsewhere within the health record, this archetype has been developed to make this functionality explicit, and to enable clinical visibility and review of this data, where it may be relevant in a template or specification.\r\n\r\nThe clinical evidence can be entered directly into this archetype as a 'Result', 'Structured result', a narrative summary in 'Summary'; or a citation can be used to explicitly point to data within the health record.",
-          "misuse" : "Not to be used to record summary details about an identified problem or diagnosis - use the EVALUATION.problem_diagnosis for this purpose.\r\n\r\nNot to be used to record summary details about an identified adverse reaction risk - use the EVALUATION.adverse_reaction_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified health risk - use the EVALUATION.health_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified contraindication - use the EVALUATION.contraindication for this purpose.",
-          "copyright" : "© openEHR Foundation, openEHR Norway",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.clinical_evidence.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-clinical_evidence-002.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "items",
-        "children" : [ {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..1",
-          "nodeId" : "at0007.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-citation-002.v0",
-          "referenceType" : "archetypeOverlay"
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "de" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "25f3f07e-1c99-47c3-99a2-56967b763817",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Alina Rehberg, Darin Leonhardt",
-        "organisation" : "Medizinische Hochschule Hannover, PLRI, PLRI für medizinische Informatik/ Medizinische Hochschule",
-        "email" : "rehberg.alina@mh-hannover.de, leonhardt.darin@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Therese Lindberg",
-        "organisation" : "Cambio CDS",
-        "email" : "therese.lindberg@cambio.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Silje Ljosland Bakke, Liv Laugen, Vebjørn Arntzen",
-        "organisation" : "Nasjonal IKT HF, ​Oslo University Hospital, Norway",
-        "email" : "silje.ljosland.bakke@nasjonalikt.no, liv.laugen@ous-hf.no, varntzen@ous-hf.no"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "9e2a7119-cce4-40c4-86cf-6e8aa4417f60",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "DA2C4FA1BBEBDDA9C9E13EE31D97C437"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Damit wird ermöglicht bestimmte Abschnitte der Gesundheitsinformationen, die an anderer Stelle gespeichert sind, in die aktuelle Krankenakte aufzunehmen.",
-          "keywords" : [ "Zitat", "Referenz" ],
-          "use" : "Verwenden Sie diese Option, um auf Informationen zu verweisen, die an einer anderen Stelle im selben EHR oder außerhalb des aktiven EHR gespeichert sind, damit sie in das aktuelle Dokument oder die aktuelle Nachricht aufgenommen werden können, die gerade erstellt wird. Beispielsweise kann eine Entlassungszusammenfassung den zusammenfassenden Bericht eines Labortests unter Verwendung dieses Zitierarchetyps enthalten, anstatt den gesamten Laborbericht zu duplizieren.\r\nDieser Archetyp ist bewusst als Archetyp der Klasse CLUSTER konzipiert, sodass das Zitieren durch Einfügen in einen Slot im Kontext anderer Archetypen oder als eigenständige Instanz innerhalb des spezifischen Archetyps EVALUATION.citation erfolgen kann.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å gjøre det mulig å inkludere i den gjeldende pasientjournalen spesifikk helseinformasjon som er lagret andre steder.",
-          "keywords" : [ "henvisning", "refereanse" ],
-          "use" : "Brukes for å henvise til informasjon, som enten er lagret et annet sted i den elektroniske pasientjournalen (EPJ) enn det aktuelle dokumentet, eller lagret eksternt, men som det ønskes å refereres til. For eksempel kan en epikrise inkludere en referanse til et laboratoriesvar heller enn å duplisere hele laboratoriesvaret. \r\n\r\nDenne arketypen er bevist designet som en CLUSTER arketype, slik at referansen kan gjøres via en innsettingsspor (SLOT) i andre arketyper, eller som en selvstendig instans innenfor den spesifikke EVALUATION.citation arketypen.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "pt-br" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "pt-br"
-          },
-          "purpose" : "Possibilitar que seções específicas de informações de saúde armazenadas em outros lugares sejam incluídas no registro clínico atual.",
-          "keywords" : [ "citação", "referência" ],
-          "use" : "Usado para referenciar informações que estão armazenadas em outro local do RES ou externas ao RES ativo, então essas informações podem ser incluídas no documento atual ou na mensagem que está sendo criada. Por exemplo, um sumário de alta pode incluir um relatório resumido de um teste laboratorial com o uso deste arquétipo de citação, em vez de duplicar todo o relatório laboratorial.\r\nEste arquétipo está deliberadamente projetado como uma classe de arquétipo CLUSTER de forma que a citação possa ser feita por meio de inserção em um slot dentro do contexto de outros arquétipos ou como uma instancia independente dentro do arquétipo específico EVALUATION.citation.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "ar-sy" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "ar-sy"
-          },
-          "purpose" : "ليتمكن من تضمين المقاطع المحددة للمعلومات الطبية في داخل السجل السريري الحالي, و التي كان يتم تخزينها في مكان آخر",
-          "keywords" : [ "الاقتباس", "المرجع" ],
-          "use" : "يستخدم كمرجع للمعلومات التي يتم تخزينها في مكان آخر في داخل ذات السجل الطبي الإلكتروني, أو في خارج السجل الطبي الإلكتروني النشط, بحيث يمكن تضمينه في الوثيقة الحالية أو الرسالة التي يتم تكوينها.\r\nمثلا: قد يتضمن ملخص الخروج تقريرا موجزا لاختبار معملي عن طريق استخدام هذا النموذج الخاص بالمرجعية, بدلا من تكرار إدراج نفس التقرير المعملي.\r\nو قد تم تعمد تصميم هذا النموذج على هيئة فئة نماذج (عنقود) حتى يتم إدراج المرجعية في شرفة في سياق النماذج الأخرى, أو كمعلومة مستقلة في النموذج المخصص (تقييم. اقتباس).",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To enable specific sections of health information that are stored elsewhere to be included within the current clinical record.",
-          "keywords" : [ "citation", "reference" ],
-          "use" : "Use to reference information that is stored elsewhere in the same EHR or external to the active EHR, so that it can be included in the current document or message that is being created.  For example, a discharge summary may include the summary report of a laboratory test through the use of this citation archetype, rather than duplicating the whole laboratory report.\r\nThis archetype is deliberately designed as a CLUSTER class archetype so that the citation can be made via insertion into a slot within the context of other archetypes, or as a standalone instance within the specific EVALUATION.citation archetype.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "zh-cn" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "zh-cn"
-          },
-          "purpose" : "*To enable specific sections of health information that are stored elsewhere to be included within the current clinical record.(en)",
-          "keywords" : [ "*citation(en)", "*reference(en)" ],
-          "use" : "*Use to reference information that is stored elsewhere in the same EHR or external to the active EHR, so that it can be included in the current document or message that is being created.  For example, a discharge summary may include the summary report of a laboratory test through the use of this citation archetype, rather than duplicating the whole laboratory report.\r\nThis archetype is deliberately designed as a CLUSTER class archetype so that the citation can be made via insertion into a slot within the context of other archetypes, or as a standalone instance within the specific EVALUATION.citation archetype.(en)",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.citation.v0",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-citation-002.v0"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "zh-cn" : { },
-        "pt-br" : { },
-        "ar-sy" : { },
-        "de" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "a90753d4-595a-46e7-9c96-fcbe8611865e",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Aurelie Tomczak",
-        "organisation" : "Institute of Pathology, University Hospital Heidelberg, Germany",
-        "email" : "au.tomczak@yahoo.com"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "ahe@dips.no" : "ahe@dips.no",
-        "name" : "Anca Heyd, Liv Laugen, Vebjørn Arntzen",
-        "organisation" : "Dips ASA, ​Oslo University Hospital, Norway",
-        "email" : "liv.laugen@ous-hf.no, varntzen@ous-hf.no"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-br"
-      },
-      "author" : {
-        "name" : "Gabriela Alves",
-        "organisation" : "Core Consulting",
-        "email" : "contato@coreconsulting.com.br"
-      },
-      "accreditation" : "Hospital Alemão Oswaldo Cruz (HAOC)",
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "ar-sy"
-      },
-      "author" : {
-        "name" : "Mona Saleh"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "zh-cn"
-      },
-      "author" : { },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
     "uid" : "88088f40-e1a4-4506-b883-856be4e4df73",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
@@ -20964,7 +20289,50 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "OBSERVATION",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "HISTORY",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "events",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "POINT_EVENT",
+              "nodeId" : "at0016",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "data",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "ITEM_TREE",
+                  "nodeId" : "at0003",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "items",
+                    "children" : [ {
+                      "@type" : "C_ARCHETYPE_ROOT",
+                      "rmTypeName" : "CLUSTER",
+                      "occurrences" : "0..*",
+                      "nodeId" : "at0019.1",
+                      "attributes" : [ ],
+                      "attributeTuples" : [ ],
+                      "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-clinical_evidence-002.v1",
+                      "referenceType" : "archetypeOverlay"
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -21083,6 +20451,102 @@
         "name" : "Marit Alice Venheim, John Tore Valand",
         "organisation" : "Helse Vest IKT",
         "email" : "marit.alice.venheim@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no"
+      },
+      "otherDetails" : { }
+    } ]
+  }, {
+    "@type" : "TEMPLATE_OVERLAY",
+    "uid" : "4ca8de17-c7b6-4274-8892-450052368821",
+    "description" : {
+      "@type" : "RESOURCE_DESCRIPTION",
+      "originalAuthor" : { },
+      "otherContributors" : [ ],
+      "ipAcknowledgements" : { },
+      "references" : { },
+      "conversionDetails" : { },
+      "otherDetails" : {
+        "PARENT:MD5-CAM-1.0.1" : "9CA673C44D07EB44E7473631D0F97DD4"
+      },
+      "details" : { }
+    },
+    "parentArchetypeId" : "openEHR-EHR-CLUSTER.clinical_evidence.v1",
+    "differential" : true,
+    "archetypeId" : {
+      "@type" : "ARCHETYPE_HRID",
+      "value" : "openEHR-EHR-CLUSTER.ovl-clinical_evidence-002.v1"
+    },
+    "definition" : {
+      "@type" : "C_COMPLEX_OBJECT",
+      "rmTypeName" : "CLUSTER",
+      "nodeId" : "at0000.1",
+      "attributes" : [ ],
+      "attributeTuples" : [ ]
+    },
+    "terminology" : {
+      "@type" : "ARCHETYPE_TERMINOLOGY",
+      "conceptCode" : "at0000",
+      "termDefinitions" : {
+        "en" : { },
+        "nb" : { },
+        "de" : { },
+        "sv" : { }
+      },
+      "termBindings" : { },
+      "terminologyExtracts" : { },
+      "valueSets" : { }
+    },
+    "adlVersion" : "1.4",
+    "buildUid" : "25f3f07e-1c99-47c3-99a2-56967b763817",
+    "rmName" : "openehr",
+    "rmRelease" : "1.1.0",
+    "generated" : true,
+    "otherMetaData" : { },
+    "originalLanguage" : {
+      "terminologyId" : {
+        "value" : "ISO_639-1"
+      },
+      "codeString" : "en"
+    },
+    "translations" : [ {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "de"
+      },
+      "author" : {
+        "name" : "Alina Rehberg, Darin Leonhardt",
+        "organisation" : "Medizinische Hochschule Hannover, PLRI, PLRI für medizinische Informatik/ Medizinische Hochschule",
+        "email" : "rehberg.alina@mh-hannover.de, leonhardt.darin@mh-hannover.de"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "sv"
+      },
+      "author" : {
+        "name" : "Therese Lindberg",
+        "organisation" : "Cambio CDS",
+        "email" : "therese.lindberg@cambio.se"
+      },
+      "otherDetails" : { }
+    }, {
+      "@type" : "TRANSLATION_DETAILS",
+      "language" : {
+        "terminologyId" : {
+          "value" : "ISO_639-1"
+        },
+        "codeString" : "nb"
+      },
+      "author" : {
+        "name" : "Silje Ljosland Bakke, Liv Laugen, Vebjørn Arntzen",
+        "organisation" : "Nasjonal IKT HF, ​Oslo University Hospital, Norway",
+        "email" : "silje.ljosland.bakke@nasjonalikt.no, liv.laugen@ous-hf.no, varntzen@ous-hf.no"
       },
       "otherDetails" : { }
     } ]
