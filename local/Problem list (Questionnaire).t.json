@@ -19,9 +19,9 @@
       "original_namespace" : "",
       "original_publisher" : "",
       "custodian_namespace" : "",
-      "sem_ver" : "14.0.0",
+      "sem_ver" : "15.0.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "0173e08623f9deadec54d83e92c541ad",
+      "MD5-CAM-1.0.1" : "32f803e37cf4245747923d8002c78421",
       "PARENT:MD5-CAM-1.0.1" : "6b142ab25a9d3163c1ac37d05e602ceb"
     },
     "details" : {
@@ -430,15 +430,6 @@
                           "attributes" : [ ],
                           "attributeTuples" : [ ],
                           "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-adhoc_cluster_heading-002.v0",
-                          "referenceType" : "archetypeOverlay"
-                        }, {
-                          "@type" : "C_ARCHETYPE_ROOT",
-                          "rmTypeName" : "CLUSTER",
-                          "occurrences" : "0..1",
-                          "nodeId" : "at0039.1",
-                          "attributes" : [ ],
-                          "attributeTuples" : [ ],
-                          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-organisation-001.v1",
                           "referenceType" : "archetypeOverlay"
                         } ]
                       } ],
@@ -954,560 +945,6 @@
         "name" : "Vanessa Pereira",
         "organisation" : "Better - Pathfinder",
         "email" : "vanessapereira@protonmail.com"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "4c86abbe-2242-4c3c-89e6-e2b8c3808524",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "5DFD0809E7CD46EA0712A590C68F545B"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Darstellung von Informationen zur einer Organisation, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden.",
-          "keywords" : [ "Organisation, Anbieter, Versorger, Betreuer, Netzwerk, Verbund, Gruppe" ],
-          "use" : "Der Archetyp wird verwendet, um Informationen zur einer Organisation darzustellen, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden, oft ad hoc oder wenn die Verwendung von einem formellen demografischen Register oder einem Index nicht angemessen oder nicht möglich ist.\r\nBeispiele beinhalten:\r\n- der Inhaber einer Patientenverfügung unter Verwendung des SLOT „Inhaber der Kopie“ innerhalb des Archetyps EVALUATION.advance_care_directive oder\r\n- Name und Kontaktdaten einer Organisation, die die Betreuung einer Person in ihrem zu Hause übernimmt.\r\n\r\nDieser Archetyp wurde entwickelt, um Angaben zu offiziell anerkannten Einrichtungen, wie einem eingetragenen Unternehmen, einem Krankenhaus und seinen anerkannten „Unterorganisationen“, wie einer operativ getrennten oder spezialisierten Satellitenklinik oder einem häuslichen Pflegedienst, zu enthalten. Es kann auch verwendet werden, um Kontaktinformationen über informellere Netzwerke oder Gruppen darzustellen, wie z. B. eine lokale Selbsthilfegruppe.\r\n\r\nDieser Archetyp könnte auch als Proxy für formale demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der die Prüfer erwarten würden, dass die Details zu der Organisation oben auf dem Bewertungsformular angezeigt werden.",
-          "misuse" : "Der Archetyp darf nicht verwendet werden, um ein offizielles Register oder einen Index darzustellen, zu ersetzen oder zu führen. Verwenden Sie zu diesem Zweck einen formellen Gesundheitsanbieter-Index (Health Provider Index) oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDer Archetyp darf nicht verwendet werden, um den Pflegeort und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Reference Model-Attribute dargestellt werden sollten.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "sv" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "sv"
-          },
-          "purpose" : "Att registrera information om en organisation på det sätt som det behöver representeras i en journalanteckning.\r\n",
-          "keywords" : [ "organisation, leverantör, vårdgivare, vårdenhet, enhet, avdelning, nätverk, grupp" ],
-          "use" : "Används för att registrera information om en organisation som behöver representeras i journalen. Används exempelvis ad hoc eller i de fall då formella demografiska register eller kataloger inte kan användas istället. \r\nExempel inkluderar:\r\n- namn och kontaktuppgifter för en organisation som har en fysisk kopia av patientens önskemål om vård i händelse av att patienten inte längre kan kommunicera\r\n- namn och kontaktuppgifter för hemtjänst- eller hemsjukvårdsorganisation för en individ\r\n\r\nDenna arketyp har utformats för att dokumentera information om formellt erkända enheter, såsom ett registrerat företag, ett sjukhus och dess erkända \"underorganisationer\", såsom en separat eller specialiserad satellitklinik eller hemsjukvård. Den kan också användas för att dokumentera kontaktinformation om mer informella nätverk eller grupper, till exempel en lokal stödgrupp.\r\n\r\nDen här arketypen kan också användas som en proxy för formell demografisk data när man granskar en mall med domänexperter - exempelvis där granskare förväntar sig att se en organisations information i ett formulär.",
-          "misuse" : "*Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes. (en)",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
-          "keywords" : [ "organisasjon, leverandør, omsorgsperson, nettverk, gruppe" ],
-          "use" : "Brukes for å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet, ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nFor eksempel:\r\n- kopiinnhaver av av et fremtidig behandlingsvalg ved å bruke \"Kopiholder\"-SLOTet i arketypen \"EVALUATION.advance_care_directive\" (Fremtidig behandlingsvalg).\r\n- navn og kontaktdetaljer for en organisasjon som yter hjemmehjelp til en enkeltperson.\r\n\r\nDenne arketypen er utformet for å registrere detaljer om formelt anerkjente enheter, for eksempel en registrert virksomhet, et sykehus og dets \"underorganisasjoner\", en operativt separat eller spesialisert satellittklinikk eller hjemmetjeneste. Den kan også brukes til å registrere kontaktinformasjon om mer uformelle nettverk eller grupper, for eksempel en lokal støttegruppe.\r\n\r\nDenne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om en organisasjon i et vurderingsskjema.",
-          "misuse" : "Brukes ikke til å representere, erstatte eller vedlikeholde formelle demografiske opplysninger. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere behandlingssted eller lignende dataelementer, som skal representeres formelt i pasientjournalen. Bruk attributter fra Referansemodellen for dette formålet.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record details about an organisation as they are known or understood in the course of clinical documentation.",
-          "keywords" : [ "organisation, organization, provider, carer, network, group" ],
-          "use" : "Use to record details of an organisation as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype; or\r\n- the name and contact details of an organisation providing home care to an individual.\r\n\r\nThis archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.",
-          "misuse" : "Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-organisation-001.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "items",
-        "children" : [ {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..1",
-          "nodeId" : "at0005.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-address-001.v1",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0022.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-001.v1",
-          "referenceType" : "archetypeOverlay"
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "de" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "8543bf4b-0e15-4990-8a02-c7d082df8617",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Sarah Ballout, Natalia Strauch",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "ballout.sarah@mh-hannover.de, Strauch.Natalia@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Therese Lindberg, Erik Sundvall",
-        "organisation" : "Cambio CDS, Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
-        "email" : "therese.lindberg@cambio.se, erik.sundvall@regionstockholm.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
-        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
-        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "32cd1e03-1924-4e9d-a624-fc00d8fffb77",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Darstellung von Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
-          "keywords" : [ "Adresse", "Anschrift", "postalisch", "Mailing", "Privat", "Geschäft", "physisch", "Landmarke" ],
-          "use" : "Verwenden Sie diesen Archetyp, um Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke darzustellen, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, einen Adresssuchdienst zu verwenden. Beispiele beinhalten:\r\n- die Geschäftsadresse einer Organisation, die eine Person zu Hause betreut; oder\r\n- die Postanschrift des Inhabers einer Patientenverfügung innerhalb des Archetyps EVALUATION.advance_care_directive; oder\r\n- der Sturz- oder Unfallort.\r\n\r\nDer Geltungsbereich dieses Archetyps wurde darauf beschränkt, nur die gebräuchlichsten strukturierten Komponenten zur Identifizierung eines bestimmten physischen Gebäudes oder einer Landmarke zu enthalten. In diesem Zusammenhang kann eine vollständige Adresse beschrieben werden mit:\r\n- Ein oder mehrere Freitext-„Adresszeilen“-Datenelemente, um die große Vielfalt an Möglichkeiten darzustellen, wie Details auf „Straßenebene“ aufgezeichnet werden müssen; und\r\n- „Stadt“, um einen Vorort, eine Stadt, ein Dorf oder eine Gemeinde darzustellen;\r\n- „Region/Landkreis“ zur Darstellung eines lokalen Regierungsbezirks;\r\n- „Staat/Territorium/Provinz“, um einen großen Regierungsbezirk darzustellen;\r\n- „Postleitzahl“ und\r\n- \"Land\".\r\n\r\nDieser Archetyp könnte auch als Ersatz für formelle demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der Prüfer eine Adresse in einem Bewertungsformular erwarten würden. Dieser CLUSTER.address könnte auch als Stellvertreter für eine Adresse in formalen demografischen Adressdaten verwendet werden, wenn ein Template mit Klinikern überprüft wird – zum Beispiel bei einer Bewertung, bei der Prüfer erwarten würden, dass die vollständigen Kontaktdaten der Person oben auf dem Bewertungsformular angezeigt werden.",
-          "misuse" : "Darf nicht verwendet werden, um eine vollständig strukturierte Adresse, wie sie in ISO-Standards beschrieben ist, im Rahmen der Führung eines offiziellen demografischen Registers oder Index zu erfassen. Verwenden Sie zu diesem Zweck einen Adresssuchdienst, einen formalen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDarf nicht verwendet werden, um digitale Adressen zur Verwendung in der elektronischen Kommunikation darzustellen. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.electronic_communication.\r\n\r\nDarf nicht verwendet werden, um Details über Wohnungs- oder Obdachlosigkeit darzustellen. Verwenden Sie für diesen Zweck den Archetyp EVALUATION.housing_summary.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "pt-pt" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "pt-pt"
-          },
-          "purpose" : "Registar os detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica.",
-          "keywords" : [ "endereço", "morada", "postal", "correio", "casa", "negócio", "físico", "marco", "ponto de referência" ],
-          "use" : "Utilize para registar detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica, muitas vezes ad hoc ou quando não é apropriado ou possível utilizar um serviço de pesquisa de endereços. Exemplos incluem:\r\n- o endereço comercial de uma organização que presta cuidados domiciliários a um indivíduo; ou\r\n- o endereço postal do titular de um registo de cuidados avançados, dentro do arquétipo EVALUATION.advance_care_directive; ou\r\n- a localização física de uma queda ou acidente.\r\n\r\nO âmbito deste arquétipo foi restringido para conter os componentes estruturados mais comuns para identificar um edifício físico ou um ponto de referência específico. Neste contexto, um endereço completo pode ser descrito utilizando:\r\n- Um ou mais elementos de dados de texto livre de 'Linha de endereço' para representar a enorme variedade de formas pelas quais os detalhes 'ao nível da rua' podem ter de ser registados; e\r\n- 'Cidade' para representar um subúrbio, vila, cidade, vila ou comunidade;\r\n- 'Distrito/Concelho' para representar um distrito governamental local;\r\n- 'Estado/Território/Província' para representar um importante distrito governamental;\r\n- ‘Código postal’, e\r\n- 'País'.\r\nNo entanto, este arquétipo pode ser estendido para incluir detalhes adicionais sobre o endereço, aninhando o CLUSTER.structured_address dentro do SLOT 'Endereço estruturado'.\r\n\r\nEste arquétipo CLUSTER.address também pode ser utilizado como um substituto para um endereço em dados formais de endereço demográfico ao rever um template com especialistas do domínio - por exemplo, uma avaliação em que os revisores esperariam ver os detalhes completos de contacto do indivíduo na parte superior do formulário de avaliação.",
-          "misuse" : "Não deve ser utilizado para registar um endereço totalmente estruturado, tal como descrito nas normas ISO ou como parte da manutenção de um registo ou índice demográfico oficial. Utilize um serviço de pesquisa de endereços, um Índice Mestre de Pacientes formal ou um Índice de Prestadores de Cuidados de Saúde para este fim, ou arquétipos baseados no Modelo de Informação Demográfica openEHR.\r\n\r\nNão deve ser utilizado para representar endereços digitais para utilização em comunicação eletrónica. Utilize CLUSTER.electronic_communication para este efeito.\r\n\r\nNão deve ser utilizado para registar detalhes sobre habitação ou falta de habitação. Utilize EVALUATION.housing_summary para esta finalidade.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "sv" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "sv"
-          },
-          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
-          "keywords" : [ "adress", "postadress", "hem", "företag", "position", "ort", "distrikt", "region" ],
-          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
-          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
-          "keywords" : [ "adresse", "postadresse", "hjem", "arbeid", "fysisk", "oppmøtested" ],
-          "use" : "\t\r\nBrukes for å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\nFor eksempel:\r\n- Adressen til hjemmetjeneste eller en annen helsetjenesteyter.\r\n- Adressen til en person eller organisasjon som oppbevarer fremtidige behandlingsvalg i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- Adressen til hendelsestedet til en ulykke eller et fall.\r\n\r\nOmfanget av denne arketypen har blitt begrenset til å dekke de vanligste komponentene i en enkel adresse. I denne sammenhengen kan en fullstendig adresse beskrives ved å bruke:\r\n- Ett eller flere \"Adresselinje\"-dataelementer for å representere det store utvalget av måter \"gatenivå\" kan registreres på.\r\n- \"By\" for å representere en forstad, by eller landsby.\r\n- \"Distrikt/fylke\" for å representere et lokalt myndighetsdistrikt.\r\n- \"Stat/territorium/provins\" for å representere et større myndighetsdistrikt.\r\n- \"Postnummer\".\r\n- \"Land\".\r\nImidlertidig kan denne arketypen utvides for å inkludere ytteligere detaljer om adressen ved å nøste arketypen CLUSTER.structured_address i SLOTet \"Strukturert adresse\"\r\n\r\nDenne CLUSTER-arketypen kan også brukes istedenfor formelle demografiske adressedata ved gjennomgang av et templat med klinikere – for eksempel en vurdering der brukeren/klinikeren forventer å se personens fullstendige kontaktinformasjon øverst i vurderingsskjemaet.",
-          "misuse" : "Brukes ikke til å representere en fullstendig strukturert adresse, som beskrevet i ISO-standarder eller for å opprettholde et demografisk register eller en indeks. Bruk en adresseoppslagstjeneste, et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke til å representere digitale adresser for bruk i elektronisk kommunikasjon. Bruk CLUSTER.electronic_communication (Elektronisk kommunikasjon) for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om bolig eller hjemløshet, Bruk arketypen EVALUATION.housing_summary (Boligsammendrag) for dette formålet.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "el" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "el"
-          },
-          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
-          "keywords" : [ "*address(en)", "*postal(en)", "*mailing(en)", "*home(en)", "*business(en)", "*physical(en)", "*landmark(en)" ],
-          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
-          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.",
-          "keywords" : [ "address", "postal", "mailing", "home", "business", "physical", "landmark" ],
-          "use" : "Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.",
-          "misuse" : "Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "fr" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "fr"
-          },
-          "purpose" : "Enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique.",
-          "keywords" : [ "adresse", "postale", "courrier", "domicile", "professionnel", "physique", "repère" ],
-          "use" : "Sert à enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique, souvent de manière ad hoc ou lorsqu'il n'est pas approprié ou possible d'utiliser un service de recherche d'adresses. Il s'agit par exemple\r\n- l'adresse professionnelle d'une organisation fournissant des soins à domicile à une personne ; ou\r\n- l'adresse postale du détenteur de la copie d'un dossier de soins avancés, dans l'archétype EVALUATION.advance_care_directive ; ou\r\n- le lieu physique d'une chute ou d'un accident.\r\n\r\nLe champ d'application de cet archétype a été limité aux composants structurés les plus courants permettant d'identifier un bâtiment physique ou un point de repère spécifique. Dans ce contexte, une adresse complète peut être décrite à l'aide des éléments suivants\r\n- un ou plusieurs éléments de données \"ligne d'adresse\" en texte libre pour représenter l'énorme variété de façons dont les détails \"au niveau de la rue\" peuvent être enregistrés ; et\r\n- Ville\" pour représenter une banlieue, une ville, un village ou une communauté ;\r\n- District/County\" pour représenter un district d'administration locale ;\r\n- \"État/Territoire/Province\" pour représenter un grand district gouvernemental ;\r\n- Code postal\", et \r\n- Pays\".\r\nToutefois, cet archétype peut être étendu pour inclure des détails plus fins sur l'adresse en imbriquant le CLUSTER.structured_address dans le SLOT \"Adresse structurée\".\r\n\r\nCet archétype CLUSTER.address peut également être utilisé comme substitut d'une adresse dans les données démographiques formelles lors de la révision d'un modèle avec des experts du domaine - par exemple, une évaluation où les examinateurs s'attendent à voir les coordonnées complètes de la personne en haut du formulaire d'évaluation.",
-          "misuse" : "Ne pas utiliser pour enregistrer une adresse entièrement structurée, telle que décrite dans les normes ISO ou dans le cadre de la tenue d'un registre ou d'un index démographique officiel. Utiliser à cette fin un service de recherche d'adresses, un index principal officiel des patients ou un index des prestataires de soins de santé, ou des archétypes fondés sur le modèle d'information démographique de l'openEHR.\r\n\r\nNe pas utiliser pour représenter des adresses numériques destinées à la communication électronique. Utiliser CLUSTER.electronic_communication à cette fin.\r\n\r\nNe doit pas être utilisé pour enregistrer des détails sur le logement ou l'absence de domicile. Utilisez EVALUATION.housing_summary à cette fin.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-address-001.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "de" : { },
-        "pt-pt" : { },
-        "el" : { },
-        "fr" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "98bc048f-0811-45f4-8f58-46853c50ac46",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Natalia Strauch, Alina Rehberg",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-pt"
-      },
-      "author" : {
-        "name" : "Hugo Silva",
-        "organisation" : "University of Minho",
-        "email" : "pg50416@uminho.pt"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Erik Sundvall",
-        "organisation" : "Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
-        "email" : "erik.sundvall@regionstockholm.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
-        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
-        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "el"
-      },
-      "author" : {
-        "name" : "Erasmia Partafylla",
-        "organisation" : "Sigmasoft",
-        "email" : "c.partafylla@sigmasoft.gr"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "fr"
-      },
-      "author" : {
-        "name" : "Vanessa Pereira",
-        "organisation" : "Luxembourg Institute of Health (LIH)",
-        "email" : "vanessapereira@protonmail.com"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "4418a306-1cf5-4d2b-9012-ef83a9575f2b",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird.",
-          "keywords" : [ "Telefon, Mobiltelefon, E-Mail, Fax, Pager, Chat, Soziale Medien, asynchron, Kommunikation, SoMe" ],
-          "use" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation für eine Person oder Organisation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird. Dies geschieht üblicherweise ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles Register oder einen Index zu verwenden.",
-          "misuse" : "Nicht für komplexe Kommunikationsdarstellung oder -verwaltung zu verwenden, wie z. B. bevorzugte Telefonnummern oder Gültigkeit der Nutzung. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere detaljer om en spesifikk type elektronisk kommunikasjon som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
-          "keywords" : [ "telefon, mobil, e-post, faks, personsøker, chat, asynkron dialog, sosiale media, kommunikasjon, SoMe," ],
-          "use" : "Brukes for å registrere detaljer om en spesifikk type elektronisk kommunikasjon for en person eller en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.",
-          "misuse" : "Brukes ikke til kompleks kommunikasjonsadministrasjon, for eksempel foretrukne telefonnummer eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.",
-          "keywords" : [ "telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe" ],
-          "use" : "Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.",
-          "misuse" : "Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-001.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "de" : { },
-        "nb" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "ae57162c-7e2f-4096-a08f-8f03574e4a72",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Natalia Strauch",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "Strauch.Natalia@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Kanika Kuwelker, John Tore Valand, Liv Laugen",
-        "organisation" : "Helse Vest IKT, Helse Bergen, ​Oslo University Hospital, Norway",
-        "email" : "kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
       },
       "otherDetails" : { }
     } ]
@@ -2533,7 +1970,232 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0021.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0007.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -90.0,
+                      "upper" : 90.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -180.0,
+                      "upper" : 180.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0009.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "122" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "m" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lowerIncluded" : false,
+                      "upperIncluded" : false,
+                      "upperUnbounded" : true,
+                      "lowerUnbounded" : true
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 2,
+                      "upper" : 2,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -4316,7 +3978,232 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0021.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0007.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -90.0,
+                      "upper" : 90.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -180.0,
+                      "upper" : 180.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0009.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "122" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "m" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lowerIncluded" : false,
+                      "upperIncluded" : false,
+                      "upperUnbounded" : true,
+                      "lowerUnbounded" : true
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 2,
+                      "upper" : 2,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -4878,7 +4765,232 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0021.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0007.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -90.0,
+                      "upper" : 90.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -180.0,
+                      "upper" : 180.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0009.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "122" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "m" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lowerIncluded" : false,
+                      "upperIncluded" : false,
+                      "upperUnbounded" : true,
+                      "lowerUnbounded" : true
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 2,
+                      "upper" : 2,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -5799,7 +5911,49 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "EVALUATION",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "data",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ITEM_TREE",
+          "nodeId" : "at0001",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "items",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "ELEMENT",
+              "nodeId" : "at0002.1",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "name",
+                "children" : [ {
+                  "@type" : "C_COMPLEX_OBJECT",
+                  "rmTypeName" : "DV_CODED_TEXT",
+                  "attributes" : [ {
+                    "@type" : "C_ATTRIBUTE",
+                    "rmAttributeName" : "defining_code",
+                    "children" : [ {
+                      "@type" : "C_TERMINOLOGY_CODE",
+                      "rmTypeName" : "TERMINOLOGY_CODE",
+                      "occurrences" : "1..1",
+                      "terminologyId" : {
+                        "value" : "local"
+                      },
+                      "constraint" : [ "ac0.2" ],
+                      "selectedTerminologies" : [ ]
+                    } ]
+                  } ],
+                  "attributeTuples" : [ ]
+                } ]
+              } ],
+              "attributeTuples" : [ ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -5812,17 +5966,69 @@
             "code" : "at0000.1",
             "text" : "No known medical history/ diagnosis/ procedure?",
             "description" : "An overall statement of exclusion about all Problems/diagnoses, Family history, Medications, Procedures, Adverse reactions or other clinical items that are either not currently present, or have not been present in the past."
+          },
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "(Synthesized)",
+            "code" : "ac0.2",
+            "description" : ""
           }
         },
-        "nb" : { },
-        "pt-br" : { },
-        "de" : { },
-        "sv" : { },
-        "fr" : { }
+        "nb" : {
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          }
+        },
+        "pt-br" : {
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          }
+        },
+        "de" : {
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          }
+        },
+        "sv" : {
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          }
+        },
+        "fr" : {
+          "ac0.2" : {
+            "@type" : "ARCHETYPE_TERM",
+            "text" : "*(Synthesized) (en)",
+            "code" : "ac0.2",
+            "description" : ""
+          }
+        }
       },
       "termBindings" : { },
       "terminologyExtracts" : { },
-      "valueSets" : { }
+      "valueSets" : {
+        "ac0.1" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.1",
+          "members" : [ "at0003", "at0004", "at0005", "at0006", "at0007" ]
+        },
+        "ac0.2" : {
+          "@type" : "VALUE_SET",
+          "id" : "ac0.2",
+          "members" : [ "at0003", "at0004", "at0005", "at0006", "at0007" ]
+        }
+      }
     },
     "adlVersion" : "1.4",
     "buildUid" : "d7bd414b-824b-4271-b19c-bfd7b610757b",
@@ -7166,7 +7372,232 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0021.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0007.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -90.0,
+                      "upper" : 90.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -180.0,
+                      "upper" : 180.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0009.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "122" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "m" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lowerIncluded" : false,
+                      "upperIncluded" : false,
+                      "upperUnbounded" : true,
+                      "lowerUnbounded" : true
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 2,
+                      "upper" : 2,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -7540,7 +7971,232 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0021.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0007.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -90.0,
+                      "upper" : 90.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -180.0,
+                      "upper" : 180.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0009.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "122" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "m" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lowerIncluded" : false,
+                      "upperIncluded" : false,
+                      "upperUnbounded" : true,
+                      "lowerUnbounded" : true
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 2,
+                      "upper" : 2,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -9474,560 +10130,6 @@
     } ]
   }, {
     "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "32cd1e03-1924-4e9d-a624-fc00d8fffb77",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "4CB383854196F76408BABBEB02117881"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Darstellung von Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden.",
-          "keywords" : [ "Adresse", "Anschrift", "postalisch", "Mailing", "Privat", "Geschäft", "physisch", "Landmarke" ],
-          "use" : "Verwenden Sie diesen Archetyp, um Details über den Standort einer Person, eines physischen Gebäudes oder einer Landmarke darzustellen, wie sie im Rahmen der klinischen Dokumentation bekannt sind oder verstanden werden, oft ad hoc oder wenn es nicht angemessen oder möglich ist, einen Adresssuchdienst zu verwenden. Beispiele beinhalten:\r\n- die Geschäftsadresse einer Organisation, die eine Person zu Hause betreut; oder\r\n- die Postanschrift des Inhabers einer Patientenverfügung innerhalb des Archetyps EVALUATION.advance_care_directive; oder\r\n- der Sturz- oder Unfallort.\r\n\r\nDer Geltungsbereich dieses Archetyps wurde darauf beschränkt, nur die gebräuchlichsten strukturierten Komponenten zur Identifizierung eines bestimmten physischen Gebäudes oder einer Landmarke zu enthalten. In diesem Zusammenhang kann eine vollständige Adresse beschrieben werden mit:\r\n- Ein oder mehrere Freitext-„Adresszeilen“-Datenelemente, um die große Vielfalt an Möglichkeiten darzustellen, wie Details auf „Straßenebene“ aufgezeichnet werden müssen; und\r\n- „Stadt“, um einen Vorort, eine Stadt, ein Dorf oder eine Gemeinde darzustellen;\r\n- „Region/Landkreis“ zur Darstellung eines lokalen Regierungsbezirks;\r\n- „Staat/Territorium/Provinz“, um einen großen Regierungsbezirk darzustellen;\r\n- „Postleitzahl“ und\r\n- \"Land\".\r\n\r\nDieser Archetyp könnte auch als Ersatz für formelle demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der Prüfer eine Adresse in einem Bewertungsformular erwarten würden. Dieser CLUSTER.address könnte auch als Stellvertreter für eine Adresse in formalen demografischen Adressdaten verwendet werden, wenn ein Template mit Klinikern überprüft wird – zum Beispiel bei einer Bewertung, bei der Prüfer erwarten würden, dass die vollständigen Kontaktdaten der Person oben auf dem Bewertungsformular angezeigt werden.",
-          "misuse" : "Darf nicht verwendet werden, um eine vollständig strukturierte Adresse, wie sie in ISO-Standards beschrieben ist, im Rahmen der Führung eines offiziellen demografischen Registers oder Index zu erfassen. Verwenden Sie zu diesem Zweck einen Adresssuchdienst, einen formalen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDarf nicht verwendet werden, um digitale Adressen zur Verwendung in der elektronischen Kommunikation darzustellen. Verwenden Sie für diesen Zweck den Archetyp CLUSTER.electronic_communication.\r\n\r\nDarf nicht verwendet werden, um Details über Wohnungs- oder Obdachlosigkeit darzustellen. Verwenden Sie für diesen Zweck den Archetyp EVALUATION.housing_summary.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "pt-pt" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "pt-pt"
-          },
-          "purpose" : "Registar os detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica.",
-          "keywords" : [ "endereço", "morada", "postal", "correio", "casa", "negócio", "físico", "marco", "ponto de referência" ],
-          "use" : "Utilize para registar detalhes sobre a localização de uma pessoa, edifício físico ou ponto de referência, tal como são conhecidos ou compreendidos no decurso da documentação clínica, muitas vezes ad hoc ou quando não é apropriado ou possível utilizar um serviço de pesquisa de endereços. Exemplos incluem:\r\n- o endereço comercial de uma organização que presta cuidados domiciliários a um indivíduo; ou\r\n- o endereço postal do titular de um registo de cuidados avançados, dentro do arquétipo EVALUATION.advance_care_directive; ou\r\n- a localização física de uma queda ou acidente.\r\n\r\nO âmbito deste arquétipo foi restringido para conter os componentes estruturados mais comuns para identificar um edifício físico ou um ponto de referência específico. Neste contexto, um endereço completo pode ser descrito utilizando:\r\n- Um ou mais elementos de dados de texto livre de 'Linha de endereço' para representar a enorme variedade de formas pelas quais os detalhes 'ao nível da rua' podem ter de ser registados; e\r\n- 'Cidade' para representar um subúrbio, vila, cidade, vila ou comunidade;\r\n- 'Distrito/Concelho' para representar um distrito governamental local;\r\n- 'Estado/Território/Província' para representar um importante distrito governamental;\r\n- ‘Código postal’, e\r\n- 'País'.\r\nNo entanto, este arquétipo pode ser estendido para incluir detalhes adicionais sobre o endereço, aninhando o CLUSTER.structured_address dentro do SLOT 'Endereço estruturado'.\r\n\r\nEste arquétipo CLUSTER.address também pode ser utilizado como um substituto para um endereço em dados formais de endereço demográfico ao rever um template com especialistas do domínio - por exemplo, uma avaliação em que os revisores esperariam ver os detalhes completos de contacto do indivíduo na parte superior do formulário de avaliação.",
-          "misuse" : "Não deve ser utilizado para registar um endereço totalmente estruturado, tal como descrito nas normas ISO ou como parte da manutenção de um registo ou índice demográfico oficial. Utilize um serviço de pesquisa de endereços, um Índice Mestre de Pacientes formal ou um Índice de Prestadores de Cuidados de Saúde para este fim, ou arquétipos baseados no Modelo de Informação Demográfica openEHR.\r\n\r\nNão deve ser utilizado para representar endereços digitais para utilização em comunicação eletrónica. Utilize CLUSTER.electronic_communication para este efeito.\r\n\r\nNão deve ser utilizado para registar detalhes sobre habitação ou falta de habitação. Utilize EVALUATION.housing_summary para esta finalidade.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "sv" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "sv"
-          },
-          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
-          "keywords" : [ "adress", "postadress", "hem", "företag", "position", "ort", "distrikt", "region" ],
-          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
-          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
-          "keywords" : [ "adresse", "postadresse", "hjem", "arbeid", "fysisk", "oppmøtested" ],
-          "use" : "\t\r\nBrukes for å registrere detaljer om lokaliseringen til en person, en fysisk bygning eller et landemerke, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller der det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\nFor eksempel:\r\n- Adressen til hjemmetjeneste eller en annen helsetjenesteyter.\r\n- Adressen til en person eller organisasjon som oppbevarer fremtidige behandlingsvalg i arketypen EVALUATION.advance_care_directive (Fremtidig behandlingsvalg).\r\n- Adressen til hendelsestedet til en ulykke eller et fall.\r\n\r\nOmfanget av denne arketypen har blitt begrenset til å dekke de vanligste komponentene i en enkel adresse. I denne sammenhengen kan en fullstendig adresse beskrives ved å bruke:\r\n- Ett eller flere \"Adresselinje\"-dataelementer for å representere det store utvalget av måter \"gatenivå\" kan registreres på.\r\n- \"By\" for å representere en forstad, by eller landsby.\r\n- \"Distrikt/fylke\" for å representere et lokalt myndighetsdistrikt.\r\n- \"Stat/territorium/provins\" for å representere et større myndighetsdistrikt.\r\n- \"Postnummer\".\r\n- \"Land\".\r\nImidlertidig kan denne arketypen utvides for å inkludere ytteligere detaljer om adressen ved å nøste arketypen CLUSTER.structured_address i SLOTet \"Strukturert adresse\"\r\n\r\nDenne CLUSTER-arketypen kan også brukes istedenfor formelle demografiske adressedata ved gjennomgang av et templat med klinikere – for eksempel en vurdering der brukeren/klinikeren forventer å se personens fullstendige kontaktinformasjon øverst i vurderingsskjemaet.",
-          "misuse" : "Brukes ikke til å representere en fullstendig strukturert adresse, som beskrevet i ISO-standarder eller for å opprettholde et demografisk register eller en indeks. Bruk en adresseoppslagstjeneste, et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke til å representere digitale adresser for bruk i elektronisk kommunikasjon. Bruk CLUSTER.electronic_communication (Elektronisk kommunikasjon) for dette formålet.\r\n\r\nBrukes ikke for å registrere detaljer om bolig eller hjemløshet, Bruk arketypen EVALUATION.housing_summary (Boligsammendrag) for dette formålet.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "el" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "el"
-          },
-          "purpose" : "*To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.(en)",
-          "keywords" : [ "*address(en)", "*postal(en)", "*mailing(en)", "*home(en)", "*business(en)", "*physical(en)", "*landmark(en)" ],
-          "use" : "*Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.(en)",
-          "misuse" : "*Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.(en)",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation.",
-          "keywords" : [ "address", "postal", "mailing", "home", "business", "physical", "landmark" ],
-          "use" : "Use to record details about the location of a person, physical building or landmark as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use an address lookup service. Examples include:\r\n- the business address of an organisation providing home care to an individual; or\r\n- the postal address of the copyholder of an advanced care record, within the EVALUATION.advance_care_directive archetype; or\r\n- the physical location of a fall or accident.\r\n\r\nThe scope of this archetype has been constrained to carry the commonest structured components for identifying a specific physical building or landmark. In this context, a complete address may be described using:\r\n- One or more free text 'Address line' data elements to represent the huge variety of ways that ‘street-level' details may need to be recorded; and\r\n- 'Town' to represent a suburb, town, city, village, or community;\r\n- 'District/County' to represent a local government district;\r\n- 'State/Territory/Province’ to represent a major government district;\r\n- ‘Postcode’, and \r\n- ‘Country'.\r\nHowever, this archetype can be extended to include additional fine-grained details about the address by nesting the CLUSTER.structured_address within the 'Structured address' SLOT.\r\n\r\nThis CLUSTER.address archetype can also be used as a proxy for an address in formal demographic address data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see the individual's full contact details at the top of the assessment form.",
-          "misuse" : "Not to be used to record a fully structured address, such as described in ISO standards or as part of maintaining an official demographic register or index. Use an address lookup service, a formal Master Patient Index or a Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent digital addresses for use in electronic communication. Use CLUSTER.electronic_communication for this purpose.\r\n\r\nNot to be used to record details about housing or homelessness. Use the EVALUATION.housing_summary for this purpose.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "fr" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "fr"
-          },
-          "purpose" : "Enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique.",
-          "keywords" : [ "adresse", "postale", "courrier", "domicile", "professionnel", "physique", "repère" ],
-          "use" : "Sert à enregistrer des détails sur la localisation d'une personne, d'un bâtiment physique ou d'un point de repère, tels qu'ils sont connus ou compris dans le cadre de la documentation clinique, souvent de manière ad hoc ou lorsqu'il n'est pas approprié ou possible d'utiliser un service de recherche d'adresses. Il s'agit par exemple\r\n- l'adresse professionnelle d'une organisation fournissant des soins à domicile à une personne ; ou\r\n- l'adresse postale du détenteur de la copie d'un dossier de soins avancés, dans l'archétype EVALUATION.advance_care_directive ; ou\r\n- le lieu physique d'une chute ou d'un accident.\r\n\r\nLe champ d'application de cet archétype a été limité aux composants structurés les plus courants permettant d'identifier un bâtiment physique ou un point de repère spécifique. Dans ce contexte, une adresse complète peut être décrite à l'aide des éléments suivants\r\n- un ou plusieurs éléments de données \"ligne d'adresse\" en texte libre pour représenter l'énorme variété de façons dont les détails \"au niveau de la rue\" peuvent être enregistrés ; et\r\n- Ville\" pour représenter une banlieue, une ville, un village ou une communauté ;\r\n- District/County\" pour représenter un district d'administration locale ;\r\n- \"État/Territoire/Province\" pour représenter un grand district gouvernemental ;\r\n- Code postal\", et \r\n- Pays\".\r\nToutefois, cet archétype peut être étendu pour inclure des détails plus fins sur l'adresse en imbriquant le CLUSTER.structured_address dans le SLOT \"Adresse structurée\".\r\n\r\nCet archétype CLUSTER.address peut également être utilisé comme substitut d'une adresse dans les données démographiques formelles lors de la révision d'un modèle avec des experts du domaine - par exemple, une évaluation où les examinateurs s'attendent à voir les coordonnées complètes de la personne en haut du formulaire d'évaluation.",
-          "misuse" : "Ne pas utiliser pour enregistrer une adresse entièrement structurée, telle que décrite dans les normes ISO ou dans le cadre de la tenue d'un registre ou d'un index démographique officiel. Utiliser à cette fin un service de recherche d'adresses, un index principal officiel des patients ou un index des prestataires de soins de santé, ou des archétypes fondés sur le modèle d'information démographique de l'openEHR.\r\n\r\nNe pas utiliser pour représenter des adresses numériques destinées à la communication électronique. Utiliser CLUSTER.electronic_communication à cette fin.\r\n\r\nNe doit pas être utilisé pour enregistrer des détails sur le logement ou l'absence de domicile. Utilisez EVALUATION.housing_summary à cette fin.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.address.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-address-009.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "de" : { },
-        "pt-pt" : { },
-        "el" : { },
-        "fr" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "98bc048f-0811-45f4-8f58-46853c50ac46",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Natalia Strauch, Alina Rehberg",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "Strauch.Natalia@mh-hannover.de, rehberg.alina@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "pt-pt"
-      },
-      "author" : {
-        "name" : "Hugo Silva",
-        "organisation" : "University of Minho",
-        "email" : "pg50416@uminho.pt"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Erik Sundvall",
-        "organisation" : "Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
-        "email" : "erik.sundvall@regionstockholm.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
-        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
-        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "el"
-      },
-      "author" : {
-        "name" : "Erasmia Partafylla",
-        "organisation" : "Sigmasoft",
-        "email" : "c.partafylla@sigmasoft.gr"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "fr"
-      },
-      "author" : {
-        "name" : "Vanessa Pereira",
-        "organisation" : "Luxembourg Institute of Health (LIH)",
-        "email" : "vanessapereira@protonmail.com"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "4418a306-1cf5-4d2b-9012-ef83a9575f2b",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "631B12227B6F857367CA40D256DD814A"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird.",
-          "keywords" : [ "Telefon, Mobiltelefon, E-Mail, Fax, Pager, Chat, Soziale Medien, asynchron, Kommunikation, SoMe" ],
-          "use" : "Zur Darstellung von Informationen über eine bestimmte Art der elektronischen Kommunikation für eine Person oder Organisation, wie sie bekannt ist oder im Rahmen der klinischen Dokumentation verstanden wird. Dies geschieht üblicherweise ad hoc oder wenn es nicht angemessen oder möglich ist, ein formelles Register oder einen Index zu verwenden.",
-          "misuse" : "Nicht für komplexe Kommunikationsdarstellung oder -verwaltung zu verwenden, wie z. B. bevorzugte Telefonnummern oder Gültigkeit der Nutzung. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem demografischen Informationsmodell von openEHR basieren.\r\n\r\nDarf nicht verwendet werden, um das formelle Identifikationsmanagement darzustellen oder zu ersetzen oder um ein offizielles demografisches Register oder einen Index zu führen. Verwenden Sie zu diesem Zweck einen formellen Master Patient Index oder Health Provider Index oder Archetypen, die auf dem openEHR Demographic Information Model basieren.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere detaljer om en spesifikk type elektronisk kommunikasjon som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
-          "keywords" : [ "telefon, mobil, e-post, faks, personsøker, chat, asynkron dialog, sosiale media, kommunikasjon, SoMe," ],
-          "use" : "Brukes for å registrere detaljer om en spesifikk type elektronisk kommunikasjon for en person eller en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet. Brukes ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.",
-          "misuse" : "Brukes ikke til kompleks kommunikasjonsadministrasjon, for eksempel foretrukne telefonnummer eller gyldige bruksdatoer. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\t\r\nBrukes ikke til å representere eller erstatte de formelle demografiske opplysninger for formell identitetsforvaltning eller for å opprettholde et demografisk register eller en indeks. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record details about a specified type of electronic communication as it is known or understood in the course of clinical documentation.",
-          "keywords" : [ "telephone, phone, mobile, email, fax, pager, chat, social media, asynchronous, communication, SoMe" ],
-          "use" : "Use to record details about a specified type of electronic communication for an individual or an organisation as it is known or understood in the course of clinical documentation. This is commonly ad hoc or when it is not appropriate or possible to use a formal register or index.",
-          "misuse" : "Not to be used for complex communication representation or management, such as preferred phone numbers or valid dates of usage. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent or replace formal identification management or for the purposes of maintaining an official demographic register or index. Use a formal Master Patient Index or Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.electronic_communication.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-012.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "de" : { },
-        "nb" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "ae57162c-7e2f-4096-a08f-8f03574e4a72",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Natalia Strauch",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "Strauch.Natalia@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Kanika Kuwelker, John Tore Valand, Liv Laugen",
-        "organisation" : "Helse Vest IKT, Helse Bergen, ​Oslo University Hospital, Norway",
-        "email" : "kanika.kuwelker@helse-vest-ikt.no, john.tore.valand@helse-vest-ikt.no, liv.laugen@ous-hf.no"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
-    "uid" : "4c86abbe-2242-4c3c-89e6-e2b8c3808524",
-    "description" : {
-      "@type" : "RESOURCE_DESCRIPTION",
-      "originalAuthor" : { },
-      "otherContributors" : [ ],
-      "ipAcknowledgements" : { },
-      "references" : { },
-      "conversionDetails" : { },
-      "otherDetails" : {
-        "PARENT:MD5-CAM-1.0.1" : "5DFD0809E7CD46EA0712A590C68F545B"
-      },
-      "details" : {
-        "de" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "de"
-          },
-          "purpose" : "Zur Darstellung von Informationen zur einer Organisation, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden.",
-          "keywords" : [ "Organisation, Anbieter, Versorger, Betreuer, Netzwerk, Verbund, Gruppe" ],
-          "use" : "Der Archetyp wird verwendet, um Informationen zur einer Organisation darzustellen, wie sie bekannt sind oder im Rahmen der klinischen Dokumentation verstanden werden, oft ad hoc oder wenn die Verwendung von einem formellen demografischen Register oder einem Index nicht angemessen oder nicht möglich ist.\r\nBeispiele beinhalten:\r\n- der Inhaber einer Patientenverfügung unter Verwendung des SLOT „Inhaber der Kopie“ innerhalb des Archetyps EVALUATION.advance_care_directive oder\r\n- Name und Kontaktdaten einer Organisation, die die Betreuung einer Person in ihrem zu Hause übernimmt.\r\n\r\nDieser Archetyp wurde entwickelt, um Angaben zu offiziell anerkannten Einrichtungen, wie einem eingetragenen Unternehmen, einem Krankenhaus und seinen anerkannten „Unterorganisationen“, wie einer operativ getrennten oder spezialisierten Satellitenklinik oder einem häuslichen Pflegedienst, zu enthalten. Es kann auch verwendet werden, um Kontaktinformationen über informellere Netzwerke oder Gruppen darzustellen, wie z. B. eine lokale Selbsthilfegruppe.\r\n\r\nDieser Archetyp könnte auch als Proxy für formale demografische Daten verwendet werden, wenn ein Template mit Domänenexperten überprüft wird – beispielsweise bei einer Bewertung, bei der die Prüfer erwarten würden, dass die Details zu der Organisation oben auf dem Bewertungsformular angezeigt werden.",
-          "misuse" : "Der Archetyp darf nicht verwendet werden, um ein offizielles Register oder einen Index darzustellen, zu ersetzen oder zu führen. Verwenden Sie zu diesem Zweck einen formellen Gesundheitsanbieter-Index (Health Provider Index) oder Archetypen, die auf dem openEHR Demographic Information Model basieren.\r\n\r\nDer Archetyp darf nicht verwendet werden, um den Pflegeort und ähnliche Datenelemente darzustellen, die formal in der Patientenakte unter Verwendung der Reference Model-Attribute dargestellt werden sollten.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "sv" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "sv"
-          },
-          "purpose" : "Att registrera information om en organisation på det sätt som det behöver representeras i en journalanteckning.\r\n",
-          "keywords" : [ "organisation, leverantör, vårdgivare, vårdenhet, enhet, avdelning, nätverk, grupp" ],
-          "use" : "Används för att registrera information om en organisation som behöver representeras i journalen. Används exempelvis ad hoc eller i de fall då formella demografiska register eller kataloger inte kan användas istället. \r\nExempel inkluderar:\r\n- namn och kontaktuppgifter för en organisation som har en fysisk kopia av patientens önskemål om vård i händelse av att patienten inte längre kan kommunicera\r\n- namn och kontaktuppgifter för hemtjänst- eller hemsjukvårdsorganisation för en individ\r\n\r\nDenna arketyp har utformats för att dokumentera information om formellt erkända enheter, såsom ett registrerat företag, ett sjukhus och dess erkända \"underorganisationer\", såsom en separat eller specialiserad satellitklinik eller hemsjukvård. Den kan också användas för att dokumentera kontaktinformation om mer informella nätverk eller grupper, till exempel en lokal stödgrupp.\r\n\r\nDen här arketypen kan också användas som en proxy för formell demografisk data när man granskar en mall med domänexperter - exempelvis där granskare förväntar sig att se en organisations information i ett formulär.",
-          "misuse" : "*Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes. (en)",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "nb" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "nb"
-          },
-          "purpose" : "For å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet.",
-          "keywords" : [ "organisasjon, leverandør, omsorgsperson, nettverk, gruppe" ],
-          "use" : "Brukes for å registrere detaljer om en organisasjon, som man har informasjon om eller har forstått, i det kliniske dokumentasjonsarbeidet, ofte ad hoc eller i de tilfeller når det ikke er ønskelig eller mulig å bruke et formelt demografisk register eller indeks.\r\n\r\nFor eksempel:\r\n- kopiinnhaver av av et fremtidig behandlingsvalg ved å bruke \"Kopiholder\"-SLOTet i arketypen \"EVALUATION.advance_care_directive\" (Fremtidig behandlingsvalg).\r\n- navn og kontaktdetaljer for en organisasjon som yter hjemmehjelp til en enkeltperson.\r\n\r\nDenne arketypen er utformet for å registrere detaljer om formelt anerkjente enheter, for eksempel en registrert virksomhet, et sykehus og dets \"underorganisasjoner\", en operativt separat eller spesialisert satellittklinikk eller hjemmetjeneste. Den kan også brukes til å registrere kontaktinformasjon om mer uformelle nettverk eller grupper, for eksempel en lokal støttegruppe.\r\n\r\nDenne arketypen kan også brukes som en midlertidig erstatning for formelle demografiske data når man gjennomgår et templat med domeneeksperter - for eksempel en vurdering der man i templatet forventer å se detaljer om en organisasjon i et vurderingsskjema.",
-          "misuse" : "Brukes ikke til å representere, erstatte eller vedlikeholde formelle demografiske opplysninger. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.\r\n\r\nBrukes ikke for å representere behandlingssted eller lignende dataelementer, som skal representeres formelt i pasientjournalen. Bruk attributter fra Referansemodellen for dette formålet.",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        },
-        "en" : {
-          "@type" : "RESOURCE_DESCRIPTION_ITEM",
-          "language" : {
-            "terminologyId" : {
-              "value" : "ISO_639-1"
-            },
-            "codeString" : "en"
-          },
-          "purpose" : "To record details about an organisation as they are known or understood in the course of clinical documentation.",
-          "keywords" : [ "organisation, organization, provider, carer, network, group" ],
-          "use" : "Use to record details of an organisation as they are known or understood in the course of clinical documentation, often ad hoc or when it is not appropriate or possible to use a formal demographic register or index. Examples include:\r\n- the copyholder of an advanced care record, using the 'Copyholder' SLOT within the EVALUATION.advance_care_directive archetype; or\r\n- the name and contact details of an organisation providing home care to an individual.\r\n\r\nThis archetype has been designed to carry details of formally recognised entities, such as a registered business, a hospital and its recognised 'sub-organisations', such as an operationally separate or specialised satellite clinic or home care service. It may also be used to carry contact information about more informal networks or groups, such as a local community support group.\r\n\r\nThis archetype could also be used as a proxy for formal demographic data when reviewing a template with domain experts - for example, an assessment where reviewers would expect to see an organisations' details on an assessment form.",
-          "misuse" : "Not to be used to represent, replace or maintain an official register or index. Use a formal Health Provider Index for this purpose, or archetypes based on the openEHR Demographic Information Model.\r\n\r\nNot to be used to represent the location of care and similar data elements that should be represented formally in the health record using the Reference Model attributes.",
-          "copyright" : "© openEHR Foundation",
-          "originalResourceUri" : { },
-          "otherDetails" : { }
-        }
-      }
-    },
-    "parentArchetypeId" : "openEHR-EHR-CLUSTER.organisation.v1",
-    "differential" : true,
-    "archetypeId" : {
-      "@type" : "ARCHETYPE_HRID",
-      "value" : "openEHR-EHR-CLUSTER.ovl-organisation-009.v1"
-    },
-    "definition" : {
-      "@type" : "C_COMPLEX_OBJECT",
-      "rmTypeName" : "CLUSTER",
-      "nodeId" : "at0000.1",
-      "attributes" : [ {
-        "@type" : "C_ATTRIBUTE",
-        "rmAttributeName" : "items",
-        "children" : [ {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..1",
-          "nodeId" : "at0005.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-address-009.v1",
-          "referenceType" : "archetypeOverlay"
-        }, {
-          "@type" : "C_ARCHETYPE_ROOT",
-          "rmTypeName" : "CLUSTER",
-          "occurrences" : "0..*",
-          "nodeId" : "at0022.1",
-          "attributes" : [ ],
-          "attributeTuples" : [ ],
-          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-electronic_communication-012.v1",
-          "referenceType" : "archetypeOverlay"
-        } ]
-      } ],
-      "attributeTuples" : [ ]
-    },
-    "terminology" : {
-      "@type" : "ARCHETYPE_TERMINOLOGY",
-      "conceptCode" : "at0000",
-      "termDefinitions" : {
-        "en" : { },
-        "nb" : { },
-        "de" : { },
-        "sv" : { }
-      },
-      "termBindings" : { },
-      "terminologyExtracts" : { },
-      "valueSets" : { }
-    },
-    "adlVersion" : "1.4",
-    "buildUid" : "8543bf4b-0e15-4990-8a02-c7d082df8617",
-    "rmName" : "openehr",
-    "rmRelease" : "1.1.0",
-    "generated" : true,
-    "otherMetaData" : { },
-    "originalLanguage" : {
-      "terminologyId" : {
-        "value" : "ISO_639-1"
-      },
-      "codeString" : "en"
-    },
-    "translations" : [ {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "de"
-      },
-      "author" : {
-        "name" : "Sarah Ballout, Natalia Strauch",
-        "organisation" : "Medizinische Hochschule Hannover",
-        "email" : "ballout.sarah@mh-hannover.de, Strauch.Natalia@mh-hannover.de"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "sv"
-      },
-      "author" : {
-        "name" : "Therese Lindberg, Erik Sundvall",
-        "organisation" : "Cambio CDS, Karolinska Institutet + Karolinska University Hospital, Region Stockholm + Linköping University",
-        "email" : "therese.lindberg@cambio.se, erik.sundvall@regionstockholm.se"
-      },
-      "otherDetails" : { }
-    }, {
-      "@type" : "TRANSLATION_DETAILS",
-      "language" : {
-        "terminologyId" : {
-          "value" : "ISO_639-1"
-        },
-        "codeString" : "nb"
-      },
-      "author" : {
-        "name" : "Liv Laugen, John Tore Valand, Vebjørn Arntzen, Kanika Kuwelker",
-        "organisation" : "​Oslo University Hospital, Norway, Helse Bergen, Helse Vest IKT",
-        "email" : "liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no"
-      },
-      "otherDetails" : { }
-    } ]
-  }, {
-    "@type" : "TEMPLATE_OVERLAY",
     "uid" : "bada35f2-f318-495e-b68c-8ec8ff285e5d",
     "description" : {
       "@type" : "RESOURCE_DESCRIPTION",
@@ -10182,15 +10284,6 @@
                           "attributes" : [ ],
                           "attributeTuples" : [ ],
                           "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-adhoc_cluster_heading-003.v0",
-                          "referenceType" : "archetypeOverlay"
-                        }, {
-                          "@type" : "C_ARCHETYPE_ROOT",
-                          "rmTypeName" : "CLUSTER",
-                          "occurrences" : "0..1",
-                          "nodeId" : "at0039.1",
-                          "attributes" : [ ],
-                          "attributeTuples" : [ ],
-                          "archetypeRef" : "openEHR-EHR-CLUSTER.ovl-organisation-009.v1",
                           "referenceType" : "archetypeOverlay"
                         } ]
                       } ],
@@ -10439,7 +10532,232 @@
       "@type" : "C_COMPLEX_OBJECT",
       "rmTypeName" : "CLUSTER",
       "nodeId" : "at0000.1",
-      "attributes" : [ ],
+      "attributes" : [ {
+        "@type" : "C_ATTRIBUTE",
+        "rmAttributeName" : "items",
+        "children" : [ {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0021.1",
+          "attributes" : [ ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0007.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -90.0,
+                      "upper" : 90.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0008.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "497" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "deg" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lower" : -180.0,
+                      "upper" : 180.0,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 6,
+                      "upper" : 6,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        }, {
+          "@type" : "C_COMPLEX_OBJECT",
+          "rmTypeName" : "ELEMENT",
+          "occurrences" : "0..0",
+          "nodeId" : "at0009.1",
+          "attributes" : [ {
+            "@type" : "C_ATTRIBUTE",
+            "rmAttributeName" : "value",
+            "children" : [ {
+              "@type" : "C_COMPLEX_OBJECT",
+              "rmTypeName" : "DV_QUANTITY",
+              "attributes" : [ {
+                "@type" : "C_ATTRIBUTE",
+                "rmAttributeName" : "property",
+                "children" : [ {
+                  "@type" : "C_TERMINOLOGY_CODE",
+                  "occurrences" : "0..1",
+                  "terminologyId" : {
+                    "value" : "openehr"
+                  },
+                  "constraint" : [ "122" ]
+                } ]
+              } ],
+              "attributeTuples" : [ {
+                "@type" : "C_ATTRIBUTE_TUPLE",
+                "members" : [ {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "units",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "magnitude",
+                  "children" : [ ]
+                }, {
+                  "@type" : "C_ATTRIBUTE",
+                  "rmAttributeName" : "precision",
+                  "children" : [ ]
+                } ],
+                "tuples" : [ {
+                  "@type" : "C_PRIMITIVE_TUPLE",
+                  "members" : [ {
+                    "@type" : "C_STRING",
+                    "rmTypeName" : "STRING",
+                    "constraint" : [ "m" ]
+                  }, {
+                    "@type" : "C_REAL",
+                    "rmTypeName" : "REAL",
+                    "constraint" : [ {
+                      "lowerIncluded" : false,
+                      "upperIncluded" : false,
+                      "upperUnbounded" : true,
+                      "lowerUnbounded" : true
+                    } ]
+                  }, {
+                    "@type" : "C_INTEGER",
+                    "rmTypeName" : "INTEGER",
+                    "constraint" : [ {
+                      "lower" : 2,
+                      "upper" : 2,
+                      "lowerIncluded" : true,
+                      "upperIncluded" : true,
+                      "upperUnbounded" : false,
+                      "lowerUnbounded" : false
+                    } ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ],
+          "attributeTuples" : [ ]
+        } ]
+      } ],
       "attributeTuples" : [ ]
     },
     "terminology" : {
@@ -20277,7 +20595,54 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "04DB3ACCF005E496B0B9FD86C73867DA"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus einer Person, die nur zum Zeitpunkt der Feststellung als richtig anzusehen ist.",
+          "keywords" : [ "Schwangerschaft, schwanger, Ausschluss" ],
+          "use" : "Zur Aufzeichnung einer Aussage oder Feststellung über den Schwangerschaftsstatus einer Person zu einem bestimmten Zeitpunkt. \r\n\r\nDiese Datengruppe ist ganz bewusst als Aufzeichnung einer Behauptung definiert, einer sorgfältigen klinischen Aussage eines Arztes darüber, ob er nach bestem Wissen und Gewissen glaubt, dass eine Person schwanger ist oder nicht.\r\n\r\n\"Möglicherweise schwanger“ wird in der Regel nicht als Wert angeboten, geschweige denn in der Krankenakte vermerkt, da dies die Standardannahme eines jeden Arztes für jede Frau im gebärfähigen Alter ist, bis das Gegenteil bewiesen ist. \r\n\r\nDie Feststellung, dass eine Person schwanger ist, lässt sich relativ einfach und sicher auf der Grundlage von Beweisen wie einem positiven Urin- oder Bluttest oder körperlichen Untersuchungsergebnissen treffen. In der Regel führen die Folgen eines Fehlers in diesem Szenario zu übervorsichtigen Behandlungsentscheidungen, die wahrscheinlich keinen klinischen Schaden verursachen. Die umgekehrte Situation, in der ein Arzt feststellen muss, dass eine Person, die bei der Geburt als weiblich eingestuft wurde, nicht schwanger ist, ist jedoch oft keine einfache oder sichere Entscheidung. Die fälschliche Feststellung, dass eine Person nicht schwanger ist, kann erhebliche klinische Folgen haben, wenn sie zu klinischen Behandlungsentscheidungen führt, die einer schwangeren Frau oder dem Fötus in einer nicht erkannten Schwangerschaft schaden können.\r\n\r\nEin absoluter Ausschluss einer Schwangerschaft ist nur in begrenzten Fällen möglich, z. B. nach bestätigtem Fehlen oder Entfernung beider Eierstöcke und der Gebärmutter. In den meisten anderen Situationen kann der Arzt nur auf der Grundlage einer Kombination aus Anamnese, körperlicher Untersuchung, diagnostischen Tests und klinischem Urteil entscheiden, dass keine Schwangerschaft vorliegt. Jede Aussage zum Ausschluss einer Schwangerschaft sollte eine Begründung oder Rechtfertigung des Arztes enthalten, die sich auf aktuelle Testergebnisse, ein Organinventar oder eine Vorgeschichte von Diagnosen und Verfahren beziehen kann.\r\n\r\nEine Feststellung sollte nur zum Zeitpunkt der Feststellung als richtig angesehen werden. So ist beispielsweise die Feststellung, eine Person sei schwanger, für die Diagnose einer Eileiterschwangerschaft erforderlich, obwohl sie nach einer Operation nicht mehr schwanger sein sollte. Ebenso muss eine Feststellung, dass eine Person nicht schwanger ist, die auf einer Anamnese und einem Urin-Schwangerschaftstest beruht, möglicherweise kurz darauf revidiert werden, wenn ein Bluttest auf Schwangerschaft positiv ausfällt.",
+          "misuse" : "Nicht für die Aufzeichnung zusammenfassender Informationen über eine einzelne Schwangerschaft zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp EVALUATION.pregnancy_summary.\r\n\r\nNicht zur Aufzeichnung der Phase einer aktiven Schwangerschaft, wie z. B. vor der Empfängnis, schwanger oder nach der Geburt, zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp EVALUATION.pregnancy_phase.\r\n\r\nNicht zur Erfassung von Details zu Eingriffen während einer Schwangerschaft, z. B. Schwangerschaftsabbrüche oder Entbindungen, zu verwenden. Verwenden Sie zu diesem Zweck den Archetyp ACTION.procedure oder andere relevante Archetypen.\r\n\r\nNicht zu verwenden im Zusammenhang mit fragebogenartigen Darstellungen, wie z. B. Selbstauskünften mit Fragen wie „Sind Sie schwanger?“. Verwenden Sie hierfür den openEHR-EHR-OBSERVATION.problem_screening.v1 oder andere entsprechende Archetypen.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "Å registrere et utsagn om graviditetsstatusen til en person, som kun skal anses som nøyaktig på datoen og tidspunktet for utsagnet.",
+          "keywords" : [ "graviditet, gravid, ekskludering, utelukkelse" ],
+          "use" : "Brukes til å registrere et utsagn om graviditetsstatusen til individet på et bestemt tidspunkt.\r\n\r\nDenne typen data er spesifikt definert som registrering av et utsagn, en nøye klinisk uttalelse fra en kliniker om hvorvidt de tror, ​​basert på deres beste kunnskap, at en person er gravid eller ikke gravid.\r\n\r\n\"Kan være gravid\" tilbys vanligvis ikke som en verdi, langt mindre registrert i helsejournalen, da dette er en klinikers antakelse for enhver kvinne i fertil alder, inntil det motsatte er bevist.\r\n\r\nÅ hevde at en person er gravid er relativt enkelt og trygt å gjøre på grunnlag av bevis som en positiv urin- eller blodprøve eller fysiske undersøkelse. Vanligvis fører konsekvensene av en feil i dette scenariet til svært forsiktige behandlingsvalg, som neppe vil forårsake klinisk skade. Imidlertid er den motsatte situasjonen hvor en kliniker trenger å hevde at en person som ble født som kvinne ikke er gravid, ofte ikke er en enkel eller sikker avgjørelse. Feil utsagn om at individet ikke er gravid kan ha betydelige kliniske konsekvenser dersom det resulterer i kliniske valg som kan skade en gravid kvinne eller fosteret i et ukjent svangerskap.\r\n\r\nAbsolutt utelukkelse av graviditet er bare mulig i begrensede tilfeller, for eksempel etter bekreftet fjerning av både eggstokkene og livmoren. I de fleste andre situasjoner kan klinikere bare ta en avgjørelse om \"ikke gravid\" basert på en kombinasjon av anamnese, fysisk undersøkelse, diagnostisk testing og klinisk vurdering. Enhver erklæring om utelukkelse av graviditet bør inkludere klinikerens begrunnelse, som kan referere til samtidige testresultater, manglende organ eller en tidligere historie med diagnoser og prosedyrer.\r\n\r\nEt utsagn bør kun anses som nøyaktig på tidspunktet for utsagnet. For eksempel er et utsagn om at en person er gravid nødvendig for å diagnostisere en graviditet utenfor livmoren, men personen bør ikke lenger være gravide etter en operasjon. På samme måte kan et utsagn om at en person ikke er gravid, basert på anamnese og et uringraviditetstestresultat, måtte revideres kort tid etter hvis en blodprøve for graviditet returnerer positiv.",
+          "misuse" : "Skal ikke brukes til å registrere sammendrag om en enkelt graviditet. Bruk arketypen EVALUATION.pregnancy_summary til dette formålet.\r\n\r\nSkal ikke brukes til å registrere fasen av en graviditet, slik som før unnfangelsen, graviditeten eller etter fødselen. Bruk arketypen EVALUATION.pregnancy_phase til dette formålet.\r\n\r\nSkal ikke brukes til å registrere detaljer om prosedyrer utført under en graviditet, for eksempel avbrudd eller fødsel. Bruk ACTION.prosedyren eller andre relevante arketyper for dette formålet.\r\n\r\nSkal ikke brukes i sammenheng med spørreskjema for eksempel selvrapporterte data med spørsmål som \"Er du gravid?\". Bruk openEHR-EHR-OBSERVATION.problem_screening.v1 eller andre relevante arketyper for dette formålet.",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record a statement or declaration about the pregnancy status of the individual, which is to be considered accurate only at the date and time of assertion.",
+          "keywords" : [ "pregnancy, pregnant, exclusion," ],
+          "use" : "Use to record a statement or declaration about the pregnancy status of the individual at a specific point in time. \r\n\r\nThis data group is very deliberately defined as the recording of an assertion, a careful clinical statement made by a clinician about whether they believe, based on their best knowledge, that an individual is pregnant or not pregnant.\r\n\r\n‘May be pregnant’ is not usually offered as a value, much less recorded in the health record, as this is every clincian’s default assumption for any woman of child-bearing age, until proven otherwise. \r\n\r\nAsserting that an individual is pregnant is relatively straightforward and safe to do on the basis of evidence such as a positive urine or blood test or physical examination findings. Typically, the consequences of an error in this scenario lead to overly cautious treatment choices, which are unlikely to cause clinical harm. However, the opposite situation where a clinician needs to assert that an individual who has been assigned as female at birth is not pregnant is often not a straightforward or safe determination. Incorrectly asserting that the individual is not pregnant can have significant clinical consequences if it results in clinical management choices that can cause harm to a pregnant woman or to the fetus in an unrecognised pregnancy.\r\n\r\nAbsolute exclusion of pregnancy is possible only in limited cases, such as after the confirmed absence or removal of both ovaries and the uterus. In most other situations, clinicians can only make a determination of ‘not pregnant’ based on a combination of history taking, physical examination, diagnostic testing and clinical judgment. Any statement of pregnancy exclusion should include the clinician’s rationale or justification, which may reference contemporaneous test results, an organ inventory or a past history of diagnoses and procedures.\r\n\r\nAn assertion should be considered accurate only at the time of assertion. For example, an assertion that an individual is pregnant is needed to diagnose an ectopic pregnancy, however they should no longer be pregnant following surgery. Similarly, an assertion that an individual is not pregnant, based on history taking and a urine pregnancy test result, may need to be revised shortly after if a blood test for pregnancy returns positive.",
+          "misuse" : "Not to be used to record summary information about a single pregnancy. Use the EVALUATION.pregnancy_summary archetype for this purpose.\r\n\r\nNot to be used to record the phase of an active pregnancy, such as preconception, pregnant, or postpartum. Use the EVALUATION.pregnancy_phase archetype for this purpose.\r\n\r\nNot to be used to record details about procedures performed during a pregnancy, for example terminations or deliveries. Use the ACTION.procedure or other relevant archetypes for this purpose.\r\n\r\nNot to be used in the context of questionnaire-style representations, such as self-reported data with questions like 'Are you pregnant?'. Use the openEHR-EHR-OBSERVATION.problem_screening.v1 or other relevant archetypes for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-OBSERVATION.pregnancy_finding.v0",
     "differential" : true,
@@ -20401,7 +20766,40 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "271CD0C30AF2A1828A0A2EA440800BBC"
       },
-      "details" : { }
+      "details" : {
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere detaljer om den første dagen i den siste menstruasjonsperioden individet opplevde.",
+          "keywords" : [ "menstruasjon, mensen, LNMP, LMP, LNP, DLMP" ],
+          "use" : "Brukes for å registrere detaljer om den første dagen i den siste menstruasjonsperioden individet opplevde.\r\n\r\nBruk dataelementet \"Sikkerhet\" for å registrere sikkerhetsgraden for at datoen var korrekt. Ved registrering av startdatoen for siste menstruasjonsperiode er antagelsen at denne menstruasjonen var normal.",
+          "misuse" : "Brukes ikke for å registrere detaljer om menarke eller overgangsalder - bruk arketypen EVALUATION.menstruation_summary for dette formålet.\r\n\r\nBrukes ikke for å registrere informasjon om en spesifikk dag i menstruasjonssyklusen, bruk arketypen OBSERVATION.menstrual_diary for dette formålet.\r\n\r\nBrukes ikke for å registrere informasjon om typiske eller vanlige menstruasjonssykluser eller mønstre - bruk arketypen EVALUATION.menstruation_summary for dette formålet.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record the details about the first day of the most recent menstrual cycle for the individual.",
+          "keywords" : [ "menstruation, menses, LNMP, LMP, LNP, DLMP" ],
+          "use" : "Use to record the details about the first day of the most recent menstrual cycle for the individual. \r\n\r\nUse the data element 'Certainty' to record the level of certainty the date was correct. The assumption when recording the onset of the last menstrual cycle is that the menstruation was 'normal'.",
+          "misuse" : "Not to be used to record information about menses or related symptoms, use the OBSERVATION.menstruation archetype for this purpose. \r\n\r\nNot to be used to record information about a specific day in a menstrual cycle, use the OBSERVATION.menstrual_diary archetype for this purpose.\r\n\r\nNot to be used to record information about an individual's menstruation history events or patterns of menstruation over time, use the EVALUATION.menstruation_summary archetype for this purpose.",
+          "copyright" : "© openEHR Foundation",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-EVALUATION.last_menstrual_period.v1",
     "differential" : true,
@@ -20467,7 +20865,72 @@
       "otherDetails" : {
         "PARENT:MD5-CAM-1.0.1" : "9CA673C44D07EB44E7473631D0F97DD4"
       },
-      "details" : { }
+      "details" : {
+        "de" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "de"
+          },
+          "purpose" : "Zur Dokumentation eines expliziten Befundes zur Unterstützung einer klinischen Behauptung, wie z.B. eines Problems/einer Diagnose, eines Nebenwirkungsrisikos, einer Gesundheitsrisikobewertung oder einer Kontraindikation.",
+          "keywords" : [ "Diagnose", "Beweis", "Bedingung", "Krankheit", "Problem", "Feststellung", "Befund", "Beobachtung" ],
+          "use" : "Zur Dokumentationn von Details zu Befunden, die eine klinische Feststellung unterstützen, entweder als Zusammenfassung von Daten, die in anderen (oft der Klasse OBSERVATION) Archetypen verfügbar sind, oder wenn die ursprünglichen Beobachtungsdaten nicht verfügbar sind.\r\n\r\nDiesen Archetypen innerhalb eines SLOTS Archetypen wie EVALUATION.problem_diagnose, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication oder ähnlichen zusammenfassenden Archetypen verwenden, bei denen der Name der Feststellung bereits in der EVALUATION angegeben wurde, verschachtelt wird, um den Inhalt um diesen zusätzlichen und optionalen Datensatz zu erweitern. Während LINKs innerhalb des openEHR-Referenzmodells eine Verknüpfung mit Daten ermöglichen, die an anderer Stelle in der Gesundheitsakte gespeichert sind, wurde dieser Archetyp entwickelt, um diese Funktionalität explizit zu machen und um die klinische Sichtbarkeit und Überprüfung dieser Daten zu ermöglichen, wo sie in einer Vorlage oder Spezifikation relevant sein können.\r\n\r\nDer klinische Beweis kann direkt in diesen Archetyp als \"Finding\" eingegeben werden, oder es kann ein Zitat verwendet werden, um explizit auf Daten innerhalb der Gesundheitsakte zu verweisen.\r\n\r\n",
+          "misuse" : "Nicht zur Dokumentation von zusammenfassende Details zu einem identifizierten Problem oder einer Diagnose verwenden - verwenden Sie dazu die EVALUATION.problem_diagnosis.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Nebenwirkungsrisiko verwenden - verwenden Sie dazu die Datei EVALUATION.adverse_reaction_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassenden Details über ein identifiziertes Gesundheitsrisiko zu verwenden - verwenden Sie zu diesem Zweck die Datei EVALUATION.health_risk.\r\n\r\nNicht zur Dokumentation von zusammenfassende Einzelheiten über eine identifizierte Kontraindikation verwenden - verwenden Sie dazu die Datei EVALUATION.contraindication.\r\n",
+          "copyright" : "© openEHR Foundation, openEHR Norway",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "sv" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "sv"
+          },
+          "purpose" : "Att registrera ett uttryckligt resultat till stöd för ett kliniskt påstående, såsom ett problem / diagnos, biverkningsrisk, hälsoriskbedömning eller kontraindikation.",
+          "keywords" : [ "diagnos", "bevis", "tillstånd", "sjukdom", "problem", "påstående", "fynd", "observation" ],
+          "use" : "*Används för att registrera detaljer om fynd som stöder ett kliniskt påstående, antingen som en sammanfattning av data som finns tillgängliga i andra (ofta OBSERVATION-klass) arketyper, eller när de ursprungliga observationsdata inte är tillgängliga.\r\n\r\nDenna arketyp är utformad för att kapslas in i en SLOT i EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, eller liknande sammanfattande arketyper, där namnet på påståendet redan har specificerats i EVALUATIONEN, för att utöka innehållet med denna extra och valfria dataset. Medan LÄNKAR inom openEHR-referensmodellen möjliggör koppling till data som hålls någon annanstans inom hälsojournalen har denna arketyp utvecklats för att göra denna funktion tydlig och för att möjliggöra klinisk synlighet och granskning av dessa data, där det kan vara relevant i en template eller specifikation.\r\n\r\nDe kliniska bevisen kan matas in direkt i denna arketyp som en \"Finding\", eller en citering kan användas för att uttryckligen peka på data i hälsojournalen.",
+          "misuse" : "Är inte utformad för att registrera sammanfattade detaljer om ett identifierat problem eller diagnos - använd EVALUATION.problem_diagnosis för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad biverkningsrisk - använd EVALUATION.adverse_reaction_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad hälsorisk - använd EVALUATION.health_risk för detta ändamål.\r\n\r\nÄr inte utformad för att registrera sammanfattande detaljer om en identifierad kontraindikation - använd EVALUATION.-kontraindikationen för detta ändamål.",
+          "copyright" : "© openEHR Foundation, openEHR Norway",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "nb" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "nb"
+          },
+          "purpose" : "For å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, for eksempel en problem/diagnose, risiko for overfølsomhetsreaksjon, helserisiko, eller kontraindikasjon.",
+          "keywords" : [ "diagnose", "evidens", "tilstand", "sykdom", "problem", "observasjon", "begrunnelse" ],
+          "use" : "Brukes for å registrere eksplisitte detaljer om grunnlaget for et klinisk utsagn, enten som en oppsummering av data som er tilgjengelig i andre arketyper (ofte av OBSERVATION-klassen), eller når de opprinnelige dataene ikke er tilgjengelige for applikasjonen.\r\n\r\nDenne arketypen er ment å legges i et SLOT i arketypene EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication eller lignende oppsummerende arketyper, der utsagnet allerede er spesifisert i EVALUATION-arketypen. Den fungerer der som en valgfri utvidelse av datasettet i EVALUATION-arketypen.\r\n\r\nSom spesifisert i openEHR referansemodellen kan det benyttes lenker for å lenke til data som ligger andre steder i journalen, mens denne arketypen er laget for å gjøre dette eksplisitt, og for å gjøre det mulig å vise og gjennomgå disse dataene klinisk der dette er relevant.\r\n\r\nGrunnlaget kan legges direkte i denne i arketypen som et \"Resultat\", \"Strukturert resultat\", som fritekstlig oppsummering i \"Oppsummering\", eller en referans kan benyttes for å peke direkte til dataene som ligger et annet sted i journalen.",
+          "misuse" : "Skal ikke brukes til å registrere sammendrag om et problem eller en diagnose. For dette brukes arketypen EVALUATION.problem_diagnosis.\r\n\r\nSkal ikke brukes til å registrere sammendrag om risiko for overfølsomhetsreaksjoner. For dette brukes arketypen EVALUATION.adverse_reaction_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en helserisiko. For dette brukes arketypen EVALUATION.health_risk.\r\n\r\nSkal ikke brukes til å registrere sammendrag om en kontraindikasjon. For dette brukes arketypen EVALUATION.contraindication.",
+          "copyright" : "© openEHR Foundation, openEHR Norway",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        },
+        "en" : {
+          "@type" : "RESOURCE_DESCRIPTION_ITEM",
+          "language" : {
+            "terminologyId" : {
+              "value" : "ISO_639-1"
+            },
+            "codeString" : "en"
+          },
+          "purpose" : "To record an explicit finding in support of a clinical assertion, such as a problem/diagnosis, adverse reaction risk, health risk assessment, or contraindication.",
+          "keywords" : [ "diagnosis", "evidence", "condition", "disease", "problem", "assertion", "finding", "observation" ],
+          "use" : "Use to record details about findings that support a clinical assertion, either as a summary of data available in other (often OBSERVATION class) archetypes, or when the original observational data is not available.\r\n\r\nThis archetype is designed to be nested within a SLOT in the EVALUATION.problem_diagnosis, EVALUATION.adverse_reaction_risk, EVALUATION.health_risk, EVALUATION.contraindication, or similar summary archetypes, where the name of the assertion has already been specified in the EVALUATION, in order to extend its content with this additional and optional dataset. While LINKs within the openEHR Reference Model allow for linkage to data held elsewhere within the health record, this archetype has been developed to make this functionality explicit, and to enable clinical visibility and review of this data, where it may be relevant in a template or specification.\r\n\r\nThe clinical evidence can be entered directly into this archetype as a 'Result', 'Structured result', a narrative summary in 'Summary'; or a citation can be used to explicitly point to data within the health record.",
+          "misuse" : "Not to be used to record summary details about an identified problem or diagnosis - use the EVALUATION.problem_diagnosis for this purpose.\r\n\r\nNot to be used to record summary details about an identified adverse reaction risk - use the EVALUATION.adverse_reaction_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified health risk - use the EVALUATION.health_risk for this purpose.\r\n\r\nNot to be used to record summary details about an identified contraindication - use the EVALUATION.contraindication for this purpose.",
+          "copyright" : "© openEHR Foundation, openEHR Norway",
+          "originalResourceUri" : { },
+          "otherDetails" : { }
+        }
+      }
     },
     "parentArchetypeId" : "openEHR-EHR-CLUSTER.clinical_evidence.v1",
     "differential" : true,
